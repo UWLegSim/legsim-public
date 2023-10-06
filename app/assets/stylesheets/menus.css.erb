@@ -1,0 +1,317 @@
+/* MENU STYLES */
+
+/* Main Menu */
+
+#nav, #loginnav {
+    margin: 0 auto;
+    height: 36px;
+    _overflow: hidden;
+    z-index:999;
+    background: url(<%= image_path 'menu.png' %>) no-repeat center top;
+    text-align: left;
+    }
+
+#nav ul {
+    margin: 0 auto;
+    list-style: none;
+    width: 962px;
+    height: 36px;
+    z-index:999;
+    }
+
+#nav li {
+    float: left;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: block;
+    height: 36px;
+    z-index:999;
+    }
+
+#nav li a { padding: 0; display: block; height:36px; z-index:999;}
+
+#nav li a span { display: none; }
+
+#nav_home { background-image: url(<%= image_path 'menu-home.png' %>) ; width: 85px; }
+#nav_members { background-image: url(<%= image_path 'menu-members.png' %>) ; width: 105px; }
+#nav_organizations { background-image: url(<%= image_path 'menu-organizations.png' %>) ; width: 137px; }
+#nav_clerk { background-image: url(<%= image_path 'menu-clerk.png' %>) ; width: 79px; }
+#nav_committees { background-image: url(<%= image_path 'menu-committees.png' %>) ; width: 125px; }
+#nav_floor { background-image: url(<%= image_path 'menu-floor.png' %>) ; width: 80px; }
+#nav_white_house { background-image: url(<%= image_path 'menu-white-house.png' %>) ; width: 130px; }
+#nav_tutorials { background-image: url(<%= image_path 'menu-tutorials.png' %>) ; width: 102px; }
+#nav_instruction { background-image: url(<%= image_path 'menu-instruction.png' %>) ; width: 119px; }
+
+#nav_users { background-image: url(<%= image_path 'menu-users.png' %>) ; width: 85px; }
+#nav_courses { background-image: url(<%= image_path 'menu-courses.png' %>) ; width: 102px; }
+#nav_content { background-image: url(<%= image_path 'menu-content.png' %>) ; width: 103px; }
+#nav_mansion { background-image: url(<%= image_path 'menu-mansion.png' %>) ; width: 130px; }
+
+#nav_home:hover, #nav_home.over,
+#nav_tutorials:hover, #nav_tutorials.over,
+#nav_members:hover, #nav_members.over,
+#nav_committees:hover, #nav_committees.over,
+#nav_organizations:hover, #nav_organizations.over,
+#nav_floor:hover, #nav_floor.over,
+#nav_clerk:hover, #nav_clerk.over,
+#nav_white_house:hover, #nav_white_house.over,
+#nav_mansion:hover, #nav_mansion.over,
+#nav_users:hover, #nav_users.over,
+#nav_courses:hover, #nav_courses.over,
+#nav_content:hover, #nav_content.over,
+#nav_instruction:hover, #nav_instruction.over { background-position: 0px -37px; }
+
+#nav_home li a,
+#nav_tutorials li a,
+#nav_members li a,
+#nav_committees li a,
+#nav_organizations li a,
+#nav_floor li a,
+#nav_clerk li a,
+#nav_white_house li a,
+#nav_mansion li a,
+#nav_users li a,
+#nav_courses li a,
+#nav_content li a,
+#nav_instruction li a { background: white; }
+
+#nav_home li a:hover,
+#nav_tutorials li a:hover,
+#nav_members li a:hover,
+#nav_committees li a:hover,
+#nav_organizations li a:hover,
+#nav_floor li a:hover,
+#nav_clerk li a:hover,
+#nav_white_house li a:hover,
+#nav_mansion li a:hover,
+#nav_users li a:hover,
+#nav_courses li a:hover,
+#nav_content li a:hover,
+#nav_instruction li a:hover { background: #f1f6fc !important; }
+
+#nav ul ul {
+    display: none;
+    position: absolute;
+    top: 36px;
+    left: 3px;
+    width: 172px;
+    height: auto !important;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 4px 8px 8px 8px;
+    background: url(<%= image_path 'menu-dropdown.png' %>)  no-repeat center bottom;
+    _background: url(<%= image_path 'menu-dropdown-ie.png' %>)  no-repeat center bottom;
+    }
+
+#nav ul .last ul {
+    left: -72px;
+    }
+
+#nav ul ul li {
+    height: auto;
+    display: block;
+    width: 172px;
+    }
+
+#nav ul ul li a {
+    display: block;
+    padding: 4px 0 4px 10px;
+    height:auto !important;
+    width: 162px;
+    }
+
+#nav ul ul li>a {
+    display: block;
+    padding: 4px 10px;
+    width: auto;
+    }
+
+#nav ul ul li a:hover {
+    display: block;
+    }
+
+#nav li:hover ul {
+    display: block;
+    }
+
+#nav li.over ul {
+    display: block;
+    }
+
+
+
+
+/* Main Menu */
+
+#topnav {
+    float: left;
+    width: 336px;
+    margin: 0 auto;
+    _overflow: hidden;
+    text-align: right;
+    font-size: 11px;
+    color: #d2f0ff;
+    }
+
+#topnav a { color: #e6eef5; }
+#topnav a:hover { color: white; }
+
+#topmenu { padding: 6px 4px; }
+
+
+
+#cloakroom {
+    width: 203px;
+    height: 34px;
+    margin-top: 20px;
+    padding: 0;
+    _OVERFLOW: hidden;
+    z-index:1999;
+    float: right;
+    text-align: left;
+    }
+
+#cloakroom ul {
+    margin: 0 auto;
+    width: 203px;
+    height: 34px;
+    list-style: none;
+    float: right;
+    z-index:1999;
+    }
+
+#cloakroom li {
+    float: left;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: block;
+    height:34px;
+    z-index:1999;
+    background: url(<%= image_path 'arrow-cloakroom.png' %>)  no-repeat left top;
+    _background: url(<%= image_path 'arrow-cloakroom-ie.png' %>)  no-repeat left top;
+    }
+
+#cloakroom li:hover {
+    background-position: left -37px;
+    }
+
+#cloakroom li a {
+    display: block;
+    width: 167px;
+    z-index: 1999;
+    height: 16px;
+    padding: 9px 10px 9px 26px;
+    }
+
+#cloakroom ul ul li,
+#cloakroom ul ul li a { background: transparent; }
+
+#cloakroom ul ul {
+    display: none;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    width: 170px;
+    height:auto !important;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 2px 10px 16px 23px;
+    background: url(<%= image_path 'cloakroom-dropdown.png' %>)  no-repeat center bottom;
+    _background: url(<%= image_path 'cloakroom-dropdown-ie.png' %>)  no-repeat center bottom;
+    }
+
+#cloakroom ul ul li {
+    color: #0e4ea9;
+    height: auto;
+    text-align: left;
+    display: block;
+    width: 155px;
+    z-index:1999;
+    padding: 3px 0 3px 16px;
+    background: url(<%= image_path 'cloakroom-li.png' %>)  no-repeat 2px 6px;
+    }
+
+    #cloakroom ul ul li:hover { background-position: 2px 6px; }
+
+
+#cloakroom ul ul li.in {
+    background: url(<%= image_path 'cloakroom-li-in.png' %>)  no-repeat 2px 6px;
+    }
+
+   #cloakroom ul ul li.in:hover { font-weight: bold; }
+
+#cloakroom ul ul li a {
+    display: block;
+    height:auto !important;
+    width: 100%;
+    padding: 0;
+    }
+
+#cloakroom ul ul li>a {
+    display: block;
+    width: auto;
+    padding: 0;
+    }
+
+#cloakroom ul ul li a:hover {
+    display: block;
+    text-decoration: none;
+    }
+
+#cloakroom li:hover ul {
+    display: block;
+    }
+
+#cloakroom li.over ul {
+    display: block;
+    }
+
+
+
+
+
+
+/* Section Menu*/
+
+#wrapper #submenu {
+    width: 252px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: url(<%= image_path 'submenu_id_tile.jpg' %>)  no-repeat left top;
+    }
+
+#submenu ul {
+    width: 252px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+
+#submenu li {
+    width: 252px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    }
+
+#submenu li a {
+    display: block;
+    margin: 0 auto !important;
+    padding: 3px 0 3px 26px;
+    width: 226px;
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: bold;
+    background: url(<%= image_path 'submenu_bullet.png' %>)  no-repeat left 2px;
+    }
+
+#submenu li a:hover { background-position: left -176px; text-decoration: none; }
+
+
+#submenu .title {
+    display: block;
+    padding: 2px 0 16px 0;
+    background: transparent !important;
+    }

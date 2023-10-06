@@ -1,0 +1,15 @@
+  <%= form_field do %>
+  	<div class='field'>
+	  	<%= f.label :name, "Title" %>
+	    <%= f.text_field :name, :class => "input" %>	
+  	</div>
+  <% end %>
+
+  <%= form_field do %>
+  	<div class='field text-field'>
+  		<%= f.label :description, "Description" %>
+    	<%= f.text_area :description, :class => 'tinymce' %>
+  	</div>
+  <% end %>
+  <br/>
+  <%= f.hidden_field :group_id %>

@@ -1,0 +1,24 @@
+<% if @current_chamber_role.group_leader?( @party ) %>
+<div id="overview" class="left-column">
+<div class="left-content">
+  <%= content('manage-party') %>
+
+  <div class="field field-submit">
+  	<%= link_button_to "Return to Party", party_path( @party ), :size => 'sixty', :class =>'btn blue-btn' %>
+  </div>
+</div>
+</div>
+
+<div id="details" class="right-column">
+<div class="the-content">
+  <div class='field'><%= link_to 'Manage Party Information', manage_info_party_path(@party) %></div>
+  <div class='field'><%= link_to 'Manage Legislative Study Groups', manage_referrals_party_path(@party) %></div>
+  <div class='field'><%= link_to 'Manage Discussions', manage_discussions_party_path(@party) %></div>
+  <% if @current_chamber.setting("has_#{@party.type.underscore}_voting") %>
+    <div class='field'><%= link_to 'Manage Vote Schedule', manage_votes_party_path(@party) %></div>
+  <% end %>
+</div>
+</div>
+<% else %>
+	Only the party chair can edit this page.
+<% end %>

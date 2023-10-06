@@ -1,0 +1,16 @@
+<div class='field'>
+	<%= f.label :name, "Title" %> <%= f.text_field :name %>
+	<%= f.label :name, "Abbreviation" %> <%= f.text_field :abbr %>
+</div>
+
+<div class='field text-field'>
+	<%= f.label :jurisdiction_description %>
+	<%= f.text_area :jurisdiction_description %>
+</div>
+
+<div class='field text-field'>
+	<%= f.label :issue_description %>
+	<%= f.text_area :issue_description %>
+</div>
+
+<%= f.hidden_field :chamber_id if @committee.chamber %>

@@ -1,0 +1,52 @@
+<div class="wide-form">
+
+  <div id="overview">
+
+    <h2>Course Archives</h2>
+
+    <p>
+      When a course is archived it is unaccessible to both instructors and members. System administrators can still enter
+      an archived course through the Account Assumption tool.
+    </p>
+
+    <%= link_button_to "Course Management", system_courses_path, :size => 'hundred' %>
+
+  </div>
+
+  <div id="details">
+
+    <% unless @archive_courses.empty? %>
+
+      <div id="active_courses" class="expander expanded">
+        <div class="bar clearfix">
+          <a href="#" class="title">Archived Courses <span class="parenthesis">(<%= @archive_courses.count %> courses)</span></a>
+        </div><!--bar-->
+        <div class="expander-contents">
+          <table cellspacing="0">
+            <tr>
+              <th style="width: 250px">Course</th>
+              <th style="width: 200px">Institution</th>
+              <th style="width: 100px">Created</th>
+              <th style="width: 75px">Status</th>
+              <th></th>
+            </tr>
+            <% @archive_courses.each do |course| %>
+              <tr>
+                <td><%= course.name %></td>
+                <td><%= course.institution.name %></td>
+                <td><%= course.created_at.to_s(:short_with_year) %></td>
+                <td><%= course.status.titleize %></td>
+                <td><%= link_to "manage", system_course_path( course ) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+    <% else %>
+
+      <h1>There are no archived courses.</h1>
+
+    <% end %>
+
+</div>

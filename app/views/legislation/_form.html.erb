@@ -1,0 +1,25 @@
+  <div class="field"><%= f.label :name, "Legislative Title" %> <%= f.text_field :name, :class => "input" %><a href="whatisthis" class="wit"></a></div>
+
+  <% unless @legislation.legislative_type_id %>
+    <div class="field">
+
+    <%= f.label :legislative_type_id, "Legislative Type" %>
+    <%= f.select :legislative_type_id, @current_chamber.legislative_types.collect {|lt| [ lt.title, lt.id ] }, {:include_blank => 'None'}, :class => "input" %><a href="whatisthis" class="wit"></a></div>
+  <% end %>
+
+  <%= f.fields_for :submission_text do |lt| %>
+    <div class="field text-field"><%= lt.label :primary_text, "Legislative Text"  %>
+    <%= lt.text_area :primary_text, :class => 'tinymce' %>
+<!--     <a href="whatisthis" class="wit"></a> -->
+    </div>
+
+    <div class="field text-field"><%= lt.label :secondary_text, "Supporting Text"   %>
+    <%= lt.text_area :secondary_text, :class => 'tinymce' %>
+<!--     <a href="whatisthis" class="wit"></a> -->
+    </div>
+  <% end %>
+
+  <div class="alert-box" id="validation-box" style="display:none">
+    <h2 class="error">Error</h2>
+    <ul id="form-errors"></ul>
+  </div>

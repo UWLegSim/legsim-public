@@ -1,0 +1,43 @@
+<% if group.referrals.count > 0 %>
+  <div id="referrals" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Legislative Studies <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+    <table cellspacing="0">
+      <tbody>
+
+        <% if group.referrals.count > 0 %>
+          <% group.referrals.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <% if @current_chamber_role.group_member?( group ) or @current_chamber_role.is_administrator? %>
+                  <%= link_to "Study Page", referral_path( referral ) %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+      </tbody>
+    </table>
+    <table cellspacing="0" class="legend">
+      <thead>
+          <tr>
+            <th colspan="4">Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="pending">Pending</td>
+            <td class="hearing">Hearing</td>
+            <td class="reported">Reported</td>
+            <td class="tabled">Tabled</td>
+          </tr>
+      </tbody>
+    </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->
+<% end %>

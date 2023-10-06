@@ -1,0 +1,9 @@
+<p>Thank you <%= @resource.name %> for registering with LegSim for <b><%= @resource.course.title %></b>!</p>
+
+<p>Before you can login you will need to <%= link_to 'confirm your account', confirmation_url(@resource, confirmation_token: @token) %> by clicking the link provided in this email. Once confirmed, you will be able to login with the email/password you provided at registration. Be sure to select the correct session from the dropdown menu.  Once in, you’ll be asked to complete your personal profile. If you don’t have all of the information at this point, you can always edit it later.</p>
+
+<p>And if you would like to learn a little more about the US Congress and Legsim (including some resources for students), please check out <a href="http://info.legsim.org">info.legsim.org</a> (also linked on the main LegSim home page).</p>
+
+<p><%= link_to 'Confirm your account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>For any assistance, please contact us at <a href="mailto:support@legsim.org">support@legsim.org</a>. Thanks for using LegSim!</p>

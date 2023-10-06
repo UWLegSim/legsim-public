@@ -1,0 +1,95 @@
+/* expanders.css */
+
+
+
+/* Interior Tabs-------------------------------------------------------------- */
+
+.expander {
+    margin-bottom: 20px;
+    background: #fafcfe;
+    border: 1px solid #f1f5f8;
+    }
+
+.expander .bar {
+    padding: 10px;
+    background: #f3f7fb;
+    }
+
+.expander.expanded .bar {
+    border-bottom: 1px solid #f1f5f8;
+    }
+
+.expander .bar a.title {
+    float: left;
+    display: block;
+    padding: 0 0 0 20px;
+    margin: 0;
+//    width: 247px;
+    color: #818181;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    background-image: url(<%= image_path 'expand-contract.png' %>);
+    background-repeat: no-repeat;
+    }
+
+.expander .bar a.title:hover {
+    color: #585858;
+    }
+
+.expander .bar a.title span.parenthesis {
+    display: inline-block;
+    text-transform: none;
+    font-weight: normal;
+    }
+
+.expander.expanded .bar a.title         { background-position: left top; }
+.expander.expanded .bar a.title:hover   { background-position: left -44px; }
+.expander.contracted .bar a.title       { background-position: left -88px; }
+.expander.contracted .bar a.title:hover { background-position: left -132px; }
+
+.expander.expanded .expander-contents   { display: block; }
+.expander.contracted .expander-contents { display: none; }
+
+
+.expander .bar .small-link {
+    padding: 0; margin: 0;
+    float: left;
+    width: 250px;
+    line-height: 14px;
+    text-align: right;
+    }
+
+.expander-contents {
+    padding: 10px;
+    }
+
+.expander table  { margin: 0;}
+
+.expander thead, .expander tfoot  { padding: 0;}
+
+.expander thead th {
+    border-bottom: 1px dotted #dfe7ee;
+    padding: 0 0 7px 0;
+    }
+
+.panel tbody td,
+.expander tbody td  {
+    border-bottom: 1px dotted #dfe7ee;
+    font-size: 12px;
+    padding: 7px 0;
+    }
+
+.expander tfoot td {
+    border-bottom: none;
+    padding: 7px 0 0 0;
+    }
+
+.expander td h2  {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    }
+
+

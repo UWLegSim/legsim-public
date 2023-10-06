@@ -1,0 +1,264 @@
+---
+contents:
+- reference: edit-caucus
+  copy: |-
+    <p>A Caucus is an informal group of members that organizes&nbsp;to pursue common goals.</p>
+    <p>Any member can create a caucus and becomes the leader of that caucus. Each caucus includes management tools for promoting communications among members. Members often belong to multiple caucuses.</p>
+- reference: create-party
+  copy: |-
+    <p>A Political Party is a type of caucus. In Congress, party members work together to pursue common objectives, often by voting as a block on matters of leadership selection or procedure.</p>
+    <p>In LegSim, Any member can create a party. Members can only belong to one party, and must seek the leader's&nbsp; permission to join.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://www.dems.gov/">House Democratic Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.gop.gov/">House Republican Caucus</a></p>
+    <p><a href="http://src.senate.gov/public/">Senate Republican Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://democrats.senate.gov/">Senate Democratic Caucus</a></p>
+- reference: committee-request-info
+  copy: |-
+    <p><span style="text-decoration: underline;">About Congressional Committees</span></p>
+    <p>Congress divides its workload among approximately 200 committees and subcommittees. This workload includes evaluating legislative proposals, overseeing the management of existing programs, and investigating new issues.&nbsp;</p>
+    <p>The issue responsibilities of committees are specified in the rules of the House and Senate (below). The chamber leadership, with the advice of the parliamentarian typically refers a bill to just one committee. The exceptions (multiple referrals) usually involve legislation that address issues that cut across the jurisdictions of multiple committees.</p>
+    <p><a href="http://www.senate.gov/reference/resources/pdf/RL30743.pdf">Senate Committees: Assignment Process</a></p>
+    <p><a href="http://www.access.gpo.gov/congress/senate/sclinks.html">Senate Committee Jurisdictions</a>&nbsp;<a href="http://rules.house.gov/Archives/comm_jurisdiction.htm"></a></p>
+    <p><a href="http://info.legsim.org/resources/AuthorizationAppropriations.pdf">Authorization-Appropriations Process</a></p>
+- reference: edit-administrator-profile
+  copy: <p>Every lawmaker has a website that provides information about his or her priorities and the constituency that he or she represents. This public profile is helpful for communicating with constituents, and for helping other busy legislators and their staff learn about a lawmaker's priorities as they seek support for their own legislative agendas.&nbsp;</p>
+- reference: submit-legislation
+  copy: |-
+    <p>A bill cannot be withdrawn or edited once it has been submitted. Please draft bills off-line and proofread carefully before you submit. A sample bill can be found under the Instruction tab.</p>
+    <p><strong>Types of Legislation</strong>.</p>
+    <p>(S.) Bills that become public law revise the U.S. Code (below). Bills can vary dramatically in terms of their importance.</p>
+    <p><strong></strong> (S. Res) Simple Resolutions do not have the force of law. They are often used to make statements of support or opposition, and are also used to propose changes in internal legislative procedures.</p>
+    <p><strong></strong>(S.J. Res) Joint Resolutions become law in the same manner as public bills. The exceptions are Joint Resolutions that propose amendments to the Constitution, which require 2/3rds support of Congress to be referred to the states for ratification.</p>
+    <p>&nbsp;</p>
+    <p>The<strong> Legislative Text</strong> of a bill in LegSim includes the specific proposed legislative language (i.e. how you propose to alter the U.S Code).</p>
+    <p>The <strong>Supporting Text </strong>is where the goal of the bill, why it is needed, and how will will accomplish the goal is described.&nbsp; In other words, why other lawmakers should support it.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><a href="http://info.legsim.org/resources/Introducing_a_Senate_Bill_or_Resolution.pdf">Introducing a Senate Bill or Resolution</a></p>
+    <p><a href="http://www.rules.house.gov/archives/98-458.pdf"></a></p>
+    <p><a href="http://info.legsim.org/resources/Bills%20and%20Resolutions.pdf">Bills and Resolutions: Examples of how each kind is used</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p><a href="http://www.house.gov/legcoun/strokoff.shtml">How&nbsp;laws are made</a></p>
+    <p><a href="http://www.gpoaccess.gov/uscode/browse.html">U.S. Code</a>: The law of the land &nbsp; <a href="http://www.whitehouse.gov/omb/"></a></p>
+    <p><a href="http://www.whitehouse.gov/omb/">U.S Budget:</a> How much do things cost?</p>
+    <p><a href="http://thomas.loc.gov">Thomas</a>: Research congressional legislation&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p><a href="http://thomas.loc.gov/bss/d111/sponlst.html"></a></p>
+- reference: leadership-nominations-info
+  copy: |-
+    <p>This page offers legislators the opportunity to nominate and indicate support candidates for chamber leadership positions.</p>
+    <p>Actual leadership selection processes are more complicated, and most classes will decide their procedures and make their choices in the classroom.</p>
+    <p>In the House, each party caucus informally chooses its nominee, and then votes as a block during the formal process that takes place on the first day of the 2 year Congress. Thus the real action takes place in caucus, where candidates are successively eliminated (lowest vote getter) until one candidate recieves a majority of support in the caucus.</p>
+    <p>In the Senate, the presiding officer is the Vice-President. In practice, however, the majority party leader is the <em>de facto</em> leader of the Senate.</p>
+    <p>For more information about how congressional leaders are formally chosen, consult the links below.&nbsp;</p>
+    <p>&nbsp;<a href="http://opencrs.com/document/RL30725/2006-12-08/">The First Day of a New Congress</a></p>
+    <p>&nbsp;&nbsp;&nbsp; <a href="http://www.house.gov/house/orgs_pub_hse_ldr_www.shtml">House Leadership</a></p>
+    <p><a href="http://info.legsim.org/resources/Presiding_Officer.pdf">Presiding Officer: Senate</a></p>
+    <p>&nbsp;&nbsp;&nbsp; <a href="http://www.senate.gov/pagelayout/senators/a_three_sections_with_teasers/leadership.htm">Senate Leadership</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: party-directory
+  copy: |-
+    <p>A Political Party is a type of caucus. In Congress, party members work together to pursue common objectives, often by voting as a block on matters of leadership selection or procedure.</p>
+    <p>Any member can create a party. Members can join or leave party caucuses at will. The party caucus leader can also decide to exclude a particular member.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://www.dems.gov/">House Democratic Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.gop.gov/">House Republican Caucus</a></p>
+    <p><a href="http://src.senate.gov/public/">Senate Republican Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://democrats.senate.gov/">Senate Democratic Caucus</a></p>
+- reference: caucus-directory
+  copy: |-
+    <p>A Caucus or Congressional Member Organization (CMO) is an informal group of members that organizes&nbsp;to pursue common goals.</p>
+    <p>Any member can create a caucus, and each caucus includes management tools for promoting communications among members. Members often belong to multiple caucuses.</p>
+    <p>Members can join or leave caucuses at will. The caucus leader can also decide to exclude a particular member from a caucus.</p>
+    <p>The U.S. Senate has only one official caucus. However it is common for Senators to join CMOs established by House members</p>
+    <p><a href="http://cha.house.gov/member-services/congressional-memberstaff-organizations">Congressional Member Organizations</a></p>
+- reference: draft-dear-colleague
+  copy: |-
+    <p><strong>About Dear Colleague letters</strong></p>
+    <p>In LegSim there are two kinds of dear colleague emails. Ordinary 'dear colleagues' provide a means of communication among legislators and legislative groups. You&nbsp;are encouraged to use&nbsp;ordinary dear colleagues as often as you like.&nbsp;</p>
+    <p>"Special" dear colleagues sent&nbsp;to the entire chamber should be restricted to&nbsp;general announcements or to seek general support for legislation, etc. They should <span style="text-decoration: underline;">not</span> be used to carry on a conversation that everyone in the class is forced to read. In 2008, Congress implemented&nbsp;an e-dear colleague email system that looks very similar to&nbsp;what LegSim has had for the past 8 years!</p>
+    <p>&nbsp;<a href="http://digital.library.unt.edu/govdocs/crs//data/2005/upl-meta-crs-6161/RS21667_2005Jan04.pdf">Dear Colleague Letters: A Brief Overview</a></p>
+- reference: browse-legislation
+  copy: |-
+    <p><strong>Browse Submitted Legislation</strong></p>
+    <p>All submitted legislation is listed here. A bill can have only one sponsor. However, other legislators can indicate their support for a bill by co-sponsoring it.</p>
+    <p>The Speaker, in consultation with the Parliamentarian, refers each bill to committee for initial consideration. For information about committee consideration, consult the Committees page.</p>
+    <p><a href="http://info.legsim.org/resources/Introducing_a_Senate_Bill_or_Resolution.pdf">&nbsp;Introducing a Senate Bill or Resolution</a></p>
+    <p><a href="http://thomas.loc.gov/bss/d111/sponlst.html">Member Sponsorship and cosponsorship activities in Congress</a></p>
+- reference: committee-directory
+  copy: |-
+    <p><strong>Congress in its Committees is Congress at Work</strong></p>
+    <p>Committees are where much of the work of Congress gets done. They enable Congress to accomplish more by dividing up tasks and by encouraging lawmakers to acquire and share policy and political expertise.</p>
+    <p>Most legislation is referred to committee for initial consideration. This right of referral gives the committee of jurisdiction considerable influence over the progress and substance of legislation.</p>
+    <p><strong>Committee Proceedings</strong></p>
+    <p>The Committee Chair sets the committee agenda. In LegSim, this includes scheduling <strong>legislative hearings </strong>and <strong>votes</strong> on <strong>amendments</strong> sponsored by committee members to legislation referred to the committee, and scheduling <strong>non-legislative</strong> <strong>hearings</strong> on other matters. The committee chair is also responsible for ensuring that the committee issues a written <strong>committee report </strong>on any legislation it sends to the floor.</p>
+    <p><strong>Committee Referrals</strong></p>
+    <p>Every bill must be referred to at least one primary committee of referral  within 24 hours of introduction.</p>
+    <p><strong>Primary referrals.</strong><strong> </strong>The bill cannot be placed on the calendar  for floor consideration until it has been reported out of this committee (or  committees).&nbsp;</p>
+    <p><strong>Secondary referrals</strong>. A bill may also be referred to  secondary committees of referral. Bills can be placed on the calendar even if  they have not been reported by secondary committees of referral.</p>
+    <p><a href="http://info.legsim.org/resources/committee_system.pdf">The Committee System</a></p>
+    <p><a href="http://info.legsim.org/resources/Senate_Committee_Reports.pdf">Committee Reports: Required Contents</a></p>
+- reference: committee-directory
+  copy: |-
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><a href="http://beijing.usembassy-china.org.cn/uploads/images/r8bxlA61-zMHlF76jit9Rw/committee_system.pdf">Committee System n the U.S. Congress</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: manage-content
+  copy: ""
+- reference: chamber-management
+  copy: |-
+    <p>From this desk the Chamber Leader assigns legislators to committees and refers legislation to the appropriate committee of jurisdiction.</p>
+    <p><strong>Assignment of senators to committees</strong></p>
+    <p>The Chamber Leader formally assigns legislators to committee and assign committee chairs based upon a process decided by the House.</p>
+    <p><strong>Referrals of legislation to committee.</strong></p>
+    <p>The Chamber Leader, in consultation with the parliamentarian, refers legislation to the committee or committees that possess jurisdiction over the bill's subject.</p>
+    <p style="padding-left: 30px;"><a href="http://rules.house.gov/Archives/comm_jurisdiction.htm"></a><a href="http://rules.senate.gov/public/index.cfm?FuseAction=RulesOfSenate.View&amp;Rule_id=9207398e-859e-41d3-a614-8186b81d99d0">Senate Committee Jurisdictions</a></p>
+    <p><strong>Calendars and Floor Scheduling</strong></p>
+    <p>The Chamber Leader is also responsible for proposing floor agendas.&nbsp; This includes placing reported bills on calendars, proposing terms for the consideration of legislation on the floor (the motion to proceed) and scheduling debates and floor votes.</p>
+    <p><a href="http://assets.opencrs.com/rpts/RS20881_20041129.pdf"></a></p>
+- reference: chamber-management
+  copy: |-
+    <p>More tools to come!</p>
+    <p><a href="http://assets.opencrs.com/rpts/RS20881_20041129.pdf">Party Leaders in  the House</a></p>
+    <p><a href="http://rules.house.gov/Archives/comm_jurisdiction.htm">House Committee  Jurisdictions</a></p>
+- reference: committee-referral
+  copy: |-
+    <p>Every bill must be referred to at least one committee of referral within 24 hours of introduction.</p>
+    <p>Referrals are generally made to the committee with jurisdiction over the  predominant subject matter in the bill or resolution, but measures may be  referred to more than one committee by unanimous consent</p>
+    <p>On LegSim, referrals can only be altered within 24 hours of the original referral.</p>
+    <p><a href="http://www.access.gpo.gov/congress/senate/sclinks.html">Senate Committee Jurisdictions</a></p>
+    <p><a href="http://rules.house.gov/Archives/comm_jurisdiction.htm"></a></p>
+- reference: manage-committee
+  copy: |-
+    <p>This is where the Committee Chair manages committee affairs.</p>
+    <p><strong>Manage Committee Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Referrals</strong>. Allows you to open and close a committee hearing on a legislative referral. If you open a hearing, it will create a discussion forum that is automatically linked to the legislation. This is also where you have the ability to<strong> table</strong> a bill or prepare a <strong>committee report</strong> and report the bill to the floor. An example of a committee report can be found under Instruction.</p>
+    <p><strong>Initiate a Non-legislative Hearing.&nbsp;</strong> Allows you to create a discussion forum on any topic. By default these hearings are public, which means that any member of the chamber can contribute.</p>
+    <p><strong>Draft and submit a committee report. </strong>The option to vote to report a bill to the floor does not exist until a committee report has been drafted and submitted by the chair. The chair can continue to edit the report until the vote to report it has been scheduled.</p>
+    <p><strong>Reporting a bill to the floor. </strong>Once a draft report has been created, the chair can schedule a vote on a motion to 'adopt the committee report.' If the motion passes, the bill is automatically sent to the leader, who then places it on the calendar.</p>
+    <p><strong></strong></p>
+- reference: manage-party
+  copy: |-
+    <p>This is where the Party&nbsp;leader&nbsp;manages party&nbsp;affairs.</p>
+    <p><strong>Manage Party&nbsp;Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Discussions</strong>. Allows you to open and close a party&nbsp;meeting that is linked to a <strong>specific piece of legislation</strong>. When other members of the party go to the legislation, they will see that there is a place to share their views with other party members (only).</p>
+    <p><strong>Manage General Discussions.&nbsp;</strong> Allows you to create a discussion forum on any topic.&nbsp;&nbsp;</p>
+- reference: manage-caucus
+  copy: |-
+    <p>This is where the Caucus leader&nbsp;manages caucus&nbsp;affairs.</p>
+    <p><strong>Manage Caucus&nbsp;Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Discussions</strong>. Allows you to open and close a caucus meeting that is linked&nbsp;to&nbsp;<strong>specific piece of legislation</strong>. When other members of the caucus go to the legislation, they will see that there is a place to share their views with other caucus members (only).</p>
+    <p><strong>Manage General Discussions.&nbsp;</strong> Allows you to create a discussion forum on any topic.&nbsp;&nbsp;</p>
+- reference: manage-party-information
+  copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+- reference: manage-committee-information
+  copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+- reference: manage-caucus-information
+  copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+- reference: manage-committee-referrals
+  copy: |-
+    <p><strong>Referral &nbsp;Hearings</strong></p>
+    <p>After a bill has been referred to committee, the committee chair can decide whether to open a hearing to discuss the legislation and consider committee&nbsp;amendments. No other action on a bill can occur until a hearing has been scheduled.</p>
+    <p><strong>Draft and submit a committee report. </strong>The option to vote to report a bill to the floor does not exist until a committee report has been drafted and submitted by the chair. The chair can continue to edit the report until the vote to report it has been scheduled.</p>
+    <p>The committee chair can delegate resposibility for preparing the report to another committee member, but only the chair can create and edit the committee report.</p>
+    <p><strong>Reporting a bill to the floor. </strong>Once a draft report has been created, the chair can schedule a vote on a motion to 'adopt the committee report.' If the motion passes, the bill is automatically sent to the leader, who then places it on the calendar.</p>
+    <p><strong>Bill Reporting</strong></p>
+    <p>If a committee decides to recommend legislation for chamber consideration, the committee chair must issue a committee report (s/he can delegate resposibility for preparing the report to another committee member, but only the Chair can formally report the bill to the floor).</p>
+    <p>A committee report cannot be prepared until a&nbsp;hearing on the legislation has been opened.</p>
+    <p><strong>Tabling</strong></p>
+    <p>If the committee opens a hearing on a bill, but decides not to report it,&nbsp;it can set the bill aside by tabling it.&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: draft-committee-report
+  copy: |-
+    <p>Committee revisions to legislation must reflect decisions made by a majority of the&nbsp;committee (e.g. adopted committee amendments).</p>
+    <p><strong>Committee Reports</strong></p>
+    <p>The Committee chair is primarily responsible for&nbsp;drafting the report. The purpose of the report is to share information about the committee's proceedings and findings. It is an opportunity for the committee to persuade other legislators that committee members have done their homework.</p>
+    <p>The draft&nbsp;becomes available to other committee members to review. Committee members can then recommend revisions.&nbsp;Once a majority of members votes to report the bill, the committee chair produces the&nbsp;final version and the bill is automatically sent to the floor.</p>
+    <p>The final committee report must include the voting positions of committee members on the question of whether to report the legislation. Committee members&nbsp;also have the&nbsp;option of inserting&nbsp;dissenting viewpoints in the final version.&nbsp;</p>
+    <p>This document describes congressional committee reports in detail. Yours should reflect the intent if not the actual substance of an actual congressional committee report.</p>
+    <p><a href="http://www.rules.house.gov/archives/98-169.pdf">Committee Reports: Required Conten</a>ts</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: manage-party-referrals
+  copy: |-
+    <p>The party&nbsp;leader can initiate&nbsp;party caucus discussions on specific bills here. The party can also present its views&nbsp;in the form of a party report. This report has no official status, but it is a way for the party leadership to build support within the caucus, and perhaps&nbsp;attract support from other members.</p>
+    <p><strong>Draft version of party&nbsp;report</strong></p>
+    <p>The party leader&nbsp;is primarily responsible for&nbsp;drafting the report. After the leader submits the&nbsp;draft report, it becomes available to other party members.&nbsp;&nbsp;When s.he is ready, the party leader&nbsp;&nbsp;drafts and submits the&nbsp;final version of the report, which is linked to the legislation.&nbsp;</p>
+    <p>Once the final version&nbsp;has been submitted, it cannot be revised!</p>
+- reference: manage-caucus-referrals
+  copy: |-
+    <p>The caucus&nbsp;leader can initiate&nbsp;caucus discussions on specific bills here. The caucus can also present its views&nbsp;in the form of a caucus report. This report has no official status, but it is a way for the caucus&nbsp;to build support for its perspective.</p>
+    <p><strong>Draft version of caucus&nbsp;report</strong></p>
+    <p>The caucus&nbsp;leader&nbsp;is primarily responsible for&nbsp;drafting the report. After the leader submits the&nbsp;draft report, it becomes available to other caucus&nbsp;members.&nbsp;&nbsp;When s/he is ready, the leader&nbsp;&nbsp;drafts and submits the&nbsp;final version of the report, which is linked to the legislation.&nbsp;</p>
+    <p>Once the final version&nbsp;has been submitted, it cannot be revised!</p>
+- reference: instruction
+  copy: <p>Bill Sample</p>
+- reference: manage-floor-calendars
+  copy: |-
+    <p><strong>Scheduling Bills and Resolutions for Floor Consideration</strong></p>
+    <p>Bill that are&nbsp;reported from committee are&nbsp;placed on the&nbsp;calendar. In the House, under ordinary procedure, bills are then scheduled for floor consideration in the order in which they were placed on the calendar. Thus, the first one to be placed on the calendar is the first to be brought to the floor. The other option is to bring a bill up out of order by passing a special rule proposed by the Rules committee.</p>
+    <p>In the Senate, a bill that has been reported from committee must first be place on the calendar. The Senate has a <strong>legislative calendar</strong> for legislative matters, and an <strong>executive calendar</strong> for matters involving the executive branch (e.g. confirmations).</p>
+    <p>Once a bill has been placed on the calendar, the majority leader proposes a '<strong>motion to proceed</strong>' to consideration of the bill, either by unanimous consent or by a simple majority. If the motion passes by unanimous consent, the bill can then be scheduled according to the terms laid out in the motion to proceed.</p>
+    <p>If the Senate passes the motion to proceed by a simple majority,&nbsp; a vote on the bill can now be scheduled but it may be filibustered. A filibuster can only be ended if 3/5ths of the Senate votes <strong>cloture</strong> (or closure).</p>
+    <p>In LegSim, a senator initiates a filibuster by indicating that he is 'still debating' on a motion that has been scheduled for a vote. If one or more senators are 'still debating' the only motion in order on that bill is cloture - which is also scheduled by the majority leader.</p>
+    <p>The majority leader need to propose the terms of the cloture motion. If it passes by a 3/5th majority, voting on the bill (or amendment) proceeds. However it is important that the majority lead abide by whatever terms were included in the cloture motion.</p>
+- reference: info-calendar
+  copy: |-
+    <p>When a committee reports a bill, the Majority Leader places it on the appropriate calendar for possible floor consideration.</p>
+    <p>The Senate accords its Chamber Leader (Constitutionally, the Vice President or President Pro-Tempore; in practice, the Majority Party leader) prime responsibility for scheduling floor debates.S/he can do this by seeking a <strong>Unanimous Consent Agreement</strong> (UCA) from lawmakers to bring a bill up at a particular point in time according to a proposed set of procedures.</p>
+    <p>In the absence of a UCA, the Chamber Leader can make a <strong>Motion to Proceed</strong> to consideration of the bill.&nbsp; This 'motion to proceed' must be formally adopted by the Senate and is debateable (and therefore subject to filibuster).</p>
+    <p>A senator who objects to a proposed UCA or motion to Proceed can file a .</p>
+    <p><strong><span style="text-decoration: underline;">How a Filibuster works in LegSim</span></strong></p>
+    <p>1. The moment a bill is placed on  the calendar any member can register a <strong>Hold</strong> on the bill (in the Senate this is a Notice of Intent to Object to Proceeding.<strong><em> </em></strong><em><strong>&nbsp;</strong></em>In LegSim, a hold is placed by going to <strong>Clerk  -&gt; Legislative Holds</strong>. Members can both add and remove a hold from this interface.<br /><br />2. The Majority Leader can then propose a floor procedure.  Now, LegSim won't enforce this rule, but if the Majority Leader proposes a floor  procedure too quickly, then members won't have a chance to register holds...  which you'll see is important here in a moment. Floor procedures come in one of  two types<br /><br />&nbsp;-<strong> Unanimous Consent Agreements</strong>: requires zero 'no' votes, but  cannot be filibustered<br />&nbsp;- <strong>Motion to Proceed</strong>: requires simple majority, can be  filibustered<br /><br />The system will provide a draft motion based on which of the  two types of procedure the majority leader selects, but the Majority Leader can/should revise the motion to specify the proposed procedures for the consideration of the bill. <br /><br />3. Once the motion is scheduled, anyone who  has registered a hold -- BEFORE the motion to proceed was scheduled -- can initiate a  filibuster. The vote clock then stops and <strong>no votes</strong> will be allowed until either the filibuster ends or <strong>cloture</strong> is  achieved. The vote clock starts only if all filibuster-ers withdraw, OR...<br /><br />4.&nbsp; The  Majority Leader schedules a cloture vote and the cloture vote passes. Cloture votes require a 3/5ths majority and count  "present" votes as "no" votes. They cannot be filibustered. If the cloture motion is  adopted, the vote clock will start  again (on whatever vote is pending).<br /><br />5. If the motion to proceed is adopted, the legislation in question can now be scheduled for amendment or final passage votes.  Final passage votes are subject to filibusters using the same process described above.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: manage-floor-information
+  copy: <p>As Majority Leader, you have the ability to post announcements about the Senate agenda. The content you submit here&nbsp;is then displayed on each senator's home page.</p>
+- reference: manage-floor-votes
+  copy: |-
+    <p><strong>Schedule On-Line Vote</strong></p>
+    <p>On-line votes are&nbsp;scheduled according to the rules of the chamber. In the Senate, this means that only bills scheduled by Unanimous Consent or by the adoption of the Motion to Proceed are in order (and will be seen here as available for scheduling).</p>
+    <p>The chamber leader schedules when each on-line vote begins and when it ends, and whether a vote can be filibustered. The LegSim rules of procedure specify that&nbsp;on-line votes must be open for 48 hours and that no more than 3 votes can occur on-line at one time.</p>
+    <p><strong>Cloture Vote </strong>scheduling - Important!</p>
+    <p>Senate procedures require an <strong>absolute</strong> 3/5th majority. <strong>Be sure to click the box that indicate that absences and present votes count as no votes</strong>, and select the 3/5th majority voting option.</p>
+    <p><strong>Enter Previous Vote</strong></p>
+    <p>To enter a vote that occured off-line (e.g. in the classroom). If you receive an error, it is probably because you haven't completed all of the steps below.</p>
+    <p>1. Select the Type of Motion considered (final passage or amendment).</p>
+    <p>2. Select the specific motion or select Insert Text of Legislation to incorporate a different version.</p>
+    <p>3. Select whether the Once&nbsp;you enter the previous vote on Final Passage, the bill's status is updated to reflect the outcome of the vote (e.g. it now indicates 'passed' or 'failed').</p>
+    <p>4. Select threshold, how vote was decided, and outcome. If you selected recorded vote, you will also need to enter the vote positions of each senator.</p>
+- reference: previous-floor-votes
+  copy: <p>This page contains information about previous recorded votes in your session</p>
+- reference: floor-information
+  copy: <p>This page provides information about Senate floor activity</p>
+- reference: Legislative Holds
+  copy: <p>An informal practice by which a Senator informs his or her floor leader that he or she does not wish a particular bill or other measure to reach the floor for consideration. The Majority Leader need not follow the Senator's wishes, but is on notice that the opposing Senator may filibuster any motion to proceed to consider the measure.</p>
+- reference: Legislative Holds
+  copy: <p><span class="contenttext">An informal practice by which a Senator informs his or her floor leader that he or she does not wish a particular bill or other measure to reach the floor for consideration. The Majority Leader need not follow the Senator's wishes, but is on notice that the opposing Senator may filibuster any motion to proceed to consider the measure. </span></p>
+- reference: holds
+  copy: <p>An informal practice by which a Senator informs his or her floor  leader that he or she does not wish a particular bill or other measure  to reach the floor for consideration. The Majority Leader need not  follow the Senator's wishes, but is on notice that the opposing Senator  may filibuster any motion to proceed to consider the measure.</p>
+- reference: legislative-hold
+  copy: <p>test</p>
+- reference: legislative--holds
+  copy: <p>test</p>
+- reference: legislative-holds
+  copy: |-
+    <p>An informal practice by which a Senator informs his or her floor leader  that he or she does not wish a particular bill or other measure to be considered on the floor in its current form. The chamber leader need not follow the  Senator's wishes, but a hold puts the leadership on notice that a Senator may be prepared&nbsp;  engage in a filibuster.</p>
+    <p>In order to filibuster a bill or a related motion to proceed (see Tutorials), a Senator must place a hold on the bill before a vote has been scheduled.</p>
+- reference: manage-committee-votes
+  copy: |-
+    <p>When committee voting is enabled by the instructor, there are two general options for voting. One is to schedule an on-line vote. The other is to enter a previous vote.</p>
+    <p>In both cases, the dropdown box to the left asks you to specify the type of motion that is being voted on and to confirm or enter the substance of the motion being voted on.</p>
+    <p><strong>Reporting a bill</strong>. In committee, the most important vote is the vote to 'adopt the committee report.' If the committee report is adopted, the bill is automatically reported to the chamber leader. A vote on the report can't occur until a report has been drafted (and a report can't be drafted until a hearing has been opened).</p>

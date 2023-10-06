@@ -1,0 +1,47 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= form_for :caucuses, :url => mass_delete_admin_caucuses_path do |f| %>
+
+    <div id="caucuses" class="expander expanded">
+      <div class="bar clearfix">
+        <h2 href="#" class="title">Caucuses</h2>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th style=""></th>
+            <th style="width: 370px">Name</th>
+            <th style="width: 120px; text-align: center">Abbreviation</th>
+            <th style="width: 150px">Leader</th>
+            <th style="width: 50px"></th>
+            <th style="width: 50px"></th>
+          </tr>
+          <% @caucuses.each do |caucus| %>
+            <tr>
+              <td><%= check_box_tag "group_ids[]", caucus.id %></td>
+              <td><%= caucus.name %></td>
+              <td class="center"><%= caucus.abbr %></td>
+              <td><%= link_to_user caucus.primary_leader %></td>
+              <td><%= link_to "edit", edit_admin_caucus_path( caucus ) %></td>
+              <td><%= link_to "manage", admin_caucus_path( caucus ) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td><%= f.submit "Delete Selected Caucuses", :size => "ninety", :confirm => "Are you sure you want to delete the selected caucuses?", :class => 'btn blue-btn' %></td>
+        <td><%= link_button_to "New Caucus", new_admin_caucus_path, :size => "ninety", :class => 'btn blue-btn' %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+</div>

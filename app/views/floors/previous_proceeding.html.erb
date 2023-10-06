@@ -1,0 +1,191 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $("#new_vote").submit(function() {
+
+      var errors = [];
+      var time_regex = /^\d{2}:\d{2}$/;
+      var date_regex = /^\d{4}-\d{2}-\d{2}$/;
+
+      tinymce.get("motion_text").save()
+
+      if ( !$("input[name='motion[action]']:checked").val()  ) errors.push( 'No motion type provided' );
+      if ( !$("#motion_text").val()    ) errors.push( 'No motion text provided' );
+
+      if ( !$("#vote_start_at_time").val().match( time_regex )  ) errors.push( 'Invalid recorded time (example: 07:45 PM)' );
+      if ( !$("#vote_start_at_date").val().match( date_regex )  ) errors.push( 'Invalid recorded date (example: 11/28/2009)' );
+
+      if ( !$("#record_type").val() ) errors.push( 'No vote record type provided' );
+
+      if ( errors.length ){
+        $("#validation-box").show();
+        $("#form-errors").html("<li>" + errors.join('</li><li>') + "</li>");
+        return false;
+      } else {
+        $("#validation-box").hide();
+        return true;
+      }
+
+    });
+
+    $("#generate_draft_floor_proceeding").click(function(){
+
+      var post_url = '/floors/' + <%= @floor.id %> + '/generate_proceeding.js';
+      var data = {
+        proceeding_type: $("input[name='motion[action]']:checked").val(),
+        referral_id: $("#motion_referral_id").val()
+      };
+
+      $.post( 
+        post_url, 
+        data, 
+        function( response ) {
+          tinymce.get("motion_text").setContent( response );
+        },
+        'html'
+      );
+
+      return false;
+
+    });
+
+    $("#record_type").change(function(){
+
+      var record_type = $(this).val()
+      $(".vote_input_container").hide();
+
+      if      ( record_type == 'voice_vote' ) { $("#voice_vote_input_container").show(); }
+      else if ( record_type == 'division'   ) { $("#division_input_container").show();   }
+      else if ( record_type == 'roll_call'  ) { $("#roll_call_input_container").show();  }
+
+    });
+
+  });
+</script>
+
+<%= form_for @vote, :url => { :action => :create_previous, :controller => :votes } do |f| %>
+
+  <div class="left-column" style='float:left; width: 500px'>
+    <div class="left-content">
+
+    <h2>Floor Proceeding Subject Matter</h2>
+    <%= select_tag 'motion[referral_id]', options_for_select( @floor.referrals.unscheduled.includes(:legislation).collect{|r| [r.legislation.short_title_with_holds,r.id]} ), :style => "width: 100%;" %>
+    <br /><br />
+
+    <h3>Proceeding Type</h3>
+
+    <input type="radio" name="motion[action]" value="motion_to_proceed" checked /> <b>Motion to Proceed</b>
+    <p>
+      A Motion to Proceed only requires a simple majority for passage, however it is a debatable motion and thus subject to filibuster.
+    </p>
+
+    <input type="radio" name="motion[action]" value="unanimous_consent_agreement" /> <b>Unanimous Consent Agreement</b>
+    <p>
+      A Unanimous Consent Agreement requires no member object in order to be adopted. Because of the high threshold for passage, such agreements are generally only available for non-controversial proceedings.
+    </p>
+    <div>
+      <%= link_button_to "Generate Draft Floor Proceeding", "#", :size => 'ninty', :id => 'generate_draft_floor_proceeding', :class => 'btn blue-btn' %>
+    </div>
+
+    <h2>Vote Details</h2>
+
+      <p>
+        Recorded At:<br />
+        <%= date_field_tag 'vote[start_at_date]', @vote.start_at.strftime("%F"), class: 'datetime' %>
+        <%= time_field_tag 'vote[start_at_time]', @vote.start_at.strftime("%R"), class: 'datetime' %>
+      </p>
+
+      <p>
+        Vote Recorded by:<br />
+        <select name="vote[record_type]" id="record_type">
+          <option value="">--</option>
+          <option value="roll_call">Roll Call</option>
+          <option value="division">Division</option>
+          <option value="voice_vote">Voice Vote</option>
+        </select>
+      </p>
+
+      <div id="roll_call_input_container" class="vote_input_container" style="display:none">
+        <h2>Roll Call Vote</h2>
+
+        <table>
+          <tr><th>Member</th><th>Vote</th></tr>
+          <% @floor.membership.each do |member| %>
+            <tr>
+              <td><%= member.title %></td>
+              <td>
+                <select name="roll_call[member_id][<%= member.id %>]">
+                  <option value="none">None</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="present">Present</option>
+                </select>
+              </td>
+            </tr>
+          <% end %>
+          </table>
+      </div>
+
+      <div id="division_input_container" class="vote_input_container" style="display:none">
+        <h2>Division Vote</h2>
+
+        <p>For when an accurate count of yeas and neighs is kept, but not a specific record of who vote which way.</p>
+
+        <table>
+          <tr>
+            <th>Yes Votes</th>
+            <td><input type="text" name="division[yes]" size='3' value="0" style="text-align: center;" /></td>
+          </tr>
+          <tr>
+            <th>No Votes</th>
+            <td><input type="text" name="division[no]" size='3' value="0" style="text-align: center;" /></td>
+          </tr>
+          <tr>
+            <th>Present Votes</th>
+            <td><input type="text" name="division[present]" size='3' value="0" style="text-align: center;" /></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div id="voice_vote_input_container" class="vote_input_container" style="display:none">
+        <h2>Voice Vote</h2>
+
+        <p>For when only the outcome is recorded by a calling of the yeas and neighs but an accurate tally is not kept.</p>
+
+        <p>
+          Outcome:
+          <select name="voice_vote[outcome]">
+            <option value="">--</option>
+            <option value="passed">Passed</option>
+            <option value="failed">Failed</option>
+          </select>
+        </p>
+
+      </div>
+      </div>
+  </div>
+
+
+  <div id="overview" class="right-column" style='float:right;width:750px'>
+    <div class="the-content">
+    <h2>Draft Floor Proceeding</h2>
+
+    <%= form_field do %>
+      <div class='field text-field'>
+        <%= text_area_tag 'motion[text]', '', :class => 'tinymce', :style => 'width: 540px; height: 400px;' %>
+      </div>
+    <% end %>
+
+    <%= f.hidden_field :status %>
+
+    <div class="alert-box" id="validation-box">
+      <h2 class="error">Error</h2>
+      <ul id="form-errors"></ul>
+    </div>
+    <div class='field field-submit'>
+      <%= f.submit "Enter Previous Floor Proceeding", :size => 'sixty', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+  </div>
+<% end %>

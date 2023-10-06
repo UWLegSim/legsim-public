@@ -1,0 +1,102 @@
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div style="float: left; width: 400px;">
+
+    <h1>Sign up as a new user</h1>
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <p>
+      <%= f.label :first_name, 'First Name' %><br/>
+     <%= f.text_field :first_name, autofocus: true, size: 30 %>
+    </p>
+
+    <p>
+      <%= f.label :last_name, 'Last Name' %><br/>
+      <%= f.text_field :last_name, size: 30 %>
+    </p>  
+
+    <p>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autocomplete: "email", size: 30 %>
+    </p>
+
+    <p>
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", size: 30 %>
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", size: 30 %>
+    </p>
+
+    <p>
+      <%= label_tag :authorization_code, 'Chamber Authorization Code' %> (Provided by your course instructor)<br/>
+      <%= text_field_tag :authorization_code %>
+    </p>
+
+  </div>
+
+
+  <div style="float: left; width: 500px;" >
+
+    <h2>LegSim User Agreement</h2>
+
+    <div style="overflow: auto; padding-right: 5px; width: 500px; height: 340px;">
+      
+      <p>LegSim is a virtual simulation of a legislative assembly.  Students use LegSim web to organize and operate their own legislative assembly as a way to put into action their political science or social studies lessons about politics, government, legislative institutions, and political strategy.</p>
+
+      <p>Your instructor has selected LegSim for its hands-on learning experience and has worked with LegSim's resource materials to customize the legislative assembly for your course.</p>
+
+      <p>Each instructor creates a separate LegSim legislative assembly which is only available to student enrolled in the course. Each LegSim assembly is password-controlled. Only enrolled students are eligible for passwords.  Instructors provide a list of the students who will be participants for each LegSim assembly.  Student may only participate in the LegSim web assembly assigned by their instructors.</p>
+
+      <p>Each LegSim participant purchases an individual license subscription to LegSim. Participants will receive a password authorizing access to the customized LegSim assembly upon consenting to the LegSim Permission Agreement, the Online Payment Agreement (if paying online), and payment of the LegSim license subscription fee for each academic term.</p>
+
+      <p class='center'><b>Notices:</b></p>
+      <ul>
+      <li>You must be over the age of 18 to consent to the LegSim Permission Agreement.  If you are under 18, you must have a parent or guardian review and consent to the Terms of Service and complete the subscription transaction.</li>
+      <li>Please read the following information carefully before proceeding to the LegSim Subscription Payment Options.  <b>No refunds are issued once a user has successfully accessed the LegSim web assembly</b>.</li>
+      </ul>
+      <p>By clicking "I agree," to the LegSim Permission Agreement below, agreeing to the Online Payment Agreement at the Science & Technology Corporation website (if applicable) and paying the LegSim license subscription fee, you will be issued a password to access the LegSim web assembly that has been designated for your course and assigned by your instructor.</p>
+
+      <p>As a LegSim participant, you will have a limited right to reproduce, display, distribute, perform and post materials to the LegSim assembly website solely for your personal, educational and non-commercial use while you are a participant in the LegSim simulation at your academic, educational or non-profit institution. You do not receive any rights to distribute, reproduce, display or perform or share LegSim with any other person for any purpose, nor do you have the right to create derivatives of LegSim.</p>
+
+      <p>By clicking "I Agree" to this LegSim Permission Agreement, I acknowledge that I have read and agree to the following conditions ("Terms"):</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> to be personally responsible for learning about and complying with all policies, forms and documents currently in force within my institution on copyright, ethics, Website access, student-communications behavior, and use of school property, library resources in accordance with the educational and instructional policies and agreements of my institution, and in compliance with U.S. and international copyright laws and treaties.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> that all materials published on LegSim websites and in its resource materials are protected by copyright or other intellectual property rights and are owned or controlled by the University of Washington, except as noted.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> my use of LegSim materials and it is to be used for my participation in a course in which I am enrolled and shall be concurrent with the academic term in which the course is offered.  I agree that I have no rights to reproduce, distribute, display, modify or make available LegSim materials to any other individuals or organizations for any purpose.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> that any information I post or transmit to the LegSim website is solely associated with my participation in course activities related to the LegSim simulation and my postings may be shared with other members of the course and made available to my instructor and LegSim administrators for the provision of technical support to my instructor. I understand the University of Washington may monitor information posted to LegSim for the purpose of assessing use of LegSim as an instructional resource and curriculum-based course activity.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> the University of Washington has no obligations with respect to the information I post to LegSim website. I agree that University of Washington has no control over external sites and therefore cannot be responsible for the availability or content of these external sites which may be posted by LegSim users.  The University of Washington is required to comply with the Digital Millennium Copyright Act (DMCA) and other laws and regulations and the University reserves the remove right to remove information without prior notice and at its sole discretion.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> LegSim is provided on an "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF TITLE, NONINFRINGEMENT OF INTELLECTUAL PROPERTY, AND IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> that the entire risk for use of LegSim lies with me. The University of Washington reserves the right to modify LegSim, or reduce or discontinue my subscription at any time.</p>
+
+      <p style='margin-left: 20px;'><b>I agree</b> to register for access to LegSim by providing the information needed for LegSim administrative and technical use.</p>
+
+    </div>
+
+    <div style="float: left; width: 30px; margin-top: 18px;"><%= f.check_box :agreement %></div>
+    <div style="float: left; width: 470px; margin-top: 10px;">I am 18 or older, or I am the parent or guardian of the
+    student who will participate in the LegSim activities which
+    are assigned to enrolled students.</div>
+
+  </div>
+
+  <br style="clear: both" /><br />
+
+  Note, before logging in you need to activate your account with the email you provided. Besure to check your spam filter.
+  
+  <p>
+    <%= f.submit "Sign up" %>
+  </p>  
+<% end %>

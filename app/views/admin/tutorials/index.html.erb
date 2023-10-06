@@ -1,0 +1,43 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+ <%= content('manage-tutorials') %>
+
+ <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= form_for :tutorials, :url => reorder_admin_tutorials_path do |f| %>
+
+    <div id="tutorials" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Tutorials</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th style="width: 370px">Name</th>
+            <th style="width: 100px">Position</th>
+            <th style="width: 50px"></th>
+          </tr>
+          <% @tutorials.each do |tutorial| %>
+            <tr>
+              <td><%= tutorial.title %></td>
+              <td><%= text_field_tag "tutorial_#{tutorial.id}", tutorial.position, :style => "width: 50px; text-align: center;" %></td>
+              <td><%= link_to "manage", edit_admin_tutorial_path( tutorial ) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td><%= f.submit "Reorder Tutorials", :size => "ninety", :class => 'btn blue-btn' %></td>
+        <td><%= link_button_to "New Tutorial", new_admin_tutorial_path, :size => "ninety", :class => 'btn blue-btn' %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+</div>

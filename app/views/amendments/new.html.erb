@@ -1,0 +1,29 @@
+<div id="overview" class="left-column">
+	<%= link_button_to "Return to #{@amendment.referral.group.type}", @amendment.referral.group, :size => 'sixty', :class => 'btn blue-btn' %>
+
+	<div class="left-content">
+	  <%= content('propose-amendment') %>
+
+	  <%= render( :partial => "legislation/box", :locals => { :legislation => @amendment.referral.legislation } ) %>
+	</div>
+</div>
+<div id="details" class="right-column">
+	<div class="the-content">
+	  <%= form_for @amendment do |f| %>
+
+		  <%= f.error_messages %>
+
+	    <h2>Amendment Text</h2>
+	    <div class='field text-field'>
+	    	<%= f.text_area :text, :class => 'tinymce', :style => "width: 100%;" %><br/>
+	    </div>
+
+	    <%= f.hidden_field :referral_id %>
+
+	    <div class="field field-submit">
+	    	<%= f.submit "Propose Amendment", :size => "fifty", :class => 'btn blue-btn' %>
+	    </div>
+
+	  <% end %>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="wide-form">
+  <div id="overview">
+
+    <%= render :partial => 'search_form' %>
+
+  </div>
+
+  <div id="details">
+
+    <div id="chamber_settings" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title"><%= @view == 'all' ? "All" : "Active & Pending" %> Course Users</a>
+        <div class="small-link"><%= @view == 'all' ? link_to("View Current Courses", system_users_path) : link_to("View All Courses", system_users_path( view: 'all')) %></div>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th>Course / Chamber</th>
+            <th style="text-align: center;">Users</th>
+          </tr>
+          <% @courses.each do |course| %>
+            <tr>
+              <td style="font-weight: bold;"><%= link_to course.title, find_system_users_path( :course_id => course.id ) %></td>
+              <td style="text-align: center; font-weight: bold;"><%= course.users.count %></td>
+            </tr>
+            <% course.chambers.each do |chamber| %>
+              <tr>
+                <td style="padding-left: 20px;"><%= chamber.name %></td>
+                <td style="text-align: center;"><%= chamber.chamber_roles.count %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="field"><%= f.label :title, "Title" %> <%= f.text_field :title, :class => "input" %></div>
+<div class="field"><%= f.label :summary, "Summary" %> <%= f.text_field :summary, :class => "input" %></div>
+
+<div class="field text-area"><%= f.label :content %>
+<%= f.text_area :content, :class => "advanced-tinymce" %></div>
+
+
+<%= f.hidden_field :chamber_id if @tutorial.chamber %>

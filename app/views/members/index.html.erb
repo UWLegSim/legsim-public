@@ -1,0 +1,22 @@
+<div class="content-wrapper">
+	<div class="profiles-wrap wrapper">
+		<div class="another-wrapper">
+			<% @chamber.members.each do |member| %>
+				<div class="profile-item">
+					<% if member.photo.attached? %>
+						<div class="pic" style="background-image: url('<%= url_for member.photo.variant(resize_to_fill: [150, 150]) %>')"></div>
+				    <% else %>
+				      <div class="pic" style="background-image: url('/assets/silhouette.png')"></div>
+				    <% end %>
+
+					<div class="link">
+						<%= link_to_user( member ) %>
+					</div>
+
+					<div class="location"><%= member.member_profile.constituency.name unless member.constituency.nil? %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

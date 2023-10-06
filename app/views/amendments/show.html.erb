@@ -1,0 +1,21 @@
+<div id="overview" class="left-column">
+	<!-- <%= link_button_to "Return to #{@amendment.group.type}", @amendment.group, :size => 'sixty', :class => 'btn blue-btn' %> -->
+
+	<div class="left-content">
+
+  <%= render( :partial => "legislation/box", :locals => { :legislation => @amendment.legislation } ) %>
+</div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+<div class="the-content">
+  <h2>Introduced by <%= link_to_user( @amendment.sponsor ) %></h2>
+  <p>
+    <b>Introduced On:</b> <%= @amendment.created_at.to_s(:long_with_time) %><br />
+    <b>As Referred To</b>: <%= link_to @amendment.referral.group.title, referral_path( @amendment.referral)  %>
+  </p>
+
+  <h2>Amendment Text</h2>
+  <%= sanitize @amendment.text, attributes: ['style'] %>
+</div>
+</div><!--details-->

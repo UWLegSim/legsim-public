@@ -1,0 +1,59 @@
+  <div id="mailbox" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 class="title">Dear Colleague <!--<span class="parenthesis">(7 unread)</span>--></h2>
+      <div style='float:right'>
+        <a href="/letters/new">Compose</a> |
+        <a href="/letters/sent">Sent</a>
+      </div>
+    </div><!--bar-->
+    <div class="expander-contents">
+    <table cellspacing="0">
+      <tbody id="mailbox_body">
+      </tbody>
+      <tfoot>
+          <tr>
+            <td colspan="4" id="mailbox_footer" style='text-align: center'></td>
+          </tr>
+      </tfoot>
+    </table>
+    </div><!--expander-contents-->
+  </div><!--mailbox-->
+
+<script type="text/javascript">
+  mailbox_offset = 0
+  mailbox_limit = 10
+
+  function get_mailbox(offset,limit){
+    $.get('/letters.json?offset=' + offset + '&limit=' + limit,{},function(data){
+      $("#mailbox_body").html( data.mailbox_body );
+      $("#mailbox_footer").html( data.mailbox_footer );
+
+      $("a[href='#oldest']").click(function(){
+        if (data.offset+mailbox_limit < data.total)
+          get_mailbox(data.total-mailbox_limit,mailbox_limit)
+        return false;
+      });
+
+      $("a[href='#older']").click(function(){
+        if (data.offset+mailbox_limit < data.total)
+          get_mailbox(data.offset+mailbox_limit,mailbox_limit)
+        return false;
+      });
+
+      $("a[href='#newer']").click(function(){
+        if (data.offset-mailbox_limit >= 0)
+          get_mailbox(data.offset-mailbox_limit,mailbox_limit)
+        return false;
+      });
+
+      $("a[href='#newest']").click(function(){
+        if (data.offset >= 0)
+          get_mailbox(0,mailbox_limit)
+        return false;
+      });
+
+    },'json');
+  }
+
+  $().ready(function() { get_mailbox(mailbox_offset,mailbox_limit) });
+</script>

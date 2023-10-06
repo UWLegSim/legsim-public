@@ -1,0 +1,28 @@
+<div id="overview">
+
+  <h1>New Chamber</h1>
+
+  <p>
+    Courses must have at least one chamber in order for users to join and create chamber roles. The scenario chosen when
+    the chamber is created determines the initial configuration like committees and procedural rules.
+  </p>
+
+  <ul>
+    <li><b>US House of Representatives</b>: Committee structure from the United States House of Representatives, a Rules
+    Committee with procedural power, and a Speaker who manages calendars and vote schedules.</li>
+    <li><b>US Senate</b>: Committee structure from the United States Senate, filibuster and holds, and a Majority Leader
+    who can propose Unanimous Consent and Motions to Proceed.</li>
+  </ul>
+
+</div>
+
+<div id="details">
+
+  <%= error_messages_for :chamber %>
+
+  <%= form_for [:system,@chamber.course,@chamber] do |f| %>
+    <%= render(:partial => 'form', :locals => { :f => f } ) %>
+    <%= submit_tag 'Create Chamber' %>
+  <% end %>
+
+</div>

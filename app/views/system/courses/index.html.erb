@@ -1,0 +1,116 @@
+<div class="wide-form">
+
+  <div id="overview">
+
+    <h2>Course Management</h2>
+
+    <p>
+      Users of LegSim all belong to one course, which represents the entire instructional unit. To get an instructor up and
+      running with LegSim the first step is to create a new course for their institution.
+    </p>
+
+    <%= link_button_to "Create New Course", new_system_course_path, :size => 'ninety' %><br />
+
+    <p>
+      Courses which are no longer accessible are considered archived. To see them please go to the Course archives.
+    </p>
+
+    <%= link_button_to "Archived Courses", archives_system_courses_path, :size => 'ninety' %>
+
+  </div>
+
+  <div id="details">
+
+    <% unless @active_courses.empty? %>
+
+      <div id="active_courses" class="expander expanded">
+        <div class="bar clearfix">
+          <a href="#" class="title">Active Courses <span class="parenthesis">(<%= @active_courses.count %> courses)</span></a>
+        </div><!--bar-->
+        <div class="expander-contents">
+          <table cellspacing="0">
+            <tr>
+              <th style="width: 250px">Course</th>
+              <th style="width: 200px">Institution</th>
+              <th style="width: 100px">Created</th>
+              <th style="width: 75px">Status</th>
+              <th></th>
+            </tr>
+            <% @active_courses.each do |course| %>
+              <tr>
+                <td><%= course.name %></td>
+                <td><%= course.institution.name %></td>
+                <td><%= course.created_at.to_s(:short_with_year) %></td>
+                <td><%= course.status.titleize %></td>
+                <td><%= link_to "manage", system_course_path( course ) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+    <% end %>
+
+    <% unless @pending_courses.empty? %>
+
+      <div id="pending_courses" class="expander expanded">
+        <div class="bar clearfix">
+          <a href="#" class="title">Pending Courses <span class="parenthesis">(<%= @pending_courses.count%> courses)</span></a>
+        </div><!--bar-->
+        <div class="expander-contents">
+          <table cellspacing="0">
+            <tr>
+              <th style="width: 250px">Course</th>
+              <th style="width: 200px">Institution</th>
+              <th style="width: 100px">Created</th>
+              <th style="width: 75px">Status</th>
+              <th></th>
+            </tr>
+            <% @pending_courses.each do |course| %>
+              <tr>
+                <td><%= course.name %></td>
+                <td><%= course.institution.name %></td>
+                <td><%= course.created_at.to_s(:short_with_year) %></td>
+                <td><%= course.status.titleize %></td>
+                <td><%= link_to "manage", system_course_path( course ) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+    <% end %>
+
+    <% unless @inactive_courses.empty? %>
+
+      <div id="inactive_courses" class="expander expanded">
+        <div class="bar clearfix">
+          <a href="#" class="title">Inactive Courses <span class="parenthesis">(<%= @inactive_courses.count%> courses)</span></a>
+        </div><!--bar-->
+        <div class="expander-contents">
+          <table cellspacing="0">
+            <tr>
+              <th style="width: 250px">Course</th>
+              <th style="width: 200px">Institution</th>
+              <th style="width: 100px">Created</th>
+              <th style="width: 75px">Status</th>
+              <th></th>
+            </tr>
+            <% @inactive_courses.each do |course| %>
+              <tr>
+                <td><%= course.name %></td>
+                <td><%= course.institution.name %></td>
+                <td><%= course.created_at.to_s(:short_with_year) %></td>
+                <td><%= course.status.titleize %></td>
+                <td><%= link_to "manage", system_course_path( course ) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

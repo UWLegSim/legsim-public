@@ -1,0 +1,10 @@
+<div class='field'>
+	<%= f.label :name, "Title" %>
+	<%= f.text_field :name %><br />
+</div>
+
+<div class='field'>
+	<%= f.label :name, "Scenerio" %> 
+	<%= f.select :scenerio, options_for_select( [['US House of Representatives','us_house_of_representatives'],['US Senate','us_senate']]) %>
+</div><br />
+<%= f.hidden_field :course_id %>

@@ -1,0 +1,841 @@
+--- 
+instructions:
+- position: 1
+  summary: Information about the features of a good bill
+  title: Sample Bill
+  content: |-
+    <p>&nbsp;</p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/billSample.pdf" target="_blank"><strong>Sample Bill</strong></a></p>
+    <p>Click here to view a description of the purposes of different sections of a bill</p>
+    <p><a href="faculty.washington.edu/jwilker/353/billSample.pdf"><strong>&nbsp;</strong></a></p>
+- position: 2
+  summary: Information about features of a good committee report
+  title: Sample Report
+  content: |-
+    <p>This is an example of a completed committee report. A report answers a series of specific questions about a bill, organized as sections. Any committee member may draft a report on behalf of the committee, but only the committee chair can submit the report to the legislature.</p>
+    <p>&nbsp;Committee on Education Report on H.R. 7<strong>&nbsp;</strong></p>
+    <p><strong>LEGISLATIVE TEXT</strong></p>
+    <p><em>&nbsp;Amendments to the original bill proposed by the committee (if any) are specified in&nbsp;the 'Legislative Text' section. This is the bill version the committee would prefer to see enacted. It is usually the vehicle for floor consideration. In other words, the legislature considers the committee substitute version first, then decides whether to substitute the committee substitute, as amended, for the original bill. Then the legislature decides whether to pass the bill</em>.</p>
+    <p>&nbsp;(abbreviated text)&nbsp;</p>
+    <p>This Act may be cited as: The Federal Financial Aid Equity Act of 2004 As Reported by the Committee on Education</p>
+    <table style="width: 100%;" border="0" cellpadding="0">
+    <tbody>
+    <tr>
+    <td>
+    <p style="padding-left: 30px;">To amend the Higher Education Act of 1965 to provide for equitable distribution of federal financial assistance. <br /><br />Section 1. Elimination of Guaranteed Allocation.<br /><br />(A): Federal Supplemental Educational Opportunity Grants, Federal Work Study Programs, and Federal Perkins Loans <br /><br />(1) AMENDMENT- Section 413D (20 U.S.C. 1070b-3), Section 442 (42 U.S.C. 2752), and Section 462 (20 U.S.C. 1087bb) of the Higher Education Act of 1965 is amended by striking section (a) in each and inserting the following: <br /><br />(a) ALLOCATION BASED ON PREVIOUS ALLOCATION.&mdash;<br />(1) From the amount appropriated pursuant to section 413A(b) for each fiscal year, the Secretary shall first allocate to each eligible institution an amount equal to 80 percent of the amount such institution received under subsections (a) and (b) of this section for fiscal year 2005 (as such subsections were in effect with respect to allocations for such fiscal year). For fiscal years 2007 through 2009, the percentage shall be reduced to 60, 40, and 20, respectively. <br /><br />Amendments listed in Section 1 shall be in effect for Fiscal Year 2007.</p>
+    <p><strong>SUMMARY/REPORT</strong></p>
+    <p>The Summary/Report section summarizes&nbsp;the committee proceedings and findings for the legislature. The Rules of Procedure specify what must be included in a committee report.</p>
+    <p style="padding-left: 30px;">&nbsp;1. Purpose and Summary of the Legislation</p>
+    <p style="padding-left: 30px;">The purpose of this bill, the Federal Financial Aid Equity Act of 2004, is to ensure a fair distribution of financial aid to higher education establishments. This will amend the Higher Education Act of 1965 to provide for a more equitable distribution of federal financial assistance. The Committee on Education felt as though higher education institutions deserve a fair chance at receiving aid, as students everywhere are burdened with costs of tuition equally.</p>
+    <p style="padding-left: 30px;">&nbsp;2. Background and Need for the Legislation</p>
+    <p style="padding-left: 30px;">&nbsp;As more Americans are seeking opportunities in Higher Education and needing assistance in obtaining that education, current distribution rules create a disparity in how federal assistance is allocated to institutions. The greatest factor in this disparity is the existence of guaranteed distributions in institutions. To insure the greatest equitable distribution of Federal Educational Aid, such guarantees need to be removed.</p>
+    <p style="padding-left: 30px;">3. Summary of Committee Consideration and Voting</p>
+    <p style="padding-left: 30px;">At the request of the committee, Representative Elder appeared and testified on behalf of his bill. The committee requested a proposed amendment containing further background information that provided for a better understanding of the bill&rsquo;s content. The Committee adopted this amendment, along with an amendment to Sec. 1 (a) that spells out the federal financial aid systems in more detail. <br /><br />After debate on PB7, the Committee on Education felt as though the bill was beneficial to higher education institutions as a whole, guaranteeing more equitable support of students in public institutions. <br /><br />Of the nine members present, the final vote to pass this bill out of committee was as follows: <br />9 Yea&rsquo;s <br />0 Nay&rsquo;s <br />0 Abstentions</p>
+    <p style="padding-left: 30px;">(**There are actually only ten members of this committee, as Rep. Link has never been in attendance.**)</p>
+    <p style="padding-left: 30px;">&nbsp;4. Minority Views</p>
+    <p style="padding-left: 30px;">The only minority views expressed were by members that feared this bill would not be applicable to Representatives serving districts without a higher education institution.</p>
+    <p style="padding-left: 30px;">&nbsp;5. Report Author(s)</p>
+    <p style="padding-left: 30px;">&nbsp;Report authored by Rep. LegSim</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    <p>&nbsp;</p>
+- position: 3
+  summary: ""
+  title: Tips for Administrators
+  content: |-
+    <div class="pad clearfix">
+    <p>This information is for the person who has Administrator access to the site.</p>
+    <p>Instructional Resources can be found <a href="http://legsim.ecampaigntrail.com/instructors/assignment-resources/" target="_blank">here</a>&nbsp;&nbsp; (for access contact johnw@legsim.org)</p>
+    <p>1. EDIT CONTENT At the bottom of most pages of this site, you will see an 'edit content' link. Clicking on it gives you the ability to modify the accompanying text for that page. You can make changes as often as you like.</p>
+    <p>2. ADMINISTRATION. At the bottom of the page you will see an 'Administration' link. If you click on it, you will see that it provides an additional extensive menu of editing options. Not all of them are currently functional. If you need something, let us know.</p>
+    <p>3. MANAGING LEGISLATION. As the admin you also have automatic access to the same tools as the chamber and committee leaders. To manage legislation, you generally use the floor/chamber leader, and the 'manage committee' link on the individual committee pages.</p>
+    <p>4. STUDENT VIEW. As administrator, you do not have the same view as students. If you would like to see the site from the student perspective, we recommend that you create your own student account.</p>
+    <p>[Early in the class, you may want to send a 'dear colleague' to the entire legislature and confirm in your classroom that eveyone received it.]</p>
+    <p>5. ASSUME STUDENT ACCOUNT. You can also 'assume' any student's account from your home page. When you are ready to return to your administrative account, click on the 'revert' option by your name on the upper right of the page.</p>
+    <p>6. OVERRIDE VOTE SCHEDULING PROCEDURES. The procedures for bringing bills to the floor are hard-wired in LegSim. This is designed to teach students about the process. However, as the administrator you have the ability to override this process. Go to 'ADMINISTRATION' then 'MANAGE CALENDARS.' You can then schedule a vote or motion on any bill that is already on the calendar.</p>
+    <p>7. MASS REGISTRATION. For pre-paid sessions, the admin has the option of automatically generating e a list of user names and temporary passwords to distribute to students. This option can be found under the administration link.</p>
+    <p>8. Finally, the most common source of problems for students is an older web browser. LegSim is not designed to work with older browsers. Please encourage students to update theirs (for free).</p>
+    <p>9. Finally, finally, when you have questions or suggestions, send us an email at johnw@legsim.org</p>
+    </div>
+tutorials:
+- position: 1
+  summary: ""
+  title: LegSim House Rules of Procedure
+  content: |-
+    <p><b><u>Organization of this Tutorial</u></b></p>
+    <ol>
+    <p><li><a href="#Point1">The Legislative Simulation Process</a></li></p>
+    <p><li><a href="#Point2">Who are the Decision-makers?</a><ul>
+    <li>Norms and Sanctions</li>
+    <li>Leaders and Parties</li>
+    <li>Where's the Party?</li>
+    </ul></li></p>
+    <p><li><a href="#Point3">House Procedure</a><ul>
+    <li>Juggling on-line and in class activities</li>
+    </ul></li></p>
+    <p><li><a href="#Point4">Types of Legislation</a></li></p>
+    <p><li><a href="#Point5">Bill Introduction and Referral to Committee</a></li></p>
+    <p><li><a href="#Point6">Committee Consideration</a><ul>
+    <li>Committee Assignment</li>
+    <li>Scheduling a Committee Hearing</li>
+    <li>Committee Actions</li>
+    <li>Hearings</li>
+    <li>Markup</li>
+    <li>The Substance of Reports</li>
+    <li>Filing of Reports</li>
+    </ul></li></p>
+    <p><li><a href="#Point7">From the Committee to the Floor</a><ul>
+    <li>Unanimous Consent Motion</li>
+    <li>Motion to Suspend the Rules</li>
+    <li>Calendar Friday</li>
+    <li>Special Resolution or "Rule"</li>
+    <li>Motion to Discharge a Committee</li>
+    </ul></li></p>
+    <p><li><a href="#Point8">Floor Consideration</a><ul>
+    <li>Recognition</li>
+    <li>Motion to Adjourn</li>
+    <li>Questions of Privilege</li>
+    <li>Privileged Matters</li>
+    <li>Points of Order</li>
+    <li>Ordinary Debate</li>
+    <li>Quorum</li>
+    <li>The Reading of the Bill</li>
+    </ul></li></p>
+    <p><li><a href="#Point9">General Debate</a><ul>
+    <li>Amendment Procedures</li>
+    <li>Germaneness</li>
+    <li>Motion to End Debate</li>
+    <li>Previous Question</li>
+    <li>Motion to Recommit</li>
+    <li>Final Passage</li>
+    <li>Motion to Reconsider</li>
+    </ul></p>
+    <p><li><a href="#Point10">Voting</a></li></p>
+    <p><li><a href="#Point11">Motion to Adjourn, Sine Die</a></li></ol></p>
+
+    ----------------------------------------------------------------------------------------------------------
+
+    <ol>
+    <p><b><u><li><a name="Point1"></a>The Legislative Simulation Process</li></u></b></p>
+    <p>The main stages of the legislative simulation process are as follows. Your instructor may also revise these stages to better reflect the needs and constraints of your class. Support@legsim.org is available for additional questions.</p>
+
+    <p><b>Getting Organized</b><ul>
+    <li>Instructor provides registration info</li>
+    <li>Representatives create their district and personal profiles</li>
+    <li>Representatives create caucuses and parties</li>
+    <li>Representatives request committee assignments</li>
+    <li>Representatives nominate candidates and elect a chamber leader</li>
+    <li>Representatives are assigned to committees, committee chairs are selected</li>
+    </p>
+
+    <p><b>Lawmaking</b>
+    <li>Representatives draft and introduce bills</li>
+    <li>Speaker refers bills to committee</li>
+    <li>Other Representatives cosponsor bills (if desired)</li>
+    <li>Committees hold hearings, markup and report bills</li>
+    <li>Reported bills are placed on Union Calendar</li>
+    <li>Representatives propose amendments and debate on line</li>
+    <li>Rules Committee proposes special rules</li>
+    <li>Speaker schedules floor action on special rules and legislation</li>
+    <li>Amendments considered before final decision on bill</li>
+    <li>President signs or vetoes</li>
+    <li>Legislature considers veto override motion (requires 2/3rds)</li>
+    <li>Bill becomes law (or not)</li>
+    </ul></p>
+
+    <p><b><u><li><a name="Point2"></a>Who are the Decision-makers?</li></u></b></p>
+    <p>Each Representative is popularly elected and has one vote in the legislature. The Resident Commissioner from the Commonwealth of Puerto Rico and Delegates from the District of Columbia, American Samoa, Guam, and the Virgin Islands are also elected pursuant to federal law. The Resident Commissioner and Delegates have most of the prerogatives of Representatives including the right to vote in the committees to which they are elected. However, they do not have the right to vote on matters before the Legislature. A Commissioner or Delegate may take a position, but his or her vote cannot decide whether a motion passes or fails.
+    <p>Article 1 Section 5 gives the House and Senate authority to censure, sanction and even expel a Representative (by a 2/3rds vote). More generally, it is important to recognize that your colleagues exercise a lot of influence over your success in the legislature. You are just one member of a collective decision-making process. Will you be selected to serve on an important committee? Will your bill get a hearing? Will you have a chance to speak on issues before the chamber?</p>
+
+
+    <p><b>Norms and Sanctions</b></p>
+    <p>Congress also operates according to expected standards of behavior, or norms. One important norm is that Representatives address their colleagues respectfully, regardless of how heated the debate becomes. Each Representative is speaking for citizens rather than for him or herself. The views of those constituents are to be respected. The practical benefit is that such a norm helps to keep things civil, which makes progress more likely. Disagreement is respected, even encouraged (how else do we come to see things in a different light?). But this is most likely to occur when the position and not the person is attacked. Representatives address their colleagues as representatives rather than individuals.</p>
+    <p>For example, Representative Larry Craig (R-ID) is addressed as "the distinguished representative from the fine state of Idaho" or something along those lines. Never forget that you need a majority to win, and that politics makes strange bedfellows. There's always a chance that today's opponent will be tomorrow's ally. Famous quotes such as "Politics makes strange bedfellows," "Don't burn your bridges," and "Always throw your golf clubs ahead of you" (Ronald Reagan) point to the strategic value of anger management in politics!</p>
+    <p>The House can censure a badly behaving Representative by majority vote, which means that he or she no longer permitted to speak on the floor. Censure effectively means that a Representative is no longer an equal participant in the process and will be treated accordingly. In addition, there are other formal and informal ways in which legislators can sanction Representatives who are deemed to be uncooperative, untrustworthy, or both. In extreme cases, Representatives have been expelled, although Congress does not have the power to prevent the return of a Representative who is subsequently reelected.<a href="http://faculty.washington.edu/jwilker/353/353Assignments/Expulsion.pdf" target="_blank">More Here.</a></p>
+
+    <p><b>Leaders and Parties</b></p>
+    <p>The U.S. Constitution calls for a Speaker of the House of Representatives to be selected by the legislature in a manner of its choosing. The Speaker manages day to day proceedings and interprets and applies the rules of the legislature in consultation with the Parliamentarian. The Speaker serves at the majority's discretion and is elected in the first days of the session.</p>
+    <p>In Congress, the Speaker is formally chosen on the first day of the Congress. Informally, the decision is made in the majority party caucus, using a secret 'successive elimination' ballot. An initial vote is held among all of the nominated candidates. The candidate that receives the fewest votes is eliminated, and a second vote is held. This process continues until only one candidate is standing. Although time consuming, this process ensures that the winning candidate receives a majority (and also poses interesting strategic opportunities you might want to consider!). The party caucuses then vote as blocks for their preferred candidates during the formal decision.</p>
+    <p>In addition to presiding over the legislature, the Speaker plays the central role in setting the agenda of the legislature, since s/he is the only one who officially represents the views of most Representatives. Typically Speakers have extraordinary influence over decisions about committee assignments and leadership positions, because these are central to his or her ability to set the agenda.</p>
+    <p>Speakers serve with the consent of the majority. Any Representative can make a motion to declare the office of the Speaker vacant. This motion/resolution is offered as a matter of high constitutional privilege, which means that it has precedence over all other motions except the motion to adjourn. It need not be considered immediately, but it must be put to a vote within two days of being offered.</p>
+
+    <p><b>Where's the Party?</b></p>
+    <p>The U.S. Constitution does not provide for political parties. Nevertheless, parties are central to lawmaking today, especially in the House of Representatives. Your legislature must decide for itself whether Representatives will create and join informal caucuses of similarly inclined legislators.</p>
+    <p>A party caucus has advantages when its members have similar goals. Acting in concert, a party majority can decide the Speaker and structure the committee system. If you are a member of the minority party, your influence will be proportionately reduced. In the U.S. House, for example, far fewer bills sponsored by minority party Representatives emerge from committee.</p>
+    <p>All procedural questions and disputes are decided by majority rule. Typically, party caucuses meet in advance to debate and plot strategy. Party leaders expect party members to support what the caucus has decided (e.g. who will be Speaker; a procedural ruling by the Speaker).  Defections do occur, however, and leaders need to exercise care to keep their coalitions together, particularly if their majority is slim.</p>
+
+
+    <p><b><u><li><a name="Point3"></a>House Procedure</li></u></b></p>
+    <p>The rules and precedents governing House proceedings are longstanding and extensive (<a href="http://www.gpo.gov/fdsys/pkg/HMAN-112/pdf/HMAN-112.pdf">House Rules and Manual</a>, 1460 pages!) The House has a long-standing rule that the provisions of Thomas Jefferson's Manual should govern the House in all applicable cases and where they are not inconsistent with the rules of the House. The House also relies on an 11-volume compilation of parliamentary precedents, entitled Hinds' Precedents and Cannon's Precedents of the House of Representatives, dating from 1789 to 1935.</p>
+    <p>A later compilation, Deschler-Brown Precedents of the House of Representatives, spans 15 volumes and covers 1936 to date. In addition, a summary of the House precedents prior to 1959 can be found in a single volume entitled Cannon's Procedure in the House of Representatives. Procedure in the U.S. House of Representatives, fourth edition, as supplemented, and House Practice, published in 1996, are recent compilations of the precedents of the House, in summary form, together with other useful related material. Also, various rulings of the Chair are set out as notes in the current House Rules and Manual. Just thought you'd like to know in case you have questions about procedure that are not answered here!</p>
+
+
+    <p><b>Juggling between in class and on-line activities</b></p>
+    <p>LegSim advances convenience at some cost to realism. The on-line tools are particularly helpful for managing legislation and less helpful for fostering debate simply because so much about communication is lost using asynchronous discussion threads. For this reason, in class activities need to be an important part of the experience, especially with regard to committee meetings and limited floor debates.</p>
+    <p>In addition, it is also necessary to cut corners where activities such as amending are concerned. The amendment tree in the House allows Representatives to propose multiple pending amendments and amendments to those amendments before it is filled. Then there is also a specific process for disposing of those amendments in order. In theory this could be done using LegSim but it would mean allowing sufficient time for students to vote on each amendment (we recommend 48 hour voting periods given that people have other responsibilities) which would mean an amendment process that could take weeks to complete (for one bill). Another issue is that the Speaker might theoretically schedule votes on 20 bills at the same time on LegSim, something that would be difficult to accomplish in the real House. For this reason we recommend a rule prohibiting more than 3 on-line votes at a time (or something like that).</p>
+    <p>Inevitably, there will be situations where the rules described below cannot be easily applied. You should anticipate this, and strive the resolve them in a way that adheres to the broader principles of the House and the goals of the simulation. We are also happy to offer our views if you contact us at support@legsim.org</p>
+
+
+    <p><b><u><li><a name="Point4"></a>Types of Legislation</li></u></b></p>
+    <p>Congress acts by passing legislation. There are two types of legislation, bills and resolutions. You will need to specify which type of legislation you are introducing. A Representative can introduce as many pieces of legislation as he or she chooses on any subject.</p>
+
+
+    <p><b>Bills</b></p>
+    <p>A bill is the form used for most legislation, whether permanent or temporary, general or special, public or private. In your Legislature, a bill has the prefix "PB" followed by an automatically assigned number that indicates the order in which it was introduced (in the U.S. House a bill is an H.R.). It retains this number through all of the stages of the legislative process.</p>
+    <p>A bill becomes law only after --
+    <ul><li>The Chamber passes the bill;</li>
+    <li>The President approves of the bill, or</li>
+    <li>The President fails to return it with objections within 10 days, or</li>
+    <li>The Chamber overrides the presidential veto by a two-thirds vote.</li></ul></p>
+    <p>To override a President's veto, the chamber must vote on a privileged motion to "sustain the President's veto." This motion fails if 2/3rds of the legislature votes against it. A bill can also be "pocket vetoed" if the Legislature adjourns without giving the President a full 2 days to veto it.</p>
+
+    <p><b>Resolutions</b></p>
+    <p>House Resolutions carry the prefix "HRes" and do not have the force of law, nor do they require the support of the President. These are used to make symbolic statements or to propose internal procedures (as in a House Special Rule). Joint Resolutions (HJRes) do have the force of law. Their most familiar application is proposed Constitutional amendments.</p>
+
+
+    <p><b><u><li><a name="Point5"></a>Bill Introduction and Referral to Committee</li></u></b></p>
+    <p>Any Representative may introduce a bill on any subject at any time while the Legislature is in session. The Representative who submits the bill is its sponsor. Representatives sponsor bills for many different reasons. Because the default expectation is that a bill will fail (Only about 10 percent of the bills introduced in the U.S. House become law) it may be a good strategy to have lots of balls in the air. Even if they go nowhere, bills give Representatives something to point to when constituents ask "what have you done for me lately?"</p>
+    <p>An unlimited number of additional Representatives may sign on as co-sponsors. Representatives who co-sponsor on the day that it is introduced are "original" co-sponsors. Representatives who co-sponsor after this time are "additional" co-sponsors. Changes in co-sponsorship are only permitted up until the time that a bill has been reported from all of the committees to which it was referred.</p>
+    <p>Every Representative tends to be concerned about his or her own bills first. Thus, it is incumbent on Representatives to make others aware of their policy proposals, and to frame those proposals in ways that attract sufficient support to "keep the ball rolling." Entrepreneurs should consider "talking their ideas around" before actually introducing a bill to avoid including provisions that guarantee defeat. After introducing a bill, the sponsor should increase awareness and solicit support in person or via Dear Colleague letters.</p>
+    <p>A Representative can request that a bill be withdrawn by unanimous consent. A Representative who desires to modify his or her own bill can seek amendments at later stages in the process, or may choose to introduce and announce a new bill incorporating the desired changes.</p>
+    <p>Congress divides its workload by subject (jurisdiction). All bills and resolutions pertaining to a particular issue area are referred to the committee with responsibility or jurisdiction over that issue. (Rule X of House procedure specifies the jurisdictions of its committees.) It is the Speaker's responsibility to refer bills and resolutions to the appropriate committee(s) with the Parliamentarian's guidance. If a proposed bill cuts across jurisdictions, the Speaker may decide to refer it to multiple committees. (In Congress, 8 out of 10 bills are referred to just one committee.)</p>
+    <p>Multiple referral has its advantages and disadvantages. The main advantage is better information about a bill's effects. The main disadvantage is inefficiency. The bill cannot progress until every primary committee has reported (and some may choose not to). In referring a bill to multiple committees, the Speaker may instruct committees to report a bill by a date certain, although such time limits are almost never placed on the primary committees to which a bill is referred.</p>
+
+
+    <p><b><u><li><a name="Point6"></a>Committee Consideration</li></u></b></p>
+    <p>This is perhaps the most important phase of the legislative process. Committees are smaller groups of legislators who provide the most intensive review of proposed measures within an issue jurisdiction. In addition, committees are often important sources of policy ideas, due to their Representatives' exceptional interest and knowledge of the subject area. The committee chair sets the committee's agenda under ordinary circumstances.</p>
+    <p>Committees have negative and positive agenda setting powers. They can effectively prevent bills from being considered by the legislature (negative), and they can shape the terms of the proposals that the legislature does consider (positive). Committees do much more of the former. Only 1 out of 9 bills introduced in the US House makes it past this stage.</p>
+    <p>A quorum (majority) of committee members must be present for it to do business. The absence of a quorum is subject to a point of order - an objection that the proceedings violate a rule of the committee. A Representative makes this objection by seeking recognition from the chair, and asking (for example) "Ms Chairwoman, I move that a quorum is not present to do business." If a majority is not present, the committee hearing is adjourned.</p>
+
+    <p><b>Committee Assignment</b></p>
+    <p>The legislature decides the procedures for assigning Representatives to committees and for choosing committee chairs. (This is another instance of where the equality implied by one legislator/one vote breaks down.) In the U.S. House, the majority party caucus decides how many Representatives serve on each committee, and how many of those seats will be held by party members. The party caucuses then decide how to allocate the positions available to their party's members.</p>
+    <p>Newly elected Representatives request committee assignments. Incumbents (reelected Representatives) retain their committee seats, leaving freshmen to battle for the less than prime vacancies that remain. Committee chairs and ranking minority Representatives are also chosen by the party caucuses. Ordinarily, these are the most senior (not oldest) members of the committee, but party caucuses have demonstrated an increased willingness to break this norm, especially for important committees. In addition, House Republicans have term limited some committee positions, further undermining the "seniority rule."</p>
+    <p>The seniority rule is, of course, not very relevant to these decisions as they apply to your Legislature! So what guides freshmen assignment decisions? Research suggests that leaders try to balance the shared goal of getting a Representative reelected with the needs of the caucus and chamber. Reelection is often the primary concern, so most Representatives will win appointment to one committee that has an electoral connection (e.g. agriculture or transportation). The second committee assignment, if one is available, is less predictable. It might be a committee that needs to be staffed (such as the committee overseeing the District of Columbia), or it might be a more prestigious (appropriations) or policy oriented committee (judiciary) depending on a Representative's prior expertise or skill at playing politics.</p>
+
+    <p><b>Scheduling a Committee Hearing</b></p>
+    <p>The rules of your legislature require that committees meet at least once per month. [Your instructor may choose to revise these requirements.] The chairman may convene additional hearings at his or her discretion, or two committees may formally request (e.g. via a Dear Colleague letter) that the chairman call a special hearing on a specific measure or measures. If the chairman does not call for the requested special hearing within three days (to be held within seven days), then a majority of the committee may call the hearing without the chairman's consent by accepting the terms of a formal statement of the date, hour, location, and the measure(s) to be considered.</p>
+
+    <p><b>Committee Actions</b></p>
+    <p>Committees meet to review and make recommendations regarding proposed bills or to hold hearings to investigate a topic without considering specific legislation. A "non-legislative hearing of this kind may be designed to draw public attention to an issue, hoping to spur congressional action, or may even lead to a committee-drafted bill to be introduced at a later date.</p>
+
+    <p><b>Hearings</b></p>
+    <p>All committee hearings are open to the public, unless a majority of committee members votes publicly to close it. A committee is not required to hold a hearing on a bill but may choose to do so if the bill is considered to be of sufficient importance. Each committee, except for the Committee on Rules, is required to publicly announce at least 1 day in advance any hearing to be conducted by the committee, unless the committee chairman with the concurrence of the ranking minority Representative or a majority of the committee determines that there is good cause to begin the hearing earlier (in which case the chairman must publicly announce the hearing as soon as possible). These announcements are made via Dear Colleague letters.</p>
+    <p>A majority of committee members may vote to subpoena witnesses. The power to authorize and issue subpoenas may also be delegated to the chairman. A subpoena may require both testimonial and documentary evidence to be furnished to the committee. An official reporter is present to record the testimony. After brief introductory statements by committee members, the first witness is called and questioned. Each committee member is entitled to call at least one witness of their own to testify.</p>
+
+    <p><b>Markup</b></p>
+    <p>After hearings are completed, the committee usually will consider the bill or bills in a session that is popularly known as the "markup" session. The views of Representatives and witnesses are considered, revisions to the legislation proposed and voted on, and a vote is taken to determine the action of the committee. Proxy voting (voting without being present) is not permitted. The Committee may decide collectively to report a bill favorably (with or without amendment), unfavorably, or without recommendation. The committee may also "table" a bill, postponing action indefinitely. Bills are rarely reported unfavorably. More commonly, committees choose to exercise negative agenda control over bills that they do not favor by simply ignoring them.</p>
+    <p>Committee amendments are only proposals (by a few Representatives) to alter the language of the bill as introduced. Representatives may only offer germane amendments (amendments that do not introduce new subjects to the bill). The proposed changes must be fully described in the committee report (see the 'sample bill' link under the 'Instruction' link of the LegSim website).</p>
+    <p>The committee may decide to report a single amendment "in the nature of a substitute" consisting of a complete bill text.</p>
+    <p>Less frequently (for example when multiple bills on the same subject are introduced), committee draft their own "clean" bill during a markup. The drafted language is approved by the committee and (typically) the chairman heads off to write both the report and the bill. The bill is then introduced according to normal procedure. When it has been referred to the committee, it is immediately reported along with the pre-drafted report.</p>
+
+    <p><b>The Substance of Committee Reports</b></p>
+    <p>Committee reports are used by legislators, courts, executive departments, and the public to interpret the purpose and meaning of a law. For example, the original committee reports regarding the establishment of the food and drug commission were reviewed by the Supreme Court when the FDA's authority to regulate tobacco advertising was challenged (the court decided that Congress did not "intend" for the FDA to have this power). Reports describe the purpose and scope of the bill and the reasons for its recommended approval by the chamber.</p>
+    <p>The report on a bill that has been reported favorably must include (1) the committee's findings and recommendations including proposed amendments, and (2) an estimate of any new budget authority and an estimate of any increase or decrease in revenues or tax expenditures for the next fiscal year and the next five fiscal years (or the duration of the program if less than five years). Budget authority refers to the amount of new spending obligations (e.g. "The committee estimates that the new national ID card will cost $12 billion (not $10 billion) in the first year and $36 billion over the next five years.").</p>
+    <p>Proposals with tax and revenue implications are considered differently. Tax related bills must also be referred to Ways and Means. In addition, reports on bills that contain federal unfunded mandates (policies that obligate state or local governments to spend money to implement federal requirements) must also include an estimate of the cost of those mandates. Bills that raise taxes or include unfunded mandates require 3/5ths support in the House instead of a simple majority.</p>
+    <p>Each committee member's vote on the question of whether to favorably report the bill must be specified in the report. Members of the committee may submit supplemental, minority, or additional views, which will be included in the report if they are provided in a timely manner.</p>
+
+    <p><b>Filing of Committee Reports</b></p>
+    <p>Reports must be filed within 7 days of the approval of a bill by the committee. A bill or resolution reported by a committee must then layover for 3 calendar days before it can be brought up for consideration in the full chamber.</p>
+
+    <p><b><u><li><a name="Point7"></a>From the Committee to the Floor</li></u></b></p>
+    <p>The House of Representatives has well defined procedures for bringing bills to the floor. But there are procedures and then there are practices. Most bills are not considered according to the ordinary procedures of the House but are instead considered under a variety of special procedures.</p>
+    <p>A bill that is favorably reported from committee is moved to the Union Calendar. (The U.S. House has multiple calendars of which the Union Calendar is the most important). Under ordinary procedure, bills are then scheduled for floor consideration in the order in which they were placed on that calendar. Thus, the most recently reported is the last to be taken up. Because time is limited, the legislature typically employs other procedures that enable it to give priority to bills that are more important or urgent, and to quickly dispense with non-controversial legislation.</p>
+    <p>The Speaker is primarily responsible for managing the floor schedule. As such the use of special procedures such as those described below is carefully guarded. A Representative who hopes to see his bill brought to the floor will probably want to consult in advance with the leadership, as unscheduled motions are likely to be defeated as a threat to the leader's prerogative in this area.</p>
+
+    <p><b>Unanimous Consent Motion</b></p>
+    <p>One option for circumventing the Union Calendar is to pass a reported or even unreported bill or resolution by unanimous consent. On the floor, a Representative would seek recognition from the chair (Speaker), and then move (for example) that "PB11, raising the federal speed limit to 90 miles per hour in rural area be approved by unanimous consent." The Speaker would then ask "Is there objection? There being no objection, the measure is adopted." Of course, the chances of such a motion passing are very slim for legislation that is even slightly controversial.</p>
+
+    <p><b>Motion to Suspend the Rules</b></p>
+    <p>Every Wednesday (or a date chosen by your legislature), the Speaker MAY choose to entertain a motion to suspend the rules and immediately pass a bill or resolution by two-thirds of those present. Representatives must arrange in advance to be recognized to offer such a motion. The Speaker usually recognizes only a member of the committee that reported or has primary jurisdiction over the bill.</p>
+    <p>The motion to suspend the rules and pass the bill is open for limited debate. No amendments are permitted, with the exception of a manager's amendment (e.g. a version of the bill that includes the committee's recommended changes) that may be contained in the motion itself. A large proportion of (less significant) law pass under this procedure. The motion to suspend the rules may NOT be used for any other purpose.</p>
+
+    <p><b>Calendar Friday</b></p>
+    <p>On the second Friday of each month (or a date chosen by your legislature in advance of the session), and unless dispensed with by an affirmative vote of two-thirds present, the committees are called in alphabetical order. The committee that is called then brings up for consideration one bill it has reported at least three days earlier. Debate proceeds under ordinary procedure (see below). No committee is permitted to bring up a second bill under this procedure until all standing committees have been called.</p>
+
+    <p><b>Special Resolution or "Rule"</b></p>
+    <p>Bills not at the top of the calendar can be taken up if the legislature adopts a special resolution or "rule" proposed by the Committee on Rules. The Committee may draft a rule on any bill or resolution regardless of where it is in the process. The committee chairmen will typically ask the Rules Committee to introduce and report a special resolution (PR) that proposes to circumvent the Union Calendar procedure (see draft language below). This "special rule" can propose almost anything because it is meaningless if a majority of legislators does not approve it.</p>
+    <p>A special rule might do nothing more than move a bill up the calendar, or it might prohibit any debate or amendments to a bill. The sky's the limit! The only restrictions are that the recorded votes are still required if requested and that a member of the losing side is always entitled to offer a motion to recommit the bill to committee (see below) before the final passage vote.</p>
+    <p>Rules Committee hearings need not be open to the public, and the Speaker can bring up a resolution from the Committee on Rules immediately. If the Speaker does not bring it up immediately, any member of the Committee on Rules may call it up as a privileged matter after seven days have elapsed, as long as he or she gives one day's notice. The Speaker must then recognize any member of the committee for that purpose.</p>
+
+    <p><b>Draft Special Rule</b></p>
+    <p>Resolved, that upon the adoption of this resolution the Speaker declares pursuant to rule XVIII that the House consider the bill (H.R.__) entitled, etc., and the first reading of the bill shall be dispensed with. After general debate, which shall be confined to the bill and shall continue not to exceed __ minutes (or hours), to be equally divided and controlled by __, the bill shall be read for amendment under the (xx) minute rule. At the conclusion of the consideration of the bill for amendment, the previous question shall be considered as ordered on the bill shall be brought to a final vote without intervening motion except one motion to recommit with or without instructions.</p>
+
+    <p><b>Motion to Discharge a Committee</b></p>
+    <p>Finally, any Representative may petition to discharge any committee (including Rules) from considering a bill or resolution if that committee has not reported the measure within 14 days of receiving it. When a majority of the legislature has signed the Representative's discharge petition, any signing Representative may seek recognition on the floor for the purpose of calling up the motion. The motion is then debated for 20 minutes (equally divided between supporters and opponents) before it is voted on. If the motion to discharge passes, the bill or resolution is immediately considered under ordinary floor procedures. If the motion is defeated, it is referred to the calendar as if it had been reported favorably by a standing committee.</p>
+    <p>The Rules committee also has at least one other important power in this regard. Under unusual circumstances, it may also draft a resolution providing for the "discharge" and consideration of a measure that has not yet been reported by a standing committee, thus circumventing the petition process. This is typically reserved for instances where a multiply referred bill is being delayed by the inaction of one (secondary) committee.</p>
+
+    <p><b><u><li><a name="Point8"></a>Floor Consideration</li></u></b></p>
+    <p>As mentioned, the U.S. House debates the preliminaries of bills, including amendments in the Committee of the Whole. This enables the legislature to act with just 100 members present instead of a simple majority of 218. At the conclusion of debate, this "committee" rises and the full House convenes to consider only those amendments that passed in the Committee of the Whole, before deciding the final fate of the bill. There is no Committee of the Whole equivalent in LegSim. Your legislature has a single floor process where a majority of Representatives must be present in order to do business, and there is only one amending process.</p>
+    <p>Parliamentary procedures have a logic. For the U.S. House, the central principles are fairness and majority rule. Certain motions take precedence because they affect whether debate proceeds fairly or expeditiously. As a legislator, it is essential to know how and when to offer such motions. The Parliamentarian (ideally an objective observer such as your instructor) assists the Speaker in making the correct ruling on questions of procedure. Knowledgeable Representatives will also want to point out violations of procedure, often to their own benefit!</p>
+    <p>Except under exceptional circumstances, the Speaker (or Representative temporarily serving as chair) seeks to apply the rules in an impartial manner.</p>
+
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/Pocket%20Rules.xls">Pocket guide to House floor procedure can be found here.</a></p>
+
+    <p><b>Recognition</b></p>
+    <p>A Representative cannot make a motion until he or she has been formally recognized by the chair. Generally, Representatives stand and the chair recognizes them in order. One important exception is when a Representative rises to make a procedural point of order. The Representative is immediately recognized, the point of order is heard, and decided without debate. Another important exception is when debate in being controlled by floor managers. In such a case, the floor managers (as well as the Speaker) have priority recognition.</p>
+    <p>The Speaker (or Representative temporarily serving as chair) also ensures that the rules are applied as intended by the legislature. For example, if a Representative is seeking recognition solely for the purposes of delay, the Speaker might choose not to recognize a Representative, or might rule that an amendment or point of order is ‘dilatory’ and therefore out of order.</p>
+
+    <p><b>Motion to Adjourn</u></b><p>
+    <p>When the House is in session, the motion to adjourn takes precedence over all other action. If adopted by majority, the legislature suspends debate until it reconvenes at a later date. It then picks up where it left off, unless a motion is proposed and adopted that does not violate the terms of the current proceedings. For example, if debate on a bill was occurring according to the terms of a special rule, then other business must wait until that debate has been completed. The only exceptions involve privileged motions.</p>
+
+    <p><b>Questions of Privilege</b></p>
+    <p>A question of privilege takes precedence over all questions except the motion to adjourn. Questions of privilege are questions 1) affecting the rights of the legislature collectively, such as its safety, dignity, and integrity, and 2) affecting the rights, reputations, and conduct of Representatives individually or in their representative capacity. Questions of Privilege concerning the legislature at large are introduced as resolutions (HRes) and can be called up by any Representative after proper notice.</p>
+    <p>A question of personal privilege, affecting the rights, reputation, and conduct of individual Representatives (e.g. a motion to censure), may be raised from the floor without formal notice. A Representative seeks recognition ("Madame Speaker, a question of privilege") and poses the question. Debate is limited to 20 minutes equally divided and no amendments or other motions (other than the motion to adjourn) are in order.</p>
+
+    <p><b>Privileged Matters</b></p>
+    <p>Certain matters, such as a motion to sustain the President's veto or consideration of a special rule may interrupt the normal order of business. The Representative in charge of such a matter can call it up at any time for immediate consideration as long as no other business is pending. This means that it can only be brought up if no other bill or resolution is currently being debated.</p>
+    <p>Questions of privilege affect the rights of the House collectively, or the rights, reputation or conduct of its Representatives. Privileged motions have precedence over all other motions except the motion to adjourn. Privileged matters are usually brought up after consultation with the leadership but they must be considered within two days of being offered.</p>
+
+    <p><b>Points of Order</b></p>
+    <p>The Representatives of the legislature are solely responsible for enforcing the proper application of its rules. A Representative who believes that the rules are not being followed must first gain recognition from the chair (e.g. "Madam Speaker, I rise to make a point of order"). The chair responds, "For what purpose does the Representative rise?" The Representative then states his or her objection as it pertains to the rules (e.g. "Madame Speaker, the amendment is not germane to the bill."). Points of order are not debatable. It is up to the Speaker to decide to sustain the point of order. If it is denied, any Representative can seek recognition and "appeal the Speaker's decision to the floor." The appeal is put to an immediate vote. In the U.S. House, such appeals rarely if ever succeed because the party caucus invariable supports the Speaker's ruling and because the Speaker usually adheres to precedent.</p>
+
+    <p><b>Ordinary Debate</b></p>
+    <p>Someone must manage bills that are brought to the floor to ensure that the strongest arguments are heard, to ensure efficient use of limited time, and to avoid surprises at this late and critical stage in a bill's progress. Often the managers are the chair and ranking minority member of the reporting committee, although this need not be the case. Certainly, the managers need to be among those who are very familiar with the issue and are prepared to defend their side. But the other important function of the manager is to manage available time to make the best case that 1) the bill is a good idea and is well conceived, and 2) that it has widespread support. Few Representatives will have studied the bill (sad but true even in the real Congress!) and will be deciding based on less than complete information.</p>
+    <p>The manager needs to come prepared to respond to the concerns of key legislators (no need to waste time on committed opponents and supporters). What are the wafflers' concerns? Obviously, during floor debate is not the best time to learn such things! The manager wants to come to the floor prepared with answers and with other legislators prepared to anticipate and respond to concerns about the bill. The same is true for opponents, who can reasonably expect that this is their last opportunity to kill the beast, whatever its proper title.</p>
+    <p>The Speaker equally allocates the available minutes for debate to the floor managers. It is then their responsibility to determine who will have an opportunity to speak, for how long, and in what order. Thus, a Representative who wishes to speak on a bill (or offer an amendment) will contact the manager in advance of the debate.</p>
+
+    <p><b>Quorum</b></p>
+    <p>Article 1, Section 5, of the Constitution states that a majority is required to do business and permits a smaller number of legislators to compel the attendance of absent Representatives. Once again, the quorum only applies when it is enforced and the legislature may conduct much of its business with fewer Representatives present. House rules prevent a Representative from making a point of order that a quorum is not present unless a question is being voted upon; the presiding officer will not accept a point of order of no quorum during general debate or when a question is not before the House.</p>
+    <p>In the absence of a quorum (a majority of Representatives), 4 Representatives may initiate a roll call of Representatives to compel their attendance: "Mr. Speaker, I demand a call of the roll." The Speaker then directs those in favor of the motion to stand and be counted. If the request is supported by at least 1/5th of a quorum, the clerk is ordered to call the roll. The quorum call may be suspended once a majority has recorded its presence, or if no one objects to a motion to suspend it.</p>
+
+    <p><b><u><li><a name="Point9"></a>General Debate</li></u></b></p>
+    <p>This section describes ‘ordinary’ floor procedure. As noted above, bill may also be considered under different procedures adopted by the chamber.</p>
+    <p>The debate on a bill is divided into general debate, consideration of amendments and consideration of the bill as amended ("general debate"). In the absence of a special rule, 20 minutes of general debate are allowed, equally divided between proponents and opponents. (In the U.S. House, it is one hour.)</p>
+    <p>At the conclusion of general debate, each section of the bill is read for amendment. Amendments written and submitted 24 hours in advance have priority, and in some instances are the only ones allowed. This means that amendments are offered in order of the placement of the relevant language in the bill. An amendment to revise an early section of the bill is out of order if debate has moved to a later section. You snooze, you lose! Under ordinary procedure, amendment debate is limited to 2 minutes equally divided. (It is 5 minutes in the US House.)</p>
+    <p>Here's a neat little trick to inject a comment or two into an amendment debate. The rules permit Representatives to offer an amendment to the amendment, including pro forma amendments--"to strike the last word." By offering this motion, a Representative gets a minute or so to add her 2 cents worth. And if a Representative has already been recognized to speak but has run out of time, she can "request unanimous consent for an additional 30 seconds" (for example).</p>
+
+    <p><b>Amendment Procedures</b></p>
+    <p>Congressional amendment procedures are not conducive to on-line voting because considering all of the alternatives can be time consuming. Nevertheless, LegSim does offer opportunities to consider amendments on line, and in-class amending is feasible.</p>
+    <p>Congress employs amendment procedures that ensure that the original bill and the existing law will be among that last proposals to be considered. This "backwards moving agenda" advantages these proposals by ensuring that they are not eliminated early in the process.</p>
+
+    <ul><li>First stage: Amend the Committee Substitute?
+    <li>(Repeat until all Amendments have been dispensed with or debate has concluded)</li></li>
+    <li>Next stage: Amend the Bill to incorporate the Committee Substitute, as Amended?</li>
+    <li>Last stage: Pass the Bill?</li></ul>
+    <p>The <a href="http://faculty.washington.edu/jwilker/353/353Assignments/HouseAmending.pdf" target="_blank">amendment process</a>is a very interesting lecture topic but a simple process is probably sufficient for your Legislature. LegSim also allows Representatives to offer amendments to bills (on the Floor page) once a bill has been placed on the Union Calendar. On-line amendment votes are scheduled by the Speaker (ordinarily in the order in which the amendments are offered) before a final vote on the bill, as amended.</p>
+
+    <p><b>Germaneness</b></p>
+    <p>In the House amendments must address the subject of the bill and section under consideration. The purpose of this rule is to keep debate focused. However, germaneness only applies when it is enforced ("Mr. Speaker, I move that the amendment is non-germane and therefore out of order"). Appeals of the chair's ruling are in order as usual.</p>
+
+    <p><b>Motion to End Debate</b></p>
+    <p>At any time after debate has begun on proposed amendments to a specific section of a bill, the legislature may consider a procedural motion to close debate on that section: "Mr. Speaker, I move to close debate." If the motion passes, no additional amendments are allowed except for those that have been submitted 24 hours in advance (on-line). These amendments must be considered.</p>
+
+    <p><b>Previous Question</b></p>
+    <p>A procedural motion to order "the previous question," in contrast, ends ALL debate on a bill and brings it up for a final vote: "Mr. Speaker, I move the Previous Question." If the previous question carries, the Speaker then brings the bill to a final vote by asking: "Shall the bill be engrossed and read a third time?" If this motion passes by a simple majority, the bill as currently amended is then brought up for a final vote.</p>
+    <p>Special rules drafted by the Rules Committee sometimes state that the "previous question is considered as ordered on a bill." This means that no actions are allowed other than those provided in the rule (e.g. no additional amendments). At the same time, the amendments provided for in the special rule are guaranteed. The House cannot later move the previous question and expect to end debate on these amendments.</p>
+
+    <p><b>Motion to Recommit</b></p>
+    <p>Just prior to the vote on final passage, it is in order for a Representative to offer one motion to recommit the bill to committee: "Mr. Speaker, I move to recommit the bill to committee (with instructions)." This is the last chance to defeat a bill that is bound for passage. It is a significant procedural right for the minority because it guarantees at least one opportunity to propose an alternative in a majority dominated process.</p>
+    <p>Once again, preparation is essential. A bill that has made it this far is bound for passage in the absence of a really attractive alternative and a carefully constructed game plan. The motion is offered with an alternative bill (these are the "instructions"). The motion is debatable for 10 minutes (divided equally) and cannot be amended. If it passes, the immediate question is whether to pass the language it contains in lieu of the bill. Motions to recommit rarely pass. A famous example occurred in 1980. Although the Democrats controlled the House, Ronald Reagan was able to persuade southern Democrats to support his version of the budget, which was contained in a motion to recommit offered by the minority leader. Scandalous!</p>
+
+    <p><b>Final Passage</b></p>
+    <p>If your bill has made it this far, you are one of the lucky few!</p>
+    <p>The Speaker may postpone a recorded vote on final passage for up to two legislative days. As is true with every motion considered by the Legislature, it is the Speaker's responsibility to ensure that the chamber understands the question under consideration.</p>
+    <p>A 3/5 vote is required to pass a bill that contains a tax increase or unfunded mandate.</p>
+
+    <p><b>Motion to Reconsider</b></p>
+    <p>Last and probably least important of all is the motion to reconsider. After the final vote, there is one last opportunity to revisit a bill. Since the minority has already had its chance, the motion to reconsider is little more than a formality. A Representative moves to reconsider the bill, another Representative moves to table that motion (delay it indefinitely). The motion to table is adopted by voice vote - end of story.</p>
+
+    <p><b><u><li><a name="Point10"></a>Voting</li></u></b><p>
+    <p>There are three methods of voting that occur in sequence; voice, division, and recorded vote. Typically, a motion is first considered by voice vote. After time has expired (or no one wishes to speak), a Representative moves to vote on the motion. The Chair asks if there is a sufficient second. "There being so, as any as are in favor say `Aye.' As many as are opposed, say No." The Chair then judges the result based on volume ("In the opinion of the chair, the Ayes have it"). Immediately, any Representative may demand a division vote: "Mr. Speaker, I demand a division. The Chair then states: "As many as are in favor will rise and stand until counted."</p>
+    <p>After counting those standing in favor, he or she then calls on those opposed to stand. The chair announces the result. Immediately, any Representative may request a recorded vote. The Speaker asks if there is a sufficient second. If at least one-fifth of a quorum indicates their support for the motion, the vote is recorded. How is up to your Legislature. The clerk can call the roll, Representatives can submit slips of paper, or they can head off to vote on line. In any case, members' positions must be posted on the LegSim website (in clear view of their colleagues and constituents!). Voting by proxy is not permitted.</p>
+
+    <p><b>Beware the gavel!</b></p>
+    <p>The Speaker's gavel is a powerful device in the right circumstances. The sound of the gavel indicates the resolution of an action or motion. It signals that no additional debate or amendments are in order, and it signals the end of a vote. A wily Speaker knows how to use her gavel! For example, a Speaker can bang the gavel to conclude consideration of the bill following a voice vote if no Representative moves quickly enough to demand a division or voice vote.</p>
+    <p>(Also remember that the Speaker decides the outcome of a voice vote based on volume, perhaps at a time when less than a quorum of Representatives is present - gotcha!). Speakers have also been known to use the gavel to shape the outcome of recorded votes. The rules require that a recorded vote be open for 20 minutes - but when does it end? Here the rules are vague. If the Speaker's side is losing, she may hold the gavel long enough to round up needed additional votes. If you are an undecided Representative, this is a fine time to bring out that wish list!</p>
+
+    <p><b><u><li><a name="Point11"></a>Motion to Adjourn, Sine Die</li></u></b></p>
+    <p>The last action taken by the House is to adjourn, permanently. Each Congress spans two years, but the actual date of final adjournment is decided by the membership, as it is in your case as well. If past courses are any guide, this will not be an easy decision since the Legislature is unlikely to have dispensed with all of the legislation under consideration (and especially the most important - yours!). Time marches on however, and you've got a reelection campaign to run!</p>
+- position: 2
+  summary: ""
+  title: The Big Picture
+  content: |-
+    <h1><strong>&nbsp;</strong></h1>
+    <p><strong>Rules Matter!</strong></p>
+    <p>Legislators who know the rules and how to apply them will find that they have more opportunities to advance their policy ideas. Rules are important because they are not neutral. They promote a particular form of decision-making that sometimes advantages particular interests or policies. A simple example is the rule that states that a tie vote defeats a motion. Why should a tie lead to a defeat? This rule advances a conservative view of the legislative process, where stability is valued over change.</p>
+    <p><strong>Where to Find these Rules</strong></p>
+    <p>LegSim provides an abbreviated set of rules that closely approximate those of the legislature you are simulatingt of rules. Additional information about proper procedure can be found on the website of the legislature in question. For the House of Representatives, for example, you can consult the <a href="http://clerk.house.gov/legisAct/legisProc/rules/index.html">actual rules of the House</a> or additional&nbsp;<a href="http://www.rules.house.gov/">information&nbsp;made available by the House Rules Committee</a>. There are also&nbsp;excellent text references that explain how the rules are normally applied in the House and Senate, such as&nbsp;Walter Oleszek, <em>Congressional Procedures and the Policy Process</em> (Washington D.C.: Congressional Quarterly Press) and Charles Tiefer, <em>Congressional Procedures and Practice</em> (Connecticut: Greenwood Press). Many students also rely on Roberts&rsquo; Rules, but the rules of Congress do not always correspond!</p>
+    <p><strong>The (Super)Majoritarian Principle</strong></p>
+    <p>You will encounter situations where the rules do not offer a simple answer. You will also encouner situations where you would rather ignore the rules in order to get your policy passed! Rules evolve over time to serve certain purposes. Although those purposes may not always be relevant to the situation at hand, your simulation will be more realistic if&nbsp;you&nbsp;apply the rules as if these longer term purposes&nbsp;are important.</p>
+    <p>The Constitution gives Congress broad authority to determine its own rules. Each House&nbsp;adopts its own rules by majority rule&nbsp;and the rules themselves offer opportunities for circumventing certain procedures (again by majority rule).&nbsp;</p>
+    <p>In the Senate, the bar is substantially higher due to the possibility of a filibuster (60 votes are needed to overcome&nbsp;one).&nbsp;But given sufficient support, even the rules that make afilibuster possible&nbsp;could be altered by the Senate.</p>
+    <p><strong>Be Faithful</strong></p>
+    <p>In the House, almost any rule can be &ldquo;waived&rdquo; by a simple majority vote, but only if the motion to waive it takes the form of a special rule first proposed by the Rules Committee. Otherwise, it would&nbsp;be cheating&nbsp;to decide&nbsp;by majority rule that the House was going to ignore an&nbsp;established procedure!&nbsp;&nbsp;In practice, these types of procedural changes tend to be concentrated in the resolution establishing the rules at the beginning of each new Congress.</p>
+- position: 3
+  summary: ""
+  title: How LegSim differs from the U.S. Congress
+  content: |-
+    <p><strong><span style="text-decoration: underline;">How your legislature&nbsp;differs from the U.S. Congress</span></strong></p>
+    <p><strong>Not a Bicameral Process</strong></p>
+    <p>The most important difference between the U.S. lawmaking process and your LegSimlature is that yours probably does not have a companion chamber that must also pass a bill in identical form before it can become law.</p>
+    <p><strong>No Committee of the Whole</strong></p>
+    <p>In addition,&nbsp;the House of Representatives makes many of its decisions under a procedure known as the &ldquo;Committee of the Whole&rdquo; (COW). The COW is a procedural convenience. It allows the legislature to conduct much of its business&nbsp;with less than a majority of members present. LegSim does not include a Committee of the Whole procedure.</p>
+    <p><strong>No built in Authorizations/Appropriations Distinction</strong></p>
+    <p>The U.S. Congress also has two separate lawmaking processes - authorizations and appropriations. Authorizing laws give the government legal&nbsp;authority to do things (e.g. regulate prescription drugs). However, the funds needed to&nbsp;pay for new and existing programs are provided through&nbsp;appropriations laws.&nbsp;&nbsp;</p>
+    <p>Whereas authorizing laws can create permanent programs or programs that must be reauthorized in a few years,&nbsp; the funds needed to pay for many&nbsp;programs must be appropriated annually (there are important exceptions, such as many entitlement programs). Finally, to make things even more confusing, some programs are authorized but not funded, and sometimes funds are appropriated for purposes that are not authorized!</p>
+    <p><strong>No Budget Process</strong></p>
+    <p>Congress also adopts budgeting procedures designed to promote greater fiscal discipline. Each spring, the Congress passes a budget &ldquo;resolution&rdquo; that specifies overall spending targets in major categories of spending (e.g. defense, interior, agriculture). The subcommittees of the appropriations committee then propose spending levels for specific programs and activities. The budget &ldquo;reconciliation&rdquo; then resolves any lingering discrepancies between the resolution and what the appropriations committee has proposed.&nbsp;</p>
+    <p>Budget agreements do not pertain to entitlement programs (like Social Security) where the law requires the government to provide (and pay for) a service to anyone whomeets the eligibility requirements.&nbsp;Second, budget agreements do not apply to &ldquo;emergency&rdquo; appropriations, and what constitutes an emergency is up to the&nbsp;Congress!</p>
+    <p><strong>No Status Quo Policy</strong></p>
+    <p>Most of the proposals Congress debates would revise&nbsp;existing law. For example, a health care reform bill proposes to alter existing regulations rather than proposing health care regulations for the first time. It is obviously difficult for students to get up to speed on complex subjects in such a short time so this is one area where realism may take a hit. Nevertheless we think that it is best for everyone to have students developing proposals that reflect an awareness of existing law.</p>
+    <p>We also suggest that students estimate the costs of the programs&nbsp;they propose.&nbsp;The committee responsible for reviewing the bill should also&nbsp;make an assessment of&nbsp;whether those costs seem&nbsp;realistic.&nbsp;To introduce a budget constraint, one option is to assume that&nbsp;passing a&nbsp;bill that costs&nbsp;$10 billion means that the government is now runing a&nbsp;deficit. To keep the&nbsp;budget in balance, other programs would need to be cut, and/or additional revenues raised. Of course, the legislature might&nbsp;also choose to have a deficit.</p>
+    <p><strong>No Reauthorizations</strong></p>
+    <p>Finally,&nbsp;because Congress authorizes many new programs for&nbsp;limited time periods, those programs must be reviewed and reauthorized. As a result,&nbsp;the real Congress (and especially its committees) have less discretion than is true for your legislature.</p>
+- position: 4
+  summary: ""
+  title: Member Tutorial
+  content: |-
+    <p><a href="http://youtu.be/jtDUNcZDnOE" target="_blank"><img src="/assets/img/video-camera.png" alt="Member Video Tutorial"></a></p>
+    <p>LegSim is your legislature. Your job is to  represent your constituency and advance your policy views. You and your  classmates will choose your leaders and organize your committees. You  will then draft bills, evaluate and decide the fate of bills as  committee members, and vote on those that make it to the floor.  This  may seem straightforward but it is complicated by the fact that there  will inevitably not be enough time to give every proposal the attention  it deserves, and by the fact that there will be disagreements about  which proposals should have priority. There will be winners and losers  in this process!</p>
+    <p>An effective legislator understands the legislative process. A bill  must pass certain hurdles to become law. But there are also different  ways to get past these hurdles. It&rsquo;s important to know the rules, the  issue, and to see those issues from the political perspectives of your  colleagues.</p>
+    <p>Legislatures have norms of behavior in addition to rules of  procedure. In debate, members refer to one another as representatives  (for example, the "distinguished representative of Colorado"). This  non-personal way of addressing colleagues reminds them that the views  being expressed are part of a representational process. Personal attacks  during debate are not appropriate and can lead to censure.</p>
+    <p>You may be tempted to take things personally in your &ldquo;simulation.&rdquo;   Decisions produce winners and losers, and it doesn&rsquo;t feel good to be on  the losing side. But in the heat of the moment, it is worth remembering  that it is not usually a good strategy to burn your bridges. Once you  send that e-mail, it is impossible to take back.</p>
+    <p><a name="AN_OVERVIEW_OF_THE_PROCESS"></a></p>
+    <div class="standardBox"><span class="boxTitle">AN OVERVIEW OF THE PROCESS</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>To give you a better sense of what is coming, this tutorial  describes a bit about each major stage of your simulation.  The other  tutorials on the LegSim website provide the more specific information  you will need along the way. And if you have a question or a suggestion,  you can contact us at helpdesk@legsim.org.</p>
+    <p>The four stages are:</p>
+    <ol>
+    <li>Organizing the legislature</li>
+    <li>Bill Introductions and cosponsorship</li>
+    <li>Committee deliberation</li>
+    <li>Floor action and enactment</li>
+    </ol>
+    <p>Your instructor will probably ask you to complete certain tasks by  specified dates. This is to ensure that each student has taken the  needed steps to allow this collective activity to proceed.</p>
+    </div>
+    <p><a name="1._ORGANIZING_THE_LEGISLATURE"></a></p>
+    <div class="standardBox"><span class="boxTitle">1. ORGANIZING THE LEGISLATURE</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p class="title">Member profile</p>
+    <p>You have probably already begun to create your member profile. The  'edit profile' option under the &lsquo;members&rsquo; link on the sidebar is where  you make additional changes (you can also change your password). Every  bill that you sponsor or cosponsor, every vote that you cast (etc.) will  be automatically archived here, as well as any assignments you have  been asked to complete.</p>
+    <p>Your instructor will provide information about how to select a  constituency, and how to research it in order to answer the question  posed on your profile page.</p>
+    <p>Providing a valid e-mail address is essential and you should confirm  that you are receiving mail sent through the LegSim system. To find out  whether any mail has been sent to you, check your mailbox under the  &lsquo;members&rsquo; link. If there is mail there but you haven't received any to  your email address, you may want to check your junk mailbox on your  personal email account. If you see LegSim email there, there is usually  an option to - accept mail from this address.</p>
+    <p>Other legislators will study your profile to find out more about  you, your political interests, and the constituency you represent. Thus  the profile is is an important for establishing the relationships that  will help you to advance your policy priorities.</p>
+    <p class="title">Requesting and assigning committee positions</p>
+    <p>One of the goals of LegSim is to draw attention to the importance of  organizations and rules in legislatures. Every bill that is introduced  is first considered by a smaller committee of legislators. Committees  are a means of dividing the workload, but because they are smaller they  also give committee members greater influence over how certain issues  develop. You can indicate your committee preferences using the 'request  assignment" option under the &lsquo;committees&rsquo; link. While you are at it, be  sure to check out the individual committees to learn more about the  issues they manage.</p>
+    <p>The legislature as a whole decides how to allocate committee  assignments, including the number of committee positions and who will  serve in those positions. In the real world, the parties usually control  this process (some state legislatures have different practices). But  LegSim leaves these decisions up to each class.  Given the important of  committees in the process, it is worth a little of your time to think  about how you would like these selections to be made!</p>
+    <p class="title">Forming caucuses</p>
+    <p>A caucus is an informal group that members create to advance a  shared interest. Most legislatures have party caucuses (e.g. Democrats),  but they will often have many more (e.g. the Congressional Hispanic  caucus and the Kidney Disease caucus).</p>
+    <p>Any member can create a caucus. Go to the 'form caucus' option under  the 'committees' link. Once your caucus has been created, other members  can 'request' to join, but only the member who created can admit new  members. The same applies to political parties. You can request, but  cannot join a party without the party leader&rsquo;s consent (although where  party membership is required, the instructor may control this process).</p>
+    <p class="title">Selecting leaders</p>
+    <p>Your legislature needs leaders to manage the legislative process,  from formally assigning members to committees, to referring bills to the  appropriate committees, to scheduling floor votes. The chamber and  committee leaders have special levels of access to LegSim that allow  them to perform these tasks.</p>
+    <p>If success is important, leader selection decisions are critically  important. Leader have more control over the agenda and hence more  power. A leader who manages the agenda efficiently benefits everyone. An  efficient organization means that responsibilities must be divided and  that those responsible are held accountable for their actions (or  inaction).</p>
+    <p>But leadership is also a human endeavor. A leader needs to care  about the interests of those s/he represents, but must also be willing  to make the difficult (and often unpopular) decisions necessary to  advance collective goals.</p>
+    <p>Most schools will leave it to the membership to select their leaders  (in some classes the instructor may assume this role, due to time  constraints for example). Choosing a single leader from a pool of  candidates (assuming there are more than two nominees) is not  straightforward. If, for example, there are 5 candidates, is getting the  most votes sufficient, or should a leader receive a majority of the  votes? Should this process be secret or open? If your legislature has  parties, will the parties first try to agree on a candidate before the  legislature as a whole decides?</p>
+    <p>Committee leaders have primarily responsibility for getting the  committee&rsquo;s work done (and like real committee leaders, they may  discover that not every other committee member is as eager to see the  work of the committee completed!).</p>
+    </div>
+    <p><a name="2._BILL_INTRODUCTION_AND_COSPONSORSHIP"></a></p>
+    <div class="standardBox"><span class="boxTitle">2. BILL INTRODUCTION AND COSPONSORSHIP</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p class="title">Introducing a bill</p>
+    <p>Introducing a bill is easy. You&rsquo;ll find the &lsquo;submit a bill&rsquo; option  under the 'floor' link on the sidebar. Your bill is assigned a number  and is posted to the website as soon as you click &lsquo;submit.&rsquo; From there,  it is automatically sent to the chamber leader&rsquo;s desk, who than has 24  hours to refer it the appropriate committee or committees.</p>
+    <p>Whether your bill progresses beyond this stage is much less certain.  (In the U.S. Congress, 8 out of 10 bills fail to make it beyond  committee referral.) In most classes, students will be encouraged to  draft bills on subjects of their choosing (although in some classes, the  choices will be constrained by a different process (e.g. EU:LegSim), or  by the instructor&rsquo;s desire to limit attention on one policy area.</p>
+    <p>No one is expecting you to be a policy expert from the start. Your  instructor should point you to resources that will help you get up to  speed on your subject. In addition, there is a &lsquo;sample bill' located  under the 'Instruction' link on the LegSim website to give you a better  sense of how a bill is organized.</p>
+    <p>No one enjoys criticism, but if your goal is to be successful, then  it may be a good idea to &lsquo;shop&rsquo; your idea around a little before you  actually submit it in the form of a bill. A bill that has been submitted  can&rsquo;t be edited, except through amendments if it ever reaches the  floor. Thus, it&rsquo;s a good idea to draft your bill in a document program  such as Microsoft Word. Give yourself a little time to think about what  you have written and how to improve it, and then double-check before you  click &lsquo;submit!!</p>
+    <p class="title">Soliciting cosponsors</p>
+    <p>Your colleagues will probably not support a bill they know little  about. In most classes, a lot of bills will be introduced, but most  students will not check the website daily for the new arrivals. For this  reason, it&rsquo;s a good idea to promote awareness of your legislation. The  &lsquo;dear colleague&rsquo; letter (&lsquo;send a letter&rsquo; under the &lsquo;members&rsquo; link) was  designed exactly for this purpose. It is an easy way to grab the  attention of busy legislators, if only for a moment. Use the subject  line to highlight your bill&rsquo;s main attraction. Keep the letter short and  to the point. Why should other legislators care about your bill, among  the many that have been introduced? Do you want them to act, and if so  how?</p>
+    <p>One possible action is cosponsorship. A bill that seems to have  widespread support may be more likely to receive attention in committee  or on the floor. Cosponsorship also helps you to identify potential  allies.</p>
+    <p>Why should you consider cosponsoring? In addition to lending your  support to a bill, cosponsorship is a visible action (like sponsoring a  bill) that sends a signal about your priorities to your constituents. To  cosponsor, find the bill and click on the link at the bottom of the  page. Bills can be cosponsored until they are reported from committee  and placed on a floor calendar.</p>
+    </div>
+    <p><a name="3._COMMITTEE_DELIBERATIONS"></a></p>
+    <div class="standardBox"><span class="boxTitle">3. COMMITTEE DELIBERATIONS</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>A list of committees can be found under the &lsquo;committees&rsquo; link on the  sidebar. As a committee member, your organizational role is to help the  legislature decide priorities, and to improve the quality of the  proposals it considers. The importance of committees is demonstrated by  the fact that although very few bills fail once they reach the floor  most if not all legislatures, a very large proportion of bills never  makes it that far.</p>
+    <p>At a more personal level, committees are in a position to exercise  agenda control in ways that serve the interests of committee members. In  the U.S. Congress, for example, about 80 percent of all bills reported  to the chamber by committees are sponsored by committee members.</p>
+    <p>In considering a bill, the essential questions that must be answered by the committee are:</p>
+    <ol>
+    <li>Do we want to hold a hearing on this bill or ignore it?</li>
+    <li>Do we want to recommend this bill to the legislature?</li>
+    <li>Do we want to propose changes to the bill?</li>
+    </ol>
+    <p>The committee chair controls the website tools, but the chair acts  with the consent of the committee majority. As a committee member, you  have the right to participate in decisions about which bills will be  scheduled for hearings; to propose committee amendments; and to decide  whether a bill will be reported to the chamber. The chair formally  reports the bill, but can delegate responsibility for preparing the  required report to another committee member.  An example of this Report  can be found under the &lsquo;instruction&rsquo; link.</p>
+    </div>
+    <p><a name="4._FLOOR_ACTION_AND_ENACTMENT"></a></p>
+    <div class="standardBox"><span class="boxTitle">4. FLOOR ACTION AND ENACTMENT</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>A bill reported from committee is automatically sent to the leader  of the chamber, who then places it on the appropriate floor calendar.  The bill may still see no action beyond this point.</p>
+    <p>In the U.S. House of Representatives, for example, bills are debated  chronologically (the first placed on the calendar is the first to be  considered). If your bill is not at the top of the calendar, the other  option is to persuade the legislature to pass a special rule proposed by  the Rules committee (see the Rules of Procedure and Tools tips for more  details). In the U.S. Senate, bills are brought to the floor according  to terms proposed by the majority leader and adopted by the legislature  (see the Rules of Procedure and Tool tips).</p>
+    <p class="title">Amendments, debate and voting</p>
+    <p>Bills placed on the calendar are open to amendment (the option of  offering an amendment is located at the bottom of the bill itself). The  'Sample Bill' under the 'Instruction' link also offers information about  the proper drafting of committee or floor amendments. Whether an  amendment is considered once the bill reaches the floor voting stage  depends on the procedures adopted. Under ordinary U.S. House and Senate  procedures, every amendment is in order and must be considered. However,  in both chambers there are ways to limit amendments. A majority of  legislators in the House can vote to &lsquo;end debate,&rsquo; cutting off  additional amendments. In the Senate, amendments can be limited through  unanimous consent agreements or by voting cloture (see the Rules of  Procedure and Tool tips).</p>
+    <p class="title">Floor debate</p>
+    <p>LegSim includes tools for debating issues on online. The leaders of  parties, caucuses, committees and the chamber all have the ability to  create discussion threads on any subject, which are indicated on the  home page of the party, caucus etc. Once created, the members of the  group can contribute whenever they like. The value of these threads  obviously depends upon students. Hey can be a waste of time, but they  can also be very interesting, fun and informative if students use them  as they are intended. Like dear colleague letters, debate posts are  visible to everyone and as such reflect positively or negatively on the  legislator making the contribution.</p>
+    <p>Hopefully, your simulation will also include at least one in class  debate, and it is also a good idea for committees to meet in person  whenever possible. Lawmaking is a human experience and restricting  activities to a web interface is, well, de-humanizing!</p>
+    <p class="title">Floor voting</p>
+    <p>When the leader schedules an on-line vote on a motion, amendment or  bill, s/he also decides the length of the voting period (typically 24 or  48 hours). A legislator can change her vote until the voting period  ends, so this can be an interesting period of negotiation. When the vote  closes, each legislator&rsquo;s position is permanently and publicly  indicated on her profile. When a legislator does not vote, she is  recorded as having been absent.</p>
+    <p class="title">Enactment</p>
+    <p>In a single chamber U.S. legislature simulation, a bill that passes  the chamber is sent to the President for a signature or veto. If the  President signs the bill it becomes law. If the President vetoes the  bill, the chamber must pass a new motion to override the President&rsquo;s  veto (2/3rds majority). If this motion is successful, your bill  (finally!) becomes law.</p>
+    <p>A bicameral U. S. legislature simulation (House and Senate) is more  complicated (of course!) and is described in the tool tips. But  essentially, the House and Senate leaders must confirm (through  enrollment) that each chamber has passed an identical version of the  bill. Then the bill goes to the President. If the President vetoes, both  chambers must vote to override.</p>
+    </div>
+- position: 5
+  summary: ""
+  title: Leader Tutorial
+  content: |-
+    <div class="standardBox"><span class="boxTitle">Speaker Walkthrough</span></div>
+    <br/>
+    <a href="http://youtu.be/FDJxSwEa7-Q" target="_blank"><img src="/assets/img/video-camera.png" alt="Chamber Leader Video Tutorial"></a></p>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>As Speaker of the House, you are charged with the task of managing  the legislature&rsquo;s responsibilities with fairness and efficiency. You  aren&rsquo;t a dictator. You act under the assumption that your decisions have  the support of the legislative majority. To lead requires that others  are willing to follow your lead. If you have a solid majority behind you  and the support of the Rules committee, a Speaker can pretty much rule  with an iron fist. Otherwise, you will find that your colleagues have  provided you with an opportunity to lead but are constantly reevaluating  whether they benefit by continuing to follow your lead.</p>
+    <p>To be an effective leader, you need to understand the legislative  process or align with someone who knows it inside out. If you don&rsquo;t, you  will face challenges at the most inopportune time! Challenges mean loss  of control, and managing events is what leadership is all about.  Uncertainty and ignorance are handicaps! Knowledge and information are  strengths!</p>
+    <p>Information about the legislative process and how it works in LegSim  can be found under the Rules of Procedure and Tool tips options under  the &lsquo;tutorials&rsquo; link on the sidebar. Additional information may also be  located with the tools themselves. Or, if you have a question that still  needs answering, send it to helpdesk@legsim.org.</p>
+    <p class="title">Responsibilities</p>
+    <p>The Speaker is primarily responsible for managing the day to day  affairs of the legislature, from referring bills to committee to  scheduling floor votes. The tools for accomplishing these and many other  tasks are found on the Leader&rsquo;s Desk under the &lsquo;floor&rsquo; link. [Your  instructor must designate you to be the Speaker before you have access  to this desk]</p>
+    <p>In addition to these administrative responsibilities, the Speaker,  as elected leader, is in the best position to decide the priorities of  the legislature. It is important to recognize that there will be many  more demands than can be accommodated. Committees play a central role in  setting chamber priorities, but committees are still likely to report  more bills than can be accommodated. The legislature will turn to you to  make the hard decisions.</p>
+    <p>Do not lead by trying to please everyone. Everyone likes you now,  but everyone will not like you by the end of the simulation! If making  everyone happy is not a reasonable end goal, then ask yourself what you  would like to accomplish? Set priorities; draft a plan for getting  there, but one that is sufficiently adaptable to changing circumstances.</p>
+    </div>
+    <p><a name="The_Leader"></a></p>
+    <div class="standardBox"><span class="boxTitle">The Leader's Desk</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>Your desk includes a number of tools. You should know that the  instructor also has access to these tools in addition to other tools.  For example, the instructor can remove a bill from the system while you  cannot, and can schedule any bill for floor debate and voting while you  are limited to those that the rules allow.</p>
+    <p>There are too many tools to discuss them in detail here. The first  time that you use one may be a little baffling, but you&rsquo;ll quickly get  the hang of it. Take a look at the Tool tips under &lsquo;tutorials&rsquo; link on  the sidebar. If the information you need is not there, send your  question to helpdesk@legsim.org</p>
+    <p>Your first formal action will probably be assign members to  committees. This is a collective decision. Your job is to implement the  chamber&rsquo;s recommendations. The same goes for assigning committee chairs,  which should shortly follow the assignment of committee positions.</p>
+    <p>Once the committees are up and running, your next task is to give  the committees something to do. It falls to you to refer bills to their  appropriate committees. You have 24 hours to refer a bill that has been  introduced. A bill is typically referred to just one committee based on a  match between its primary subject and a committee&rsquo;s issue  responsibilities. A bill can also be referred to multiple committees,  but such a bill cannot be considered by the legislature until all  committees have reported it. The Speaker also has the ability to  discharge a bill from committee &ndash; but only in accordance with  legislative procedure.</p>
+    <p class="title">Scheduling floor consideration</p>
+    <p>As the first stop in the legislative process, committees have a big  impact on floor proceedings. Most bills die in committee. But more  importantly for you, you depend on committees to produce legislation in a  timely manner. The fact is that your legislative session is not very  long. If you sit back and wait for committees to act, there&rsquo;s a good  chance that valuable time will be wasted. Equally important, the  committees that do act may not be the ones that share your priorities.</p>
+    <p>A competent Speaker is pro-active. S/he communicates with committee  chairs, sending clear signals about her priorities. Committee chairs  will often be receptive to these requests, because if the Speaker likes a  bill, that bill has a better chance of getting to the floor. And that  counts for something. But of course, this is a two way street. A smart  Speaker will also want to grease the skids by assisting a committee in  advancing one or two priorities of its own! &ldquo;You scratch my back&hellip;&rdquo;</p>
+    <p>When a committee reports a bill, you will receive a message  indicating that it is on your desk. You then need to place it on the  appropriate calendar as defined by the rules. If there is floor time  available, you can schedule bills on the calendar for consideration, but  only one at a time and in the order that they were received  (chronologically). Thus, no other bill can be considered until the first  one reported has been considered.</p>
+    <p>[Note: if your class is using the Desktop Democracy version of  LegSim, this constraint does not exist, and you may not have the Rules  Committee discussed below]</p>
+    <p>As Speaker, you shouldn&rsquo;t like this because it limits your ability  to set priorities! The alternative is a special rule issued by the Rules  committee. A special rule (described in more detail in the Rules of  Procedure) is a proposal to bring a bill to the floor out of its order  on the calendar, according to the terms specified in the special rule. A  special rule must be passed by the chamber before it applies.   Typically, a bill is brought up for debate immediately after the special  rule passes.</p>
+    <p>Only the Rules committee can propose a special rule (and only on a  bill that has been placed on the calendar). Once the rule has been  proposed, you can schedule it for a vote. If the rule is formally  adopted, you will find that the bill itself can now be scheduled for  floor debate and voting. Obviously, getting to know the members of the  Rules committee and their needs is in your interests.</p>
+    <p>Members can offer amendments to bills that have been placed on the  calendar. If a bill comes to the floor under ordinary procedure, all  germane amendments must be disposed of before the bill can be brought up  for a final vote.</p>
+    <p class="title">Voting</p>
+    <p>Scheduling a vote is not complicated. But if you try to do things in  a hurry you may make mistakes (For example you might schedule a vote to  begin and end at the same time &ndash; this makes it hard for senators to  vote!)</p>
+    <p>As leader, you have the ability to modify the text of any motion. It  is your responsibility to read and ensure that what is in the text box  is what lawmakers are supposed to be voting on. For example, if  amendments have been adopted, then the bill as described in the final  vote motion needs to be different from what was originally introduced.</p>
+    <p class="title">Procedural motions</p>
+    <p>In Congress, certain motions have precedence. For example, if a  member feels that the rules are being violated, action is suspended  until the motion is dealt with. Another example is that a majority of  house members can vote to &ldquo;end debate&rdquo; or &ldquo;move the previous question.&rdquo;  The effect of these motions is to bring an amendment or a bill to an  immediate vote (in the latter case, preventing consideration of  additional pending amendments). These privileged motions are described  in the Rules of Procedure.</p>
+    <p>The Speaker rules on these motions. For example if a member objects  that an amendment is not germane, the Speaker would decide the question.  Although this rarely happens in the U.S. House (it is more common in  the Senate), a member of the body can the appeal the Speaker&rsquo;s ruling to  the chamber. If a majority agrees, the chair&rsquo;s ruling is reversed.</p>
+    <p>Dealing with procedural motions during on-line voting can be tricky  and LegSim does not provide a simple answer. As Speaker, you will need  to decide how to deal with them fairly and efficiently in the event that  they come up. Clearly communicating the reasoning behind your decisions  is the best way to avoid misinterpretations of your intentions.</p>
+    </div>
+    <p><a name="In_Class_Debates"></a></p>
+    <div class="standardBox"><span class="boxTitle">In Class Debates</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>In class debates are important. They provide opportunities to  network and on-line interactions are simply not as interesting. It&rsquo;s a  very good idea to schedule an in-class debate early in the term. In our  experience, a debate on a controversial subject stimulates activity  throughout the simulation. So the sooner the better! To pull this off,  you will need at least one committee to send you a good bill early in  the process. By &lsquo;good bill,&rsquo; we mean a bill that addresses an important  issue (from the perspective of your colleagues) and that is likely to  divide them, such as immigration reform or a resolution proposing a  troop withdrawal. There are lots of possibilities.</p>
+    <p>For each bill that comes to the floor, you need to assign managers.  On the support side, the committee chair is your first choice. On the  oppose side, it might be a minority member of the committee or another  member who feels passionately about the issue.</p>
+    <p>Particularly for the first debate, you want students to prepare. The  primary role of the managers is to frame the debate with opening  statements, and then to allocate their limited time to other members who  share their position, but hopefully will make additional thoughtful  contributions to the discussion. As the Rules of Procedure describe, the  floor managers control the time. Another member cannot speak unless the  manager who controls the time yields. If things go well, a lot of  legislators will be stimulated to contribute to the discussion even if  they do not have the opportunity to do so.</p>
+    <p>You do not have to preside during this debate. Remember that you are  a political leader and not just a clerk. Use this opportunity to  advance your views on the bill and your agenda more generally.</p>
+    <p>The Speaker can temporarily delegate the chair to another member (a  leadership team is recommended). This member is then responsible for  keeping track of the time used by each side, responding to procedural  questions that may arise, and when appropriate, supervising any voting  that may occur (be sure to have a way to enter votes in the event that  recorded votes are requested). Things may be a little clunky the first  time through but your class will quickly get the hang of it!</p>
+    <p>In closing, your next step should be to review the Rules of  Procedure, the Tool tips, and perhaps the Committee chair&rsquo;s tutorial.  Then you should start thinking about your plans for the future. Good  luck!</p>
+    </div>
+- position: 6
+  summary: ""
+  title: Chair Tutorial
+  content: |-
+    <div class="standardBox"><span class="boxTitle">Committee Chair Walkthrough</span></div>
+    <br/>
+    <a href="http://youtu.be/H2U0dguktb0" target="_blank"><img src="/assets/img/video-camera.png" alt="Committee Chair Video Tutorial"></a></p>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>To be an effective Chair, you need to understand the legislative process. Information about this process and how it works in LegSim can  be found under the Rules of Procedure and Tool tips options under the  &lsquo;tutorials&rsquo; link on the sidebar. Additional information may also be  located with the tools themselves. Or, if you have a question that still  needs answering, send it to helpdesk@legsim.org.</p>
+    <p>The Speaker (or instructor) formally assigns chairs using the tool  available at the Speaker's desk. Once this has occurred, the chair&rsquo;s  name is displayed at each committee under the &lsquo;committees&rsquo; link and at  the &lsquo;leadership' option under the &lsquo;floor&rsquo; link on the sidebar.</p>
+    <p>Committees are charged with reviewing and making recommendations to the full chamber concerning legislative proposals. A committee can  ignore a bill; it can hold a hearing and recommend changes; it can hold a  hearing and then decide to not recommend the bill; or it can create its  own bill on the same subject. In other words, the committee can do  whatever it wants. But the chamber has options too. It can ignore a  committee&rsquo;s recommendations when a bill is reported to the floor, and it  can also force a committee to report out a bill that the committee  opposes.</p>
+    <p>As committee chair, you are charged with the task of managing your committee&rsquo;s responsibilities with fairness and efficiency. Every bill  that is introduced is referred to a committee for initial consideration.  The committee can choose to ignore a bill, table it, schedule a  hearing, and if so, decide whether to recommend it to the chamber. If  the bill is reported (recommended), the committee chair is often also  responsible for promoting the bill&rsquo;s progress through the remainder of  the process.</p>
+    <p>The chair is ultimately accountable for how well the committee  functions. One of your most important and challenging tasks will be to  allocate responsibilities and ensure that other committee members to do  their share of the work. Good luck!</p>
+    </div>
+    <p><a name="Powers_Of_The_Chair"></a></p>
+    <div class="standardBox"><span class="boxTitle">Powers Of The Chair</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>To accomplish their responsibilities, committee chairs have access to  LegSim tools not available to other members. To view these tools, go to  your committee and click on the &lsquo;chairman&rsquo;s desk.&rsquo; You will see that  these options include initiating a hearing on a bill; scheduling votes  on committee amendments and reports, preparing committee reports, and  reporting a bill to the floor.</p>
+    <p>These actions occur in sequence. For example, no other action on a  bill can be scheduled before a hearing has been scheduled. Once a  hearing has been scheduled, votes on amendments can be scheduled. If  your LegSim session is configured to require formal authorization to  report a bill, then you will need to schedule such a vote before a  committee report can be prepared and sent to the chamber.</p>
+    <p>As chair, you decide whether non-committee members can act as  witnesses by contributing to committee hearings, and you have the  ability to assign responsibility for preparing a report to another  committee member.</p>
+    <p>Because the committee process may not be transparent to your  committee colleagues, we suggest that you take a little time to discuss  it with them.</p>
+    </div>
+    <p><a name="Hearings"></a></p>
+    <div class="standardBox"><span class="boxTitle">Hearings</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>A hearing can be a waste of time or a valuable opportunity to improve  a bill&rsquo;s prospects of success. Your committee will need to prepare a  committee report to accompany any bill that it recommends to the  chamber. This report explains why the committee supports the bill. If a  bill is already extremely popular or unpopular, the report will make  little difference. But if the bill is somewhere in the middle, a well  prepared report can make the difference.</p>
+    <p>A committee hearing in this context can also help to clarify key  questions and concerns about the bill (possibly leading to changes in  its content), and it can be used to articulate why it is in lawmakers&rsquo;  political interests to support the bill. The committee report then  reports on what was discussed and decided by the committee. If some  committee members disagree with the majority&rsquo;s decision, their views  should also be reflected in the report.</p>
+    <p>A chair is not required to schedule a hearing on a bill. If you do so  (with the implicit or explicit consent of the committee), you will find  the tool near the bottom of the chairman&rsquo;s desk. Just click on the bill  and you are set. Return to the committee page (i.e. leave your desk),  the click on &lsquo;enter hearings room.&rsquo; You will see the bill listed. Click  on the bill and you will see the beginnings of a discussion thread where  you may want to submit introductory remarks (your opportunity to frame  the forthcoming debate!) and later read comments submitted by your  colleagues (in chronological order).</p>
+    <p>The discussion thread is just one option for a hearing.  In person  hearings are probably preferred in many respects. But the discussion  thread does have value as a place where thoughtful comments can be  archived, and we encourage you to encourage colleagues to use it for  this purpose. If committee members just want to chat, then there are  probably better options such as the phone or free IM systems (IM names  can be displayed on members&rsquo; profile pages).</p>
+    </div>
+    <p><a name="Voting"></a></p>
+    <div class="standardBox"><span class="boxTitle">Voting</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>Your instructor configures LegSim so that formal votes are, or are  not, required to report a bill. When no formal vote is required by the  system, a bill can still only be reported with the support of a  committee majority AND the voting position of each committee member must  be indicated in the committee report. However it is up to you as chair  to verify both of these things.</p>
+    <p>Members can propose amendments to bills that have been scheduled for  hearings.  The tools for scheduling votes on these amendments are also  on your desk, but the actual process of considering amendment is  governed by you, and should proceed in the spirit of the chamber&rsquo;s Rules  of Procedure. In other words, as chair you do not really have the  authority to pick and choose among the amendments proposed. You need to  establish a process that is transparent and fair, and you should  probably communicate this process before things get rolling.</p>
+    <p>As leader, you have the ability to modify the text of the motion. It  is your responsibility to read and ensure that what is in the text box  is what lawmakers are supposed to be voting on.</p>
+    <p>On-line amendment voting can be time consuming (committee members  cannot always be on line), and there may be more efficient ways to  manage committee members&rsquo; requests for legislative changes. For example,  in the U.S. Congress, the end result of committee deliberations will  sometimes be the introduction of a new bill. This bill is then referred  to the committee by the Speaker, and quickly reported by the committee.  An advantage of this process is that the committee can draft the bill  that most closely reflects their ideals. A second efficiency option is  for the chair to bundle desired changes into a single committee  amendment before holding a vote. Of course, both of these options  require sufficient consensus within the committee.</p>
+    </div>
+    <p><a name="Preparing_And_Submitting_Reports"></a></p>
+    <div class="standardBox"><span class="boxTitle">Preparing And Submitting Reports</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>A sample Committee Report can be found under the 'instruction' link  on the sidebar. The chair can designate another committee member to  prepare this report using tools on the desk, but the chair must formally  submit the report to the chamber.</p>
+    <p>As always, we recommend copying and pasting your Report from a  document program such as Word. A committee report cannot be edited once  it has been submitted. So be sure that you are ready!</p>
+    </div>
+    <p><a name="Reporting_A_Bill"></a></p>
+    <div class="standardBox"><span class="boxTitle">Reporting A Bill</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>When the committee reports a bill, it cedes control to the chamber. If the committee opposes a bill, the best way to defeat it may be to table it in committee and not issue a report at all.</p>
+    <p>When you report a bill to the chamber, it goes to the chamber  leader&rsquo;s desk. The leader then places it on the appropriate calendar.  The bill is unlikely to go any further without additional intervention.  Someone needs to be its advocate and the committee chair is in the best  position to do so. Ideally, you began this process of &lsquo;greasing the  skids&rsquo; much earlier, so that the chamber leadership has already set  aside time for your bill.</p>
+    </div>
+    <p><a name="Appropriations"></a></p>
+    <div class="standardBox"><span class="boxTitle">Appropriations</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>The U.S. Congress has two stage lawmaking process for most issues. In  the first, a law is passed that &lsquo;authorizes&rsquo; the government to do  something. In the second, a law is passed that &lsquo;appropriates&rsquo; the funds  to pay for doing that something. For example, a bill might authorize the  Army Corps of Engineers to build a dam, but the dam cannot actually be  built until the funds are appropriated to pay for its construction.</p>
+    <p>Your class may or may not have an Appropriations committee. If it  does, a chair of another committee, you will also need to work to see  that funds are provided for the programs your committee recommends. Thus  you will probably want to establish a close working relationship with  the Appropriations committee chair and other Appropriations committee  members.</p>
+    </div>
+    <p><a name="Discharge_Petitions"></a></p>
+    <div class="standardBox"><span class="boxTitle">Discharge Petitions</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>A committee is under no obligation to act on a bill. However, in the  U.S. Congress, a majority of the legislature can force a committee to  send (discharge) a bill to the chamber. A discharge petition requires  the signatures of a majority of members, so it should not come as a  surprise. If discharge seems likely, it is probably better to report  such a bill on the committee&rsquo;s terms than to see it forced from the  committee.</p>
+    </div>
+    <p><a name="Managing_Bills_On_The_Floor"></a></p>
+    <div class="standardBox"><span class="boxTitle">Managing Bills On The Floor</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>As mentioned, the committee chair (rather than the bill&rsquo;s original  sponsor) is typically responsible for managing bills when they reach the  floor. The committee chair doesn&rsquo;t have much of a role to play during  on-line debates, although it is still a good idea to frame the  discussion as much as possible.</p>
+    <p>If a bill is being debated in class, then there will usually be  managers who are primarily responsible for allocating debate time to  make the best possible case for their positions. Typically, the  committee chair manages the &lsquo;support&rsquo; side of the bill, while the  &lsquo;oppose&rsquo; side is managed by a minority party leader. But the most  important thing for each side is to select someone who will delegate  responsibilities to other supporters (opponents) to make the best case  for their side.</p>
+    <p>Floor debates are about control! As a floor manager, you want to keep  the discussion focused on the topics that serve your cause. A  spontaneous debate is likely to prove much less interesting and  enlightening than one where the debaters have had time to form their  thoughts. In addition, if you call on someone without knowing what they  are going to say, it may backfire on you!</p>
+    </div>
+    <p><a name="Summary"></a></p>
+    <div class="standardBox"><span class="boxTitle">Summary</span></div>
+    <div class="standardBox"><span class="boxTitle"><br /></span></div>
+    <div class="standardBox">
+    <p>Leadership is, in many respects, a thankless task. Followers will be  inclined to free ride, and it will be impossible to please everyone. The  compensation is that you hold more cards and have more potential  influence over what transpires. If you can&rsquo;t do everything (and you  can&rsquo;t), what are your top priorities? How will you motivate your committee to do its work and to support your  agenda?</p>
+    </div>
+- position: 7
+  summary: ""
+  title: Pocket Guide to House Floor Procedure
+  content: |-
+    <p>Best option is to highlight the relevant columns and print using the 'landscape' option</p>
+    <p>Click here for the <a href="http://faculty.washington.edu/jwilker/353/353Assignments/Pocket%20Rules.xls">Pocket Guide</a></p>
+contents:
+- copy: |-
+    <p>A Caucus or Congressional Member Organization (CMO) is an informal group of members that organizes&nbsp;to pursue common goals.</p>
+    <p>Any member can create a caucus and becomes the leader of that caucus. Each caucus includes management tools for promoting communications among members. Members often belong to multiple caucuses.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://cha.house.gov/member_orgs.aspx">House Administration Committee listing of Congressional Caucuses</a></p>
+  reference: edit-caucus
+- copy: |-
+    <p>A Political Party is a type of caucus. In Congress, party members work together to pursue common objectives, often by voting as a block on matters of leadership selection or procedure.</p>
+    <p>In LegSim, Any member can create a party. Members can only belong to one party, and must seek the leader's&nbsp; permission to join.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://www.dems.gov/">House Democratic Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.gop.gov/">House Republican Caucus</a></p>
+    <p><a href="http://src.senate.gov/public/">Senate Republican Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://democrats.senate.gov/">Senate Democratic Caucus</a></p>
+  reference: create-party
+- copy: |-
+    <p>Congress divides its workload among approximately 250 committees and subcommittees. This workload includes evaluating legislation, overseeing the management of existing government programs, and investigating&nbsp; and developing legislation in response to new issues.&nbsp;</p>
+    <p><strong>Jurisdiction and referral of legislation.</strong> Each committee has specific issue responsibilities that are specified in the rules of the House and Senate (below). The chamber leadership, with the advice of the parliamentarian, typically refers a bill to just one committee. About 15 percent of the time bills are referred to multiple committees, usually because they address issues that cut across the jurisdictions of multiple committees.</p>
+    <p><strong>Requesting Committees</strong>. Members typically request committees that address issues that are important to their constituencies or are of personal interest. Appropriations is responsible for spending, so it is of general interest. However,&nbsp; keep in mind that you may not get the committee you prefer if it is a 'high demand' committee. </p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/House%20Committee%20Assignment.pdf">House Committees: Assignment Process</a></p>
+    <p><a href="http://www.access.gpo.gov/congress/senate/sclinks.html">Committee Jurisdictions</a></p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/AuthorizationAppropriations.pdf">Authorization-Appropriations Process</a></p>
+  reference: committee-request-info
+- copy: <p>Every lawmaker has a website that provides information about his or her priorities and the district that he or she represents. This public profile is helpful for communicating with constituents and for helping other busy legislators and their staff learn about your priorities as they seek support for their own policy agendas.&nbsp;</p>
+  reference: edit-administrator-profile
+- copy: |-
+    <p>A bill cannot be withdrawn or edited once it has been submitted. Please draft bills off-line and proofread carefully before you submit. A sample bill can be found under the Instruction tab.</p>
+    <p><strong>Types of Legislation</strong>.</p>
+    <p>(H.R.) Bills that become public law revise the U.S. Code (below). Bills can vary dramatically in terms of their importance.</p>
+    <p>(H. Res) Simple Resolutions do not have the force of law. They are often used to make statements of support or opposition, and are also used to propose changes in internal legislative procedures.</p>
+    <p>(H.J. Res) Joint Resolutions become law in the same manner as public bills. The exceptions are Joint Resolutions that propose amendments to the Constitution, which require 2/3rds support of Congress to be referred to the states for ratification.</p>
+    <p>&nbsp;</p>
+    <p>The<strong> Legislative Text</strong> of a bill in LegSim includes the specific proposed legislative language (i.e. how you propose to alter the U.S Code).</p>
+    <p>The <strong>Supporting Text </strong>is where the goal of the bill, why it is needed, and how will will accomplish the goal is described.&nbsp; In other words, why other lawmakers should support it.</p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/House%20Bills%20and%20Resolutions.pdf">Introducing a House Bill or Resolution</a></p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/Introducing_a_Senate_Bill_or_Resolution.pdf">Introducing a Senate Bill or Resolution</a></p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/Bills%20and%20Resolutions.pdf">Bills and Resolutions: Examples of how each kind is used</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p><a href="http://www.house.gov/legcoun/strokoff.shtml">How&nbsp;laws are made</a></p>
+    <p><a href="http://www.gpoaccess.gov/uscode/browse.html">U.S. Code</a>: The law of the land &nbsp;</p>
+    <p><a href="http://www.whitehouse.gov/omb/">U.S Budget:</a> How much do things cost?</p>
+    <p><a href="http://thomas.loc.gov/">Thomas</a>: Research congressional legislation&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  reference: submit-legislation
+- copy: |-
+    <p>This page offers legislators the opportunity to nominate and indicate support candidates for chamber leadership positions.</p>
+    <p>Actual leadership selection processes are more complicated, and most classes will decide their procedures and make their choices in the classroom.</p>
+    <p>In the House, each party caucus informally chooses its nominee, and then votes as a block during the formal process that takes place on the first day of the 2 year Congress. Thus the real action takes place in caucus, where candidates are successively eliminated (lowest vote getter) until one candidate recieves a majority of support in the caucus.</p>
+    <p>In the Senate, the presiding officer is the Vice-President. In practice, however, the majority party leader is the de facto leader of the Senate.</p>
+    <p>For more information about how congressional leaders are formally chosen, consult the links below.</p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/FirstDay.pdf">The First Day of a New Congress</a></p>
+    <p><a href="http://www.house.gov/leadership/">House Leadership</a></p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/Presiding_Officer.pdf">Presiding Officer: Senate</a></p>
+    <p><a href="http://www.senate.gov/pagelayout/senators/a_three_sections_with_teasers/leadership.htm">Senate Leadership</a></p>
+  reference: leadership-nominations-info
+- copy: |-
+    <p>A Political Party is a type of caucus. In Congress, party members work together to pursue common objectives, often by voting as a block on matters of leadership selection or procedure.</p>
+    <p>Any member can create a party. Members can join or leave party caucuses at will. The party caucus leader can also decide to exclude a particular member.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://www.dems.gov/">House Democratic Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.gop.gov/">House Republican Caucus</a></p>
+    <p><a href="http://src.senate.gov/public/">Senate Republican Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://democrats.senate.gov/">Senate Democratic Caucus</a></p>
+  reference: party-directory
+- copy: |-
+    <p>A Caucus or Congressional Member Organization (CMO) is an informal group of members that organizes&nbsp;to pursue common goals.</p>
+    <p>Any member can create a caucus, and each caucus includes management tools for promoting communications among members. Members often belong to multiple caucuses.</p>
+    <p>Members can join or leave caucuses at will. The caucus leader can also decide to exclude a particular member from a caucus.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://cha.house.gov/member_orgs.aspx">House Administration Committee listing of Congressional Caucuses</a></p>
+  reference: caucus-directory
+- copy: |-
+    <p><strong>About Dear Colleague letters</strong></p>
+    <p>In LegSim there are two kinds of dear colleague emails. Ordinary 'dear colleagues' provide a means of communication among legislators and legislative groups. You&nbsp;are encouraged to use&nbsp;ordinary dear colleagues as often as you like.&nbsp;</p>
+    <p>"Special" dear colleagues sent&nbsp;to the entire chamber should be restricted to&nbsp;general announcements or to seek general support for legislation, etc. They should <span style="text-decoration: underline;">not</span> be used to carry on a conversation that everyone in the class is forced to read. In 2008, Congress implemented&nbsp;an e-dearcolleague email system that looks very similar to&nbsp;what LegSim has had for the past 8 years!</p>
+    <p>&nbsp;<a href="http://digital.library.unt.edu/govdocs/crs//data/2005/upl-meta-crs-6161/RS21667_2005Jan04.pdf">Dear Colleague Letters: A Brief Overview</a></p>
+  reference: draft-dear-colleague
+- copy: |-
+    <p><strong>Browse Submitted Legislation</strong></p>
+    <p>All submitted legislation is listed here. A bill can have only one sponsor. However, other legislators can indicate their support for a bill by co-sponsoring it.</p>
+    <p>The Speaker, in consultation with the Parliamentarian, refers each bill to committee for initial consideration. For information about committee consideration, consult the Committees page.</p>
+    <p><a href="http://assets.opencrs.com/rpts/98-458_19990803.pdf">&nbsp;Introducing a House Bill or Resolution</a></p>
+    <p><a href="http://thomas.loc.gov/bss/d111/sponlst.html">Member Sponsorship and cosponsorship activities in Congress</a></p>
+    <p>&nbsp;</p>
+  reference: browse-legislation
+- copy: |-
+    <p><b>Congress in its Committees is Congress at Work</b></p>
+    <p>Most legislation is referred to committee for initial consideration. This right of referral gives the committee of jurisdiction considerable influence over the progress and substance of legislation. Committees are where much of the work of Congress gets done. They enable Congress to accomplish more by dividing up tasks and by encouraging lawmakers to acquire and share policy and political expertise.</p>
+    <p><b>Committee Proceedings</b>. The Committee Chair sets the committee agenda. In LegSim, this includes scheduling <b>legislative hearings, votes,</b> and <b>preparing committee reports</b> on legislation.</p>
+    <p><b>Reporting</b>. A bill moves from the committee to the floor <u>only after the committee formally votes to report it.</u> If a bill has been referred to more than one 'primary; committee, it connot be considered by the legislature until all committees have voted to report it.<p>
+    <p><b>House Rules Committee and Special Rules</b>. A reported bill is placed on the calendar by the chamber leader. In the House,  bills are considered based on their order on the calender unless the Committee on Rules approves, and the House adopts, a special rule for the bill. If the chamber adopts the special rule, the bill can brought up regardless of its location on the calendar.</p>
+    <p><b>Senate Motions to Proceed</b>. In the Senate, once a bill is on the calendar, a majority of the Senate must vote to proceed to consideration of the bill.</p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/committee_system.pdf">The Committee System</a></p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/Senate_Committee_Reports.pdf">Committee Reports: Required Contents</a> (see also sample committee report under 'instruction'.)</p>
+  reference: committee-directory
+- copy: |-
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><a href="http://beijing.usembassy-china.org.cn/uploads/images/r8bxlA61-zMHlF76jit9Rw/committee_system.pdf">Committee System n the U.S. Congress</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  reference: committee-directory
+- copy: ""
+  reference: manage-content
+- copy: |-
+    <p>From this desk the House Speaker assigns legislators to committees and refers legislation to the appropriate committee of jurisdiction.</p>
+    <p><strong>Assignment of legislators to committees</strong></p>
+    <p>The Speaker formally assigns legislators to committee and assign committee chairs based upon a process decided by the House.</p>
+    <p><strong>Referrals of legislation to committee.</strong></p>
+    <p>The Speaker, in consultation with the parliamentarian, refers legislation to the committee or committees that possess jurisdiction over the bill's subject.</p>
+    <p style="padding-left: 30px;"><a href="http://www.access.gpo.gov/congress/senate/sclinks.html">Committee Jurisdictions</a></p>
+    <p><strong>Calendars and Floor Scheduling</strong></p>
+    <p>The Speaker is also responsible for setting the floor agenda (within the limits of House procedures). This includes placing bills on the calendar, scheduling debates&nbsp;on special rules, and scheduling debates on legislation.</p>
+  reference: chamber-management
+- copy: |-
+    <p>More tools to come!</p>
+    <p><a href="http://assets.opencrs.com/rpts/RS20881_20041129.pdf">Party Leaders in  the House</a></p>
+    <p><a href="http://rules.house.gov/Archives/comm_jurisdiction.htm">House Committee  Jurisdictions</a></p>
+  reference: chamber-management
+- copy: |-
+    <p>Every bill must be referred to at least one primary committee of referral within 24 hours of introduction.</p>
+    <p><strong>Primary referrals</strong>. The bill cannot be placed on the calendar for floor consideration until it has been reported out of this committee (or committees).&nbsp;</p>
+    <p><strong>Secondary referrals</strong>. A bill may also be referred to secondary committees of referral. Bills can be placed on the calendar even if they have not been reported by secondary committees of referral.</p>
+    <p>Referrals can only be altered within 24 hours of the original referral.</p>
+    <p><a href="http://rules.house.gov/Archives/comm_jurisdiction.htm">House Committee Jurisdictions</a></p>
+  reference: committee-referral
+- copy: |-
+    <p>This is where the Committee Chair manages committee affairs.</p>
+    <p><b>Manage Committee Information</b>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><b>Convene Hearings and Prepare Reports</b>. No other action can occur until a hearing has been opened. To send a bill to the floor, the committee must prepare and vote to approve a committee report on the bill.</p>
+    <p><b>Schedule a Non-legislative Hearing</b>. Open a discussion forum on any topic. These hearings are public, which means that any member of the chamber may contribute.</p>
+    <p><b>Schedule Markup Votes and Motions to Report</b>. Markup refers to the process of amending proposed legislation in committee. The committee chair schedules on-line votes or enters the results of previous votes (for example held in class).</p>
+    <p><b>House Rules Committee and Special Rules</b>. A reported bill is placed on the calendar by the chamber leader. In the House,  bills are considered based on their order on the calender unless the Committee on Rules approves, and the House adopts, a special rule for the bill. If the chamber adopts the special rule, the bill can brought up regardless of its location on the calendar.</p>
+    <p><b>Senate Motions to Proceed</b>. In the Senate, once a bill is on the calendar, a majority of the Senate must vote to proceed to consideration of the bill.</p>
+  reference: manage-committee
+- copy: |-
+    <p>This is where the Party&nbsp;leader&nbsp;manages party&nbsp;affairs.</p>
+    <p><strong>Manage Party&nbsp;Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Discussions</strong>. Allows you to open and close a party&nbsp;meeting that is linked to a <strong>specific piece of legislation</strong>. When other members of the party go to the legislation, they will see that there is a place to share their views with other party members (only).</p>
+    <p><strong>Manage General Discussions.&nbsp;</strong> Allows you to create a discussion forum on any topic.&nbsp;&nbsp;</p>
+  reference: manage-party
+- copy: |-
+    <p>This is where the Caucus leader&nbsp;manages caucus&nbsp;affairs.</p>
+    <p><strong>Manage Caucus&nbsp;Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Discussions</strong>. Allows you to open and close a caucus meeting that is linked&nbsp;to&nbsp;<strong>specific piece of legislation</strong>. When other members of the caucus go to the legislation, they will see that there is a place to share their views with other caucus members (only).</p>
+    <p><strong>Manage General Discussions.&nbsp;</strong> Allows you to create a discussion forum on any topic.&nbsp;&nbsp;</p>
+  reference: manage-caucus
+- copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+  reference: manage-party-information
+- copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+  reference: manage-committee-information
+- copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+  reference: manage-caucus-information
+- copy: |-
+    <p><strong>Referral Hearings</strong></p>
+    <p>After a bill has been referred to committee, the committee chair can decide whether to open a hearing to discuss the legislation and consider committee&nbsp;amendments. No other action on a bill can occur until a hearing has been scheduled.</p>
+    <p><strong>Draft and submit a committee report. </strong>The option to vote to report a bill to the floor does not exist until a committee report has been drafted and submitted by the chair. The chair can continue to edit the report until the vote to report it has been scheduled.</p>
+    <p>The committee chair can delegate responsibility for preparing the report to another committee member, but only the chair can create and edit the committee report.</p>
+    <p><strong>Reporting a bill to the floor. </strong>Once a draft report has been created, the chair can schedule a vote on a motion to 'adopt the committee report.' If the motion passes, the bill is automatically sent to the leader, who then places it on the calendar.</p>
+    <p><strong>Bill Reporting</strong></p>
+    <p>If a committee decides to recommend legislation for chamber consideration, the committee chair must issue a committee report (s/he can delegate resposibility for preparing the report to another committee member, but only the Chair can formally report the bill to the floor).</p>
+    <p>A committee report cannot be prepared until a&nbsp;hearing on the legislation has been opened.</p>
+    <p><strong>Tabling</strong></p>
+    <p>If the committee opens a hearing on a bill, but decides not to report it,&nbsp;it can set the bill aside by tabling it.&nbsp;</p>
+  reference: manage-committee-referrals
+- copy: |-
+    <p><strong>Committee Reports</strong></p>
+    <p><strong>Purpose</strong>. To inform the legislature about the committee's assessment of the bill.&nbsp; Part of the report includes the bill with recommended committee amendments. The other part of the report describes the committee's view of the legislation, including the motivations behind proposed revisions.</p>
+    <p>The chair prepares a draft report which can then be viewed by other committee members.</p>
+    <p><strong>Sending to floor.</strong> In order to send the bill to the chamber, <span style="text-decoration: underline;">the chair must schedule a vote to report the bill</span>, and a majority of the committee must vote to pass it.</p>
+    <p><strong>Voting positions.</strong> The report <span style="text-decoration: underline;">must</span> include the voting positions of committee members on the question of whether to report the legislation. Committee members&nbsp;also have the&nbsp;option of inserting&nbsp;dissenting viewpoints in the final version.&nbsp;</p>
+    <p><strong>Examples.</strong> This document (below) describes congressional committee reports in detail. There is also a sample committee report under 'instruction.'</p>
+    <p><a href="http://www.rules.house.gov/archives/98-169.pdf">Committee Reports: Required Contents</a></p>
+  reference: draft-committee-report
+- copy: |-
+    <p>The party&nbsp;leader can initiate&nbsp;party caucus discussions on specific bills here. The party can also present its views&nbsp;in the form of a party report. This report has no official status, but it is a way for the party leadership to build support within the caucus, and perhaps&nbsp;attract support from other members.</p>
+    <p><strong>Draft version of party&nbsp;report</strong></p>
+    <p>The party leader&nbsp;is primarily responsible for&nbsp;drafting the report. After the leader submits the&nbsp;draft report, it becomes available to other party members.&nbsp;&nbsp;When s.he is ready, the party leader&nbsp;&nbsp;drafts and submits the&nbsp;final version of the report, which is linked to the legislation.&nbsp;</p>
+    <p>Once the final version&nbsp;has been submitted, it cannot be revised!</p>
+  reference: manage-party-referrals
+- copy: |-
+    <p>The caucus&nbsp;leader can initiate&nbsp;caucus discussions on specific bills here. The caucus can also present its views&nbsp;in the form of a caucus report. This report has no official status, but it is a way for the caucus&nbsp;to build support for its perspective.</p>
+    <p><strong>Draft version of caucus&nbsp;report</strong></p>
+    <p>The caucus&nbsp;leader&nbsp;is primarily responsible for&nbsp;drafting the report. After the leader submits the&nbsp;draft report, it becomes available to other caucus&nbsp;members.&nbsp;&nbsp;When s/he is ready, the leader&nbsp;&nbsp;drafts and submits the&nbsp;final version of the report, which is linked to the legislation.&nbsp;</p>
+    <p>Once the final version&nbsp;has been submitted, it cannot be revised!</p>
+  reference: manage-caucus-referrals
+- copy: <p>Bill Sample</p>
+  reference: instruction
+- copy: |-
+    <p>Bill that are&nbsp;reported from committee are&nbsp;placed on the&nbsp;calendar.&nbsp;Under ordinary procedure, bills are then scheduled for floor consideration in the order in which they were placed on the calendar. Thus, the first one to be placed on the calendar is the first to be brought to the floor.</p>
+    <p>**Special note: Once a bill has been placed on a calendar, the course instructor/administrator has the ability to override the normal floor scheduling process, by going to the 'administration' link at the bottom and 'manage legislation.' </p>
+    <p>&nbsp;</p>
+  reference: manage-floor-calendars
+- copy: |-
+    <p>The Speaker places bills&nbsp;reported from committee on the&nbsp;calendar for floor consideration.&nbsp;Under ordinary procedure, bills are then taken up&nbsp;for debate and voting in the order in which they are&nbsp;placed on the calendar.&nbsp;The first bill to be reported is the&nbsp;first to be brought to the floor etc.</p>
+    <p><strong>Special Rules</strong></p>
+    <p>Bills that are not at the top of the calendar can be taken up first by order of a&nbsp;special rule proposed by&nbsp;the&nbsp;Rules Committee.&nbsp;The Speaker schedules consideration of the Special Rule, which&nbsp;takes effect only if&nbsp;approved by a majority of legislators.</p>
+    <p>Bills are not automatically referred to Rules. Typically, the Chair of the committee that reported the&nbsp;bill seeks a&nbsp;special rule from the Rules committee.&nbsp;</p>
+    <p><a href="http://faculty.washington.edu/jwilker/353/353Assignments/SpecialRules.pdf">How Special Rules Regulate Calling up<br />Measures for Consideration in the House</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  reference: info-calendar
+- copy: <p>As Speaker, you have the ability to post announcements about the House agenda. The content you submit here&nbsp;is displayed on each legislators'&nbsp;home page.</p>
+  reference: manage-floor-information
+- copy: |-
+    <p><strong>Schedule Vote</strong></p>
+    <p>On-line votes are&nbsp;scheduled according to the Rules of the chamber. In the House this means that the only the bill at the top of the&nbsp;calendar can be considered, unless a different bill&nbsp;has been made in order by the formal proposal and adoption of a special rule by the Rules committee.</p>
+    <p>The leader schedules when the vote begins and when it ends. The Rules of procedure specify that&nbsp;on-line votes must be open for 48 hours. In addition, no more than 3 votes can occur on-line at one time. Entering the results for an amendment will not update the staus of the bill of course.</p>
+    <p><strong>Enter Previous Vote</strong></p>
+    <p>First, select the Type of Motion considered. Once you have done this, you can select a specific motion submitted on LegSim or you can enter the text of a different motion.</p>
+    <p>Once&nbsp;you enter the previous vote on Final Passage, the bill's status is updated to reflect the outcome of the vote (e.g. it now indicates 'passed' or 'failed').</p>
+  reference: manage-floor-votes
+- copy: |-
+    <p>The floor contains only those bills that have been scheduled for floor consideration. Check the Calendar for the current status of other bills reported from committee.</p>
+    <p>Click on a bill's <b>FLOOR PAGE</b> and scroll to the bottom to see where to propose floor amendments or participate in a floor debate.</p>
+    <p>If there is no 'floor debate' option, the chamber leader has not yet started one and you may want to suggest that.</p>
+  reference: floor-information

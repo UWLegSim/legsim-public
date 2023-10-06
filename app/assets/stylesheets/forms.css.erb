@@ -1,0 +1,87 @@
+/* --------------------------------------------------------------
+
+   forms.css
+   * Sets up some default styling for forms
+   * Gives you classes to enhance your forms
+
+   Usage:
+   * For text fields, use class .title or .text
+
+-------------------------------------------------------------- */
+
+label       { font-weight: bold; }
+fieldset    { margin: 0 0 15px 0; border: none; }
+legend      { font-weight: bold; font-size:1.2em; }
+input,
+textarea,
+select      { font-family: arial, helvetica, sanserif; }
+
+
+/* Form fields
+-------------------------------------------------------------- */
+
+
+input.text:focus, input.title:focus,
+textarea:focus, select:focus {
+  border:1px solid #666;
+}
+
+input.text,
+input.title   { width: 300px; padding:5px; }
+input.title   { font-size:1.5em; }
+textarea      { width: 390px; padding:5px; }
+
+input.checkbox { width: 20px; }
+
+
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+
+.formfielderror  { color: #8a1f11; }
+
+
+/* Select boxes
+-------------------------------------------------------------- */
+
+.pulldown {
+    font-size: 10px;
+    color: #818181;
+    text-transform: uppercase;
+    padding: 2px;
+    }
+
+#details .input,
+#details textarea {
+    width: 390px;
+    background: url(<%= image_path 'id.png' %>) repeat-x left bottom;
+    border: 1px solid #ccd7e2;
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+    }
+
+#details select.input{
+  background: none;
+}
+
+#details fieldset.clearfix label {
+    display: block;
+    float: left;
+    width: 100px;
+    padding: 3px 10px 0 0;
+    }
+
+#details .wit {
+    float: left;
+    display: block;
+    width: 17px;
+    height: 17px;
+    margin: 1px 0 0 10px;
+    background: url(<%= image_path 'whatisthis.png' %>)
+    }
+
+.datetime {
+  font-size: 18px
+}

@@ -1,0 +1,70 @@
+<% if @current_chamber_role.group_leader?( @party ) %>
+<div id="overview" class="left-column">
+  <div class="left-content">
+
+  <%= content('manage-party-referrals') %>
+
+  <% if @party.chamber.legislation.under_consideration.any? %>
+
+    <%= form_for @referral  do |f| %>
+
+      <h3>Legislation Under Consideration</h3>
+
+      <p class='field'><%= f.select :legislation_id, options_for_select( @party.chamber.legislation.under_consideration.collect{|l| [l.short_title,l.id]} ), :style => "width: 100%;" %></p>
+
+      <%= f.hidden_field :group_id %>
+      <%= f.hidden_field :priority %>
+      <div class='field field-submit'>
+        <%= submit_tag 'Open Legislative Study Group', :size => 'seventy', :class => 'btn blue-btn' %>
+      </div><br/>
+    <% end %>
+
+  <% end %>
+
+  <%= link_button_to "Party Management", manage_party_path( @party ), :size => 'sixty', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <h2>Legislative Study Groups</h2>
+
+  <% if @party.referrals.empty? %>
+    <p>There are no legislative study groups for this caucus.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 140px" colspan="3">Actions</th>
+      </tr>
+      <% @party.referrals.unreported.each do |referral| %>
+        <%= render :partial => 'referrals/group_management_row', :locals => { :referral => referral } %>
+      <% end %>
+    </table>
+  <% end %>
+
+  <% unless @party.referrals.reported.empty? %>
+
+    <h2>Reports</h2>
+
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th></th>
+      </tr>
+      <% @party.referrals.reported.each do |referral| %>
+        <tr>
+          <td><%= referral.legislation.title %></td>
+          <td>
+            <%= link_button_to "View&nbsp;Report".html_safe, report_path( referral.report ), :size => 'ninty', :class => 'btn blue-btn' %>
+          </td>
+        <tr>
+      <% end %>
+    </table>
+
+  <% end %>
+</div>
+</div>
+<% else %>
+  Only the party chair can edit this page.
+<% end %>

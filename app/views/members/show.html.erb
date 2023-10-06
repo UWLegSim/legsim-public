@@ -1,0 +1,117 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <div class="profile-wrap">
+      <% if @member.photo.attached? %>
+        <%= image_tag @member.photo.variant(resize_to_fill: [150, 150]), :alt => @member.title, :title => @member.title, :class => "profile-pic" %>
+      <% else %>
+        <%= image_tag '/assets/silhouette.png', :alt => @member.title, :title => @member.title, :class => "profile-pic" %>
+      <% end %>
+      
+      <div class="name"><%= @member.name%></div>
+      
+      <div class="address">
+        <% if @member.constituency.nil? %>
+          Currently No Constituency
+        <% else %>
+          <%= @member.constituency.title %>
+        <% end %>
+      </div>
+      <div class="mail"><a href="mailto:<%= @member.email %>"><%= @member.email %></a></div>
+    </div>
+  </div>
+</div><!--overview-->
+
+  <div id="tab-container" class="tab-container">
+    <ul class="etabs">
+      <li class='tab'><a href="#personal">Personal</a></li
+      ><li class='tab'><a href="#constituency">Constituency</a></li
+      ><li class='tab'><a href="#legislation">Legislation</a></li
+      ><li class='tab'><a href="#groups">Groups</a></li>
+    </ul>
+
+    <div id="personal">
+      <div class='right-column'>
+        <div class='the-content'>
+          <h2 style='font-size: 22px'>Personal Statement</h2>
+          <%= sanitize( @member.member_profile.personal_statement, attributes: ['style'] ) if @member.member_profile %><br/>
+
+          <table cellspacing="0">
+            <tr>
+              <th style='font-size: 22px'>Survey Question</th>
+              <th style="text-align: center; font-size: 22px">Response</th>
+            </tr>
+            <% @member.chamber.survey_questions.each do |q| %>
+              <tr>
+                <td><%= q.question %></td>
+                <td class="center"><%= @member.survey_answer_for_question( q ) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="constituency">
+      <div class='right-column'>
+        <div class='the-content' >
+          <% if @member.constituency.nil? %>
+            <div style='width:100%'>You do not have a constituency yet</div>
+          <% else %>
+            <b>Constituency</b>&nbsp;&nbsp;&nbsp;
+            <h2 style='font-size: 22px'><%= @member.member_profile.constituency.name %></h2><br /><br />
+            <%= sanitize @member.member_profile.constituency_description, attributes: ['style'] %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div id='legislation'>
+      <div class='right-column'>
+        <div class='the-content'>
+          <%= render(:partial => 'legislation/chamber_role_box', :locals => { :chamber_role => @member } ) %>
+        </div>
+      </div>
+    </div>
+
+    <div id='groups'>
+      <div class='right-column'>
+        <div class='the-content'>
+          <div id="legislation" class="expander expanded">
+            <div class="expander-contents">
+              <table cellspacing="0">
+                <thead>
+                  <tr><th>Committees</th></tr>
+                </thead>
+                <tbody>
+                  <% @member.committees.each do |group| %>
+                    <tr><td><%= link_to_group( group ) %></td></tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <% if @member.party %>
+                <table cellspacing="0">
+                  <thead>
+                    <tr><th>Party</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><%= link_to_group( @member.party ) %></td></tr>
+                  </tbody>
+                </table>
+              <% end %>
+              <table cellspacing="0">
+                <thead>
+                  <tr><th>Caucuses</th></tr>
+                </thead>
+                <tbody>
+                  <% @member.caucuses.each do |group| %>
+                    <tr><td><%= link_to_group( group ) %></td></tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div><!--details-->
+

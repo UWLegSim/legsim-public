@@ -1,0 +1,29 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+
+  <%= button_to "Delete Constituency", admin_constituency_path( @constituency ), :method => :delete, :confirm => "Are you sure you want to delete this constituency?", :class => "btn blue-btn" %><br />
+
+    
+      <%= link_button_to 'Constituency Administration', admin_constituencies_path, :class => 'btn blue-btn' %>  
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <div id="constituency_members" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">Members Representing this Constituency</a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th>Name</th>
+        </tr>
+        <% @constituency.members.each do |member| %>
+          <td><%= link_to_user( member ) %></td>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

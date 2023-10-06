@@ -1,0 +1,47 @@
+<div class="left-column">
+  <div class="left-content">
+    <div class="profile-wrap">
+      <% if @administrator.photo.attached? %>
+        <%= image_tag @administrator.photo.variant(resize_to_fill: [150, 150]), :alt => @administrator.title, :title => @administrator.title, :class => 'profile-pic' %>
+      <% else %>
+        <%= image_tag '/assets/silhouette.png', :alt => @administrator.title, :title => @administrator.title, :class => 'profile-pic' %>
+      <% end %>
+
+      <div class="name"><%= @administrator.name %></div>
+
+      <div class="mail"><a href="mailto:<%= @administrator.email %>"><%= @administrator.email %></a></div>
+
+      <!-- <div class="view-details"><%= link_to "View Public Profile", administrator_path( @administrator ) %></div> -->
+
+      <div><%= link_to "Edit Profile", edit_administrator_path( @administrator ), :class => 'btn blue-btn' %>
+      </div>
+      <br/>
+      <div><%= link_to "Change Password", edit_password_users_path, :class => 'btn blue-btn' %> </div>
+    </div>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+<div class="the-content">
+  <%= render(:partial => 'letters/mailbox', :locals => { :chamber_role => @administrator } ) %>
+  <br/>
+  
+
+  <div id="assume_accounts" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Assume User Account</h2>
+    </div>
+    <div class="field">
+      <%= form_for @administrator.user, url: assume_user_path, method: :put do |f| %>
+        <%= select_tag :chamber_role_id, options_for_select(@current_chamber.chamber_roles.collect{|c| [c.title,c.id]}), :class => "input", :style => "width: 100%;"%><br/> <br/>
+        <div class="field field-submit">
+          <%= f.submit "Assume Selected Account", :size => :sixty, :class => 'btn blue-btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  <br/>
+  <%= render(:partial => 'discussions/chamber_index', :locals => { :chamber => @administrator.chamber } ) %>
+</div>
+</div>

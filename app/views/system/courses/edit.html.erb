@@ -1,0 +1,17 @@
+<div id="overview">
+
+  <h1>Edit Course</h1>
+
+
+</div>
+
+<div id="details">
+
+  <%= error_messages_for :course %>
+
+  <%= form_for [:system,@course] do |f| %>
+    <%= render(:partial => 'form', :locals => { :f => f } ) %>
+    <%= submit_tag 'Update Course' %>
+  <% end %>
+
+</div>

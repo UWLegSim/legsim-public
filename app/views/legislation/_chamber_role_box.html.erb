@@ -1,0 +1,74 @@
+  <div id="legislation" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Legislation <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="4">Sponsored Legislation [<a href="/legislation/new" title="Introduce New Legislation">Introduce New Legislation</a>]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chamber_role.sponsored_legislation.active.each do |legislation| %>
+          <tr>
+            <td class="<%= legislation.status %>"><%= link_to_legislation( legislation ) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="4">Cosponsored Legislation [<a href="/legislation" title="Search Legislation Database">Search Legislation Database</a>]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chamber_role.cosponsored_legislation.active.each do |legislation| %>
+          <tr>
+            <td class="<%= legislation.status %>"><%= link_to_legislation( legislation ) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<!--     <table cellspacing="0" class="legend">
+
+      <thead>
+          <tr>
+            <th colspan="7">Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td font-size="50%">Introduced <span class="round-span yellow">I</span></td>
+            <td>Referred <span class="round-span green">R</span></td>
+            <td>Calendar <span class="round-span gray">C</span></td>
+            <td>Passed <span class="round-span blue">P</span></td>
+            <td>Failed <span class="round-span red">F</span></td>
+            <td>Vetoed <span class="round-span orange">V</span></td>
+            <td>Law <span class="round-span purple">L</br></span></td>
+          </tr>
+      </tbody>
+    </table> -->
+    <table cellspacing="0" class="legend">
+
+      <thead>
+          <tr>
+            <th colspan="7">Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="introduced">Introduced   </td>
+            <td class="referred">Referred</td>
+            <td class="calendar">Calendar</td>
+            <td class="passed">Passed</td>
+            <td class="failed">Failed</td>
+            <td class="vetoed">Vetoed</td>
+            <td class="law">Law</td>
+          </tr>
+      </tbody>
+    </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->

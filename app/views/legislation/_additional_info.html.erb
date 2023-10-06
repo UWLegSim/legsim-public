@@ -1,0 +1,52 @@
+<h2>Cosponsors</h2> 
+<% if legislation.cosponsorships.empty? %>
+  <p>There are no cosponsors for this legislation.</p><br />
+<% else %>
+
+  <ul><% legislation.cosponsorships.each do |cosponsorship| %>
+    <li><%= link_to_user cosponsorship.chamber_role %> - <%= cosponsorship.created_at.to_s(:long) %></li>
+  <% end %></ul>
+
+<% end %>
+
+<% if legislation.can_cosponsor?( @current_chamber_role ) %>
+
+  <% if legislation.is_cosponsor?( @current_chamber_role ) %>
+    <%= form_for legislation, :url => remove_cosponsor_legislation_path(legislation), :method => :put do |f| %>
+      <%= f.submit 'Withdraw Cosponsorship', :size => 'seventy', :class => 'btn blue-btn' %>
+    <% end %>
+  <% else %>
+    <%= form_for legislation, :url => add_cosponsor_legislation_path(legislation), :method => :put do |f| %>
+      <div class='field field-submit'>
+        <%= f.submit 'Become a Cosponsor', :size => 'seventy', :class => 'btn blue-btn'  %>
+      </div>
+    <% end %>
+  <% end %>
+
+<% end %>
+
+<h2> Amendments </h2>
+<% if legislation.amendments.count > 0 %>
+  <ul><% legislation.amendments.each do |amendment| %>
+    <li><%= link_to_group amendment.group %> -- <%= link_to amendment.title, amendment_path( amendment ) %> introduced by <%= link_to_user( amendment.sponsor ) %></li>
+  <% end %></ul>
+<% else %>
+  <p>There are no admendments for this legislation.</p><br />
+  <% if legislation.status != 'introduced'%>
+  <p>Looking to propose an amendment or want to debate this legislation? Check out the floor of the chamber and click the floor page link to go to the bill hearing page. </p>
+  <% end %>
+<% end %>
+
+<h2>Related Legislation</h2>
+<% if legislation.actor_legislation_relationships.empty? and legislation.target_legislation_relationships.empty? %>
+  <p>There is no related legislation.</p><br />
+<% else %>
+  <ul>
+    <% legislation.related_target_legislation.each do |target_legislation| %>
+      <li><%= link_to_legislation target_legislation %></li>
+    <% end %>
+    <% legislation.related_actor_legislation.each do |actor_legislation| %>
+      <li><%= link_to_legislation actor_legislation %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,16 @@
+<div id="overview" class="left-column">
+	<div class="left-content">
+  		<%= content('manage-section') %>
+
+  		<%= link_button_to "Return to Section", section_path( @section ), :size => 'sixty', :class => 'btn blue-btn' %>
+	</div>
+</div>
+
+<div id="details" class="right-column">
+	<div class="the-content">
+	  	<ul>
+	    	<li><%= link_to 'Manage Section Information', manage_info_section_path(@section), :class => 'btn blue-btn' %></li>
+	    	<li><%= link_to 'Manage Discussions', manage_discussions_section_path(@section), :class => 'btn blue-btn' %></li>
+	  	</ul>
+	</div>
+</div>

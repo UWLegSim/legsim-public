@@ -1,0 +1,80 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+
+  <% if @caucus.primary_group_leader %>
+    <h2><%= @caucus.primary_group_leader.title %></h2>
+    <p><%= link_to_user( @caucus.primary_leader ) %></p>
+  <% else %>
+    <h2>There is no Caucus Leader</h2>
+  <% end %>
+
+  <% if @caucus.public_announcement %>
+    <h2>Public Announcements</h2>
+    <%= sanitize @caucus.public_announcement, attributes: ['style'] %>
+  <% end %>
+
+  <% if @caucus.private_announcement and @current_chamber_role.group_member?( @caucus ) %>
+    <h2>Member's Only Announcements</h2>
+    <%= sanitize @caucus.private_announcement, attributes: ['style'] %>
+  <% end %>
+
+  <% unless @caucus.secondary_group_leaders.empty? %>
+    <h2>Caucus Leadership</h2>
+    <ul>
+      <% @caucus.secondary_group_leaders.each do |secondary_group_leader| %>
+        <li><%= secondary_group_leader.title %>: <%= link_to_user( secondary_group_leader.chamber_role ) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @current_chamber_role.group_leader?( @caucus ) %>
+  <div class="field field-submit">
+    <%= link_button_to "Manage Caucus", manage_caucus_path( @caucus ), :size => 'sixty', :class => "btn blue-btn" %>
+  </div>
+    <br />
+  <% end %>
+
+  <% if @caucus.membership.empty? %>
+    <h2>There is no Caucus Membership</h2>
+  <% else %>
+    <h2>Membership</h2>
+    <ul>
+      <% @caucus.membership.each do |member| %>
+        <li><%= link_to_user( member ) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @current_chamber_role.is_member? %>
+    <% if @current_chamber_role.group_member?( @caucus ) %>
+      <%= form_for @caucus, :url => { :action => :leave } do |f| %>
+        <div class="field field-submit">
+        <%= f.submit "Leave Caucus", :size => 'fifty', :class => "btn blue-btn" %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= form_for @caucus, :url => { :action => :join } do |f| %>
+      <div class="field field-submit">
+        <%= f.submit "Join Caucus", :size => 'fifty', :class => "btn blue-btn" %>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <h2>Caucus Description</h2>
+
+  <p><%= sanitize @caucus.jurisdiction_description, attributes: ['style'] %></p>
+
+  <h2>Issue Areas</h2>
+
+  <p><%= sanitize @caucus.issue_description, attributes: ['style'] %></p>
+
+  <%= render(:partial => 'discussions/group_index', :locals => { :group => @caucus } ) %>
+
+  <%= render(:partial => 'legislation/organization_studies', :locals => { :group => @caucus } ) %>
+  </div>
+</div><!--details-->

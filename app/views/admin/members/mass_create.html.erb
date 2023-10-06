@@ -1,0 +1,22 @@
+<div class='the-content' style='background-color: #DEDEDE'>
+  <h2>Mass Created Users</h2>
+
+  <p>Be sure to copy this list. There is no way to gain access to these passwords once you leave this page.</p>
+
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Temp Email (Login)</th>
+      <th>Password</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user[:user].first_name %></td>
+        <td><%= user[:user].last_name %></td>
+        <td><%= user[:user].email %></td>
+        <td><%= user[:password] %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

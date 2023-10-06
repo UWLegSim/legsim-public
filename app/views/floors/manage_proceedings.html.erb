@@ -1,0 +1,25 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('manage-floor-proceedings') %>
+
+  <h2>Draft Floor Proceeding</h2>
+
+  <p>To consider any legislation on the floor there must first be an agreement. As Majority Leader, you are responsible for drafting these agreements and getting the chamber to adopt them.</p>
+
+  <div class='field field-submit'>
+    <%= link_button_to "Draft Floor Proceeding", draft_proceeding_floor_path( @floor ), :size => 'ninty', :class => 'btn blue-btn' %>
+  </div>
+
+  <%= link_button_to "Chamber Management", manage_chamber_path( @floor.chamber ), :size => 'sixty', :class => 'btn blue-btn' %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <h2>Pending Floor Proceedings</h2>
+
+  <% @floor.motions.without_vote.each do |motion| %>
+    <%= motion.title %><br />
+  <% end %>
+  </div>
+</div>

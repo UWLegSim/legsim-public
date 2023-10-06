@@ -1,0 +1,8 @@
+<h1>Edit Committee</h1>
+
+<%= form_for @committee do |f| %>
+  <%= render(:partial => 'form', :locals => { :f => f } ) %>
+  <div class='field field-submit'>
+  	<%= submit_tag 'Update Committee', :class => 'btn blue-btn' %>
+  </div>
+<% end %>

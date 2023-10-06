@@ -1,0 +1,39 @@
+<div class="wide-form">
+  <div id="overview">
+
+    <%= render :partial => 'search_form' %>
+
+  </div>
+
+  <div id="details">
+
+    <div id="chamber_settings" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">User Search Results</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th>Login</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Confirmed</th>
+            <th>Registered</th>
+            <th></th>
+          </tr>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.email %></td>
+              <td><%= user.name %></td>
+              <td><%= user.course.institution.name %><br/><%= user.course.name %></td>
+              <td><%= user.confirmed? ? 'Y' : 'N' %></td>
+              <td><%= user.created_at %></td>
+              <td><%= link_button_to 'Manage', system_user_path( user ), size:'eighty' %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

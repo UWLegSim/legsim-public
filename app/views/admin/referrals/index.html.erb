@@ -1,0 +1,44 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('admin-referrals') %>
+
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <div class="tabs">
+  <ul class="clearfix">
+    <% @legislative_types.each do |legislative_type| %>
+      <li><a href="#tab-legislative-type-<%= legislative_type.id %>"><%= legislative_type.name.pluralize %></a></li>
+    <% end %>
+  </ul>
+  </div>
+
+  <% @legislative_types.each do |legislative_type| %>
+    <div class="panel" id="tab-legislative-type-<%= legislative_type.id %>">
+
+      <table id="referrals">
+        <% legislative_type.legislation.each do |legislation| %>
+          <tr>
+            <th colspan="2"><%= link_to_legislation( legislation ) %></th>
+          </tr>
+          <% legislation.referrals.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>"><%= link_to_group( referral.group ) %></td>
+              <td style="text-align: right;">
+                <%= link_to "Manage", edit_admin_referral_path( referral ) %>
+              </td>
+            </tr>
+          <% end %>
+          <tr>
+            <td colspan="2" style="text-align: right;"><%= link_to "Add New Referral for #{legislation.reference}", new_admin_legislation_referral_path( legislation ) %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+  <% end %>
+</div>
+</div>

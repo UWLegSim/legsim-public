@@ -1,0 +1,122 @@
+<div class="legislation clearfix">
+
+  <div class="seal <%= legislation.status %>">
+  </div><!--seal failed-->
+
+  <div class="topline">
+    <h2><%= link_to_legislation( legislation )%></h2>
+    <br/>
+    <p><strong style='color:#AA321E'>Sponsor:</strong> <%= link_to_user( legislation.sponsor ) %></p>
+    <p><strong style='color:#AA321E'>Submitted:</strong> <%= legislation.created_at.to_s(:long_with_time) %></p>
+    <p><strong style='color:#AA321E'>Cosponsors:</strong> <%= legislation.cosponsors.count %></p>
+    <p><strong style='color:#AA321E'>Proposed Amendments:</strong> <%= legislation.amendments.count %></p>
+    <!--
+      <p><strong>Motions:</strong> 1</p>
+      <p><strong>Issues:</strong> <a href="defense" title="Defense">Defense</a>; <a href="labor" title="Labor">Labor</a>, <a href="employment-and-immigration" title="Employment &amp; Immigration">Employment & Immigration</a></p>
+    -->
+
+    <div class="vote-status <%= legislation.status %> clearfix">
+      <% if legislation.status == 'introduced' %>
+        <strong>Introduced</strong>
+      <% elsif legislation.status == 'referred' %>
+        <strong>Referred</strong>
+      <% elsif legislation.status == 'calendar' %>
+        <% if legislation.floor_calendar %>
+          <strong><%= legislation.floor_calendar.name %></strong>
+        <% else %>
+          <strong>Calendar</strong>
+        <% end %>
+      <% elsif legislation.status == 'withdrawn' %>
+        <strong>Withdrawn</strong>
+      <% elsif legislation.status == 'draft' %>
+        <strong>Draft</strong>
+      <% elsif legislation.status == 'failed' or legislation.status == 'passed' %>
+        <div class="small-link"><%= link_to "View Vote Detail", vote_path( legislation.floor_vote ) %></div>
+        <% if legislation.floor_vote.record_type == 'voice_vote' %>
+          <strong><%= legislation.status.titleize %> by Voice Vote</strong>
+        <% else %>
+          <strong><%= legislation.status.titleize %>:</strong>
+          <% legislation.floor_vote.yes_tally %> Yes /
+          <% legislation.floor_vote.no_tally %> No /
+          <% legislation.floor_vote.present_tally %> Present
+        <% end %>
+      <% end %>
+    </div><!--vote-status failed-->
+  </div><!--topline-->
+
+  <% short = false if short.nil? %>
+  <% unless legislation.status == 'introduced' or short or legislation.id != nil %>
+    <h2>Versions</h2>
+    <table>
+      <tr>
+        <td><%= link_to "As Introduced in the #{legislation.chamber.name}", legislation_path( @legislation ) %></td>
+      </tr>
+      <% legislation.referrals.committee.reported.each do |referral| %>
+        <tr>
+          <td><%= link_to "As Reported by #{referral.group.name}", report_path( referral.report ) %></td>
+        </tr>
+      <% end %>
+      <% legislation.referrals.floor.finished.each do |referral| %>
+        <% if referral.report %>
+          <tr>
+            <td><%= link_to "As Approved by #{referral.group.name}", report_path( referral.report ) %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+
+    <h2>Referrals</h2>
+    <% if legislation.referrals.committee.count > 0 %>
+      <div id="referrals">
+        <table cellspacing="0">
+          <tbody>
+            <% legislation.referrals.committee.each do |referral| %>
+              <tr>
+                <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_group( referral.group ) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+
+    <h2>Debates</h2>
+    <% if legislation.referrals.count > 0 %>
+      <table>
+        <tr>
+          <th>Group</th>
+          <th>Last Event</th>
+          <th>Status</th>
+        </tr>
+        <% legislation.referrals.includes(:discussion).each do |referral| %>
+          <% if referral.discussion %>
+            <tr>
+              <td><%= link_to_group referral.group %></td>
+              <td><%= link_to_user( referral.discussion.last_event_chamber_role )%> <%= referral.discussion.last_event %> <%= distance_of_time_in_words_to_now(referral.discussion.last_event_timestamp) %> ago</td>
+              <td class="center">
+                <% if referral.discussion.private? %>
+                  Private
+                <% else %>
+                  Public<br/>[<%= link_to 'view', discussion_path( referral.discussion ) %>]</td>
+                <% end %>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    <% end %>
+
+    <h2>Studies</h2>
+    <% if legislation.referrals.organization.reported.empty? %>
+      <p>No Legislative Studies have been issued.</p>
+    <% else %>
+      <table>
+        <% legislation.referrals.organization.reported.each do |referral| %>
+          <tr>
+            <td><%= link_to "As Reported by #{referral.group.name}", report_path( referral.report ) %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  <% end %>
+
+</div><!--legislation-->

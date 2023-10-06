@@ -1,0 +1,51 @@
+<div id="discussions" class="expander expanded">
+  <div class="bar clearfix">
+    <h2 href="#" class="title">Debates &amp; Discussions <!--<span class="parenthesis">(7 unread)</span>--></h2>
+  </div>
+  <div class="expander-contents">
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Last Event</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+
+       <% @current_chamber.committees.each do | group | %>
+        <% unless group.discussions.open_discussions.with_recent_comment.empty? %>
+        <% if @current_chamber_role.group_member? (group ) %>
+          <tr><td colspan="3"><b><%= group.name %></b></td></tr>
+            <% group.discussions.open_discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+              <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+            <% end %>
+            <% end %>
+        <% end %>
+      <% end %>
+
+      <% @current_chamber.parties.each do |group| %>
+        <% unless group.discussions.open_discussions.with_recent_comment.empty? %>
+          <% if @current_chamber_role.group_member? (group ) %>
+          <tr><td colspan="3"><b><%= group.name %></b></td></tr>
+          <% group.discussions.open_discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+            <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+          <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% @current_chamber.caucuses.each do |group| %>
+        <% unless group.discussions.open_discussions.with_recent_comment.empty? %>
+          <tr><td colspan="3"><b><%= group.name %></b></td></tr>
+          <% if @current_chamber_role.group_member? (group ) %>
+          <% group.discussions.open_discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+            <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+          <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </table>
+  </div>
+</div>
+

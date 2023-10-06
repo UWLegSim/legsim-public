@@ -1,0 +1,8 @@
+
+  <%= f.hidden_field :chamber_id %>
+  <%= f.hidden_field :endorsements %>
+  <%= f.error_messages %>
+<div class="field">
+  <%= f.label 'Name'%><br />
+  <%= f.select :chamber_role_id, @current_chamber.members.collect{|c| [ c.title, c.id] }, :class => "input" %>
+</div>

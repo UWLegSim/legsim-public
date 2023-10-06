@@ -1,0 +1,84 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('manage-floor-debates') %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= link_button_to "Chamber Management", manage_chamber_path( @floor.chamber ), :size => 'hundred', :class => 'btn blue-btn' %>
+  <br/>
+  <br/>
+  <h2>Special Rules</h2>
+
+  <% if @floor.referrals.rules.pending.empty? %>
+    <p>There is no legislation on the calendar awaiting a floor debate.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 100%">Actions</th>
+      </tr>
+      <% @floor.referrals.rules.pending.each do |referral| %>
+        <tr>
+          <td><%= link_to_legislation( referral.legislation ) %></td>
+          <td colspan="3">
+            <%= form_for referral do |f| %>
+              <%= f.hidden_field :status, :value => 'hearing' %>
+              <%= f.submit "Open Debate", :size => 'ninty', :class => 'btn blue-btn' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <h2>Legislation by Special Rule</h2>
+
+  <% if @floor.referrals.special.pending.empty? %>
+    <p>There is no legislation by special rule awaiting a floor debate.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 100%">Actions</th>
+      </tr>
+      <% @floor.referrals.special.pending.each do |referral| %>
+        <tr>
+          <td><%= link_to_legislation( referral.legislation ) %></td>
+          <td colspan="3">
+            <%= form_for referral do |f| %>
+              <%= f.hidden_field :status, :value => 'hearing' %>
+              <%= f.submit "Open Debate", :size => 'ninty', :class => 'btn blue-btn' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <h2>Legislation on the Calendar</h2>
+
+  <% if @floor.referrals.floor.pending.empty? %>
+    <p>There is no legislation on the calendar awaiting a floor debate.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 100%">Actions</th>
+      </tr>
+      <% @floor.referrals.floor.pending.each do |referral| %>
+        <tr>
+          <td><%= link_to_legislation( referral.legislation ) %></td>
+          <td colspan="3">
+            <%= form_for referral do |f| %>
+              <%= f.hidden_field :status, :value => 'hearing' %>
+              <%= f.submit "Open Debate", :size => 'ninty', :class => 'btn blue-btn' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
+</div>

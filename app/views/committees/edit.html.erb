@@ -1,0 +1,15 @@
+<div id="details" class="right-column">
+	<div class="the-content">
+	<h1>Edit Committee</h1>
+		<% if @current_chamber_role.group_leader?( @committee ) %>
+			<%= form_for @committee do |f| %>
+		  	<%= render(:partial => 'form', :locals => { :f => f } ) %>
+		  	<div class='field field-submit'>
+		  		<%= submit_tag 'Update Committee', :class => 'btn blue-btn' %>
+		  	</div>
+		<% end %>
+	</div>
+</div>
+<% else %>
+  You are not this committee's chair, you are not allowed to access this information.
+<% end %>

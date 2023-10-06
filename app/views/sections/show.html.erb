@@ -1,0 +1,58 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <% if @section.primary_group_leader %>
+    <h2><%= @section.primary_group_leader.title %></h2>
+    <p><%= link_to_user( @section.primary_leader ) %></p>
+  <% else %>
+    <h2>There is no Section Leader</h2>
+  <% end %>
+
+  <% if @section.public_announcement %>
+    <h2>Public Announcements</h2>
+    <%= sanitize @section.public_announcement, attributes: ['style'] %>
+  <% end %>
+
+  <% if @section.private_announcement and @current_chamber_role.group_member?( @section ) or @current_chamber_role.can_instruct? %>
+    <h2>Member's Only Announcements</h2>
+    <%= sanitize @section.private_announcement, attributes: ['style'] %>
+  <% end %>
+
+  <% unless @section.secondary_group_leaders.empty? %>
+    <h2>Section Leadership</h2>
+    <ul>
+      <% @section.secondary_group_leaders.each do |secondary_group_leader| %>
+        <li><%= secondary_group_leader.title %>: <%= link_to_user( secondary_group_leader.chamber_role ) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @current_chamber_role.group_leader?( @section ) %>
+    <%= link_button_to "Manage Section", manage_section_path( @section ), :size => 'sixty', :class => 'btn blue-btn' %><br />
+  <% end %>
+
+  <% if @section.membership.empty? %>
+    <h2>There is no Section Membership</h2>
+  <% else %>
+    <h2>Membership</h2>
+    <ul>
+      <% @section.membership.each do |member| %>
+        <li><%= link_to_user( member ) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <h2>Section Description</h2>
+
+    <p><%= sanitize @section.jurisdiction_description, attributes: ['style'] %></p>
+
+    <h2>Issue Areas</h2>
+
+    <%= sanitize @section.issue_description, attributes: ['style'] %>
+
+    <%= render(:partial => 'discussions/group_index', :locals => { :group => @section } ) %>
+  </div>
+</div><!--details-->

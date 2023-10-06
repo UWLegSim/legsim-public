@@ -1,0 +1,252 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('manage-floor-votes') %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= link_button_to "Chamber Management", manage_chamber_path( @floor.chamber ), :size => 'hundred', :class => 'btn blue-btn' %>
+  <br/>
+  <br/>
+  <% if @floor.chamber.setting('has_filibuster') %>
+    <h2>Floor Procedures</h2>
+    <br/>
+    <%= link_button_to "Propose New Floor Proceeding", new_proceeding_floor_path( @floor ), :size => 'eighty', :class => 'btn blue-btn' %>
+    <br/>
+    <%= link_button_to "Enter Previous Floor Proceeding", previous_proceeding_floor_path( @floor ), :size => 'eighty', :class => 'btn blue-btn' %><br />
+  <% end %>
+
+  <h2>Scheduled Votes</h2>
+
+  <% if @floor.votes.pending.empty? %>
+    <p>There are no pending votes.</p>
+  <% else %>
+    <table style = "width : 100%">
+      <tr>
+        <th style = "width: 100%">Title</th>
+        <th style="width: 100%" colspan="2">Actions</th>
+      </tr>
+      <% @floor.votes.pending.each do |vote| %>
+        <tr>
+          <td>
+            <%= vote.title %><br />
+            &nbsp;&nbsp;&nbsp;<b>Start At:</b> <%= vote.start_at.to_s(:long_with_time) %><br />
+            &nbsp;&nbsp;&nbsp;<b>Finish At:</b> <%= vote.finish_at.to_s(:long_with_time) %>
+          </td>
+          <td >
+            <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_vote_path(vote), :size => 'eighty', :class => 'btn blue-btn' %>
+          </td>
+          <td >
+            <%= form_for vote, :url => {:action => 'cancel', :controller => :votes, :id => vote.id} do |f| %>
+              <%= f.submit "Cancel", :size => 'hundred', :class => 'btn blue-btn' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+    <h2>In Progress Votes</h2>
+
+    <% if @floor.votes.in_progress.empty? %>
+      <p>There are no in progress votes.</p>
+    <% else %>
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 100%" colspan="2">Actions</th>
+        </tr>
+        <% @floor.votes.in_progress.each do |vote| %>
+          <tr>
+            <td>
+              <%= vote.title %><br />
+              &nbsp;&nbsp;&nbsp;<b>Start At:</b> <%= vote.start_at.to_s(:long_with_time) %><br />
+              &nbsp;&nbsp;&nbsp;<b>Finish At:</b> <%= vote.finish_at.to_s(:long_with_time) %>
+            </td>
+            <td>
+              <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_vote_path(vote), :size => 'eighty', :class => 'btn blue-btn' %>
+            </td>
+            <td >
+              <%= form_for  vote, :url => {:action => 'cancel', :controller => :votes, :id => vote.id} do |f| %>
+                <%= f.submit "Cancel", :size => 'hundred', :class => 'btn blue-btn' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
+  <% if @floor.chamber.setting('has_hold') %>
+
+    <h2>Legislation by Consent</h2>
+
+    <% if @floor.referrals.consent.unscheduled.empty? %>
+      <p>There is no legislation by consent awaiting a vote.</p>
+    <% else %>
+
+      <table>
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 100%">Actions</th>
+        </tr>
+        <% @floor.referrals.consent.unscheduled.each do |referral| %>
+          <tr>
+            <td><%= link_to_legislation( referral.legislation ) %></td>
+            <td colspan="3">
+              <%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path(referral), :size => 'hundred', :class=>'btn blue-btn' %>
+            </td>
+            <td>
+              <%= link_button_to "Enter&nbsp;Previous&nbsp;Vote".html_safe, previous_referral_votes_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+
+  <% end %>
+
+  <% if @floor.chamber.setting('has_filibuster') %>
+
+    <h2>Filibustered Motions</h2>
+
+    <% if @floor.votes.filibuster.empty? %>
+      <p>There are not motions currently being filibustered.</p>
+    <% else %>
+
+      <table>
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 100%">Actions</th>
+        </tr>
+        <% @floor.votes.filibuster.each do |vote| %>
+          <tr>
+            <td><%= link_to( vote.motion.title, motion_path( vote.motion ) ) %></td>
+            <td>
+              <%= link_button_to "Schedule&nbsp;Cloture&nbsp;Vote".html_safe, new_referral_vote_path(vote.referral, :cloture => true), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+            <td>
+              <%= link_button_to "Enter&nbsp;Previous&nbsp;Cloture&nbsp;Vote".html_safe, previous_referral_votes_path(vote.referral, :cloture => true), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+
+  <% end %>
+
+
+  <% if @floor.chamber.setting('has_special_rules') %>
+
+    <h2>Special Rules</h2>
+
+    <% if @floor.referrals.rules.unscheduled.empty? %>
+      <p>There are no special rules awaiting a vote.</p>
+    <% else %>
+      <table>
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 100%">Actions</th>
+        </tr>
+        <% @floor.referrals.rules.unscheduled.each do |referral| %>
+          <tr>
+            <td><%= link_to_legislation( referral.legislation ) %></td>
+            <td>
+              <%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+            <td>
+              <%= link_button_to "Enter&nbsp;Previous&nbsp;Vote".html_safe, previous_referral_votes_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
+    <h2>Legislation by Special Rule</h2>
+
+    <% if @floor.referrals.special.unscheduled.empty? %>
+      <p>There is no legislation by special rule awaiting a vote.</p>
+    <% else %>
+
+      <table>
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 100%">Actions</th>
+        </tr>
+        <% @floor.referrals.special.unscheduled.each do |referral| %>
+          <tr>
+            <td><%= link_to_legislation( referral.legislation ) %></td>
+            <td>
+              <%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+            <td>
+              <%= link_button_to "Enter&nbsp;Previous&nbsp;Vote".html_safe, previous_referral_votes_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+
+  <% end %>
+
+  <% if @floor.chamber.setting('has_regular_order') %>
+
+    <h2>Legislation on the top of the Calendar</h2>
+
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 100%">Actions</th>
+      </tr>
+      <% @floor.calendars.each do |calendar| %>
+        <tr>
+          <th><%= calendar.name %></th>
+        </tr>
+        <% if referral = calendar.referrals.first %>
+          <tr>
+            <td><%= link_to_legislation( referral.legislation ) %></td>
+            <td>
+              <%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+            <td>
+              <%= link_button_to "Enter&nbsp;Previous&nbsp;Vote".html_safe, previous_referral_votes_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% else %>
+          <tr>
+            <td colspan="2">There is no legislation on this calendar</td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+
+  <% end %>
+
+
+    <h2>Previous Votes</h2>
+
+    <% if @floor.votes.finished.empty? %>
+      <p>There are no finished votes.</p>
+    <% else %>
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 100%">Outcome</th>
+          <th style="width: 100%">Actions</th>
+        </tr>
+        <% @floor.votes.finished.each do |vote| %>
+          <tr>
+            <td><%= vote.title %></td>
+            <td class="<%= vote.outcome %>"><%= vote.outcome.titleize if vote.outcome %></td>
+            <td colspan="3">
+              <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_previous_vote_path(vote), :size => 'eighty', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+    </div>
+</div>

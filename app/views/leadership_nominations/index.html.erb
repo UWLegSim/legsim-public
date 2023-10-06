@@ -1,0 +1,86 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('leadership-nominations-info') %>
+
+  <table>
+    <tr>
+      <th>Chamber</th>
+      <th>Leader</th>
+    </tr>
+    <tr>
+      <td><%= link_to_group( @current_chamber.floor ) %></td> 
+      <td><%= link_to_user( @current_chamber.floor.primary_leader) %></td>
+    </tr>
+  
+    <p><tr>
+      <th>Parties</th>
+      <th></th>
+    </tr>
+    <% @current_chamber.parties.each do |group| %>
+    <tr>
+      <td><%= link_to_group( group ) %></td> 
+      <td><%= link_to_user( group.primary_leader) %></td>
+    </tr>
+    <% end %> 
+    </p>
+    <tr>
+      <th>Caucuses</th>
+      <th></th>
+    </tr>
+    <% @current_chamber.caucuses.each do |group| %>
+    <tr>
+      <td><%= link_to_group( group ) %></td> 
+      <td><%= link_to_user( group.primary_leader) %></td>
+    </tr>
+    <% end %> 
+  
+    <tr>
+      <th>Committees</th>
+      <th></th>
+    </tr>
+    <% @current_chamber.committees.each do |group| %>
+    <tr>
+      <td><%= link_to_group( group ) %></td> 
+      <td><%= link_to_user( group.primary_leader) %></td>
+    </tr>
+  <% end %> 
+</table>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <h1>New Leadership Nomination</h1>
+
+  <%= form_for(@leadership_nomination) do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <div class="field field-submit">
+        <%= f.submit 'Endorse', :class => 'btn blue-btn' %>
+      </div>
+  <% end %>
+  
+<h1>Current Nominations</h1>
+
+<table>
+  <tr>
+
+    <th>Name</th>
+
+    <th>Endorsements</th>
+
+  </tr>
+  
+<% @chamber_nominations.each do |chamber_nomination|%>
+  <tr>
+
+    <td><%= link_to_user( chamber_nomination.chamber_role)%></td>
+
+    <td><%= chamber_nomination.endorsements%></td>
+
+    
+  </tr>
+<% end %>
+</table>
+<br />
+</div>
+</div>

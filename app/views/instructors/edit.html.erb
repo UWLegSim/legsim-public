@@ -1,0 +1,17 @@
+<div id="overview" class="left-column">
+	<div class="left-content">
+  <%= content('edit-instructor-profile') %>
+</div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+	<div class="the-content">
+  <%= form_for @instructor, :html => { :multipart => true } do |f| %>
+    <%= render(:partial => 'form', :locals => { :f => f } ) %>
+    <div class='field field-submit'>
+    	<%= submit_tag 'Update Profile', :class => 'btn blue-btn' %>
+    </div>
+    
+  <% end %>
+</div>
+</div>

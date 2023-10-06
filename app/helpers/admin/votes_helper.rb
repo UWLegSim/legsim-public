@@ -1,0 +1,2 @@
+module Admin::VotesHelper
+end

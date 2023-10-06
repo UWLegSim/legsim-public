@@ -1,0 +1,68 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <div id="office" class="clearfix">
+
+    <div class="office-photo">
+      <% if @instructor.photo.attached? %>
+        <%= image_tag @instructor.photo.variant(resize_to_fill: [150, 150]), :alt => @instructor.title, :title => @instructor.title %>
+      <% else %>
+        <%= image_tag '/assets/silhouette.png', :alt => @instructor.title, :title => @instructor.title %>
+      <% end %>
+    </div><!--office-photo-->
+
+    <div class="office-topline">
+      <h2><%= @instructor.name %></h2>
+
+      <table cellspacing="0">
+        <tr>
+          <th>Email</th>
+          <td><a href="mailto:<%= @instructor.email %>"><%= @instructor.email %></a></td>
+        </tr>
+      </table>
+
+      <div class="small-link"><%= link_to "Edit Profile", edit_instructor_path( @instructor ) %>&nbsp;&nbsp;|&nbsp;&nbsp;<%= link_to "View Public Profile", instructor_path( @instructor ) %></div>
+    </div><!--office-topline-->
+
+  </div><!--office-->
+
+  <div class="tabs">
+    <ul class="clearfix">
+      <li><a href="#tab-sections">Sections</a></li>
+      <li><a href="#tab-chamber">Chamber</a></li>
+    </ul>
+  </div>
+
+  <div class="panel" id="tab-sections">
+
+    <% @instructor.sections.each do |section| %>
+
+      <h3><%= link_to_group( section ) %></h3>
+      <ul>
+        <li><b><%= section.discussions.open_discussions.count %></b> Open <%= section.discussions.open_discussions.count == 1 ? 'Discussion' : 'Discussions' %></li>
+        <li><b>Member's Announcement</b> <%= section.private_announcement ? section.private_announcement : "<p>No Announcement</p>" %></li>
+      </ul>
+
+    <% end %>
+
+  </div>
+
+  <div class="panel" id="tab-chamber">
+      <h3><%= @instructor.chamber.title %></h3>
+      <ul>
+        <% if @instructor.chamber.floor.primary_group_leader %>
+          <li><b><%= @instructor.chamber.floor.primary_group_leader.title %></b> <%= link_to_user( @instructor.chamber.floor.primary_leader ) %></li>
+        <% end %>
+        <li><a href="/members">Membership Directory</a></li>
+        <li><b>Member's Announcement</b> <%= @instructor.chamber.floor.private_announcement ? @instructor.chamber.floor.private_announcement : "<p>No Announcement</p>" %></li>
+      </ul>
+
+  </div>
+</div>
+
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= render(:partial => 'letters/mailbox', :locals => { :chamber_role => @instructor } ) %>
+</div>
+</div>

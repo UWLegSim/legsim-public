@@ -1,0 +1,23 @@
+<div class="LogOnContent">
+
+    <%= form_tag session_path do -%>
+
+      <div id="courseField"><%= label_tag 'course_id' %>
+      <%= select_tag 'course_id', options_for_select( @courses.collect {|c| [ c.title, c.id ] }, cookies['previous_chamber_id'].to_i ), :style => "width: 100%;" %></div>
+      <br/>
+
+      <div id="loginField"><%= label_tag 'Username' %><br/><%= text_field_tag 'login', @login %></div>
+
+      <div id="passwordsField"><%= label_tag 'password' %><br/><%= password_field_tag 'password', nil %></div><br />
+
+      <div id="loginButton"><%= submit_tag 'Log in', :size => 'ninety' %></div><br />
+
+      <div id="infoLink"><a href="http://info.legsim.org"><h2>Learn more about LegSim</h2></a><br /></div>
+
+      <div id="newButton"><%= link_button_to "Create New Account", new_user_path(), :size => 'ninety' %><br /></div>
+
+      <div id="remindButton"><%= link_button_to "Password Reminder", new_user_password_path, :size => 'ninety' %></div>
+
+    <% end %>
+
+</div>

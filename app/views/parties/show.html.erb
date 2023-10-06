@@ -1,0 +1,81 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <% if @party.primary_group_leader %>
+    <h2><%= @party.primary_group_leader.title %></h2>
+    <p><%= link_to_user( @party.primary_leader ) %></p>
+  <% else %>
+    <h2>There is no Party Leader</h2>
+  <% end %>
+
+  <% if @party.public_announcement %>
+    <h2>Public Announcements</h2>
+    <%= sanitize @party.public_announcement, attributes: ['style'] %>
+  <% end %>
+
+  <% if @party.private_announcement and @current_chamber_role.group_member?( @party ) %>
+    <h2>Member's Only Announcements</h2>
+    <%= sanitize @party.private_announcement, attributes: ['style'] %>
+  <% end %>
+
+  <% unless @party.secondary_group_leaders.empty? %>
+    <h2>Party Leadership</h2>
+    <ul>
+      <% @party.secondary_group_leaders.each do |secondary_group_leader| %>
+        <li><%= secondary_group_leader.title %>: <%= link_to_user( secondary_group_leader.chamber_role ) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @current_chamber_role.group_leader?( @party ) %>
+    <div class='field field-submit'>
+      <%= link_button_to "Manage Party", manage_party_path( @party ), :size => 'sixty', :class => 'btn blue-btn' %>
+    </div>
+  <% end %>
+
+  <% if @party.membership.empty? %>
+    <h2>There is no Party Membership</h2>
+  <% else %>
+    <h2>Membership</h2>
+    <ul>
+      <% @party.membership.each do |member| %>
+        <li><%= link_to_user( member ) %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  </div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <h2>Party Description</h2>
+
+  <p><%= sanitize @party.jurisdiction_description, attributes: ['style'] %></p>
+
+  <h2>Issue Areas</h2>
+
+  <p><%= sanitize @party.issue_description, attributes: ['style'] %></p>
+
+  <%= render(:partial => 'discussions/group_index', :locals => { :group => @party } ) %>
+
+  <%= render(:partial => 'legislation/organization_studies', :locals => { :group => @party } ) %>
+
+  <% if @current_chamber_role.is_member? %>
+    <% if @current_chamber_role.group_member?( @party ) %>
+      <%= form_for @party, :url => { :action => :leave } do |f| %>
+        <div class='field field-submit'>
+          <%= f.submit "Leave Party", :size => 'fifty', :class => 'btn blue-btn' %>
+        </div>
+      <% end %>
+    <% else %>
+      <%= form_for @party, :url => { :action => :join } do |f| %>
+        <div class='field field-submit'>
+        <%= f.submit "Join Party", :size => 'fifty', :class => 'btn blue-btn' %>
+        </div>
+        <% if @current_chamber_role.party %>
+          You are already a member of <%= link_to_group( @current_chamber_role.party ) %>, if you join this one you will leave the other.
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+</div><!--details-->

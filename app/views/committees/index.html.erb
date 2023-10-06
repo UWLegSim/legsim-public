@@ -1,0 +1,17 @@
+<div id="overview" class="left-column">
+<div class="left-content">
+  <%= content('committee-directory') %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+	<div class="the-content">
+		<h2>Current Committees</h2>
+		<br/>
+	  <ul>
+	  	<% @committees.each do |group| %>
+	    		<li><%= link_to_group( group ) %></li>
+	  	<% end %>
+	  </ul>
+  </div>
+</div>

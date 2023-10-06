@@ -1,0 +1,76 @@
+<%= render partial: "text_javascript", locals: {selector: "#new_vote", cloture: params[:cloture] } %>
+
+<%= form_for @vote do |f| %>
+
+  <div id="details" class="left-column" style='float:left; width: 500px'>
+    <div class="left-content">
+    <h2>Draft the Motion</h2>
+
+    Select Motion Type
+    <p><%= select_tag 'motion[action]', options_for_select( @motion_options ), :style => "width: 100%;"  %></p>
+
+    <div id="passage_selector" style="display:none" class="text_selector" >
+      <h3>Select Legislative Version</h3>
+      <p><select id="legislative_text_id" style="width: 100%;"></select></p>
+    </div>
+
+    <div id="amendment_selector" style="display:none" class="text_selector" >
+      <h3>Select Amendment</h3>
+      <p><select id="amendment_id" style="width: 100%;"></select></p>
+    </div>
+
+    <div id="motion_text_container" style="display:none">
+      <h3>Motion Text</h3>
+      <%= text_area_tag 'motion[text]', @motion.text, :class => "tinymce", :style => "width: 100%; height: 400px;" %>
+    </div>
+
+    <%= hidden_field_tag 'motion[referral_id]', @motion.referral_id %>
+  </div>
+  </div>
+
+  <div id="overview" class="right-column" style='float:right;width:750px'>
+    <div class="the-content">
+    <div class="alert-box" id="validation-box">
+      <h2 class="error">Error</h2>
+      <ul id="form-errors"></ul>
+    </div>
+
+    <h2>Vote Details</h2>
+
+    <p>
+      Start Vote At:<br />
+      <%= date_field_tag 'vote[start_at_date]', @vote.start_at.strftime("%F"), class: 'datetime' %>
+      <%= time_field_tag 'vote[start_at_time]', @vote.start_at.strftime("%R"), class: 'datetime' %>
+    </p>
+
+    <p>
+      Finish Vote At:<br />
+      <%= date_field_tag 'vote[finish_at_date]', @vote.finish_at.strftime("%F"), class: 'datetime' %>
+      <%= time_field_tag 'vote[finish_at_time]', @vote.finish_at.strftime("%R"), class: 'datetime' %>
+    </p>
+
+    <p>
+      Threshold for Passage:<br />
+      <%= select_tag 'vote[threshold]', options_for_select( [['Simple Majority','500'],['Three-Fifths Majority','600'],['Two-Thirds Majority','667'],['Unanimous Consent','1000']], @vote.threshold.to_s ), :style => "width: 100%;"  %>
+    </p>
+
+    <p>
+      <%= check_box_tag 'vote[absolute]', 1, @vote.absolute %>
+      Count Abstentions and Present Votes as "No" votes
+    </p>
+
+    <% if @current_chamber.setting('has_filibuster') %>
+      <p>
+        <%= check_box_tag 'motion[limited_debate]', 1, @motion.limited_debate %>
+        Debate has been limited by previous agreement
+      </p>
+    <% end %>
+
+    <%= f.hidden_field :record_type %>
+    <%= f.hidden_field :status %>
+    <div class='field field-submit'>
+      <%= f.submit "Schedule Vote", :size => "seventy", :class =>'btn blue-btn' %>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,42 @@
+<% if @proceeding_type == 'motion_to_proceed' %>
+
+  <h3>Motion to Proceed to the consideration of <%= @legislation.reference %></h3>
+
+<% elsif @proceeding_type == 'unanimous_consent_agreement' %>
+
+  <h3>Unanimous Consent to the consideration of <%= @legislation.reference %></h3>
+
+<% end %>
+
+Initial version for consideration:
+<ul>
+  <li><%= link_to "As Introduced in the #{@legislation.chamber.name}", legislation_path( @legislation ) %></li>
+  <% @legislation.referrals.committee.reported.each do |referral| %>
+    <li><%= link_to "As Reported by #{referral.group.name}", report_path( referral.report ) %></li>
+  <% end %>
+</ul>
+
+Time limit on debate:
+<ul>
+  <li>Unlimited</li>
+  <li>24 hours of online debate</li>
+  <li>20 minutes of in class debate</li>
+</ul>
+
+Amendments to be considered:
+<ul>
+  <li>Unlimited Amendments</li>
+  <li>No Amendments</li>
+  <% if @legislation.status == 'calendar' %>
+    <% @legislation.referrals.floor.last.amendments.each do |amendment| %>
+      <li><%= link_to amendment.title, amendment_path( amendment ) %> introduced by <%= link_to_user( amendment.sponsor ) %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+Vote to be held:
+<ul>
+  <li>Online over a period of 24 hours</li>
+  <li>In class</li>
+  <li>At the descrection of the <%= @legislation.chamber.floor.primary_group_leader.title %></li>
+<ul>

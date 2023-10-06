@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+#this controlls the message notification system start, stop, etc.
+
+#modeled after the patter described here
+#http://napkin.highgroove.com/articles/2008/05/21/running-background-jobs-in-ruby-on-rails-revisited
+
+#requires
+#sudo gem install daemons
+
+require 'rubygems'
+require 'daemons'
+
+# options = {}
+# ARGV.options do |opts|
+#
+#   opts.on( "-e", "--environment ENVIRONMENT", String,
+#            "The Rails Environment to run under." ) do |environment|
+#     options[:environment] = environment
+#   end
+#
+#   opts.parse!
+# end
+#
+# RAILS_ENV = options[:environment] || 'development'
+RAILS_ENV = 'production'
+
+Daemons.run(File.dirname(__FILE__) + '/../script/vote_server', :dir => '/data/legsim/shared/pids/', :dir_mode => :normal)

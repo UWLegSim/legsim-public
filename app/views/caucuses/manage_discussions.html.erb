@@ -1,0 +1,74 @@
+<% if @current_chamber_role.group_leader?( @caucus) %>
+<div class="left-column">
+  <div class="left-content">
+    <%= content('manage-caucus-discussions') %>
+
+    <h3>New Discussion</h3>
+    <%= form_for @caucus.discussions.new do |f| %>
+      <div class="field">
+        <%= f.label :name, "Title" %> 
+        <%= f.text_field :name, :style => 'width:93%' %>
+      </div>
+      <%= f.hidden_field :group_id %>
+      <div class="field field-submit">
+        <%= f.submit "Create New Discussion", :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+    <br />
+    <div class="field field-submit">
+    <%= link_button_to "Caucus Management", manage_caucus_path( @caucus ), :size => 'sixty', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <h2>Discussions</h2>
+
+  <% if @caucus.discussions.empty? %>
+    <p>There are no discussions for this caucus. You can start one by provided a title in the form below.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 100%" colspan="">Actions</th>
+        <th style="width: 100%"></th>
+      </tr>
+      <% @caucus.discussions.each do |discussion| %>
+        <tr>
+          <td><%= discussion.name %></td>
+          <td>
+            <% if discussion.private %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :private, :value => '0' %>
+                <%= f.submit "Make Public", :style => 'width:100%', :class => 'btn blue-btn' %>
+              <% end %>
+            <% else %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :private, :value => true %>
+                <%= f.submit "Make Private", :style => 'width:100%', :class => 'btn blue-btn' %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if discussion.open %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :open, :value => '0' %>
+                <%= f.submit "Close", :style => 'width:100%', :class => 'btn blue-btn' %>
+              <% end %>
+            <% else %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :open, :value => true %>
+                <%= f.submit "Reopen", :style => 'width:100%', :class => 'btn blue-btn' %>
+              <% end %>
+            <% end %>
+          </td>
+        <tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
+</div>
+<% else %>
+  Only the caucus leader can edit this page.
+<% end %>

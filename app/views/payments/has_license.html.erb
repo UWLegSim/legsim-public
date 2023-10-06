@@ -1,0 +1,19 @@
+<h1>You have already purchas a license!</h1>
+
+<% if @registered_user.confirmed? %>
+
+  <h2>You account is also already confirmed, so you are good to go!</h2>
+
+  <p>
+    If you are attempting to register because you have forgotten your password, please attempt to reset it. If that doesn't work, you can reach out to <a href="mailto:support@legsim.org">support@legsim.org</a> who can help get you back into your account.
+  </p>
+
+<% else %>
+
+<h2>We have just sent you a confirmation email with activation link. Please follow that link to complete your account setup.</h2>
+
+<p>
+  If you do not receive a confirmation email within the next 10 minutes, please check your spam folder as sometimes confirmation emails can be placed there. If you are still unable to location your confirmation email, please contact <a href="mailto:support@legsim.org">support@legsim.org</a> along with your <b>course name</b> and <b>email address</b> and we will be happy to assist in getting your situation resolved.
+</p>
+
+<% end %>

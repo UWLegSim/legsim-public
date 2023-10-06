@@ -1,0 +1,20 @@
+<div class="wide-form">
+  <div id="overview" class="left-column">
+    <div class="left-content">
+    <%= content('manage-content') %>
+
+    <%= link_to "Return to Content Management", admin_contents_path, :class => 'btn blue-btn' %>
+  </div>
+  </div><!--overview-->
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+    <%= form_for @content, :url => { :action => :create } do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <div class='field field-submit'>
+      <%= submit_tag 'Create Content', :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>

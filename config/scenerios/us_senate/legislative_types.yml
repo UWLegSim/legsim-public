@@ -1,0 +1,11 @@
+---
+legislative_types:
+  - name: Bill
+    abbr: S.
+    description: A bill authorizes the spening of money or chage of the law. Requires the approval of the President.
+  - name: Resolution
+    abbr: S.Res.
+    description: A resolution takes action within the chamber such as a rule change or expresses an non-binding opinion. Does not require Presidental approval.
+  - name: Joint Resolution
+    abbr: S.J.Res.
+    description: A joint resolution is used to amend the Constitution, requiring a 2/3rds majority in both chambers and 3/4ths of the States.

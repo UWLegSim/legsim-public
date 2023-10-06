@@ -1,0 +1,249 @@
+<h1>Welcome <%= @registered_user.name %>!</h1>
+
+<p>
+  This course requires a student payment of $<%= @payment[:amount] / 100 %> to complete your registration. Please provided the requested payment information below.
+</p>
+
+<style>
+  .checkout {
+    width: 270px;
+    margin: 50px auto;
+    padding: 15px;
+    background: #f3f6fa;
+    border: 1px solid;
+    border-color: #c2cadb #bbc5d6 #b7c0cd;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    font-family: "Lucida Grande", Verdana, sans-serif;
+  }
+  .checkout > p {
+    zoom: 1;
+  }
+  .checkout > p:before, .checkout > p:after {
+    content: '';
+    display: table;
+  }
+  .checkout > p:after {
+    clear: both;
+  }
+  .checkout > p + p {
+    margin-top: 15px;
+  }
+
+  .checkout-header {
+    position: relative;
+    margin: -15px -15px 15px;
+  }
+
+  .checkout-title {
+    padding: 0 15px;
+    line-height: 38px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #7f889e;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.7);
+    background: #eceff5;
+    border-bottom: 1px solid #c5ccdb;
+    border-radius: 7px 7px 0 0;
+    background-image: -webkit-linear-gradient(top, #f5f8fb, #e9edf3);
+    background-image: -moz-linear-gradient(top, #f5f8fb, #e9edf3);
+    background-image: -o-linear-gradient(top, #f5f8fb, #e9edf3);
+    background-image: linear-gradient(to bottom, #f5f8fb, #e9edf3);
+    -webkit-box-shadow: inset 0 1px white;
+    box-shadow: inset 0 1px white;
+  }
+  .checkout-title:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  .checkout-price {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 40px;
+    font: 14px/40px Helvetica, Arial, sans-serif;
+    color: white;
+    text-align: center;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
+    text-indent: -1px;
+    letter-spacing: -1px;
+    background: #e54930;
+    border: 1px solid;
+    border-color: #b33323 #ab3123 #982b1f;
+    border-radius: 21px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: -webkit-linear-gradient(top, #f75a3b, #d63b29);
+    background-image: -moz-linear-gradient(top, #f75a3b, #d63b29);
+    background-image: -o-linear-gradient(top, #f75a3b, #d63b29);
+    background-image: linear-gradient(to bottom, #f75a3b, #d63b29);
+    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  .checkout-price:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    border: 2px solid #f5f8fb;
+    border-radius: 18px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.25), 0 -1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.25), 0 -1px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  input {
+    margin: 0;
+    line-height: normal;
+    font-family: inherit;
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .checkout-input {
+    float: left;
+    padding: 0 7px;
+    height: 32px;
+    color: #525864;
+    background: white;
+    border: 1px solid;
+    border-color: #b3c0e2 #bcc5e2 #c0ccea;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, #f6f8fa, white);
+    background-image: -moz-linear-gradient(top, #f6f8fa, white);
+    background-image: -o-linear-gradient(top, #f6f8fa, white);
+    background-image: linear-gradient(to bottom, #f6f8fa, white);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
+  }
+  .checkout-input:focus {
+    border-color: #46aefe;
+    outline: none;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px #46aefe;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px #46aefe;
+  }
+  .lt-ie9 .checkout-input {
+    line-height: 30px;
+  }
+
+  .checkout-name {
+    width: 150px;
+  }
+
+  .checkout-card {
+    width: 210px;
+  }
+
+  .checkout-address1 {
+    width: 270px;
+  }
+
+  .checkout-zip {
+    margin-left: 15px;
+    width: 55px;
+  }
+
+  .checkout-city {
+    width: 120px;
+  }
+
+  .checkout-state {
+    margin-left: 15px;
+    width: 65px;
+  }
+
+  .checkout-exp,
+  .checkout-cvc {
+    margin-left: 15px;
+    width: 45px;
+  }
+
+  .checkout-error, .checkout-error:focus{
+    border-color: red;
+  }
+
+  .checkout-btn {
+    width: 100%;
+    height: 34px;
+    padding: 0;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid;
+    border-color: #1486f9 #0f7de9 #0d6acf;
+    background: #1993fb;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, #4cb1fe, #229afc 40%, #138df6);
+    background-image: -moz-linear-gradient(top, #4cb1fe, #229afc 40%, #138df6);
+    background-image: -o-linear-gradient(top, #4cb1fe, #229afc 40%, #138df6);
+    background-image: linear-gradient(to bottom, #4cb1fe, #229afc 40%, #138df6);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  .checkout-btn:active {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border-color: #075bba #0c69d2 #0f7de9;
+    background-image: -webkit-linear-gradient(top, #1281dc, #1593fc);
+    background-image: -moz-linear-gradient(top, #1281dc, #1593fc);
+    background-image: -o-linear-gradient(top, #1281dc, #1593fc);
+    background-image: linear-gradient(to bottom, #1281dc, #1593fc);
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px rgba(255, 255, 255, 0.5);
+  }
+</style>
+
+<%= form_tag "elavon_checkout", class:"checkout" do %>
+    <div class="checkout-header">
+      <h1 class="checkout-title">
+        Credit Card Payment
+        <span class="checkout-price">$<%= @payment[:amount] / 100 %></span>
+      </h1>
+    </div>
+    <p>
+      <%= text_field_tag 'payment[cc_name]', @payment[:name], class:"checkout-input checkout-name", placeholder:"Your name", autofocus: true, style:"cursor: auto;" %>
+      <%= text_field_tag 'payment[cc_exp_month]', @payment[:exp_month], class:"checkout-input checkout-exp", placeholder:"MM" %>
+      <%= text_field_tag 'payment[cc_exp_year]', @payment[:exp_year], class:"checkout-input checkout-exp", placeholder:"YY" %>
+    </p>
+    <%= payment_error_messages( @payment[:errors], :first_name,:last_name,:month,:year) %>
+    <p>
+      <%= text_field_tag 'payment[cc_number]', @payment[:number], class:"checkout-input checkout-card", placeholder:"4111 1111 1111 1111" %>
+      <%= text_field_tag 'payment[cc_cvc]', @payment[:verification_value], class:"checkout-input checkout-cvc", placeholder:"CVC" %>
+    </p>
+    <%= payment_error_messages( @payment[:errors], :number, :verification_value) %>
+
+    <hr />
+
+    <h3>Billing Address</h3>
+
+    <p>
+      <%= text_field_tag 'payment[cc_address1]', @payment[:address1], class:"checkout-input checkout-address1", placeholder:"Street Address" %>
+    </p>
+
+    <p>
+      <%= text_field_tag 'payment[cc_city]', @payment[:city], class:"checkout-input checkout-city", placeholder:"City" %>
+      <%= select_tag 'payment[cc_state]', options_for_select(us_states, @payment[:state]), include_blank:"State", class:"checkout-input checkout-state" %>
+      <%= text_field_tag 'payment[cc_zip]', @payment[:zip], class:"checkout-input checkout-zip", placeholder:"Zip" %>
+    </p>
+
+    <% if @payment[:errors][:message] %>
+      <p><%= @payment[:errors][:message] %></p>
+    <% end %>
+
+    <p>
+      <input type="submit" name="commit" value="Purchase" class="checkout-btn">
+    </p>
+  <% end %>

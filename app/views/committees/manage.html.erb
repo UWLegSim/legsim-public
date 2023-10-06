@@ -1,0 +1,84 @@
+<% if @current_chamber_role.group_leader?( @committee ) %>
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <!-- <a href="http://youtu.be/H2U0dguktb0"><%= image_tag '/assets/img/video-camera.png', :alt => 'Committee Chair Video Tutorial', :title => 'Committee Chair Video Tutorial' %></a><br/> -->
+  <%= content('manage-committee') %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+
+  <div class="the-content">
+    <% if @committee.setting('can_draft_special_rule') %>
+      <div class='field'>
+        <%= link_to 'Draft Special Rule', draft_special_rule_committee_path(@committee) %>
+      </div>
+    <% end %>
+
+    <div class='field'>
+    <%= link_to 'Share information about the committee', manage_info_committee_path(@committee) %>
+    </div>
+
+  <div>
+  <h2> Manage Referred bills </h2>
+  </br>
+  <p> A committee does not have to consider a bill. If it chooses to do so, the following steps are required
+    in order to succesfully report (recommended) a bill to the full chamber. </p>
+  </br>
+  <p> Step 1: <%= link_to 'Open a hearing on the bill', manage_referrals_committee_path(@committee) %>
+    (so that members can discuss and propose committee amendments) </p>
+
+    <p> Step 2: <%= link_to 'Draft a committee report', manage_referrals_committee_path(@committee) %>
+      that includes the committee’s assessment and recommended changes. </p>
+
+      <p> Step 3:
+          <% if @current_chamber.setting("has_#{@committee.type.underscore}_voting") %>
+          <%= link_to 'Schedule votes on proposed committee amendments', manage_votes_committee_path(@committee) %>
+         (or enter previous vote results). </p>
+         <% end %>
+      <!-- ASK - if statement below.  -->
+
+      <p> Step 4:
+        <% if @current_chamber.setting("has_#{@committee.type.underscore}_voting") %>
+        <%= link_to 'Schedule a vote to adopt the drafted committee report ', manage_votes_committee_path(@committee) %>
+       (or enter previous vote results). </p>
+       <% end %>
+
+     </br>
+       <p> If the committee adopts the report, the bill is automatically referred to the chamber leader’s desk.
+         However, when a bill is referred to more than one committee, all committees must first report it. </p>
+
+      <p> The chair can also choose to <%= link_to 'open non-legislative hearings', manage_discussions_committee_path(@committee) %>
+        that are not related to a particular bill. For example, sometimes committees
+        develop legislation within committee and introduce the result as a new “clean” bill. </p>
+
+  </div>
+
+
+<!--
+    <div class='field'>
+      <%= link_to 'Manage Committee Information', manage_info_committee_path(@committee) %>
+    </div>
+
+    <div class='field'>
+      <%= link_to 'Convene Hearings and Prepare Reports', manage_referrals_committee_path(@committee) %>
+    </div>
+
+    <div class='field'>
+      <%= link_to 'Convene Non-Legislative Hearings', manage_discussions_committee_path(@committee) %>
+    </div>
+
+    <% if @current_chamber.setting("has_#{@committee.type.underscore}_voting") %>
+      <div class='field'>
+        <%= link_to 'Schedule Markup Votes and Motions to Report', manage_votes_committee_path(@committee) %>
+      </div>
+    <% end %> -->
+
+    <div class='field field-submit'>
+      <%= link_button_to "Return to Committee", committee_path( @committee ), :size => 'hundred', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+</div>
+<% else %>
+  You are not this committee's chair, you are not allowed to access this information.
+<% end %>

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta name="description" content="Legislative Simulation" />
+  <meta name="copyright" content="(c) Copyright 2015 LegSim" />
+  <meta name="revisit-after" content="1 day" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Welcome to LegSim: The Interactive Simulation of the Legislative Process</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= favicon_link_tag asset_path('favicon.ico') %>
+  <%= stylesheet_link_tag "new/new" %>
+  <%= javascript_include_tag "application" %>
+
+  <script src="https://cdn.tiny.cloud/1/nrtd3b4g3miq710s088b1rz5x12kyniz9h8jsxql2nu7qnis/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    tinymce.init({
+      selector:'textarea.tinymce',
+      menubar: 'edit',
+      plugins: 'paste',
+      paste_block_drop: true
+    });
+  </script>
+
+  <!--Updated JS and CSS-->
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- Art Assets for Bill Cards -->
+  <!--  
+  <link href="/new/styles/bills.css" rel='stylesheet'/>
+  <link href="/new/styles/style.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  -->
+  <!-- Old Stuff  
+  <link type="text/css" href="/utility/ui/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/utility/css/screen.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/utility/css/print.css" type="text/css" media="print" /> -->
+<!--  <script type="text/javascript" src="/new/js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="/new/js/plugins.js"></script>
+   <script type="text/javascript" src="/new/js/jquery.selectBox.js"></script> -->
+  <!--Moved script to below because there were issues having it here
+  <script type="text/javascript" src="/new/js/main.js"></script>
+  -->
+  <!-- More Old Stuff
+  unbake this javascript, to make the size smaller-->
+  <!--<script type="text/javascript" src="/utility/scripts/ui.core.js"></script> -->
+  <!--Custom script is important as well
+  this is all rather kludge, but it works for now-->
+  <!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/utility/scripts/jquery.validate.js"></script>
+
+  <script type="text/javascript" src="/utility/scripts/ui.core.js"></script>
+  <script type="text/javascript" src="/utility/scripts/ui.expander.js"></script> -->
+
+  <!--These three scripts are currently needed to keep the release js working. Look into fixing this dependency-->
+<!--
+  <script type="text/javascript" src="/utility/ui/js/jquery-ui-1.7.2.custom.min.js"></script>
+  <script type="text/javascript" src="/utility/scripts/ui.tabs.js"></script>
+  <script type="text/javascript" src="/utility/tiny_mce/jquery.tinymce.js"></script>
+  -->
+  <!--end three necessary scripts-->
+  <%#= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+  <%#= javascript_include_tag "/utility/scripts/application.js" %>
+</head>
+
+<body class="profile-page">
+  <div class="main-wrapper">
+    <header>
+        <div class="top-block">
+          <div class="wrapper">
+
+          <div class="logo-wrap">
+          <div class="logo"></div>
+          LegSim: <%= @current_chamber.name %>
+            <a class="div-link" href="/home" title="Home"></a>
+          </div>
+
+            <div class="menu">
+              <span>
+              <%= link_to_user( @current_chamber_role ) %> (<%= link_to( "Log Out", destroy_user_session_path, method: :delete ) %><% if @previous_user %> | <%= link_to( "Release", release_user_path, method: :delete ) %><% end %>)
+              </span>
+              <span>
+                <a href="/home">Home</a>
+              </span>
+              <span>
+                <a href="/tutorials">Tutorials</a>
+              </span>
+              <span>
+                <a href="/instructions">Instruction</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      <div class="bigmenu">
+        <div class="wrapper">
+        <div class="bm-item">
+          <%= image_tag 'new/Icons/Main Navigation/svg/members.svg', class:"icon svg" %>
+          <div class="title">Members</div>
+        </div>
+
+        <div class="bm-item">
+          <%= image_tag 'new/Icons/Main Navigation/svg/organizations.svg', class:"icon svg" %>
+          <div class="title">Organizations</div>
+        </div>
+
+        <div class="bm-item">
+          <%= image_tag 'new/Icons/Main Navigation/svg/clerk.svg', class:"icon svg" %>
+          <div class="title">Clerk</div>
+        </div>
+
+        <div class="bm-item">
+          <%= image_tag 'new/Icons/Main Navigation/svg/committees.svg', class:"icon svg" %>
+          <div class="title">Committees</div>
+        </div>
+
+        <div class="bm-item">
+          <%= image_tag 'new/Icons/Main Navigation/svg/floor.svg', class:"icon svg" %>
+          <div class="title">Floor</div>
+        </div>
+
+        <div class="bm-item">
+          <%= image_tag 'new/Icons/Main Navigation/svg/white_house.svg', class:"icon svg" %>
+          <div class="title">White House</div>
+        </div>
+
+        </div><!--wrapper-->
+      </div>
+
+      <div class="submenu">
+        <div class="wrapper">
+          <div class="sm-wrapper" id="members">
+            <div class="sm-item-pic">
+              <a href="/members"><%= image_tag 'new/seats.png' %></a>
+            </div>
+          </div>
+
+        <div class="sm-wrapper" id="organizations">
+          <div class="sm-item ListCaucuses">
+            <div class="icon"></div>
+            <div class="title">List All Caucuses</div>
+            <a href="/caucuses" class="div-link"></a>
+          </div>
+
+          <div class="sm-item ListParties">
+          <div class="icon"></div>
+            <div class="title">List All Parties</div>
+            <a href="/parties" class="div-link"></a>
+          </div>
+
+          <div class="sm-item AddCaucus">
+            <div class="icon"></div>
+            <div class="title">Create a New Caucus</div>
+            <a href="/caucuses/new" class="div-link"></a>
+          </div>
+
+          <div class="sm-item AddParty">
+            <div class="icon"></div>
+            <div class="title">Create a New Party</div>
+            <a href="/parties/new" class="div-link"></a>
+          </div>
+        </div>
+
+        <div class="sm-wrapper" id="clerk">
+        <div class="sm-item search">
+        <div class="icon"></div>
+        <div class="title">Search Legislation</div>
+        <a href="/legislation/search" class="div-link"></a>
+        </div>
+        <div class="sm-item browse">
+        <div class="icon"></div>
+        <div class="title">Browse Legislation</div>
+        <a href="/legislation/" class="div-link"></a>
+        </div>
+        <div class="sm-item submit">
+        <div class="icon"></div>
+        <div class="title">Submit Legislation</div>
+        <a href="/legislation/new" class="div-link"></a>
+        </div>
+        <div class="sm-item chamber">
+        <div class="icon"></div>
+        <div class="title">Chamber Leadership</div>
+        <a href="/leadership_nominations" class="div-link"></a>
+        </div>
+        <!--You need to do some code that can handle legislative holds, fillibusters!-->
+        </div>
+        
+        <div class="sm-wrapper" id="committees">
+          <div class="sm-item floor">
+            <div class="icon"></div>
+            <div class="title">Committee Directory</div>
+            <a href='/committees/' class='div-link'></a>
+          </div>
+          <div class="sm-item floor">
+            <div class="icon"></div>
+            <div class="title">Committee Requests</div>
+              <a href='/committees/membership_requests' class='div-link'></a>
+          </div>
+        <% @current_chamber.committees.each do |committee| %>
+          <% if @current_chamber_role.group_member? ( committee ) %>
+          <div class="sm-item floor">
+            <div class="icon"></div>
+            <div class="title"><%= committee.name %></div>
+            <a href="/committees/<%= committee.id %>" class="div-link"></a>
+          </div>
+          <% else %>
+          <% end %>
+        <% end %>
+        </div>
+
+        <div class="sm-wrapper" id="floor">
+          <div class="sm-item floor">
+            <div class="icon"></div>
+            <div class="title">Floor</div>
+            <a href="/floors/<%= @current_chamber.floor.id %>" class="div-link"></a>
+          </div>
+
+          <div class="sm-item leaders_desk">
+            <div class="icon"></div>
+            <div class="title">Leader’s Desk</div>
+            <a href="/chambers/<%= @current_chamber.id%>/manage" class="div-link"></a>
+          </div>
+
+          <div class="sm-item calendar">
+            <div class="icon"></div>
+            <div class="title">Calendar</div>
+            <a href="/calendars" class="div-link"></a>
+          </div>
+
+          <div class="sm-item previous_votes">
+            <div class="icon"></div>
+            <div class="title">Previous Votes</div>
+            <a href="/groups/<%= @current_chamber.floor.id %>/votes" class="div-link"></a>
+          </div>
+
+          <% if @current_chamber.setting('has_hold') %>
+            <div class="sm-item holds">
+              <div class="icon"></div>
+              <div class="title">Legislative Holds</div>
+              <%= link_to "", holds_calendars_path, style: "text-decoration:none;color:#FFF", class:"div-link" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="sm-wrapper" id="whitehouse">
+        <div class="sm-item-pic">
+
+        <% if @current_chamber.setting('has_executive') == 'Unitary' or @current_chamber.setting('has_executive') == 'Multiple' %>
+          <div id="nav_<%= @current_chamber.setting('executive_building').parameterize(separator: '_') %>">
+          <% @current_chamber.chamber_roles.each do |f| %>
+            <% if f.type == 'Executive'%>
+              <% @exec_id = f.id %>
+            <% end %>
+          <% end %>
+          <a href="/executives/<%= @exec_id %>" title="<%= @current_chamber.setting('executive_building') %>"><%= image_tag 'new/wh_icon.png' %></a><!--<ul>
+          <li><a href="/" title="">Link</a></li></ul>--></div>
+        <% end %>
+        </div>
+        </div>
+        </div>
+        <br/>
+      </div>
+      <!--BRead crumbs might need to be forced into content until a better solution can be groked-->
+      <div class="breadcrumbs">
+        <div class="wrapper">
+          <div class="bc-holder" style='font-size: 28px'>
+            <a class="breadcrumb"><%= @page_title %></a>
+            <span class="delimeter">&gt;</span>
+            
+            <% if @page_description %>
+              <a class="breadcrumb"><%= @page_description %></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+    	<div class='wrapper'>
+    	<!--This bad boy is the alert box and is kinda important -->
+      <% if flash[:error] or flash[:alert] or flash[:notice] or flash[:attention] or flash[:info]%>
+	      <div class="alert-box">
+
+          <% [:error,:alert,:attention,:notice,:info].each do |type| %>
+
+            <% if flash[type] %>
+              <h2 class="<%= type.to_s %>"><%= type.to_s.titleize %></h2>
+              <% if flash[type].is_a?(Array) %>
+                <ul>
+                  <% flash[type].each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              <% else %>
+                <p><%= flash[type] %></p>
+              <% end %>
+            <% end %>
+          <% end %>
+
+	        <% flash[:error] = flash[:notice] = flash[:attention] = flash[:info] = nil %>
+	      </div>
+	    <% end %>
+      <div class="columns-wrap">
+        
+        <%= yield %>
+      </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrapper">
+        <div class="copy">© 2001 – 2020 University of Washington</div>
+        <ul class="fmenu">
+          <% if @current_chamber_role.can_administrate? %>
+            <li><a href="/admin" title="Administration">Administration</a></li>
+          <% end %>
+          <!-- <li><a href="/help">Help</a></li> -->
+          <li><a href="mailto:support@legsim.org">Support Desk</a></li>
+        </ul>
+      </div>
+  </footer>
+</body>
+</html>

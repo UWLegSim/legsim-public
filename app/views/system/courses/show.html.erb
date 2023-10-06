@@ -1,0 +1,64 @@
+<div id="overview">
+
+  <h1><%= @course.name %></h1>
+  <h3><%= @course.institution.name %></h3>
+
+  <table>
+    <tr><th>Status</th><th><%= @course.status.titleize %></th></tr>
+    <tr><th>Created</th><td><%= @course.created_at.to_s(:short_with_year) %></td></tr>
+    <tr><th>Start Date</th><td><%= @course.start_at.to_s(:short_with_year) %></td></tr>
+    <tr><th>Finish Date</th><td><%= @course.finish_at.to_s(:short_with_year) %></td></tr>
+    <tr><th>Archive Date</th><td><%= @course.archive_at.to_s(:short_with_year) %></td></tr>
+    <tr><th>Email</th><th><%= mail_to @course.email %></th></tr>
+    <tr><th>Payment Option</th><td><%= @course.payment_option %></td></tr>
+    <tr><th>Timezone</th><th><%= @course.time_zone %></th></tr>
+  </table>
+
+  <%= link_button_to "Edit Course", edit_system_course_path( @course ), :size => 'forty' %><br /><br />
+
+  <% if @course.status == 'archive' %>
+    <%= link_button_to "Return to Course Archive", archives_system_courses_path, :size => 'eighty' %>
+  <% else %>
+    <%= link_button_to "Return to Course Management", system_courses_path, :size => 'eighty' %>
+  <% end %>
+
+</div>
+
+<div id="details">
+
+  <div id="active_courses" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">Chambers <span class="parenthesis">(<%= @course.chambers.count %> chambers)</span></a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th>Chamber</th>
+          <th style=" text-align: center;">Members</th>
+          <th>Created</th>
+          <th></th>
+        </tr>
+        <% @course.chambers.each do |chamber| %>
+          <tr>
+            <td style="border-bottom-width: 0px;"><%= chamber.name %></td>
+            <td style="border-bottom-width: 0px; text-align: center;"><%= chamber.members.count %></td>
+            <td style="border-bottom-width: 0px;"><%= chamber.created_at.to_s(:short_with_year) %></td>
+            <td style="border-bottom-width: 0px;"><%= link_to( 'manage', [:system,@course,chamber] ) %></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <ul style="margin-bottom: 0px">
+                <% chamber.authorization_codes.each do |authorization_code| %>
+                  <li><b><%= authorization_code.chamber_role_type %> Code</b>: <%= authorization_code.code %></li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+  <%= link_button_to "Create New Chamber", new_system_course_chamber_path( @course ), :size => 'sixty' %>
+
+</div>

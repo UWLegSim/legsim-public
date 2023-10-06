@@ -1,0 +1,207 @@
+/* boxes.css */
+
+
+
+/*  MEMBERDESK */
+
+/*  my office */
+
+#overview #office {
+    }
+
+#overview #office .office-photo,
+#overview #office .office-topline {
+    float: left;
+    }
+
+#overview #office .office-photo {
+    width: 115px;
+    }
+
+    #overview #office .office -photo img { width: 100px; }
+
+#overview #office .office-topline {
+    width: 213px;
+    }
+
+#overview #office .office-topline h2 {
+    margin: 0;
+    }
+
+#overview #office .office-topline table,
+#overview #office .office-topline th,
+#overview #office .office-topline td {
+    margin: 0;
+    }
+
+#overview #office .office-topline th,
+#overview #office .office-topline td {
+    padding: 9px 0 0 0;
+    line-height: 14px;
+    }
+
+#overview #office .office-topline th {
+    padding-right: 10px;
+    }
+
+
+
+/*  BILL */
+
+/*  topline */
+
+.topline p  {
+    margin: 0 0 5px 0;
+    }
+
+.vote-status  {
+    margin-top: 10px;
+    padding: 7px 10px;
+    color: #f2f2f2;
+    font-size: 14px;
+    }
+
+.vote-status strong {
+    text-transform: uppercase;
+    }
+
+.vote-status .small-link {
+    float: right;
+    padding-top: 3px;
+    }
+
+.vote-status .small-link a {
+    color: white;
+    }
+
+
+/*  vote status bars */
+
+.vote-status.draft  {
+    background: #ad6600;
+    }
+
+
+.vote-status.introduced  {
+    background: #d7b100;
+    }
+
+.vote-status.referred {
+    background: #00af1d;
+    }
+
+.vote-status.calendar  {
+    background: #7f7f7f;
+    }
+
+.vote-status.passed  {
+    background: #2789e4;
+    }
+
+.vote-status.failed  {
+    background: #d13030;
+    }
+
+.vote-status.vetoed  {
+    background: #ad6600;
+    }
+
+.vote-status.law  {
+    background: #8800bf;
+    }
+
+
+/* MAILBOX */
+
+#mailbox tbody td { font-size: 11px; vertical-align: top; }
+#mailbox td.email-subject { font-weight: bold; padding: 7px 14px;}
+
+
+
+/* ALERT BOX */
+
+.alert-box {
+    background: #024683;
+    padding: 15px 15px 1px 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #d2f0ff;
+    }
+
+
+.alert-box h2 {
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 24px;
+    text-transform: uppercase;
+    }
+
+.alert-box h2.error { background: url(<%= image_path 'icon-error.png' %>) no-repeat -1px -1px; }
+.alert-box h2.attention { background: url(<%= image_path 'icon-attention.png' %>) no-repeat -1px -1px; }
+.alert-box h2.alert { background: url(<%= image_path 'icon-attention.png' %>) no-repeat -1px -1px; }
+.alert-box h2.information { background: url(<%= image_path 'icon-information.png' %>) no-repeat -1px -1px; }
+.alert-box h2.notice { background: url(<%= image_path 'icon-notice.png' %>) no-repeat -1px -1px; }
+
+
+.alert-box h2.separator {
+    border-top: 1px dotted #d2f0ff;
+    padding-top: 15px;
+    }
+
+.alert-box h2.alert.separator,
+.alert-box h2.error.separator,
+.alert-box h2.attention.separator,
+.alert-box h2.information.separator,
+.alert-box h2.notice.separator { background-position: -1px 14px; }
+
+.alert-box ul {
+    padding-left: 24px;
+    margin-bottom: 15px;
+    }
+
+
+
+/* LEGISLATION */
+
+#legislation tbody td a { font-weight: bold; }
+
+#legislation tbody td { padding-left: 22px; }
+
+#legislation tbody td.introduced {
+    background: url(/assets/images/status-introduced.png) no-repeat left 8px;
+    }
+
+#legislation tbody td.referred {
+    background: url(/assets/images/status-referred.png) no-repeat left 8px;
+    }
+
+#legislation tbody td.calendar {
+    background: url(/assets/images/status-calendar.png) no-repeat left 8px;
+    }
+
+#legislation tbody td.passed {
+    background: url(/assets/images/status-passed.png) no-repeat left 8px;
+    }
+
+#legislation tbody td.failed {
+    background: url(/assets/images/status-failed.png) no-repeat left 8px;
+    }
+
+#legislation tbody td.vetoed {
+    background: url(/assets/images/status-vetoed.png) no-repeat left 8px;
+    }
+
+#legislation tbody td.law {
+    background: url(/assets/images/status-law.png) no-repeat left 8px;
+    }
+
+#legislation .legend thead th { padding: 15px 0 0 0; border: none;}
+
+#legislation .legend tbody td { border: none;}
+
+
+
+
+

@@ -1,0 +1,55 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('admin-settings') %>
+  <%= link_button_to "Return to Administration", admin_path, :size => 'seventy', :class => 'btn blue-btn'  %><br />
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= form_for :settings, :url => { :action => 'mass_update' } do |f| %>
+
+    <table>
+      <tr>
+        <th style="width: 100%;">Setting</th>
+        <th style="width: 100%;">Value</th>
+        <th style="width: 100%;">Scenario Default</th>
+      </tr>
+      <% @default_settings.each do |default_setting| %>
+        <tr>
+          <td><%= default_setting['title'] %></td>
+          <td>
+            <% case default_setting['type']
+              when 'string'  %>
+                <%= text_field_tag "settings[#{default_setting['name']}]", @chamber.setting(default_setting['name']), :style => 'outline: none;border: 0 none;height: 24px;color: #000;background-color: #DEDEDE;font-size: 16px;padding: 8px 12px;width: 80%;max-width: 576px;' %>
+              <% when 'select'  %>
+                <%= select_tag "settings[#{default_setting['name']}]", options_for_select( default_setting['options'], @chamber.setting(default_setting['name']) ), :style => 'width: 90%;' %>
+              <% when 'binary'  %>
+                <%= select_tag "settings[#{default_setting['name']}]", options_for_select( [['True','true'],['False','false']], @chamber.setting(default_setting['name']) ? 'true' : 'false'), :style => 'width: 90%;' %>
+            <% end %>
+          </td>
+          <td>
+            <% if default_setting['type'] == 'binary' %>
+              <%= default_setting['default'] ? 'True' : 'False' %>
+            <% else %>
+              <%= default_setting['default'] %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <!--Non-table based css wasn't co-operating-->
+    <table>
+      <tr>
+        <td>
+          <%= f.submit "Save Settings", :size => 'ninety', :class => 'btn blue-btn' %>
+        </td>
+        <td>
+          <%= f.submit "Restore Settings", :size => 'ninety', :class => 'btn blue-btn' %>
+        </td>
+      </tr>
+    </table>
+
+  <% end %>
+</div>
+</div>

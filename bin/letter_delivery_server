@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+#the logic for sending message notification emails
+
+#modeled after the patter described here
+#http://napkin.highgroove.com/articles/2008/05/21/running-background-jobs-in-ruby-on-rails-revisited
+
+#requires
+#sudo gem install daemons
+
+require 'net/smtp'
+require File.dirname(__FILE__) + '/../config/environment.rb'
+log = Logger.new( File.dirname(__FILE__) + '/../log/letter_delivery_server.log' )
+
+#how often should we check if notifications should be sent in seconds?
+CHECK_INTERVAL = 60
+
+loop do
+
+  Course.active.each do |course|
+
+    Time.zone = course.time_zone
+
+    course.chambers.each do |chamber|
+
+      #get all letters without notification
+      pending_letters = Letter.includes(:letter_user_recipients).where("notified = ? AND chamber_id = ?", false, chamber.id)
+
+      pending_letters.each do |pending_letter|
+        #for each recipient send an email letting them know "you've got mail!"
+        pending_letter.letter_user_recipients.each do |letter_user_recipient|
+          begin
+            letter_user_recipient.deliver
+          rescue => e
+            log.error( e.message )
+          end
+        end
+
+        #mark these messages as notified
+        pending_letter.notified = true
+        pending_letter.save
+      end
+
+    end
+
+  end
+
+  sleep(CHECK_INTERVAL)
+end

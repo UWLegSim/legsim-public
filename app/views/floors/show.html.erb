@@ -1,0 +1,24 @@
+
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <%= content('floor-information') %>
+
+    <% if @floor.public_announcement %>
+      <h2>Public Announcements</h2>
+      <%= sanitize @floor.public_announcement, attributes: ['style'] %>
+    <% end %>
+
+    <% if @floor.private_announcement and @current_chamber_role.group_member?( @floor ) %>
+      <h2>Member's Only Announcements</h2>
+      <%= sanitize @floor.private_announcement, attributes: ['style'] %>
+    <% end %>
+  </div>
+</div>
+
+<div class="right-column">
+  <div class="the-content">
+    <%= render(:partial => 'votes/group_votes', :locals => { :group => @floor } ) %>
+
+    <%= render(:partial => 'legislation/floor_referrals', :locals => { :group => @floor } ) %>
+  </div>
+</div>

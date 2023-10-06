@@ -1,0 +1,16 @@
+<% if @current_chamber_role.group_leader?( @party ) %>
+<div id="details" class="right-column">
+	<div class="the-content">
+<h1>Edit Party</h1>
+
+<%= form_for @party do |f| %>
+  <%= render(:partial => 'form', :locals => { :f => f } ) %>
+  <div class="field field-submit">
+  	<%= submit_tag 'Update Party', :class => 'btn blue-btn' %>
+  </div>
+<% end %>
+	</div>
+</div>
+<% else %>
+	Only the party chair can edit this page.
+<% end %>

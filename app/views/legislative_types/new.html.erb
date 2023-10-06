@@ -1,0 +1,8 @@
+<h1>New Legislative Type</h1>
+
+<%= form_for @legislative_type do |f| %>
+  <%= render(:partial => 'form', :locals => { :f => f } ) %>
+  <div class='field field-submit'>
+  	  <%= submit_tag 'Create Legislative Type', :class => 'btn blue-btn' %>
+  </div>
+<% end %>

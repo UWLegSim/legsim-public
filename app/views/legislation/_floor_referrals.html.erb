@@ -1,0 +1,100 @@
+<% if group.referrals.floor.count > 0 %>
+  <div id="referrals" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Floor Referrals <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+    <table cellspacing="0">
+      <tbody>
+
+        <% unless group.referrals.rules.hearing.empty? %>
+          <tr>
+            <th colspan="4"><b>Special Rules</b></th>
+          </tr>
+          <% group.referrals.rules.hearing.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <%= link_to "Floor Page", referral_path( referral ) %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        <% unless group.referrals.special.empty? %>
+          <tr>
+            <th colspan="4"><b>Legislation by Special Rule</b></th>
+          </tr>
+          <% group.referrals.special.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <%= link_to "Floor Page", referral_path( referral ) %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        <% unless group.referrals.consent.empty? %>
+          <tr>
+            <th colspan="4"><b>Legislation by Consent</b></th>
+          </tr>
+          <% group.referrals.consent.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <%= link_to "Floor Page", referral_path( referral ) %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        <% unless group.referrals.floor.hearing.empty? %>
+          <tr>
+            <th colspan="4"><b>Floor Debates</b></th>
+          </tr>
+          <% group.referrals.floor.hearing.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <%= link_to "Floor Page", referral_path( referral ) %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        <% unless group.referrals.floor.pending.empty? %>
+          <tr>
+            <th colspan="4"><b>Pending Floor Debates</b></th>
+          </tr>
+          <% group.referrals.floor.pending.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <%= link_to "Floor Page", referral_path( referral ) %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+      </tbody>
+    </table>
+    <table cellspacing="0" class="legend">
+      <thead>
+          <tr>
+            <th colspan="4">Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="pending">Pending</td>
+            <td class="hearing">Hearing</td>
+            <td class="reported">Reported</td>
+            <td class="tabled">Tabled</td>
+          </tr>
+      </tbody>
+    </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->
+<% end %>

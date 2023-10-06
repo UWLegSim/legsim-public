@@ -1,0 +1,11 @@
+<h1>Letter</h1>
+
+<p>
+  <% @letters.each do |letter| %>
+    <%= link_to "show", letter_path( letter ) %> :
+    <%= letter.subject %>
+    <br />
+  <% end %>
+</p>
+
+<p><%= link_to "Create New Letter", new_letter_path %><br /></p>

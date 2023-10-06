@@ -1,0 +1,25 @@
+<h1>Chamber: <%= @chamber.title %></h1>
+
+<%= form_for @chamber, :url => { :action => :create_referrals } do |f| %>
+
+  <h3>Submitted Legislation</h3>
+
+  <% @chamber.submitted_legislation.each do |legislation| %>
+    <%= check_box_tag 'legislation_ids[]', legislation.id %><%= legislation.title %><br />
+  <% end %>
+
+  <h3>Referred Legislation</h3>
+
+  <% @chamber.referred_legislation.each do |legislation| %>
+    <%= check_box_tag 'legislation_ids[]', legislation.id %><%= legislation.title %><br />
+  <% end %>
+
+
+  Refer marked legislation to:
+  <%= select_tag 'group_id', options_for_select( @chamber.committees.collect{|g| [g.title,g.id]} ) %><br />
+
+  <%= submit_tag 'Refer Legislation' %>
+
+<% end %>
+
+<%= link_to "Chamber Administration", admin_chamber_path( @chamber ) %>

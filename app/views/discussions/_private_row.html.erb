@@ -1,0 +1,10 @@
+<tr>
+  <td><%= link_to discussion.name, discussion %></td>
+  <% if discussion.last_comment %>
+    <td><%= link_to_user( discussion.last_comment.chamber_role )%> commented <%= distance_of_time_in_words_to_now(discussion.last_comment.created_at) %> ago</td>
+    <td class="center"><%= discussion.comments_count %></td>
+  <% else %>
+    <td><%= link_to_user( discussion.creator )%> started <%= distance_of_time_in_words_to_now(discussion.created_at) %> ago</td>
+    <td class="center">0</td>
+  <% end %>
+</tr>

@@ -1,0 +1,43 @@
+<div class="vote clearfix">
+
+  <div class="seal <%= vote.status %>">
+  </div>
+  <!--seal failed-->
+
+  <div class="topline">
+    <h2>Vote on Motion Regarding <%= link_to vote.referral.legislation.reference, legislation_path( vote.referral.legislation ) %></h2>
+    <br/>
+    <p><strong style='color:#AA321E'>Type:</strong> <%= vote.motion.action.titleize %></p>
+    <p><strong style='color:#AA321E'>Starts:</strong> <%= vote.start_at.to_s(:long_with_time) %></p>
+    <p><strong style='color:#AA321E'>Concludes:</strong> <%= vote.finish_at.to_s(:long_with_time) %></p>
+    <p><strong style='color:#AA321E'>Vote Threshold:</strong> <%= vote.threshold_to_text %></p>
+
+    <div class="vote-status <%= vote.status_class %> clearfix">
+      <% if vote.status == 'pending' %>
+        <strong>Pending</strong>
+      <% elsif vote.status == 'in_progress' %>
+        <strong>In Progress</strong>
+        <%= vote.yes_tally %> Yes / <%= vote.no_tally %> No / <%= vote.present_tally %> Present
+      <% elsif vote.status == 'filibuster' %>
+        <strong>Filibuster</strong>
+      <% elsif vote.status == 'terminated' %>
+        <strong>Terminated</strong>
+      <% elsif vote.status == 'finished' %>
+        <% if vote.record_type == 'voice_vote' %>
+          <strong><%= vote.outcome.titleize %> by Voice Vote</strong>
+        <% else %>
+          <strong><%= vote.outcome.titleize %>:</strong>
+          <%= vote.yes_tally %> Yes /
+          <%= vote.no_tally %> No /
+          <%= vote.present_tally %> Present
+        <% end %>
+      <% end %>
+      <% if type == 'motion' %>
+        <div class="small-link"><%= link_to "Motion Text", motion_path( vote.motion ) %></div>
+      <% else %>
+        <div class="small-link"><%= link_to "Vote Detail", vote_path( vote ) %></div>
+      <% end %>
+    </div><!--vote-status-->
+  </div><!--topline-->
+
+</div><!--legislation-->

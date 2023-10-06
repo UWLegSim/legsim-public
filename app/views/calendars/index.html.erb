@@ -1,0 +1,40 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('info-calendar') %>
+  </div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <div class="tabs">
+      <ul class="clearfix">
+        <% @calendars.each do |calendar| %>
+          <li><a href="#tab-calendar-<%= calendar.id %>"><%= calendar.name %> (<%= calendar.calendar_referrals.count %>)</a></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <% @calendars.each do |calendar| %>
+
+    <!-- set s1 keeps track of the shown legislations to avoid duplicate bill bug -->
+    <% s1 = Set.new %>
+      <div class="panel" id="tab-calendar-<%= calendar.id %>">
+
+        <%= sanitize calendar.description, attributes: ['style'] %>
+
+        <% if calendar.referrals.includes( :legislation ).empty? %>
+          <h2>There is no legislation on this calendar</h2>
+        <% else %>
+          <% calendar.referrals.each do |referral| %>
+
+            <% if !s1.include?(referral.legislation) %>
+              <%= render(:partial => 'legislation/box', :locals => { :legislation => referral.legislation, :short => true } ) %>
+              <%  s1.add(referral.legislation) %>
+            <%  end%>
+          <% end %>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+</div><!--details-->

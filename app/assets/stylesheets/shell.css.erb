@@ -1,0 +1,261 @@
+/* --------------------------------------------------------------
+   shell.css
+-------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Serifa';
+  src: url(<%= asset_path "SerifaStd-Roman.eot?#iefix" %>) format("embedded-opentype"),
+       url(<%= asset_path "SerifaStd-Roman.otf" %>) format("opentype"),
+       url(<%= asset_path "SerifaStd-Roman.woff" %>) format("woff"),
+       url(<%= asset_path "SerifaStd-Roman.ttf" %>) format("truetype"),
+       url(<%= asset_path "SerifaStd-Roman.svg#SerifaStd-Roman" %>) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    margin:0;
+    background: #f5f8fb url(<%= image_path 'tile.png' %>) repeat-x center top;
+    font-family: 'Serifa', sans-serif;
+    color: #0067c6;
+
+    }
+.LogOnContent{
+  font-size: 120% !important;
+  align-items: center !important;
+}
+#infoLink{
+  font-size: 80%;
+}
+#loginfooter {
+  font-size: 120% !important;
+}
+
+select {
+    font: inherit;
+}
+input {
+  font: inherit;
+}
+
+#newButton .button .submit{
+  font-size: 80% !important;
+}
+  #remindButton .button .submit{
+    font-size: 80% !important;
+  }
+/*newButton  .button .left .right a, .button .left .right  {
+  font-size: 50% !important;
+}*/
+
+/* Site Widths */
+
+
+#header, #nav{
+    width: 962px;
+    margin: auto;
+    }
+
+#wrapper, #footer {
+    width: 958px;
+    margin: auto;
+    }
+
+
+
+/* Header styles */
+
+#header, #loginheader {
+    height: 120px;
+    _overflow: hidden;
+    background: url(<%= image_path 'legsimicon.svg' %>) no-repeat 200px top;
+    color: #ffff
+    }
+
+#logo, #logo a {
+    float: left;
+    width: 275px;
+    height: 120px;
+    }
+
+#logo a {
+    background: url(<%= image_path 'newlogo.png' %>) no-repeat 19px 0px;
+    _background: url(<%= image_path 'logo-ie.png' %>) no-repeat 19px 34px;
+    display: block;
+    }
+
+#logo a span { display: none; }
+
+
+#chamber, #chamber a {
+    float: left;
+    width: 350px;
+    height: 96px;
+    }
+
+#chamber a.system_administration {
+    background: url(<%= image_path 'system-administration.png' %>) no-repeat left 46px;
+    _background: url(<%= image_path 'system-administration.png' %>) no-repeat left 46px;
+    display: block;
+    }
+
+
+#chamber a.us_house_of_representatives {
+    background: url(<%= image_path 'house-of-representatives.png' %>) no-repeat left 46px;
+    _background: url(<%= image_path 'house-of-representatives-ie.png' %>) no-repeat left 46px;
+    display: block;
+    }
+
+#chamber a.us_senate {
+    background: url(<%= image_path 'united-states-senate.png' %>) no-repeat left 46px;
+    _background: url(<%= image_path 'united-states-senate-ie.png' %>) no-repeat left 46px;
+    display: block;
+    }
+
+#chamber a span { display: none; }
+
+
+
+/* Container Styles */
+
+#container {
+    margin: auto;
+    background: url(<%= image_path 'container.png' %>) repeat-y center top;
+    width: 100%;
+    min-height: 500px;
+    _height: 500px;
+    }
+
+
+
+/* Wrapper Styles */
+
+#wrapper, #loginwrapper {
+    background: url(<%= image_path 'wrapper.png' %>) repeat-y center top;
+    min-height: 400px;
+    _height: 400px;
+    text-align: left;
+    }
+
+
+/* -- ID BAR  -- */
+
+
+#id, #loginid {
+    padding: 17px 19px;
+    text-align: left;
+    background: url(<%= image_path 'id.png' %>) repeat-x left bottom;
+    }
+
+#id #breadcrumbs {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    }
+
+#id h1 {
+    margin: 0;
+    padding: 0;
+    }
+
+#id h1 .explanation {
+    font-size: 14px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #bfbfbf;
+    }
+
+
+
+
+
+
+/* Columns
+-------------------------------------------------------------- */
+
+#overview, #details, #overview-comments, #details-comments, #committee-assignments {
+   float: left;
+   overflow: hidden;
+   text-align: left;
+   min-height: 400px;
+   }
+
+#overview {
+   width: 360px;
+   margin: 0 20px 0 0;
+   }
+
+#details {
+   width: 540px;
+   }
+
+#overview-comments {
+   width: 430px;
+   margin: 0 20px 0 0;
+   }
+
+#details-comments {
+   width: 400px;
+   }
+#committee-assignments {
+   width:400px;
+   }
+
+
+.pad, .loginpad { padding: 20px 19px; }
+
+
+
+
+
+/* Misc classes and elements
+-------------------------------------------------------------- */
+
+.title a span, .title span {display: none;}
+
+.divider {
+    background: url(<%= image_path 'divider.png' %>) no-repeat left 30px;
+    width: 637px;
+    height: 63px;
+    }
+
+
+/* Use this to create a horizontal ruler across a column. */
+hr {
+  background: #ddd;
+  color: #ddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: .1em;
+  margin: 0 0 1.45em;
+  border: none;
+}
+
+hr.space {
+  background: #fff;
+  color: #fff;
+}
+
+
+/* Clearing floats without extra markup
+   Based on How To Clear Floats Without Structural Markup by PiE
+   [http://www.positioniseverything.net/easyclearing.html] */
+
+.clearfix:after, .container:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix, .container {display: inline-block;}
+* html .clearfix,
+* html .container {height: 1%;}
+.clearfix, .container {display: block;}
+
+/* Regular clearing
+   apply to column that should drop below previous ones. */
+
+.clear { clear:both; }

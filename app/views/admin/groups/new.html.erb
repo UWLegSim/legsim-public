@@ -1,0 +1,27 @@
+<div class="wide-form">
+
+  <div id="overview" class="left-column">
+    <div class="left-content">
+    <%=
+      case @group_type
+        when 'Party'     then content('edit-party')
+        when 'Caucus'    then content('edit-caucus')
+        when 'Committee' then content('edit-committee')
+      end
+    %>
+
+    <%= link_button_to 'Administration', admin_path, :size => 'hundred' %>
+</div>
+  </div><!--overview-->
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+    <%= form_for @group do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <%= hidden_field_tag :group_type, @group_type %>
+      <%= submit_tag("Create #{@group_type}") %>
+    <% end %>
+  </div>
+  </div><!--details-->
+
+</div>

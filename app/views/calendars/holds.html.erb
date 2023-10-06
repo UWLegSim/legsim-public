@@ -1,0 +1,71 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('legislative-holds') %>
+
+  <h2>Place a Legislative Hold</h2>
+
+  <%= form_for :place_hold, :url => { :action => :place_hold } do |f| %>
+    <%= select_tag 'referral_id', options_for_select( @holdable_referrals.collect{|r| [r.legislation.short_title,r.id]} ), :style => "width: 100%;" %><br /><br />
+    <div class='field field-submit'>
+      <%= f.submit "Place Hold", :size => 'forty', :class => 'btn blue-btn' %>
+    </div>
+  <% end %>
+  </div>
+</div>
+<div id="details" class="right-column">
+  <div class="the-content">
+    <h2>My Holds</h2>
+
+    <% if @current_chamber_role.holds.includes(:legislation).empty? %>
+      <p>You have no current holds.</p>
+    <% else %>
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 300px">Title</th>
+          <th style="width: 100px; text-align: center">Total Holds</h2>
+          <th style="width: 140px; text-align: center">Actions</th>
+        </tr>
+        <% @current_chamber_role.holds.each do |hold| %>
+          <% if hold.legislation.nil? %>
+          <% else %>
+            <tr>
+              <td><%= hold.legislation.title %></td>
+              <td style="text-align: center;"><%= hold.referral.holds.count %></td>
+              <td>
+                <%= form_for :remove_hold, :url => { :action => :remove_hold } do |f| %>
+                  <%= hidden_field_tag :hold_id, hold.id %>
+                  <%= f.submit "Remove Hold", :size => 'hundred', :class => 'btn blue-btn' %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    <% end %>
+
+    <h2>Current Holds</h2>
+
+    <% if @holdable_referrals.empty? %>
+
+      There is no legislation currently eligable to be placed on hold.
+
+    <% else %>
+
+      <table style="width: 100%">
+        <tr>
+          <th style="width: 300px">Title</th>
+          <th style="width: 140px; text-align: center">Placed on the Calendar</th>
+          <th style="width: 100px; text-align: center">Total Holds</h2>
+        </tr>
+        <% @holdable_referrals.each do |referral| %>
+          <tr>
+            <td><%= referral.legislation.title %></td>
+            <td style="text-align: center;"><%= distance_of_time_in_words_to_now(referral.created_at) %> ago</td>
+            <td style="text-align: center;"><%= referral.holds.count %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <div id="office" class="clearfix">
+
+            <div class="profile-wrap">
+      <% if @member.photo.attached? %>
+        <%= image_tag @member.photo.variant(resize_to_fill: [150, 150]), :alt => @member.title, :title => @member.title, :class => "profile-pic" %>
+      <% else %>
+        <%= image_tag '/assets/silhouette.png', :alt => @member.title, :title => @member.title, :class => "profile-pic" %>
+      <% end %>
+      
+      <div class="name"><%= @member.name%></div>
+      
+      <div class="address">
+        <% if @member.constituency.nil? %>
+        <% else %>
+          <%= @member.constituency.title %>
+        <% end %>
+      </div>
+      <div class="mail"><a href="mailto:<%= @member.email %>"><%= @member.email %></a></div>
+      </div>
+
+    <br />
+
+    <div id="tab-container" class="tab-container">
+      <ul class='etabs'>
+        <li class='tab'><a href="#views">Views</a></li>
+        <li class='tab'><a href="#posts">Posts</a></li>
+      </ul>
+
+      <div id="views">
+        <table cellspacing="0">
+          <tr>
+            <th style="padding-right:1em">Date Span</th>
+            <th>Count</th>
+          </tr>
+          <% @member.views_by_week.each do |week| %>
+            <tr>
+              <td style="padding-right:1em; text-align:center"><%= week[:week] %></td>
+              <td style="text-align:center"><%= week[:count] %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+
+      <div id="posts">
+        <table cellspacing="0">
+          <tr>
+            <th style="padding-right:1em">Date Span</th>
+            <th>Count</th>
+          </tr>
+          <% @member.posts_by_week.each do |week| %>
+            <tr>
+              <td style="padding-right:1em;text-align:center"><%= week[:week] %></td>
+              <td style="text-align:center"><%= week[:count] %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div><!--overview--></div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <div>
+      <table cellspacing="0" style="margin-top:0em">
+          <tr>
+            <th>Sponsored Legislation</th>
+            <th>Introduced At</th>
+          </tr>
+          <% @member.sponsored_legislation.each do |legislation| %>
+            <tr>
+              <td><%= link_to_legislation( legislation ) %></td>
+              <td><%= legislation.created_at.to_s(:long) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Cosponsored Legislation</th>
+            <th>Cosponsored At</th>
+          </tr>
+          <% @member.cosponsorship.includes(:legislation).each do |cosponsorship| %>
+            <tr>
+              <td><%= link_to_legislation( cosponsorship.legislation ) %></td>
+              <td><%= cosponsorship.created_at.to_s(:long) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Group Membership</th>
+            <th>Joined At</th>
+          </tr>
+          <% @member.group_memberships.includes(:group).each do |group_membership| %>
+            <tr>
+              <td><%= link_to_group( group_membership.group ) %></td>
+              <td><%= group_membership.created_at.to_s(:long) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Sent Dear Colleagues</th>
+            <th>Sent At</th>
+          </tr>
+          <% @member.sent_letters.each do |letter| %>
+            <tr>
+              <td><%= link_to letter.subject, letter_path( letter ) %></td>
+              <td><%= letter.created_at.to_s(:long) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Discussion Comments</th>
+            <th>Posted At</th>
+          </tr>
+          <% @member.comments.includes( :discussion ).each do |comment| %>
+            <tr>
+              <td><%= link_to comment.discussion.title, discussion_path( comment.discussion ) %></td>
+              <td><%= comment.created_at.to_s(:long) %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Votes</th>
+            <th>Posted At</th>
+          </tr>
+          <% @member.ballots.voted.includes( :vote ).each do |ballot| %>
+            <tr>
+              <td><%= link_to ballot.vote.motion.title, vote_path( ballot.vote ) %></td>
+              <td><%= ballot.created_at.to_s(:long) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!--legislation-->
+  </div>
+</div><!--details-->
+

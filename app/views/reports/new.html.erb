@@ -1,0 +1,20 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <% if @report.referral.group.is_committee? %>
+      <%= content('draft-committee-report') %>
+    <% else %>
+      <%= content('draft-organization-report') %>
+    <% end %>
+  </div>
+  </div>
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+    <%= form_for @report, :url => referral_reports_path( @report.referral ) do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <div class='field field-submit'>
+        <%= f.submit 'Submit Draft Report', :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

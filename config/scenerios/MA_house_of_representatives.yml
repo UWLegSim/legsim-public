@@ -1,0 +1,478 @@
+---
+chamber_settings:
+  - name:    member_title
+    title:   Member Title
+    default: Representative
+    type:    string
+  - name:    member_title_abbr
+    title:   Member Title Abbreviation
+    default: Rep.
+    type:    string
+  - name:    chamber_leader_title
+    title:   Chamber Leader Title
+    default: Speaker
+    type:    string
+  - name:    has_executive
+    title:   Executive
+    default: Unitary
+    type:    select
+    options:
+      - None
+      - Unitary
+      - Multiple
+  - name:    executive_title
+    title:   Executive Title
+    default: President
+    type:    string
+  - name:    executive_title_abbr
+    title:   Executive Title Abbreviation
+    default: Pres.
+    type:    string
+  - name:    executive_building
+    title:   Executive Building
+    default: White House
+    type:    select
+    options:
+      - White House
+      - Mansion
+  - name:    has_regular_order
+    title:   Regular Order
+    type:    binary
+    default: true
+  - name:    has_committee_voting
+    title:   Committee Voting
+    type:    binary
+    default: true
+  - name:    has_caucus_voting
+    title:   Caucus Voting
+    type:    binary
+    default: true
+  - name:    has_party_voting
+    title:   Party Voting
+    type:    binary
+    default: true
+  - name:    has_special_rules
+    title:   Special Rules
+    type:    binary
+    default: true
+  - name:    has_filibuster
+    title:   Filibuster
+    type:    binary
+    default:
+  - name:    has_hold
+    title:   Holds
+    type:    binary
+    default:
+  - name:    email_dear_colleague
+    title:   Email Dear Colleague
+    type:    binary
+    default: true
+
+special_settings:
+  rules_committee: "Committee on Rules"
+  rules_legislation_type: "Resolution"
+
+legislative_types:
+  - name: Bill
+    abbr: H.R.
+    description: A bill authorizes the spening of money or chage of the law. Requires the approval of the President.
+  - name: Resolution
+    abbr: H.Res.
+    description: A resolution takes action within the chamber such as a rule change or expresses an non-binding opinion. Does not require Presidental approval.
+  - name: Joint Resolution
+    abbr: H.J.Res.
+    description: A joint resolution is used to amend the Constitution, requiring a 2/3rds majority in both chambers and 3/4ths of the States.
+
+parties:
+  - name: Democratic Party
+    abbr: D
+    jurisdiction_description: The Democratic Party is committed to keeping our nation safe and expanding opportunity for every American.  That commitment is reflected in an agenda that emphasizes the security of our nation, strong economic growth, affordable health care for all Americans, retirement security, honest government, and civil rights.
+  - name: Republican Party
+    abbr: R
+    jurisdiction_description: The Republican Party focuses on ensuring that America remains safe, terrorists are defeated, and democracy flourishes in the world; on expanding opportunities for ownership and investment; on making tax relief permanent and ensuring greater energy independence; on increasing the affordability and accessibility of health care; on promoting works of compassion and strengthening our greatest values; on preparing students for success in life by bringing the benefits of education reform to high schools; and on helping workers adjust to a changing economy by offering flexible training options that meet their individual needs.
+  - name: Independent Party
+    abbr: I
+    jurisdiction_description: Not technically a formal party, the Independent Party is an organization for members who do not identify with any of the existing party organizations.
+
+committees:
+  - name: Committee on Agriculture
+    abbr: AG
+    jurisdiction_description: Agricultural production and research, Food safety and Child nutrition, Rural development, Water conservation.
+  - name: Committee on Appropriations
+    abbr: APPROP
+    jurisdiction_description: Appropriation of revenues for the support of government programs.
+  - name: Committee on Armed Services
+    abbr: ARMSER
+    jurisdiction_description: Defense generally, Petroleum reserves, Intelligence.
+  - name: Committee on Education and Labor
+    abbr: EDU
+    jurisdiction_description: Labor generally, Worker training, Education programs generally.
+  - name: Committee on Energy and Commerce
+    abbr: ENRGY
+    jurisdiction_description: Energy generally, Interstate commerce, Health including Medicaid and SCHIP (unless supported by payroll deductions), Consumer affairs, Travel and tourism.
+  - name: Committee on Financial Services
+    abbr: FS
+    jurisdiction_description: Banking, Insurance, Intl Finance, Securities, Housing and Urban development.
+  - name: Committee on Oversight & Government Reform
+    abbr: OGR
+    jurisdiction_description: Civil service, D.C., Post Office, Government organization and accountability, Census, Official holidays.
+  - name: Committee on Homeland Security
+    abbr: HMS
+    jurisdiction_description: Overall homeland security policy, Border security, Customs, Transportation security, Domestic preparedness, Information.
+  - name: Committee on Foreign Affairs
+    abbr: FA
+    jurisdiction_description: Foreign relations, Export controls, Loans, International organizations, Interventions and declarations of war.
+  - name: Committee on the Judiciary
+    abbr: JUD
+    jurisdiction_description: Civil and criminal proceedings, Apportionment, Constitutional issues, Immigration, Prisons, Patents, Monopolies, Subversive activities.
+  - name: Committee on Natural Resources
+    abbr: NR
+    jurisdiction_description: Fisheries and wildlife, Forest reserves and national parks, Intl fishing agreements, Irrigation, Native Americans, Mining and minerals, Trans-Alaska Pipeline.
+  - name: Committee on Rules
+    abbr: RULE
+    jurisdiction_description: Rules and the order of business of the House.
+  - name: Committee on Science & Technology
+    abbr: SCI
+    jurisdiction_description: Science, Energy research and development, Environmental research, Space, Civil Aviation, Weights and measures.
+  - name: Committee on Small Business
+    abbr: SBUS
+    jurisdiction_description: Assistance to and protection of small business.
+  - name: Committee on Transportation and Infrastructure
+    abbr: TRANS
+    jurisdiction_description: Transportation generally, Coast Guard, FEMA, Navigation, Flood Control, Public Buildings, Hydroelectric power.
+  - name: Committee on Veterans' Affairs
+    abbr: VA
+    jurisdiction_description: Veterans generally.
+  - name: Committee on Ways and Means
+    abbr: W&M
+    jurisdiction_description: Taxes generally, Customs revenue, trade agreements, territories, tax exempt foundations, Social Security programs including income security and Medicare (funded by payroll deductions).
+
+survey_questions:
+  - question: Government regulations usually do more good than harm.
+  - question: The federal government, more than the state governments, threatens our personal rights and freedoms.
+  - question: All Americans deserve access to affordable health care, even if it means higher costs for those who can afford it.
+  - question: Preventing terrorist attacks is more important than privacy.
+  - question: We can usually trust our elected representatives in Washington D.C. to do the right thing.
+
+constituencies:
+
+  - abbr: MA01
+    name: Massachusetts 1
+  - abbr: MA02
+    name: Massachusetts 2
+  - abbr: MA03
+    name: Massachusetts 3
+  - abbr: MA04
+    name: Massachusetts 4
+  - abbr: MA05
+    name: Massachusetts 5
+  - abbr: MA06
+    name: Massachusetts 6
+  - abbr: MA07
+    name: Massachusetts 7
+  - abbr: MA08
+    name: Massachusetts 8
+  - abbr: MA09
+    name: Massachusetts 9
+  - abbr: MA10
+    name: Massachusetts 10
+  - abbr: MA11
+    name: Massachusetts 11
+  - abbr: MA12
+    name: Massachusetts 12
+  - abbr: MA13
+    name: Massachusetts 13
+  - abbr: MA14
+    name: Massachusetts 14
+  - abbr: MA15
+    name: Massachusetts 15
+  - abbr: MA16
+    name: Massachusetts 16
+  - abbr: MA17
+    name: Massachusetts 17
+  - abbr: MA18
+    name: Massachusetts 18
+  - abbr: MA09
+    name: Massachusetts 19
+  - abbr: MA20
+    name: Massachusetts 20
+  - abbr: MA21
+    name: Massachusetts 21
+  - abbr: MA22
+    name: Massachusetts 22
+  - abbr: MA23
+    name: Massachusetts 23
+  - abbr: MA24
+    name: Massachusetts 24
+  - abbr: MA25
+    name: Massachusetts 25
+  - abbr: MA26
+    name: Massachusetts 26
+  - abbr: MA27
+    name: Massachusetts 27
+  - abbr: MA28
+    name: Massachusetts 28
+  - abbr: MA29
+    name: Massachusetts 29
+  - abbr: MA30
+    name: Massachusetts 30
+  - abbr: MA31
+    name: Massachusetts 31
+  - abbr: MA32
+    name: Massachusetts 32
+  - abbr: MA33
+    name: Massachusetts 33
+  - abbr: MA34
+    name: Massachusetts 34
+  - abbr: MA35
+    name: Massachusetts 35
+  - abbr: MA36
+    name: Massachusetts 36
+  - abbr: MA37
+    name: Massachusetts 37
+  - abbr: MA38
+    name: Massachusetts 38
+  - abbr: MA39
+    name: Massachusetts 39
+  - abbr: MA40
+    name: Massachusetts 40
+  - abbr: MA41
+    name: Massachusetts 41
+  - abbr: MA42
+    name: Massachusetts 42
+  - abbr: MA43
+    name: Massachusetts 43
+  - abbr: MA44
+    name: Massachusetts 44
+  - abbr: MA45
+    name: Massachusetts 45
+  - abbr: MA46
+    name: Massachusetts 46
+  - abbr: MA47
+    name: Massachusetts 47
+  - abbr: MA48
+    name: Massachusetts 48
+  - abbr: MA49
+    name: Massachusetts 49
+  - abbr: MA50
+    name: Massachusetts 50
+  - abbr: MA51
+    name: Massachusetts 51
+  - abbr: MA52
+    name: Massachusetts 52
+  - abbr: MA53
+    name: Massachusetts 53
+  - abbr: MA54
+    name: Massachusetts 54
+  - abbr: MA55
+    name: Massachusetts 55
+  - abbr: MA56
+    name: Massachusetts 56
+  - abbr: MA57
+    name: Massachusetts 57
+  - abbr: MA58
+    name: Massachusetts 58
+  - abbr: MA59
+    name: Massachusetts 59
+  - abbr: MA50
+    name: Massachusetts 60
+  - abbr: MA61
+    name: Massachusetts 61
+  - abbr: MA62
+    name: Massachusetts 62
+  - abbr: MA63
+    name: Massachusetts 63
+  - abbr: MA64
+    name: Massachusetts 64
+  - abbr: MA65
+    name: Massachusetts 65
+  - abbr: MA66
+    name: Massachusetts 66
+  - abbr: MA67
+    name: Massachusetts 67
+  - abbr: MA68
+    name: Massachusetts 68
+  - abbr: MA69
+    name: Massachusetts 69
+  - abbr: MA70
+    name: Massachusetts 70
+  - abbr: MA71
+    name: Massachusetts 71
+  - abbr: MA72
+    name: Massachusetts 72
+  - abbr: MA73
+    name: Massachusetts 73
+  - abbr: MA74
+    name: Massachusetts 74
+  - abbr: MA75
+    name: Massachusetts 75
+  - abbr: MA76
+    name: Massachusetts 76
+  - abbr: MA77
+    name: Massachusetts 77
+  - abbr: MA78
+    name: Massachusetts 78
+  - abbr: MA79
+    name: Massachusetts 79
+  - abbr: MA80
+    name: Massachusetts 80
+  - abbr: MA81
+    name: Massachusetts 81
+  - abbr: MA82
+    name: Massachusetts 82
+  - abbr: MA83
+    name: Massachusetts 83
+  - abbr: MA84
+    name: Massachusetts 84
+  - abbr: MA85
+    name: Massachusetts 85
+  - abbr: MA86
+    name: Massachusetts 86
+  - abbr: MA87
+    name: Massachusetts 87
+  - abbr: MA88
+    name: Massachusetts 88
+  - abbr: MA89
+    name: Massachusetts 89
+  - abbr: MA90
+    name: Massachusetts 90
+  - abbr: MA91
+    name: Massachusetts 91
+  - abbr: MA92
+    name: Massachusetts 92
+  - abbr: MA93
+    name: Massachusetts 93
+  - abbr: MA94
+    name: Massachusetts 94
+  - abbr: MA95
+    name: Massachusetts 95
+  - abbr: MA96
+    name: Massachusetts 96
+  - abbr: MA97
+    name: Massachusetts 97
+  - abbr: MA98
+    name: Massachusetts 98
+  - abbr: MA99
+    name: Massachusetts 99
+  - abbr: MA100
+    name: Massachusetts 101
+  - abbr: MA101
+    name: Massachusetts 101
+  - abbr: MA102
+    name: Massachusetts 102
+  - abbr: MA103
+    name: Massachusetts 103
+  - abbr: MA104
+    name: Massachusetts 104
+  - abbr: MA105
+    name: Massachusetts 105
+  - abbr: MA106
+    name: Massachusetts 106
+  - abbr: MA107
+    name: Massachusetts 107
+  - abbr: MA108
+    name: Massachusetts 108
+  - abbr: MA109
+    name: Massachusetts 109
+  - abbr: MA110
+    name: Massachusetts 110
+  - abbr: MA111
+    name: Massachusetts 111
+  - abbr: MA112
+    name: Massachusetts 112
+  - abbr: MA113
+    name: Massachusetts 113
+  - abbr: MA114
+    name: Massachusetts 114
+  - abbr: MA115
+    name: Massachusetts 115
+  - abbr: MA116
+    name: Massachusetts 116
+  - abbr: MA117
+    name: Massachusetts 117
+  - abbr: MA118
+    name: Massachusetts 118
+  - abbr: MA119
+    name: Massachusetts 119
+  - abbr: MA120
+    name: Massachusetts 120
+  - abbr: MA121
+    name: Massachusetts 121
+  - abbr: MA122
+    name: Massachusetts 122
+  - abbr: MA123
+    name: Massachusetts 123
+  - abbr: MA124
+    name: Massachusetts 124
+  - abbr: MA125
+    name: Massachusetts 125
+  - abbr: MA126
+    name: Massachusetts 126
+  - abbr: MA127
+    name: Massachusetts 127
+  - abbr: MA128
+    name: Massachusetts 128
+  - abbr: MA129
+    name: Massachusetts 129
+  - abbr: MA130
+    name: Massachusetts 130
+  - abbr: MA131
+    name: Massachusetts 131
+  - abbr: MA132
+    name: Massachusetts 132
+  - abbr: MA133
+    name: Massachusetts 133
+  - abbr: MA134
+    name: Massachusetts 134
+  - abbr: MA135
+    name: Massachusetts 135
+  - abbr: MA136
+    name: Massachusetts 136
+  - abbr: MA137
+    name: Massachusetts 137
+  - abbr: MA138
+    name: Massachusetts 138
+  - abbr: MA139
+    name: Massachusetts 139
+  - abbr: MA140
+    name: Massachusetts 140
+  - abbr: MA141
+    name: Massachusetts 141
+  - abbr: MA142
+    name: Massachusetts 142
+  - abbr: MA143
+    name: Massachusetts 143
+  - abbr: MA144
+    name: Massachusetts 144
+  - abbr: MA145
+    name: Massachusetts 145
+  - abbr: MA146
+    name: Massachusetts 146
+  - abbr: MA147
+    name: Massachusetts 147
+  - abbr: MA148
+    name: Massachusetts 148
+  - abbr: MA149
+    name: Massachusetts 149
+  - abbr: MA150
+    name: Massachusetts 150
+  - abbr: MA151
+    name: Massachusetts 151
+  - abbr: MA152
+    name: Massachusetts 152
+  - abbr: MA153
+    name: Massachusetts 153
+  - abbr: MA154
+    name: Massachusetts 154
+  - abbr: MA155
+    name: Massachusetts 155
+  - abbr: MA156
+    name: Massachusetts 156
+  - abbr: MA157
+    name: Massachusetts 157
+  - abbr: MA158
+    name: Massachusetts 158
+  - abbr: MA159
+    name: Massachusetts 159
+  - abbr: MA160
+    name: Massachusetts 160

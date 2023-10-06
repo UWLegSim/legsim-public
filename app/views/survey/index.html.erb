@@ -1,0 +1,28 @@
+
+<div id="overview">
+	Here is where you can interact with other members in your chamber through surveys. It is a nice way to figure out opinions about various policy issues.
+	The comments are all made anonmyously, but remember that the responses will be visible to the whole chamber and abusive comments can and probably will be removed by your course instructor.
+</div>
+<div id="details">
+
+
+
+	<%= render(:partial => 'form', :locals => { :chamber_role => @member, :group_id => @current_chamber.floor.id } ) %>
+
+	<!--
+	Set-up this page/form box for trial balloons into different categories
+	Chamber(floor) trial balloons
+	Caucus(parties and otherwise) trial balloons
+	this differentiation will be handled by context which will be the chamber id and group id
+	both given when creating a new survey.
+	-->
+	<% @controller.get_surveys.each do | f | %>
+	
+		<%= f['topic'] %>
+		<a href="https://pol.is/<%= f['conversation_id']%>" target="_blank"><%= f['topic'] %></a>
+		<a href="<%= f['mod_url']%>" target="_blank">Moderation</a>
+		<br />
+
+	<% end %>
+
+</div>

@@ -1,0 +1,94 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <%= button_to "Delete Party", admin_party_path( @party ), :method => :delete, :size => 'seventy', :confirm => "Are you sure you want to delete this party?", :class => 'btn blue-btn' %><br />
+
+    <%= link_button_to 'Return to Party Administration', admin_parties_path, :size => 'hundred', :class => 'btn blue-btn' %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= link_button_to "Download Party Statistics", download_stats_admin_party_path( @party ), :size => 'seventy', :class => 'btn blue-btn' %><br />
+
+  <%= form_for :update_leadership, :url => update_leadership_admin_party_path( @party ), :html => { :method => :put } do |f| %>
+
+    <div id="party_leadership" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Leadership</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th>Position</th>
+            <th style="width: 250px">Member</th>
+          </tr>
+          <tr>
+            <td><%= @party.primary_group_leader_title %></td>
+            <td><%= select_tag "primary_leader", options_for_select( @party.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => @party.primary_leader ? @party.primary_leader.id : 0} ), :class => "input", :style => "width: 100%;" %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class='field field-submit' style="float:right">
+    <%= f.submit "Update Leadership", :size => 'seventy', :class => 'btn blue-btn' %></div>
+  <% end %><br /><br />
+
+  <%= form_for :add_members, :url => remove_members_admin_party_path( @party ), :html => { :method => :put } do |f| %>
+    <div id="party_members" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Members</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th style="width: 370px">Name</th>
+            <th style="width: 100px; text-align: center">Selected</th>
+            <th style="width: 370px">Name</th>
+            <th style="width: 100px; text-align: center">Selected</th>
+          </tr>
+          <% @party.membership.each do |member| %>
+            <%= cycle("<tr>".html_safe, "", :name => "start_row") -%>
+              <td><%= link_to_user( member ) %></td>
+              <td class="center"><%= check_box_tag 'chamber_role_ids[]', member.id %></td>
+            <%= cycle("", "<tr>", :name => "end_row") -%>
+          <% end %>
+          <% reset_cycle("start_row") -%>
+          <% reset_cycle("end_row") -%>
+        </table>
+      </div>
+    </div>
+
+    <div class='field field-submit' style="float:right">
+    <%= f.submit "Remove Selected Members", :size => 'seventy', :class => 'btn blue-btn' %></div>
+  <% end %><br /><br />
+
+  <%= form_for :remove_members, :url => add_members_admin_party_path( @party ), :html => { :method => :put } do |f| %>
+    <div id="party_outsiders" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Unassigned Members</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th style="width: 370px">Name</th>
+            <th style="width: 100px; text-align: center">Selected</th>
+            <th style="width: 370px">Name</th>
+            <th style="width: 100px; text-align: center">Selected</th>
+          </tr>
+          <% @party.unassigned_chamber_roles.each do |member| %>
+            <%= cycle("<tr>".html_safe, "", :name => "start_row") -%>
+              <td><%= link_to_user( member ) %></td>
+              <td class="center"><%= check_box_tag 'chamber_role_ids[]', member.id %></td>
+            <%= cycle("","<tr>".html_safe, :name => "end_row") -%>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div class='field field-submit' style="float:right">
+    <%= f.submit "Add Selected Members", :size => 'seventy', :class => 'btn blue-btn' %></div>
+  <% end %>
+
+</div>
+</div>

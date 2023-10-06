@@ -1,0 +1,23 @@
+<div class="left-column">
+  <div class="left-content">
+    <%= render "legislation/box", legislation: @motion.legislation %>
+
+    <% if @motion.vote %>
+      <%= render "votes/box", vote: @motion.vote, type: 'vote' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="right-column">
+  <div class="the-content">
+    <% if @motion.vote %>
+      <% if @motion.vote.chamber.setting('has_filibuster') %>
+        <%= render '/motions/debate_status', :motion => @motion %>
+      <% end %>
+  <% end %>
+
+  <h2>Motion by <%= link_to_user( @motion.chamber_role ) %> - <%= @motion.action.titleize %></h2>
+
+  <%= sanitize @motion.text, attributes: ['style'] %>
+  </div>
+</div>

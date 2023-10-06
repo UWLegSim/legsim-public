@@ -1,0 +1,6 @@
+---
+chamber_settings:
+- name: member_title
+  value: Sen.
+- name: chamber_leader_title
+  value: Majority Leader

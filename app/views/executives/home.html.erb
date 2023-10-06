@@ -1,0 +1,38 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <div id="office" class="clearfix">
+      <div class="office-photo">
+        <% if @executive.photo.attached? %>
+          <%= image_tag @executive.photo.variant(resize_to_fill: [150, 150]), :alt => @executive.title, :title => @executive.title %>
+        <% else %>
+          <%= image_tag '/assets/silhouette.png', :alt => @executive.title, :title => @executive.title %>
+        <% end %>
+      </div><!--office-photo-->
+
+      <div class="office-topline">
+        <h2><%= @executive.name %></h2>
+
+        <table cellspacing="0">
+          <tr>
+            <th>Email</th>
+            <td><a href="mailto:<%= @executive.email %>"><%= @executive.email %></a></td>
+          </tr>
+        </table>
+
+        <div class="small-link"><%= link_to "Edit Profile", edit_executive_path( @executive, :class => 'btn blue-btn' ) %> : <%= link_to "View Public Profile", executive_path( @executive, :class => 'btn blue-btn' ) %></div>
+      </div><!--office-topline-->
+    </div><!--office-->
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= render(:partial => 'letters/mailbox', :locals => { :chamber_role => @executive } ) %>
+  <%= form_tag executives_path do-%>
+
+  <%= render(:partial => 'legislation/executive_role_box', :locals => { :chamber => @current_chamber} ) %>
+
+  <% end %>
+  </div>
+</div>
+

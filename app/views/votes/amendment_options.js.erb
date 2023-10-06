@@ -1,0 +1,5 @@
+<option value="">--</option>
+<% @referral.amendments.each do |amendment| -%>
+  <option value="<%= amendment.id %>"><%= amendment.title_with_sponsor %></option>
+<% end -%>
+<option value="blank">Draft New Amendment Text</option>

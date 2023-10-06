@@ -1,0 +1,20 @@
+<div class="wide-form">
+
+  <div id="overview" class="left-column">
+    <div class="left-content">
+    <%= content('admin-edit-committee') %>
+
+    <%= link_button_to 'Administration', admin_path, :size => 'hundred' %>
+</div>
+  </div><!--overview-->
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+    <%= form_for [:admin,@committee] do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <%= submit_tag("Create Committee") %>
+    <% end %>
+</div>
+  </div><!--details-->
+
+</div>

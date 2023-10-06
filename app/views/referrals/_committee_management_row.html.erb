@@ -1,0 +1,57 @@
+        <tr>
+          <td><%= referral.legislation.title %></td>
+
+          <% if referral.status == 'pending' or referral.status == 'tabled' %>
+            <td colspan="3">
+              <%= form_for referral do |f| %>
+                <%= f.hidden_field :status, :value => 'hearing' %>
+                <%= f.submit "Open Hearing", :size => 'ninty', :class => 'btn blue-btn' %>
+              <% end %>
+            </td>
+          <% elsif referral.status == 'hearing' %>
+
+            <% if @current_chamber.setting('has_committee_voting') %>
+
+              <td>
+                <%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path( referral ), :size => 'ninty', :class => 'btn blue-btn' %>
+              </td>
+
+              <% if referral.report %>
+                <td>
+                  <%= link_button_to "Revise&nbsp;Report".html_safe, edit_report_path( referral.report ), :size => 'ninty', :class => 'btn blue-btn' %>
+                </td>
+              <% else %>
+                <td>
+                  <%= link_button_to "Draft&nbsp;Report".html_safe, new_referral_report_path( referral ), :size => 'ninty', :class => 'btn blue-btn' %>
+                </td>
+              <% end %>
+
+            <% else %>
+
+              <% if referral.report %>
+                <td>
+                  <%= form_for referral.report, :url => publish_report_path( referral.report )  do |f| %>
+                    <%= f.submit "Publish Report", :size => 'ninty', :class => 'btn blue-btn' %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_button_to "Revise&nbsp;Report".html_safe, edit_report_path( referral.report ), :size => 'ninty', :class => 'btn blue-btn' %>
+                </td>
+              <% else %>
+                <td colspan="2">
+                  <%= link_button_to "Draft&nbsp;Report".html_safe, new_referral_report_path( referral ), :size => 'ninty', :class => 'btn blue-btn' %>
+                </td>
+              <% end %>
+
+            <% end %>
+
+            <td>
+              <%= form_for referral do |f| %>
+                <%= f.hidden_field :status, :value => 'tabled' %>
+                <%= f.submit "Table Hearing", :size => 'ninty', :class => 'btn blue-btn' %>
+              <% end %>
+            </td>
+
+          <% end %>
+
+        </tr>

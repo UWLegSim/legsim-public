@@ -1,0 +1,6 @@
+<option value="">--</option>
+<option value="<%= @referral.legislation.submission_text_id %>">As Introduced in the <%= @referral.legislation.chamber.name %></option>
+<% @referral.legislation.referrals.committee.reported.each do |referral| -%>
+<option value="<%= referral.report.reported_text_id %>">As Reported by <%= referral.group.name %></option>
+<% end -%>
+<option value="blank">Draft New Legislative Text</option>

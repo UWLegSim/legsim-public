@@ -1,0 +1,23 @@
+<div class='the-content'>
+  <%= form_for @chamber, :url => { :action => :update_committee_primary_leaders } do |f| %>
+    
+    <%= link_button_to "Chamber Management", manage_chamber_path( @chamber ), :size => 'hundred', :class => 'btn blue-btn' %>
+    <br/>
+    <br/>
+    <table>
+    <tr>
+      <td><%= link_to_group( @chamber.floor ) %></td>
+      <td><%= select_tag "group_#{@chamber.floor.id}", options_for_select( @chamber.floor.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => @chamber.floor.primary_leader ? @chamber.floor.primary_leader.id : 0} ) %></td>
+    </tr>
+    <% @chamber.committees.each do |committee| %>
+      <tr>
+        <td><%= link_to_group( committee ) %></td>
+        <td><%= select_tag "group_#{committee.id}", options_for_select( committee.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => committee.primary_leader ? committee.primary_leader.id : 0} ), :class => "input" %></td>
+      </tr>
+    <% end %>
+    </table>
+    <div class='field field-submit'>
+      <%= f.submit "Update Committee Leadership", :class => 'btn blue-btn' %>
+    </div>
+  <% end %>
+</div>

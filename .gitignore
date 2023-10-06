@@ -1,0 +1,24 @@
+config/app.yml
+log/*
+*~
+public/system/photos/*
+storage/*
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore KDE cruft
+*.kate-swp
+.DS_Store
+
+/config/master.key
+/vendor/bundle

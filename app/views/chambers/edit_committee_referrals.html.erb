@@ -1,0 +1,76 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <%= content('committee-referral') %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div id="tab-container" class="tab-container">
+    <ul class="etabs">
+      <li class='tab'><a href="#primary-referrals">Primary Referrals</a></li><li class='tab'><a href="#additional-referrals">Additional Referrals</a></li><li class='tab'><a href="#undo-referral">Undo Referral</a></li>
+    </ul>
+
+    <div id="primary-referrals">
+      <div class="the-content">
+      <%= form_for @chamber, :url => { :action => :update_committee_referrals } do |f| %>
+
+        <h3>Introduced Legislation</h3>
+
+        <p class='field'><%= select_tag 'legislation_ids', options_for_select( @chamber.introduced_legislation.collect{|l| [l.short_title,l.id]} ), :multiple => true, :style => "width: 100%;", :size => 10  %></p>
+
+        <h3>Committee</h3>
+
+        <p class='field'><%= select_tag 'group_id', options_for_select( @chamber.committees.collect{|g| [g.title,g.id]} ), :style => "width: 100%;" %></p>
+
+        <%= hidden_field_tag :priority, "primary" %>
+        <div class='field field-submit'>
+          <%= submit_tag 'Issue Primary Referral', :size => 'fifty', :class => 'btn blue-btn' %>
+        </div>
+
+      <% end %>
+      </div>
+    </div>
+    <div id="additional-referrals">
+      <div class='the-content'>
+      <%= form_for @chamber, :url => { :action => :update_committee_referrals } do |f| %>
+
+        <h3>Referred Legislation</h3>
+
+        <p class='field'><%= select_tag 'legislation_ids', options_for_select( @chamber.referred_legislation.collect{|l| [l.short_title,l.id]} ), :multiple => true, :style => "width: 100%;", :size => 10  %></p>
+
+        <h3>Referral Type</h3>
+
+        <p class='field'>
+          <%= radio_button_tag :priority, "secondary", true %> Secondary&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= radio_button_tag :priority, "primary" %> Primary
+        </p>
+
+        <h3>Committee</h3>
+
+        <p class='field'><%= select_tag 'group_id', options_for_select( @chamber.committees.collect{|g| [g.title,g.id]} ), :style => "width: 100%;" %></p>
+        <div class='field field-submit'>
+          <%= submit_tag 'Issue Secondary Legislation', :size => 'fifty', :class => 'btn blue-btn' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <div id="undo-referral">
+      <div class='the-content'>
+      <%= form_for @chamber, :url => { :action => :undo_committee_referral } do |f| %>
+
+        <h3>Recent Referrals</h3>
+
+        <p>Referrals made within the past 24 hours are eligible for undo. After that the referral is permanent.</p>
+
+        <p><%= select_tag 'referral_id', options_for_select( @chamber.referrals.recent.select{ |r| r.group.is_committee? }.collect{|r| [r.legislation_with_group,r.id]} ), :style => "width: 100%;" %></p>
+        <div class='field field-submit'>
+          <%= submit_tag 'Undo Referral', :size => 'fifty', :class => 'btn blue-btn' %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <div class='the-content'>
+    <%= link_button_to "Chamber Management", manage_chamber_path( @chamber ), :size => 'hundred', :class => 'btn blue-btn' %>
+  </div>
+</div>

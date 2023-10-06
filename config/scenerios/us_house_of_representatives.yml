@@ -1,0 +1,1077 @@
+---
+chamber_settings:
+  - name:    member_title
+    title:   Member Title
+    default: Representative
+    type:    string
+  - name:    member_title_abbr
+    title:   Member Title Abbreviation
+    default: Rep.
+    type:    string
+  - name:    chamber_leader_title
+    title:   Chamber Leader Title
+    default: Speaker
+    type:    string
+  - name:    has_executive
+    title:   Executive
+    default: Unitary
+    type:    select
+    options:
+      - None
+      - Unitary
+      - Multiple
+  - name:    executive_title
+    title:   Executive Title
+    default: President
+    type:    string
+  - name:    executive_title_abbr
+    title:   Executive Title Abbreviation
+    default: Pres.
+    type:    string
+  - name:    executive_building
+    title:   Executive Building
+    default: White House
+    type:    select
+    options:
+      - White House
+      - Mansion
+  - name:    has_regular_order
+    title:   Regular Order
+    type:    binary
+    default: true
+  - name:    has_committee_voting
+    title:   Committee Voting
+    type:    binary
+    default: true
+  - name:    has_caucus_voting
+    title:   Caucus Voting
+    type:    binary
+    default: true
+  - name:    has_party_voting
+    title:   Party Voting
+    type:    binary
+    default: true
+  - name:    has_special_rules
+    title:   Special Rules
+    type:    binary
+    default: true
+  - name:    has_filibuster
+    title:   Filibuster
+    type:    binary
+    default:
+  - name:    has_hold
+    title:   Holds
+    type:    binary
+    default:
+  - name:    email_dear_colleague
+    title:   Email Dear Colleague
+    type:    binary
+    default: true
+
+special_settings:
+  rules_committee: "Committee on Rules"
+  rules_legislation_type: "Resolution"
+
+legislative_types:
+  - name: Bill
+    abbr: H.R.
+    description: A bill authorizes the spening of money or chage of the law. Requires the approval of the President.
+  - name: Resolution
+    abbr: H.Res.
+    description: A resolution takes action within the chamber such as a rule change or expresses an non-binding opinion. Does not require Presidental approval.
+  - name: Joint Resolution
+    abbr: H.J.Res.
+    description: A joint resolution is used to amend the Constitution, requiring a 2/3rds majority in both chambers and 3/4ths of the States.
+
+parties:
+  - name: Democratic Party
+    abbr: D
+    jurisdiction_description: The Democratic Party is committed to keeping our nation safe and expanding opportunity for every American.  That commitment is reflected in an agenda that emphasizes the security of our nation, strong economic growth, affordable health care for all Americans, retirement security, honest government, and civil rights.
+  - name: Republican Party
+    abbr: R
+    jurisdiction_description: The Republican Party focuses on ensuring that America remains safe, terrorists are defeated, and democracy flourishes in the world; on expanding opportunities for ownership and investment; on making tax relief permanent and ensuring greater energy independence; on increasing the affordability and accessibility of health care; on promoting works of compassion and strengthening our greatest values; on preparing students for success in life by bringing the benefits of education reform to high schools; and on helping workers adjust to a changing economy by offering flexible training options that meet their individual needs.
+  - name: Independent Party
+    abbr: I
+    jurisdiction_description: Not technically a formal party, the Independent Party is an organization for members who do not identify with any of the existing party organizations.
+
+committees:
+  - name: Committee on Agriculture
+    abbr: AG
+    jurisdiction_description: Agricultural production and research, Food safety and Child nutrition, Rural development, Water conservation.
+  - name: Committee on Appropriations
+    abbr: APPROP
+    jurisdiction_description: Appropriation of revenues for the support of government programs.
+  - name: Committee on Armed Services
+    abbr: ARMSER
+    jurisdiction_description: Defense generally, Petroleum reserves, Intelligence.
+  - name: Committee on Education and Labor
+    abbr: EDU
+    jurisdiction_description: Labor generally, Worker training, Education programs generally.
+  - name: Committee on Energy and Commerce
+    abbr: ENRGY
+    jurisdiction_description: Energy generally, Interstate commerce, Health including Medicaid and SCHIP (unless supported by payroll deductions), Consumer affairs, Travel and tourism.
+  - name: Committee on Financial Services
+    abbr: FS
+    jurisdiction_description: Banking, Insurance, Intl Finance, Securities, Housing and Urban development.
+  - name: Committee on Oversight & Government Reform
+    abbr: OGR
+    jurisdiction_description: Civil service, D.C., Post Office, Government organization and accountability, Census, Official holidays.
+  - name: Committee on Homeland Security
+    abbr: HMS
+    jurisdiction_description: Overall homeland security policy, Border security, Customs, Transportation security, Domestic preparedness, Information.
+  - name: Committee on Foreign Affairs
+    abbr: FA
+    jurisdiction_description: Foreign relations, Export controls, Loans, International organizations, Interventions and declarations of war.
+  - name: Committee on the Judiciary
+    abbr: JUD
+    jurisdiction_description: Civil and criminal proceedings, Apportionment, Constitutional issues, Immigration, Prisons, Patents, Monopolies, Subversive activities.
+  - name: Committee on Natural Resources
+    abbr: NR
+    jurisdiction_description: Fisheries and wildlife, Forest reserves and national parks, Intl fishing agreements, Irrigation, Native Americans, Mining and minerals, Trans-Alaska Pipeline.
+  - name: Committee on Rules
+    abbr: RULE
+    jurisdiction_description: "Rules and the order of business of the House. Under ordinary procedures, legislation must be considered based on its order on the calendar. The Rules committee proposes non-ordinary floor procedures. This 'special rule' takes the form of a resolution and can propose to bring a bill up out of order, prohibit amendments etc. The critical point is that a chamber majority must first approve of whatever the rules committee proposes.<br />
+    Process: The Rules Committee chair 1) drafts the special rule, 2) drafts a motion to report, and 3) schedules a vote to adopt the motion to report. The Speaker then schedules a floor vote on the special rule. If the rule is adopted by the chamber, the Speaker can then schedule consideration of the bill in a non-ordinary way."
+  - name: Committee on Science & Technology
+    abbr: SCI
+    jurisdiction_description: Science, Energy research and development, Environmental research, Space, Civil Aviation, Weights and measures.
+  - name: Committee on Small Business
+    abbr: SBUS
+    jurisdiction_description: Assistance to and protection of small business.
+  - name: Committee on Transportation and Infrastructure
+    abbr: TRANS
+    jurisdiction_description: Transportation generally, Coast Guard, FEMA, Navigation, Flood Control, Public Buildings, Hydroelectric power.
+  - name: Committee on Veterans' Affairs
+    abbr: VA
+    jurisdiction_description: Veterans generally.
+  - name: Committee on Ways and Means
+    abbr: W&M
+    jurisdiction_description: Taxes generally, Customs revenue, trade agreements, territories, tax exempt foundations, Social Security programs including income security and Medicare (funded by payroll deductions).
+
+survey_questions:
+  - question: Government regulations usually do more good than harm.
+  - question: The federal government, more than the state governments, threatens our personal rights and freedoms.
+  - question: All Americans deserve access to affordable health care, even if it means higher costs for those who can afford it.
+  - question: Preventing terrorist attacks is more important than privacy.
+  - question: We can usually trust our elected representatives in Washington D.C. to do the right thing.
+
+constituencies:
+  - abbr: AL01
+    name: Alabama 1
+  - abbr: AL02
+    name: Alabama 2
+  - abbr: AL03
+    name: Alabama 3
+  - abbr: AL04
+    name: Alabama 4
+  - abbr: AL05
+    name: Alabama 5
+  - abbr: AL06
+    name: Alabama 6
+  - abbr: AL07
+    name: Alabama 7
+
+  - abbr: AK01
+    name: Alaska At Large
+
+  - abbr: AZ01
+    name: Arizona 1
+  - abbr: AZ02
+    name: Arizona 2
+  - abbr: AZ03
+    name: Arizona 3
+  - abbr: AZ04
+    name: Arizona 4
+  - abbr: AZ05
+    name: Arizona 5
+  - abbr: AZ06
+    name: Arizona 6
+  - abbr: AZ07
+    name: Arizona 7
+  - abbr: AZ08
+    name: Arizona 8
+  - abbr: AZ09
+    name: Arizona 9
+
+  - abbr: AR01
+    name: Arkansas 1
+  - abbr: AR02
+    name: Arkansas 2
+  - abbr: AR03
+    name: Arkansas 3
+  - abbr: AR04
+    name: Arkansas 4
+
+  - abbr: CA01
+    name: California 1
+  - abbr: CA02
+    name: California 2
+  - abbr: CA03
+    name: California 3
+  - abbr: CA04
+    name: California 4
+  - abbr: CA05
+    name: California 5
+  - abbr: CA06
+    name: California 6
+  - abbr: CA07
+    name: California 7
+  - abbr: CA08
+    name: California 8
+  - abbr: CA09
+    name: California 9
+  - abbr: CA10
+    name: California 10
+  - abbr: CA11
+    name: California 11
+  - abbr: CA12
+    name: California 12
+  - abbr: CA13
+    name: California 13
+  - abbr: CA14
+    name: California 14
+  - abbr: CA15
+    name: California 15
+  - abbr: CA16
+    name: California 16
+  - abbr: CA17
+    name: California 17
+  - abbr: CA18
+    name: California 18
+  - abbr: CA19
+    name: California 19
+  - abbr: CA20
+    name: California 20
+  - abbr: CA21
+    name: California 21
+  - abbr: CA22
+    name: California 22
+  - abbr: CA23
+    name: California 23
+  - abbr: CA24
+    name: California 24
+  - abbr: CA25
+    name: California 25
+  - abbr: CA26
+    name: California 26
+  - abbr: CA27
+    name: California 27
+  - abbr: CA28
+    name: California 28
+  - abbr: CA29
+    name: California 29
+  - abbr: CA30
+    name: California 30
+  - abbr: CA31
+    name: California 31
+  - abbr: CA32
+    name: California 32
+  - abbr: CA33
+    name: California 33
+  - abbr: CA34
+    name: California 34
+  - abbr: CA35
+    name: California 35
+  - abbr: CA36
+    name: California 36
+  - abbr: CA37
+    name: California 37
+  - abbr: CA38
+    name: California 38
+  - abbr: CA39
+    name: California 39
+  - abbr: CA40
+    name: California 40
+  - abbr: CA41
+    name: California 41
+  - abbr: CA42
+    name: California 42
+  - abbr: CA43
+    name: California 43
+  - abbr: CA44
+    name: California 44
+  - abbr: CA45
+    name: California 45
+  - abbr: CA46
+    name: California 46
+  - abbr: CA47
+    name: California 47
+  - abbr: CA48
+    name: California 48
+  - abbr: CA49
+    name: California 49
+  - abbr: CA50
+    name: California 50
+  - abbr: CA51
+    name: California 51
+  - abbr: CA52
+    name: California 52
+  - abbr: CA53
+    name: California 53
+
+  - abbr: CO01
+    name: Colorado 1
+  - abbr: CO02
+    name: Colorado 2
+  - abbr: CO03
+    name: Colorado 3
+  - abbr: CO04
+    name: Colorado 4
+  - abbr: CO05
+    name: Colorado 5
+  - abbr: CO06
+    name: Colorado 6
+  - abbr: CO07
+    name: Colorado 7
+
+  - abbr: CT01
+    name: Connecticut 1
+  - abbr: CT02
+    name: Connecticut 2
+  - abbr: CT03
+    name: Connecticut 3
+  - abbr: CT04
+    name: Connecticut 4
+  - abbr: CT05
+    name: Connecticut 5
+
+  - abbr: DE01
+    name: Delaware At Large
+
+  - abbr: FL01
+    name: Florida 1
+  - abbr: FL02
+    name: Florida 2
+  - abbr: FL03
+    name: Florida 3
+  - abbr: FL04
+    name: Florida 4
+  - abbr: FL05
+    name: Florida 5
+  - abbr: FL06
+    name: Florida 6
+  - abbr: FL07
+    name: Florida 7
+  - abbr: FL08
+    name: Florida 8
+  - abbr: FL09
+    name: Florida 9
+  - abbr: FL10
+    name: Florida 10
+  - abbr: FL11
+    name: Florida 11
+  - abbr: FL12
+    name: Florida 12
+  - abbr: FL13
+    name: Florida 13
+  - abbr: FL14
+    name: Florida 14
+  - abbr: FL15
+    name: Florida 15
+  - abbr: FL16
+    name: Florida 16
+  - abbr: FL17
+    name: Florida 17
+  - abbr: FL18
+    name: Florida 18
+  - abbr: FL19
+    name: Florida 19
+  - abbr: FL20
+    name: Florida 20
+  - abbr: FL21
+    name: Florida 21
+  - abbr: FL22
+    name: Florida 22
+  - abbr: FL23
+    name: Florida 23
+  - abbr: FL24
+    name: Florida 24
+  - abbr: FL25
+    name: Florida 25
+  - abbr: FL26
+    name: Florida 26
+  - abbr: FL27
+    name: Florida 27
+
+  - abbr: GA01
+    name: Georgia 1
+  - abbr: GA02
+    name: Georgia 2
+  - abbr: GA03
+    name: Georgia 3
+  - abbr: GA04
+    name: Georgia 4
+  - abbr: GA05
+    name: Georgia 5
+  - abbr: GA06
+    name: Georgia 6
+  - abbr: GA07
+    name: Georgia 7
+  - abbr: GA08
+    name: Georgia 8
+  - abbr: GA09
+    name: Georgia 9
+  - abbr: GA10
+    name: Georgia 10
+  - abbr: GA11
+    name: Georgia 11
+  - abbr: GA12
+    name: Georgia 12
+  - abbr: GA13
+    name: Georgia 13
+  - abbr: GA14
+    name: Georgia 14
+
+  - abbr: HI01
+    name: Hawaii 1
+  - abbr: HI02
+    name: Hawaii 2
+
+  - abbr: ID01
+    name: Idaho 1
+  - abbr: ID02
+    name: Idaho 2
+
+  - abbr: IL01
+    name: Illinois 1
+  - abbr: IL02
+    name: Illinois 2
+  - abbr: IL03
+    name: Illinois 3
+  - abbr: IL04
+    name: Illinois 4
+  - abbr: IL05
+    name: Illinois 5
+  - abbr: IL06
+    name: Illinois 6
+  - abbr: IL07
+    name: Illinois 7
+  - abbr: IL08
+    name: Illinois 8
+  - abbr: IL09
+    name: Illinois 9
+  - abbr: IL10
+    name: Illinois 10
+  - abbr: IL11
+    name: Illinois 11
+  - abbr: IL12
+    name: Illinois 12
+  - abbr: IL13
+    name: Illinois 13
+  - abbr: IL14
+    name: Illinois 14
+  - abbr: IL15
+    name: Illinois 15
+  - abbr: IL16
+    name: Illinois 16
+  - abbr: IL17
+    name: Illinois 17
+  - abbr: IL18
+    name: Illinois 18
+
+  - abbr: IN01
+    name: Indiana 1
+  - abbr: IN02
+    name: Indiana 2
+  - abbr: IN03
+    name: Indiana 3
+  - abbr: IN04
+    name: Indiana 4
+  - abbr: IN05
+    name: Indiana 5
+  - abbr: IN06
+    name: Indiana 6
+  - abbr: IN07
+    name: Indiana 7
+  - abbr: IN08
+    name: Indiana 8
+  - abbr: IN09
+    name: Indiana 9
+
+  - abbr: IA01
+    name: Iowa 1
+  - abbr: IA02
+    name: Iowa 2
+  - abbr: IA03
+    name: Iowa 3
+  - abbr: IA04
+    name: Iowa 4
+
+  - abbr: KS01
+    name: Kansas 1
+  - abbr: KS02
+    name: Kansas 2
+  - abbr: KS03
+    name: Kansas 3
+  - abbr: KS04
+    name: Kansas 4
+
+  - abbr: KY01
+    name: Kentucky 1
+  - abbr: KY02
+    name: Kentucky 2
+  - abbr: KY03
+    name: Kentucky 3
+  - abbr: KY04
+    name: Kentucky 4
+  - abbr: KY05
+    name: Kentucky 5
+  - abbr: KY06
+    name: Kentucky 6
+
+  - abbr: LA01
+    name: Louisiana 1
+  - abbr: LA02
+    name: Louisiana 2
+  - abbr: LA03
+    name: Louisiana 3
+  - abbr: LA04
+    name: Louisiana 4
+  - abbr: LA05
+    name: Louisiana 5
+  - abbr: LA06
+    name: Louisiana 6
+
+  - abbr: ME01
+    name: Maine 1
+  - abbr: ME02
+    name: Maine 2
+
+  - abbr: MD01
+    name: Maryland 1
+  - abbr: MD02
+    name: Maryland 2
+  - abbr: MD03
+    name: Maryland 3
+  - abbr: MD04
+    name: Maryland 4
+  - abbr: MD05
+    name: Maryland 5
+  - abbr: MD06
+    name: Maryland 6
+  - abbr: MD07
+    name: Maryland 7
+  - abbr: MD08
+    name: Maryland 8
+
+  - abbr: MA01
+    name: Massachusetts 1
+  - abbr: MA02
+    name: Massachusetts 2
+  - abbr: MA03
+    name: Massachusetts 3
+  - abbr: MA04
+    name: Massachusetts 4
+  - abbr: MA05
+    name: Massachusetts 5
+  - abbr: MA06
+    name: Massachusetts 6
+  - abbr: MA07
+    name: Massachusetts 7
+  - abbr: MA08
+    name: Massachusetts 8
+  - abbr: MA09
+    name: Massachusetts 9
+
+  - abbr: MI01
+    name: Michigan 1
+  - abbr: MI02
+    name: Michigan 2
+  - abbr: MI03
+    name: Michigan 3
+  - abbr: MI04
+    name: Michigan 4
+  - abbr: MI05
+    name: Michigan 5
+  - abbr: MI06
+    name: Michigan 6
+  - abbr: MI07
+    name: Michigan 7
+  - abbr: MI08
+    name: Michigan 8
+  - abbr: MI09
+    name: Michigan 9
+  - abbr: MI10
+    name: Michigan 10
+  - abbr: MI11
+    name: Michigan 11
+  - abbr: MI12
+    name: Michigan 12
+  - abbr: MI13
+    name: Michigan 13
+  - abbr: MI14
+    name: Michigan 14
+
+  - abbr: MN01
+    name: Minnesota 1
+  - abbr: MN02
+    name: Minnesota 2
+  - abbr: MN03
+    name: Minnesota 3
+  - abbr: MN04
+    name: Minnesota 4
+  - abbr: MN05
+    name: Minnesota 5
+  - abbr: MN06
+    name: Minnesota 6
+  - abbr: MN07
+    name: Minnesota 7
+  - abbr: MN08
+    name: Minnesota 8
+
+  - abbr: MS01
+    name: Mississippi 1
+  - abbr: MS02
+    name: Mississippi 2
+  - abbr: MS03
+    name: Mississippi 3
+  - abbr: MS04
+    name: Mississippi 4
+
+  - abbr: MO01
+    name: Missouri 1
+  - abbr: MO02
+    name: Missouri 2
+  - abbr: MO03
+    name: Missouri 3
+  - abbr: MO04
+    name: Missouri 4
+  - abbr: MO05
+    name: Missouri 5
+  - abbr: MO06
+    name: Missouri 6
+  - abbr: MO07
+    name: Missouri 7
+  - abbr: MO08
+    name: Missouri 8
+
+  - abbr: MT01
+    name: Montana At Large
+
+  - abbr: NE01
+    name: Nebraska 1
+  - abbr: NE02
+    name: Nebraska 2
+  - abbr: NE03
+    name: Nebraska 3
+
+  - abbr: NV01
+    name: Nevada 1
+  - abbr: NV02
+    name: Nevada 2
+  - abbr: NV03
+    name: Nevada 3
+  - abbr: NV04
+    name: Nevada 4
+
+  - abbr: NH01
+    name: New Hampshire 1
+  - abbr: NH02
+    name: New Hampshire 2
+
+  - abbr: NJ01
+    name: New Jersey 1
+  - abbr: NJ02
+    name: New Jersey 2
+  - abbr: NJ03
+    name: New Jersey 3
+  - abbr: NJ04
+    name: New Jersey 4
+  - abbr: NJ05
+    name: New Jersey 5
+  - abbr: NJ06
+    name: New Jersey 6
+  - abbr: NJ07
+    name: New Jersey 7
+  - abbr: NJ08
+    name: New Jersey 8
+  - abbr: NJ09
+    name: New Jersey 9
+  - abbr: NJ10
+    name: New Jersey 10
+  - abbr: NJ11
+    name: New Jersey 11
+  - abbr: NJ12
+    name: New Jersey 12
+
+  - abbr: NM01
+    name: New Mexico 1
+  - abbr: NM02
+    name: New Mexico 2
+  - abbr: NM03
+    name: New Mexico 3
+
+  - abbr: NY01
+    name: New York 1
+  - abbr: NY02
+    name: New York 2
+  - abbr: NY03
+    name: New York 3
+  - abbr: NY04
+    name: New York 4
+  - abbr: NY05
+    name: New York 5
+  - abbr: NY06
+    name: New York 6
+  - abbr: NY07
+    name: New York 7
+  - abbr: NY08
+    name: New York 8
+  - abbr: NY09
+    name: New York 9
+  - abbr: NY10
+    name: New York 10
+  - abbr: NY11
+    name: New York 11
+  - abbr: NY12
+    name: New York 12
+  - abbr: NY13
+    name: New York 13
+  - abbr: NY14
+    name: New York 14
+  - abbr: NY15
+    name: New York 15
+  - abbr: NY16
+    name: New York 16
+  - abbr: NY17
+    name: New York 17
+  - abbr: NY18
+    name: New York 18
+  - abbr: NY19
+    name: New York 19
+  - abbr: NY20
+    name: New York 20
+  - abbr: NY21
+    name: New York 21
+  - abbr: NY22
+    name: New York 22
+  - abbr: NY23
+    name: New York 23
+  - abbr: NY24
+    name: New York 24
+  - abbr: NY25
+    name: New York 25
+  - abbr: NY26
+    name: New York 26
+  - abbr: NY27
+    name: New York 27
+
+  - abbr: NC01
+    name: North Carolina 1
+  - abbr: NC02
+    name: North Carolina 2
+  - abbr: NC03
+    name: North Carolina 3
+  - abbr: NC04
+    name: North Carolina 4
+  - abbr: NC05
+    name: North Carolina 5
+  - abbr: NC06
+    name: North Carolina 6
+  - abbr: NC07
+    name: North Carolina 7
+  - abbr: NC08
+    name: North Carolina 8
+  - abbr: NC09
+    name: North Carolina 9
+  - abbr: NC10
+    name: North Carolina 10
+  - abbr: NC11
+    name: North Carolina 11
+  - abbr: NC12
+    name: North Carolina 12
+  - abbr: NC13
+    name: North Carolina 13
+
+  - abbr: ND01
+    name: North Dakota At Large
+
+  - abbr: OH01
+    name: Ohio 1
+  - abbr: OH02
+    name: Ohio 2
+  - abbr: OH03
+    name: Ohio 3
+  - abbr: OH04
+    name: Ohio 4
+  - abbr: OH05
+    name: Ohio 5
+  - abbr: OH06
+    name: Ohio 6
+  - abbr: OH07
+    name: Ohio 7
+  - abbr: OH08
+    name: Ohio 8
+  - abbr: OH09
+    name: Ohio 9
+  - abbr: OH10
+    name: Ohio 10
+  - abbr: OH11
+    name: Ohio 11
+  - abbr: OH12
+    name: Ohio 12
+  - abbr: OH13
+    name: Ohio 13
+  - abbr: OH14
+    name: Ohio 14
+  - abbr: OH15
+    name: Ohio 15
+  - abbr: OH16
+    name: Ohio 16
+
+  - abbr: OK01
+    name: Oklahoma 1
+  - abbr: OK02
+    name: Oklahoma 2
+  - abbr: OK03
+    name: Oklahoma 3
+  - abbr: OK04
+    name: Oklahoma 4
+  - abbr: OK05
+    name: Oklahoma 5
+
+  - abbr: OR01
+    name: Oregon 1
+  - abbr: OR02
+    name: Oregon 2
+  - abbr: OR03
+    name: Oregon 3
+  - abbr: OR04
+    name: Oregon 4
+  - abbr: OR05
+    name: Oregon 5
+
+  - abbr: PA01
+    name: Pennsylvania 1
+  - abbr: PA02
+    name: Pennsylvania 2
+  - abbr: PA03
+    name: Pennsylvania 3
+  - abbr: PA04
+    name: Pennsylvania 4
+  - abbr: PA05
+    name: Pennsylvania 5
+  - abbr: PA06
+    name: Pennsylvania 6
+  - abbr: PA07
+    name: Pennsylvania 7
+  - abbr: PA08
+    name: Pennsylvania 8
+  - abbr: PA09
+    name: Pennsylvania 9
+  - abbr: PA10
+    name: Pennsylvania 10
+  - abbr: PA11
+    name: Pennsylvania 11
+  - abbr: PA12
+    name: Pennsylvania 12
+  - abbr: PA13
+    name: Pennsylvania 13
+  - abbr: PA14
+    name: Pennsylvania 14
+  - abbr: PA15
+    name: Pennsylvania 15
+  - abbr: PA16
+    name: Pennsylvania 16
+  - abbr: PA17
+    name: Pennsylvania 17
+  - abbr: PA18
+    name: Pennsylvania 18
+
+  - abbr: RI01
+    name: Rhode Island 1
+  - abbr: RI02
+    name: Rhode Island 2
+
+  - abbr: SC01
+    name: South Carolina 1
+  - abbr: SC02
+    name: South Carolina 2
+  - abbr: SC03
+    name: South Carolina 3
+  - abbr: SC04
+    name: South Carolina 4
+  - abbr: SC05
+    name: South Carolina 5
+  - abbr: SC06
+    name: South Carolina 6
+  - abbr: SC07
+    name: South Carolina 7
+
+  - abbr: SD01
+    name: South Dakota At Large
+
+  - abbr: TN01
+    name: Tennessee 1
+  - abbr: TN02
+    name: Tennessee 2
+  - abbr: TN03
+    name: Tennessee 3
+  - abbr: TN04
+    name: Tennessee 4
+  - abbr: TN05
+    name: Tennessee 5
+  - abbr: TN06
+    name: Tennessee 6
+  - abbr: TN07
+    name: Tennessee 7
+  - abbr: TN08
+    name: Tennessee 8
+  - abbr: TN09
+    name: Tennessee 9
+
+  - abbr: TX01
+    name: Texas 1
+  - abbr: TX02
+    name: Texas 2
+  - abbr: TX03
+    name: Texas 3
+  - abbr: TX04
+    name: Texas 4
+  - abbr: TX05
+    name: Texas 5
+  - abbr: TX06
+    name: Texas 6
+  - abbr: TX07
+    name: Texas 7
+  - abbr: TX08
+    name: Texas 8
+  - abbr: TX09
+    name: Texas 9
+  - abbr: TX10
+    name: Texas 10
+  - abbr: TX11
+    name: Texas 11
+  - abbr: TX12
+    name: Texas 12
+  - abbr: TX13
+    name: Texas 13
+  - abbr: TX14
+    name: Texas 14
+  - abbr: TX15
+    name: Texas 15
+  - abbr: TX16
+    name: Texas 16
+  - abbr: TX17
+    name: Texas 17
+  - abbr: TX18
+    name: Texas 18
+  - abbr: TX19
+    name: Texas 19
+  - abbr: TX20
+    name: Texas 20
+  - abbr: TX21
+    name: Texas 21
+  - abbr: TX22
+    name: Texas 22
+  - abbr: TX23
+    name: Texas 23
+  - abbr: TX24
+    name: Texas 24
+  - abbr: TX25
+    name: Texas 25
+  - abbr: TX26
+    name: Texas 26
+  - abbr: TX27
+    name: Texas 27
+  - abbr: TX28
+    name: Texas 28
+  - abbr: TX29
+    name: Texas 29
+  - abbr: TX30
+    name: Texas 30
+  - abbr: TX31
+    name: Texas 31
+  - abbr: TX32
+    name: Texas 32
+  - abbr: TX33
+    name: Texas 33
+  - abbr: TX34
+    name: Texas 34
+  - abbr: TX35
+    name: Texas 35
+  - abbr: TX36
+    name: Texas 36
+
+  - abbr: UT01
+    name: Utah 1
+  - abbr: UT02
+    name: Utah 2
+  - abbr: UT03
+    name: Utah 3
+  - abbr: UT04
+    name: Utah 4
+
+  - abbr: VT01
+    name: Vermont At Large
+
+  - abbr: VA01
+    name: Virginia 1
+  - abbr: VA02
+    name: Virginia 2
+  - abbr: VA03
+    name: Virginia 3
+  - abbr: VA04
+    name: Virginia 4
+  - abbr: VA05
+    name: Virginia 5
+  - abbr: VA06
+    name: Virginia 6
+  - abbr: VA07
+    name: Virginia 7
+  - abbr: VA08
+    name: Virginia 8
+  - abbr: VA09
+    name: Virginia 9
+  - abbr: VA10
+    name: Virginia 10
+  - abbr: VA11
+    name: Virginia 11
+
+  - abbr: WA01
+    name: Washington 1
+  - abbr: WA02
+    name: Washington 2
+  - abbr: WA03
+    name: Washington 3
+  - abbr: WA04
+    name: Washington 4
+  - abbr: WA05
+    name: Washington 5
+  - abbr: WA06
+    name: Washington 6
+  - abbr: WA07
+    name: Washington 7
+  - abbr: WA08
+    name: Washington 8
+  - abbr: WA09
+    name: Washington 9
+  - abbr: WA10
+    name: Washington 10
+
+  - abbr: WV01
+    name: West Virginia 1
+  - abbr: WV02
+    name: West Virginia 2
+  - abbr: WV03
+    name: West Virginia 3
+
+  - abbr: WI01
+    name: Wisconsin 1
+  - abbr: WI02
+    name: Wisconsin 2
+  - abbr: WI03
+    name: Wisconsin 3
+  - abbr: WI04
+    name: Wisconsin 4
+  - abbr: WI05
+    name: Wisconsin 5
+  - abbr: WI06
+    name: Wisconsin 6
+  - abbr: WI07
+    name: Wisconsin 7
+  - abbr: WI08
+    name: Wisconsin 8
+
+  - abbr: WY01
+    name: Wyoming At Large

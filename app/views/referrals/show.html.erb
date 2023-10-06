@@ -1,0 +1,136 @@
+<div id="overview" class="left-column">
+  <%= link_button_to "Return to #{@referral.group.type}", @referral.group, :size => 'sixty', :class => 'btn blue-btn' %>
+
+  <div class="left-content">
+  <%= render( :partial => "legislation/box", :locals => { :legislation => @referral.legislation} ) %>
+
+  <div>
+<!--     <ul class="etabs">
+      <% if @referral.accepts_ammendments? %>
+        <li class='tab'><a href="#amendments">Amendments</a></li>
+      <% end %><li class='tab' style="width:150px"><a href="#new-comment">New Comment</a></li><li class='tab'><a href="#motions">Motions</a></li>
+    </ul> -->
+
+    <% if @referral.accepts_ammendments? %>
+      <div id="amendments">
+
+          <% if @referral.amendments.count > 0 %>
+            <ul><% @referral.amendments.each do |amendment| %>
+              <li><%= link_to amendment.title, amendment_path( amendment ) %> (<%= link_to_user( amendment.sponsor ) %>)</li>
+            <% end %></ul>
+          <% else %>
+            <h3>There are no <%= @referral.group.type.downcase %> admendments for this legislation.</h3><br />
+          <% end %>
+
+          <%= link_button_to "Propose Amendment", new_referral_amendment_path( @referral ), :class => 'btn blue-btn' %>
+          <%= link_button_to "Contribute to the debate", @referral.discussion, :size => 'sixty', :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="right-column">
+  <% if @referral.report %>
+    <% if @referral.report.status == 'draft' %>
+      <div id="tab-container" class="tab-container">
+        <ul class="etabs">
+          <li class='tab' style="width:300px"><a href="#legislative-text">Draft Legislation as Amended</a></li><li class='tab'><a href="#summary-report">Draft <%= @referral.report.group.type %> Report</a></li></li><li class='tab'><a href='#referrals-discussion'>Discussion</a></li><li class='tab'><a href='#motions'>Motions</a></li>
+        </ul>
+    <% else %>
+      <div class="tab-container" id='tab-container'>
+        <ul class="etabs">
+          <li class='tab' style="width:300px"><a href="#legislative-text">Published Legislation as Amended</a></li><li class='tab'><a href="#summary-report">Published <%= @referral.report.group.type %> Report</a></li><li class='tab'><a href='#referrals-discussion'>Discussion</a></li><li class='tab'><a href='#motions'>Motions</a></li>
+        </ul>
+    <% end %>
+        <div id="legislative-text">
+          <div class="the-content">
+            <%= sanitize @referral.report.reported_text.primary_text, attributes: ['style'] %>
+          </div>
+        </div>
+
+        <div id="summary-report">
+          <div class="the-content">
+            <%= sanitize @referral.report.reported_text.secondary_text, attributes: ['style'] %>
+          </div>
+        </div>
+
+        <div id="referrals-discussion">
+          <div class='the-content'>
+            <% if @referral.discussion %>
+
+              <h2>Discussion on this Bill</h2>
+              <div id="new-comment">
+                <% if @referral.discussion and @referral.discussion.open? %>
+                  <!-- <%= form_for @referral.discussion.comments.new do |f| %>
+                    <%= f.hidden_field :discussion_id %>
+                    <%= form_field do %>
+                      <div class='field text-field'>
+                        <%= f.text_area :content, :class => "tinymce" %>
+                      </div>
+                    <% end %> -->
+                    <!-- <div class='field submit-field'>
+                      <%= f.submit "Post Comment", :class => 'btn blue-btn' %>
+                    </div> -->
+                    <%= link_button_to "Contribute to the discussion", @referral.discussion, :size => 'sixty', :class => 'btn blue-btn' %>
+                  <% end %>
+                <% else %>
+                  <% if @referral.status == 'pending' %>
+                    <p>A hearing on this referral has not been opened.</p>
+                  <% else %>
+                    <p>This hearing has been closed.</p>
+                  <% end %>
+                <% end %>
+              </div>
+              <br/>
+              <% if @referral.discussion.comments.empty? %>
+
+                <p>There are no comments in this hearing yet</p>
+
+              <% else %>
+
+                <% @referral.discussion.comments.includes(:chamber_role).each do |comment| %>
+
+                  <b>From</b> <%= link_to_user comment.chamber_role %><br />
+                  <b>On</b> <%= comment.created_at.strftime("%m/%d/%Y %H:%M %p") %>
+
+                  <p><%= sanitize comment.content, attributes: ['style'] %></p>
+
+                <% end %>
+
+              <% end %>
+
+            <% else %>
+
+              <h2>No hearing has been convened</h2>
+
+            <% end %>
+          </div>
+        </div>
+
+        <div id='motions'>
+          <div class='the-content'>
+            <% if @referral.motions.empty? %>
+              <h2>There have been no motions</h2>
+            <% else %>
+              <ul>
+                <% @referral.motions.each do |motion| %>
+                  <li>
+                    <%= link_to motion.title, motion_path( motion ) %>
+                    <% if motion.vote %>
+                      <% if motion.vote.status == 'finished' %>
+                        - <%= motion.vote.outcome&.titleize %>
+                      <% else %>
+                        - Pending
+                      <% end %>
+                    <% end %>
+
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

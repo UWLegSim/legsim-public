@@ -1,0 +1,19 @@
+<%= f.fields_for :reported_text do |rt| %>
+
+  <%= form_field :tip => "Don't mess with this" do %>
+    <div class='field text-field'>
+    	<%= rt.label :primary_text, "Legislation as Amended"  %>
+    	<%= rt.text_area :primary_text, :class => "tinymce" %>
+    </div>  
+  <% end %>
+
+  <%= form_field :tip => "Don't mess with this" do %>
+  	<div class='field text-field'>
+  		<%= rt.label :secondary_text, "#{@report.referral.group.type} Report"  %>
+    	<%= rt.text_area :secondary_text, :class => "tinymce" %>	
+  	</div>
+  <% end %>
+<% end %>
+
+<%= f.hidden_field :referral_id %>
+<%= f.hidden_field :status %>

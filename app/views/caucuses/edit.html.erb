@@ -1,0 +1,16 @@
+<% if @current_chamber_role.group_leader?( @caucus) %>
+<div id="details" class="right-column">
+	<div class="the-content">
+<h1>Edit Caucus</h1>
+
+<%= form_for @caucus do |f| %>
+  <%= render(:partial => 'form', :locals => { :f => f } ) %>
+  <div class="field field-submit">
+  	<%= submit_tag 'Update Caucus', :class => "btn blue-btn" %>
+  </div>
+<% end %>
+<% else %>
+	Only the caucus leader can edit this page.
+<% end %>
+</div>
+</div>

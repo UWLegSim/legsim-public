@@ -1,0 +1,80 @@
+<% if group.referrals.count > 0 %>
+  <div id="referrals" class="expander expanded referrals">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Committee Referrals <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+    <table cellspacing="0">
+      <tbody>
+
+        <% if group.setting('can_draft_special_rule') %>
+          <% unless group.referrals.rules.hearing.empty?  %>
+            <tr>
+              <th colspan="4"><b>Special Rules</b></th>
+            </tr>
+            <% group.referrals.rules.hearing.each do |referral| %>
+              <tr>
+                <td class="<%= referral.status %>" colspan="3" style="width: 70%;padding-left:20px"><%= link_to_legislation( referral.legislation ) %></td>
+                <td>
+                  <% if @current_chamber_role.group_member?( group ) or @current_chamber_role.is_administrator? %>
+                    <%= link_to "Committee Page", referral_path( referral ) %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <% if group.primary_referrals.count > 0 %>
+          <tr>
+            <th colspan="4"><b>Primary Referrals</b></th>
+          </tr>
+          <% group.primary_referrals.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;padding-left:20px"><%= link_to_legislation( referral.legislation ) %></td>
+              <td>
+                <% if @current_chamber_role.group_member?( group ) or @current_chamber_role.is_administrator? %>
+                  <%= link_to "Committee Page", referral_path( referral ) %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+        <% if group.secondary_referrals.count > 0 %>
+          <tr>
+            <th colspan="4"><b>Secondary Referrals</b></th>
+          </tr>
+          <% group.secondary_referrals.each do |referral| %>
+            <tr>
+              <td class="<%= referral.status %>" colspan="3" style="width: 70%;padding-left:20px"><%= link_to_legislation( referral.legislation )%></td>
+              <td>
+                <% if @current_chamber_role.group_member?( group ) or @current_chamber_role.is_administrator?  %>
+                  <%= link_to "Committee Page", referral_path( referral ) %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+
+      </tbody>
+    </table>
+    <table cellspacing="0" class="legend">
+      <thead>
+          <tr>
+            <th colspan="4">Status</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="pending" style='padding-left:20px'>Pending</td>
+            <td class="hearing">Hearing</td>
+            <td class="reported">Reported</td>
+            <td class="tabled">Tabled</td>
+          </tr>
+      </tbody>
+    </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->
+<% end %>

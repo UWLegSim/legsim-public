@@ -1,0 +1,28 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('manage-committees') %>
+
+  <%= form_for @chamber, :url => { :action => :init_committees } do |f| %>
+    <h2>Reload Committees</h2>
+
+    <p>Reloading committees will destroy all current committees and anything related to that
+    committee (like referrals, membership, discussion groups) and then reload committees
+    based on the chamber's scenerio.</p>
+    <%= submit_tag "Reload Committees", :size => 'sixty' %>
+  <% end %>
+
+  <%= link_to "Return to Chamber Management", admin_chamber_path( @chamber ) %>
+</div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+<div class="the-content">
+  <h2>Existing Committees</h2>
+
+  <ul>
+    <% @chamber.committees.each do |committee| %>
+      <li><%= committee.title %></li>
+    <% end %>
+  </ul>
+</div>
+</div>

@@ -1,0 +1,6 @@
+<h1>Edit Chamber</h1>
+
+<%= form_for @chamber do |f| %>
+  <%= render(:partial => 'form', :locals => { :f => f } ) %>
+  <%= submit_tag 'Update Chamber' %>
+<% end %>

@@ -1,0 +1,5 @@
+<%= f.label :institution_id, "Institution" %>
+<%= f.select :institution_id, Institution.all.collect {|i| [ i.name, i.id ] }, {:include_blank => 'Create New'} %>
+<%= text_field_tag :new_institution_title %><br/>
+
+<%= f.label :name, "Title" %> <%= f.text_field :name %><br />

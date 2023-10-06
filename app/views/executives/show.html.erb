@@ -1,0 +1,54 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <div class="profile-wrap">
+      <% if @executive.photo.attached? %>
+        <%= image_tag @executive.photo.variant(resize_to_fill: [150, 150]), :alt => @executive.title, :title => @executive.title, :class => 'profile-pic' %>
+      <% else %>
+        <%= image_tag '/assets/silhouette.png', :alt => @executive.title, :title => @executive.title, :class => 'profile-pic' %>
+      <% end %>
+
+      <div class="name">
+        <%= @executive.name %>
+      </div>
+
+      <div class='mail'>
+        <a href="mailto:<%= @executive.email %>"><%= @executive.email %></a>
+      </div>
+
+      <% if @current_chamber_role.is_administrator? %>
+        <div class="small-link">
+          <%= link_to "Edit Profile", edit_executive_path( @executive ) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div id='tab-container' class='tab-container'>
+    <ul class='etabs'>
+      <li class='tab'><a href='#legislation'>Legislation</a></li
+      ><li class='tab'><a href='#priorities'>Governing Priorities</a></li
+      ><li class='tab'><a href='#statement'>Personal Statement</a></li>
+    </ul>
+
+    <div id="priorities">
+      <div class='the-content'>
+        <%= sanitize( @executive.executive_profile.priorities, attributes: ['style'] ) if @executive.executive_profile %>
+      </div>
+    </div>
+
+    <div id="statement">
+      <div class='the-content'>
+        <%= sanitize( @executive.executive_profile.personal_statement, attributes: ['style'] ) if @executive.executive_profile %>
+      </div>
+    </div>
+
+    <div id="legislation">
+      <div class='the-content'>
+        <%= render(:partial => 'legislation/executive_role_box', :locals => { :chamber => @current_chamber} ) %>
+      </div>
+    </div>
+  </div>
+</div><!--details-->
+

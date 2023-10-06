@@ -1,0 +1,37 @@
+<div class='left-column'>
+  <div class='left-content'>
+    <p>Here is a record of all the dear colleague letters that you have sent.</p>
+  </div>
+</div>
+<div class='right-column'>
+  <div class="the-content">
+    <h1>Sent Letters</h1>
+    <br/>
+      <ul>
+        <% @letters.reverse.each do |letter| %>
+          <div class="expander expanded">
+            <div id="mail-header" style="border: 0px; padding: 0px;">
+
+              <h2><%= link_to letter.subject, letter_path( letter ) %></h2>
+              <table cellspacing="0">
+                <tr>
+                  <td style='float:right;'>Sent</td>
+                  <td><%= letter.created_at.to_s(:long_with_time) %></td>
+                </tr>
+                <tr>
+                  <td style='float:right;'>To</td>
+                  <td><%= letter.recipient_list.join(', ') %></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <br/>
+        <% end %>
+      </ul>
+    
+    <p class='field field-submit'>
+      <%= link_to "Create New Letter", new_letter_path, :class => 'btn blue-btn' %>
+      <br />
+    </p>
+  </div>
+</div>

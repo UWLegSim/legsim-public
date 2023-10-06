@@ -1,0 +1,54 @@
+<% if @current_chamber_role.group_leader?( @committee ) %>
+<div id="overview" class="left-column">
+  <%= link_button_to "Return to Committee Management", manage_committee_path( @committee ), :size => 'hundred', :class => 'btn blue-btn' %>
+
+  <div class="left-content">
+    <%= content('manage-committee-referrals') %>
+  </div>
+  <div class='field field-submit'>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <h2>Referrals</h2>
+
+    <% if @committee.referrals.unreported.empty? %>
+      <p>No bills have been referred to this committee.</p>
+    <% else %>
+      <table>
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th style="width: 140px" colspan="3">Actions</th>
+        </tr>
+        <% @committee.referrals.unreported.each do |referral| %>
+          <%= render :partial => 'referrals/group_management_row', :locals => { :referral => referral } %>
+        <% end %>
+      </table>
+    <% end %>
+
+    <% unless @committee.referrals.reported.empty? %>
+
+      <h2>Reports</h2>
+
+      <table>
+        <tr>
+          <th style="width: 100%">Title</th>
+          <th></th>
+        </tr>
+        <% @committee.referrals.reported.each do |referral| %>
+          <tr>
+            <td><%= referral.legislation.title %></td>
+            <td>
+              <%= link_button_to "View&nbsp;Report".html_safe, report_path( referral.report ), :size => 'ninty', :class => 'btn blue-btn' %>
+            </td>
+          <tr>
+        <% end %>
+      </table>
+
+    <% end %>
+  </div>
+</div>
+<% else %>
+  You are not this committee's chair, you are not allowed to access this information.
+<% end %>

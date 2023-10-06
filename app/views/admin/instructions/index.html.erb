@@ -1,0 +1,43 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+   <%= content('manage-instructions') %>
+
+   <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <%= form_for :instructions, :url => reorder_admin_instructions_path do |f| %>
+
+      <div id="instructions" class="expander expanded">
+        <div class="bar clearfix">
+          <a href="#" class="title">Instructions</a>
+        </div><!--bar-->
+        <div class="expander-contents">
+          <table cellspacing="0">
+            <tr>
+              <th style="width: 370px">Name</th>
+              <th style="width: 100px">Position</th>
+              <th style="width: 50px"></th>
+            </tr>
+            <% @instructions.each do |instruction| %>
+              <tr>
+                <td><%= instruction.title %></td>
+                <td><%= text_field_tag "instruction_#{instruction.id}", instruction.position, :style => "width: 50px; text-align: center;" %></td>
+                <td><%= link_to "manage", edit_admin_instruction_path( instruction ) %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+      <table>
+        <tr>
+          <td><%= f.submit "Reorder Instructions", :size => "ninety", :class => 'btn blue-btn' %></td>
+          <td><%= link_button_to "New Instruction", new_admin_instruction_path, :size => "ninety", :class => 'btn blue-btn' %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>

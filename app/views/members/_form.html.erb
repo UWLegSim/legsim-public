@@ -1,0 +1,63 @@
+<h1>Edit Your Profile</h1>
+
+<div class="field">
+  <%= f.label :first_name, "First Name" %> <%= f.text_field :first_name, :class => "input" %>
+</div>
+
+<div class="field">
+  <%= f.label :last_name, "Last Name" %> <%= f.text_field :last_name, :class => "input" %>
+</div>
+
+<%= f.fields_for :user do |u| %>
+  <div class="field">
+    <%= u.label :email %> <%= u.text_field :email, :class => "input" %>
+  </div>
+<% end %>
+
+<div class="field">
+  <%= f.label :photo %>
+  <%= f.file_field :photo, accept: 'image/*'  %>
+  <p>Image will be resized to 150 x 150 px</p>
+</div>
+
+<% if @member.photo.attached? %>
+  <div class="field">
+    <label>Current Photo</label>
+    <%= image_tag @member.photo.variant(resize_to_fill: [150, 150]), :alt => @member.title, :title => @member.title %>
+    Delete Current Photo <%= check_box_tag :delete_photo %>
+  </div>
+<% end %>
+
+<%= f.fields_for :member_profile do |p| %>
+  <div class="field text-field">
+    <%= p.label :personal_statement, "Personal Statement" %>
+    <%= p.text_area :personal_statement, :class => "tinymce" %>
+  </div>
+
+  <div class="field">
+    <%= p.label :constituency_id, "Constituency" %>
+    <%= p.select :constituency_id, @member.chamber.constituencies.collect {|c| [ c.title, c.id ] }, {:include_blank => 'None'}, :class => "input" %>
+  </div>
+
+  <div class="field">
+    <%= p.label :constituency_description, "Constituency Description" %>
+    <%= p.text_area :constituency_description, :class => "tinymce" %>
+  </div>
+
+<% end %>
+
+<br/>
+<h1>Survey Questions</h1>
+<br/>
+
+<% @member.chamber.survey_questions.each do |q| %>
+
+  <b><%= q.question %></b><br />
+  <%= radio_button_tag "q#{q.id}", 1, @member.survey_answer?(q,1) %> Strongly Disagree<br />
+  <%= radio_button_tag "q#{q.id}", 2, @member.survey_answer?(q,2) %> Disagree<br />
+  <%= radio_button_tag "q#{q.id}", 3, @member.survey_answer?(q,3) %> Neither Agree Nor Disagree<br />
+  <%= radio_button_tag "q#{q.id}", 4, @member.survey_answer?(q,4) %> Agree<br />
+  <%= radio_button_tag "q#{q.id}", 5, @member.survey_answer?(q,5) %> Strongly Agree<br /><br />
+
+<% end %>
+

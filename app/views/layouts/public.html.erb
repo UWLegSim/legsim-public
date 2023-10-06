@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta name="description" content="Legislative Simulation" />
+  <meta name="copyright" content="(c) Copyright 2013 LegSim" />
+  <meta name="revisit-after" content="1 day" />
+  <meta name="viewport" content="width=device-width" />
+
+
+  <title>Welcome to LegSim: The Interactive Simulation of the Legislative Process</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= favicon_link_tag asset_path('favicon.ico') %>
+  <%= stylesheet_link_tag "application", debug: true  %>
+  <%= javascript_include_tag "application" %>
+
+  <!--[if IE]><%= stylesheet_link_tag "ie", media: [:screen, :projection] %><![endif]-->
+
+<!--   <script type="text/javascript" src="/utility/scripts/jquery.js"></script> -->
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+</head>
+<body id="home">
+
+  <div id="loginheader" class="clearfix">
+    <div id="logo"><a href="/"><span>LegSim</span></a></div>
+<!--     <div id="chamber"><a href="/" class="house_of_representatives"><span>House of Representatives</span></a></div> -->
+  </div><!--header clearfix-->
+
+  <div id="loginnav"></div><!--nav-->
+
+  <div id="container">
+
+    <div id="loginwrapper">
+
+      <% if @page_title %>
+        <div id="loginid">
+          <% if @breadcrumbs %>
+            <p id="breadcrumbs"><a href="/members/">Members</a>&nbsp;&nbsp;&#062;&nbsp;&nbsp;Rep. Edward Coe</p>
+          <% end %>
+          <h1> Welcome to LegSim: Legislative Simulation</h1>
+            <!-- <h1><%= @page_title %><% if @page_description %><span class="explanation"><%= @page_description %></span><% end %></h1> -->
+        </div>
+      <% end %>
+
+      <div class="loginpad">
+      <% if flash[:error] or flash[:alert] or flash[:notice] or flash[:attention] or flash[:info]%>
+	      <div class="alert-box">
+
+          <% [:error,:alert,:attention,:notice,:info].each do |type| %>
+
+            <% if flash[type] %>
+              <h2 class="<%= type.to_s %>"><%= type.to_s.titleize %></h2>
+              <% if flash[type].is_a?(Array) %>
+                <ul>
+                  <% flash[type].each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              <% else %>
+                <p><%= flash[type] %></p>
+              <% end %>
+            <% end %>
+          <% end %>
+
+	        <% flash[:error] = flash[:notice] = flash[:attention] = flash[:info] = nil %>
+	      </div>
+	    <% end %>
+
+        <%= yield %>
+
+      </div><!--pad-->
+    </div><!--wrapper-->
+
+    <div id="loginfooter" class="clearfix">
+      <div class="links clearfix">
+        <div class="menu_left"></div>
+        <div class="menu_right"><%= link_to('Help',:help) %>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="mailto:support@legsim.org" title="Support Desk">Support Desk</a></div>
+      </div><!--links clearfix-->
+
+      <div class="copyright">
+      &copy; 2001 - 2014 University of Washington.
+      </div>
+    </div><!--footer-->
+  </div><!--container-->
+
+</body>
+</html>

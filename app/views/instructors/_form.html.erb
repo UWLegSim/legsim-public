@@ -1,0 +1,26 @@
+<div class="field">
+  <%= f.label :first_name, "First Name" %> <%= f.text_field :first_name, :class => "input" %>
+</div>
+<div class="field">
+  <%= f.label :last_name, "Last Name" %> <%= f.text_field :last_name, :class => "input" %>
+</div>
+
+<%= f.fields_for :user do |u| %>
+  <div class="field">
+    <%= u.label :email %> <%= u.text_field :email, :class => "input" %>
+  </div>
+<% end %>
+
+<div class="field">
+  <%= f.label :photo %>
+  <%= f.file_field :photo, accept: 'image/*', class: 'field'  %>
+  <p>Image will be resized to 150 x 150 px</p>
+</div>
+
+<% if @instructor.photo.attached? %>
+  <div class="field">
+    <label>Current Photo</label>
+    <%= image_tag @instructor.photo.variant(resize_to_fill: [150, 150]), :alt => @instructor.title, :title => @instructor.title %>
+    Delete Current Photo <%= check_box_tag :delete_photo %>
+  </div>
+<% end %>

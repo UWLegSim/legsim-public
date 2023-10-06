@@ -1,0 +1,15 @@
+  <div class="field"><%= f.label :name, "Title" %> <%= f.text_field :name, :class => "input" %><a href="whatisthis" class="wit"></a></div>
+
+  <div class="field"><%= f.label :name, "Abbreviation" %> <%= f.text_field :abbr, :class => "input"  %><a href="whatisthis" class="wit"></a></div>
+
+  <div class="field text-area"><%= f.label :jurisdiction_description, "Committee Description" %>
+  <%= f.text_area :jurisdiction_description, :class => 'tinymce' %>
+<!--   <a href="whatisthis" class="wit"></a> -->
+  </div>
+
+  <div class="field"><%= f.label :issue_description, "Issue Areas"  %>
+  <%= f.text_area :issue_description, :class => 'tinymce' %>
+<!--   <a href="whatisthis" class="wit"></a> -->
+  </div>
+
+  <%= f.hidden_field :chamber_id %>

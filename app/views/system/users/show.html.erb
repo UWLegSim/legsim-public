@@ -1,0 +1,127 @@
+<div id="overview">
+
+  <h1><%= @user.name %></h1>
+
+  <ul>
+    <li><b>Institution:</b> <%= @user.course.institution.name %></li>
+    <li><b>Course:</b> <%= @user.course.name %></li>
+    <li><b>Login:</b> <%= @user.email %></li>
+    <li><b>Email:</b> <%= mail_to @user.email %></li>
+    <li><b>Confirmed:</b> <%= @user.confirmed? ? 'Yes' : 'No' %></li>
+    <% unless @user.confirmation_token.blank? %>
+      <li><b>Confirmation Link:</b> <%= link_to confirmation_url(@user, confirmation_token: @user.confirmation_token) %></li>
+    <% end %>
+  </li><br />
+
+  <%= link_button_to "Resend Confirmation Email", send_confirmation_system_user_path( @user ), :size => 'eighty', :method => 'put' %><br />
+
+  <% unless @user.confirmed? %>
+    <%= link_button_to "Manually Confirm User", confirmation_url(@user, confirmation_token: @user.confirmation_token), :size => 'eighty' %><br />
+  <% end %>
+
+  <%= link_button_to "Delete User", [:system,@user], :size => 'eighty', :method => 'delete', :confirm => "Are you sure you want to delete this user? It is irreversible." %><br />
+
+  <%= link_button_to "Return to User Search", system_users_path, :size => 'eighty' %>
+
+</div>
+
+<div id="details">
+
+  <%= form_for @user, :url => update_password_system_user_path do |f| %>
+
+    <%= error_messages_for :user %>
+
+    <div style="float: left;">
+      <p><%= f.label :password, 'New Password' %><br/>
+      <%= f.password_field :password %></p>
+    </div>
+
+    <div style="float: left;">
+      <p><%= f.label :password_confirmation, 'Confirm Password' %><br/>
+      <%= f.password_field :password_confirmation %></p>
+    </div>
+
+    <p style="clear: left;"><%= submit_tag 'Change Password' %></p>
+
+  <% end %>
+
+  <% unless @user.chamber_roles.empty? %>
+
+    <div id="chamber_roles" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Chamber Roles</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th>Name</th>
+            <th style="width: 100px;">Role</th>
+            <th style="width: 150px;">Chamber</th>
+            <th></th>
+          </tr>
+          <% @user.chamber_roles.includes( :chamber ).each do |chamber_role| %>
+            <tr>
+              <td><%= chamber_role.name %></td>
+              <td><%= chamber_role.type %></td>
+              <td><%= sanitize chamber_role.chamber&.name || '<b>Missing</b>', attributes: ['style'] %></td>
+              <td>
+                <%= form_for @user, :url => assume_system_user_path, :method => :put, :html => { :target => "assume_role_#{chamber_role.id}" }  do |f| %>
+                  <%= hidden_field_tag :chamber_role_id, chamber_role.id %>
+                  <%= f.submit "assume", :size => 'ninty' %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+  <% else %>
+    <h2>There are no chamber roles for this user.</h2>
+  <% end %>
+
+
+  <% unless @user.payments.empty? %>
+
+    <div id="payments" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Payments</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th>Amount</th>
+            <th>Processed At</th>
+            <th>Status</th>
+            <th>CC Number</th>
+            <th></th>
+          </tr>
+          <% @user.payments.reverse.each do |payment| %>
+            <tr>
+              <td><%= number_to_currency(payment.amount / 100) %></td>
+              <td><%= payment.processed_at.strftime('%D %r %Z ') %></td>
+              <td><b><%= payment.status %></b></td>
+              <td><%= payment.cc_number %></td>
+              <td>
+                <% if payment.refundable? %>
+                  <%= form_for payment, :url => refund_system_user_payment_path(@user,payment), :method => :put do |f| %>
+                    <%= f.submit "Refund", :size => 'ninty' %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+            <% if payment.details %>
+              <tr>
+                <td colspan="5"><b>Failure Details:</b> <%= payment.details %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+  <% else %>
+    <h2>There are no payments for this user.</h2>
+  <% end %>
+
+</div>

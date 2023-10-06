@@ -1,0 +1,53 @@
+---
+committees:
+  - name: Committee on Agriculture
+    abbr: AG
+    jurisdiction_description: Agricultural production and research, Food safety and Child nutrition, Rural development, Water conservation.
+  - name: Committee on Appropriations
+    abbr: APPROP
+    jurisdiction_description: Appropriation of revenues for the support of government programs.
+  - name: Committee on Armed Services
+    abbr: ARMSER
+    jurisdiction_description: Defense generally, Petroleum reserves, Intelligence.
+  - name: Committee on Education and Labor
+    abbr: EDU
+    jurisdiction_description: Labor generally, Worker training, Education programs generally.
+  - name: Committee on Energy and Commerce
+    abbr: ENRGY
+    jurisdiction_description: Energy generally, Interstate commerce, Health including Medicaid and SCHIP (unless supported by payroll deductions), Consumer affairs, Travel and tourism.
+  - name: Committee on Financial Services
+    abbr: FS
+    jurisdiction_description: Banking, Insurance, Intl Finance, Securities, Housing and Urban development.
+  - name: Committee on Oversight &amp; Government Reform
+    abbr: OGR
+    jurisdiction_description: Civil service, D.C., Post Office, Government organization and accountability, Census, Official holidays.
+  - name: Committee on Homeland Security
+    abbr: HMS
+    jurisdiction_description: Overall homeland security policy, Border security, Customs, Transportation security, Domestic preparedness, Information.
+  - name: Committee on Foreign Affairs
+    abbr: FA
+    jurisdiction_description: Foreign relations, Export controls, Loans, International organizations, Interventions and declarations of war.
+  - name: Committee on the Judiciary
+    abbr: JUD
+    jurisdiction_description: Civil and criminal proceedings, Apportionment, Constitutional issues, Immigration, Prisons, Patents, Monopolies, Subversive activities.
+  - name: Committee on Natural Resources
+    abbr: NR
+    jurisdiction_description: Fisheries and wildlife, Forest reserves and national parks, Intl fishing agreements, Irrigation, Native Americans, Mining and minerals, Trans-Alaska Pipeline.
+  - name: Committee on Rules
+    abbr: RULE
+    jurisdiction_description: Rules and the order of business of the House.
+  - name: Committee on Science & Technology
+    abbr: SCI
+    jurisdiction_description: Science, Energy research and development, Environmental research, Space, Civil Aviation, Weights and measures.
+  - name: Committee on Small Business
+    abbr: SBUS
+    jurisdiction_description: Assistance to and protection of small business.
+  - name: Committee on Transportation and Infrastructure
+    abbr: TRANS
+    jurisdiction_description: Transportation generally, Coast Guard, FEMA, Navigation, Flood Control, Public Buildings, Hydroelectric power.
+  - name: Committee on Veterans' Affairs
+    abbr: VA
+    jurisdiction_description: Veterans generally.
+  - name: Committee on Ways and Means
+    abbr: W&M
+    jurisdiction_description: Taxes generally, Customs revenue, trade agreements, territories, tax exempt foundations, Social Security programs including income security and Medicare (funded by payroll deductions).

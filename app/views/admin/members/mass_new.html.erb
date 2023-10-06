@@ -1,0 +1,41 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <p>
+    For prepaid sessions, the administrator has the option of generating a
+    list of user names and passwords to distribute to students.
+  </p>
+
+  <p>
+    There can be no blank spaces before the names, and no initials.
+  </p>
+
+  <p>
+    Right click to save the results and distribute to your students.
+  </p>
+  <p>
+    Students need to change their passwords and email addresses after
+    they login for the first time.
+  </p>
+</br>
+
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'hundred', :class => 'btn blue-btn' %>
+</div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= form_for(:members, :url => mass_create_admin_members_path, :method => :post) do |f| %>
+    <div class='field text-area'>
+      <%= label_tag :fullnames, "Full Name of Users (one per line, FIRSTNAME LASTNAME)"  %>
+      <%= text_area_tag :fullnames, '', :style => "height: 300px; width: 95%;" %>
+    </div>
+
+    <br style="clear: left;" />
+    <br style="clear: left;" />
+    <div class='field field-submit'>
+      <%= f.submit "Create User Accounts", :size => 'sixty', :class => 'btn blue-btn' %>
+    <div>
+
+  <% end %>
+</div>
+</div><!--details-->

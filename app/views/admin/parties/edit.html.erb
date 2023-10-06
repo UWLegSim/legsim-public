@@ -1,0 +1,19 @@
+<div class="left-column">
+  <div class="left-content">
+    <%= content('edit-party') %>
+
+    <%= link_button_to 'Return to Administration', admin_path, :size => 'hundred', :class => 'btn blue-btn' %>
+  </div>
+</div>
+
+<div class="right-column">
+  <div class="the-content">
+    <%= form_for [:admin,@party] do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <div class='field field-submit'>
+        <%= submit_tag("Update Party", :class => 'btn blue-btn') %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

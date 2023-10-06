@@ -1,0 +1,39 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <%= form_for :members, :url => mass_delete_admin_members_path do |f| %>
+
+      <div id="members" class="expander expanded">
+        <div class="bar clearfix">
+          <a href="#" class="title">Members</a>
+        </div><!--bar-->
+        <div class="expander-contents">
+          <table cellspacing="0">
+            <tr>
+              <th style="width: 26px"></th>
+              <th style="width: 370px">Name</th>
+              <th style="width: 50px"></th>
+              <th style="width: 50px"></th>
+            </tr>
+            <% @members.each do |member| %>
+              <tr>
+                <td><%= check_box_tag "chamber_role_ids[]", member.id %></td>
+                <td><%= member.name %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+
+      <div class="field field-submit">
+        <%= f.submit "Delete Selected Members", :size => "ninety", :confirm => "Are you sure you want to delete the selected members?", :class => 'btn blue-btn' %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

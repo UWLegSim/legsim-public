@@ -1,0 +1,49 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('admin-sections') %>
+
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= form_for :sections, :url => mass_delete_admin_sections_path do |f| %>
+
+    <div id="sections" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Sections</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th></th>
+            <th style="width: 370px">Name</th>
+            <th style="width: 120px; text-align: center">Abbreviation</th>
+            <th style="width: 150px">Instructor</th>
+            <th style="width: 50px"></th>
+            <th style="width: 50px"></th>
+          </tr>
+          <% @sections.each do |section| %>
+            <tr>
+              <td><%= check_box_tag "group_ids[]", section.id %></td>
+              <td><%= link_to section.name, section_path( section ) %></td>
+              <td class="center"><%= section.abbr %></td>
+              <td><%= link_to_user section.primary_leader %></td>
+              <td><%= link_to "edit", edit_admin_section_path( section ) %></td>
+              <td><%= link_to "manage", admin_section_path( section ) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td><%= f.submit "Delete Selected Sections", :size => "ninety", :confirm => "Are you sure you want to delete the selected sections?", :class => 'btn blue-btn' %></td>
+        <td><%= link_button_to "New Section", new_admin_section_path, :size => "ninety", :class => 'btn blue-btn' %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+</div>

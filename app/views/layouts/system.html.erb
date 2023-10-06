@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <meta name="description" content="Legislative Simulation" />
+  <meta name="copyright" content="(c) Copyright 2013 LegSim" />
+  <meta name="revisit-after" content="1 day" />
+
+  <title>Welcome to LegSim: The Interactive Simulation of the Legislative Process</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  
+  <%= favicon_link_tag asset_path('favicon.ico') %>
+
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+
+  <!--[if IE]><link rel="stylesheet" href="/utility/css/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+
+</head>
+<body id="home">
+
+  <div id="header" class="clearfix">
+    <div id="logo"><a href="/system"><span>LegSim</span></a></div>
+    <div id="chamber"><a href="/system" class="system_administration"><span>System Administation</span></a></div>
+    <div id="topnav">
+      <div id="topmenu">
+        <% if current_system_user %>
+          <%= current_system_user.name %> [<%= current_system_user.email %>] (<%= link_to( "Log Out", destroy_system_user_session_path, method: :delete ) %>)&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+        <% end %>
+      </div>
+    </div><!--topnav-->
+  </div><!--header clearfix-->
+
+  <div id="nav">
+    <ul id="menu">
+      <li id="nav_home"><a href="/system" title="System"><span>System</span></a></li>
+      <li id="nav_courses"><a href="/system/courses" title="Courses"><span>Courses</span></a></li>
+      <li id="nav_users"><a href="/system/users" title="Users"><span>Users</span></a><ul>
+        <li><a href="/system/users" title="Registrations">Registrations</a></li>
+        <li><a href="/system/system_users" title="System Users">System Users</a></li>
+      </ul></li>
+      <li id="nav_content"><a href="/system/content" title="Content"><span>Content</span></a></li>
+    </ul>
+  </div><!--nav-->
+
+  <div id="container">
+
+    <div id="wrapper">
+
+      <div class="pad">
+
+        <% if flash[:error] or flash[:notice] or flash[:attention] or flash[:info]%>
+          <div class="alert-box">
+
+            <% [:error,:attention,:notice,:info].each do |type| %>
+
+              <% if flash[type] %>
+                <h2 class="<%= type.to_s %>"><%= type.to_s.titleize %></h2>
+                <% if flash[type].is_a?(Array) %>
+                  <ul>
+                    <% flash[type].each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                <% else %>
+                  <p><%= flash[type] %></p>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <% flash[:error] = flash[:notice] = flash[:attention] = flash[:info] = nil %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+
+      </div><!--pad-->
+    </div><!--wrapper-->
+
+    <div id="footer" class="clearfix">
+
+      <div class="links clearfix">
+        <div class="menu_left"></div>
+        <div class="menu_right"><a href="/contact" title="Contact Us">Contact Us</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="/support_desk" title="Support Desk">Support Desk</a></div>
+      </div><!--links clearfix-->
+
+      <div class="copyright">
+      &copy; 2001 - 2014 University of Washington.
+      </div>
+    </div><!--footer-->
+  </div><!--container-->
+
+</body>
+</html>

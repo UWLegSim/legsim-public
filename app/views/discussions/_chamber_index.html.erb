@@ -1,0 +1,51 @@
+<div id="discussions" class="expander expanded">
+  <div class="bar clearfix">
+    <h2 href="#" class="title">Debates &amp; Discussions <!--<span class="parenthesis">(7 unread)</span>--></h2>
+  </div>
+  <div class="expander-contents">
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Last Event</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+
+      <% unless chamber.floor.discussions.open_discussions.with_recent_comment.empty? %>
+        <tr><td colspan="3"><b><%= chamber.floor.name %></b></td></tr>
+        <% chamber.floor.discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+          <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+        <% end %>
+      <% end %>
+
+      <% chamber.committees.each do |group| %>
+        <% unless group.discussions.open_discussions.with_recent_comment.empty? %>
+          <tr><td colspan="3"><b><%= group.name %></b></td></tr>
+          <% group.discussions.open_discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+            <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% chamber.parties.each do |group| %>
+        <% unless group.discussions.open_discussions.with_recent_comment.empty? %>
+          <tr><td colspan="3"><b><%= group.name %></b></td></tr>
+          <% group.discussions.open_discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+            <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% chamber.caucuses.each do |group| %>
+        <% unless group.discussions.open_discussions.with_recent_comment.empty? %>
+          <tr><td colspan="3"><b><%= group.name %></b></td></tr>
+          <% group.discussions.open_discussions.with_recent_comment.include_chamber_role.each do |discussion| %>
+            <%= render( :partial => 'discussions/private_row', :locals => { :discussion => discussion } ) %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </table>
+  </div>
+</div>

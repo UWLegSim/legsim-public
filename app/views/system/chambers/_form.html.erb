@@ -1,0 +1,10 @@
+<fieldset class="clearfix">
+  <%= f.label :name %> <%= f.text_field :name, :style => "width: 300px"  %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :scenerio %>
+  <%= f.select :scenerio, options_for_select( [['Select a scenerio...',''],['US House of Representatives','us_house_of_representatives'],['US Senate','us_senate'], ['MA State House','MA_house_of_representatives']]), {}, :style => "width: 300px" %>
+</fieldset>
+
+<%= f.hidden_field :course_id %>

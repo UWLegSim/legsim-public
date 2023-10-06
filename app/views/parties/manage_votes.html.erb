@@ -1,0 +1,133 @@
+<!--Copy the styling from manage votes caucuses-->
+<% if @current_chamber_role.group_leader?( @party ) %>
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('manage-party-votes') %>
+
+    <div class="field field-submit">
+      <%= link_button_to "Party Management", manage_party_path( @party ), :size => 'sixty', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <h2>Scheduled Votes</h2>
+
+  <% if @party.votes.pending.empty? %>
+    <p>There are no pending votes.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th style="width: 140px" colspan="2">Actions</th>
+      </tr>
+      <% @party.votes.pending.each do |vote| %>
+        <tr>
+          <td>
+            <%= vote.title %><br />
+            &nbsp;&nbsp;&nbsp;<b>Start At:</b> <%= vote.start_at.to_s(:long_with_time) %><br />
+            &nbsp;&nbsp;&nbsp;<b>Finish At:</b> <%= vote.finish_at.to_s(:long_with_time) %>
+          </td>
+          <td >
+            <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_vote_path(vote), :size => 'eighty', :class => 'btn blue-btn' %>
+          </td>
+          <td >
+            <%= form_for vote, :url => {:action => 'cancel', :controller => :votes, :id => vote.id} do |f| %>
+              <%= f.submit "Cancel", :size => 'hundred', :class => 'btn blue-btn' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <h2>Legislation in Study Groups</h2>
+
+  <% if @party.referrals.hearing.empty? %>
+    <p>There is no legislation in a study group.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 140px">Actions</th>
+      </tr>
+      <% @party.referrals.hearing.each do |referral| %>
+        <tr>
+          <td><%= link_to_legislation( referral.legislation ) %></td>
+          <td colspan="3">
+            <%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+          </td>
+          <td>
+            <%= link_button_to "Enter&nbsp;Previous&nbsp;Vote".html_safe, previous_referral_votes_path(referral), :size => 'hundred', :class => 'btn blue-btn' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+
+  <% if @current_chamber_role.is_administrator? %>
+
+    <h2>In Progress Votes</h2>
+
+    <% if @party.votes.in_progress.empty? %>
+      <p>There are no in progress votes.</p>
+    <% else %>
+      <table style="width: 100%">
+        <tr>
+          <th>Title</th>
+          <th style="width: 140px" colspan="2">Actions</th>
+        </tr>
+        <% @party.votes.in_progress.each do |vote| %>
+          <tr>
+            <td>
+              <%= vote.title %><br />
+              &nbsp;&nbsp;&nbsp;<b>Start At:</b> <%= vote.start_at.to_s(:long_with_time) %><br />
+              &nbsp;&nbsp;&nbsp;<b>Finish At:</b> <%= vote.finish_at.to_s(:long_with_time) %>
+            </td>
+            <td>
+              <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_vote_path(vote), :size => 'eighty', :class => 'btn blue-btn' %>
+            </td>
+            <td >
+              <%= form_for  vote, :url => {:action => 'cancel', :controller => :votes, :id => vote.id} do |f| %>
+                <%= f.submit "Cancel", :size => 'hundred', :class => 'btn blue-btn' %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
+  <% end %>
+
+  <% if @current_chamber_role.is_administrator? %>
+
+    <h2>Previous Votes</h2>
+
+    <% if @party.votes.finished.empty? %>
+      <p>There are no finished votes.</p>
+    <% else %>
+      <table style="width: 100%">
+        <tr>
+          <th>Title</th>
+          <th style="width: 100px">Outcome</th>
+          <th style="width: 140px">Actions</th>
+        </tr>
+        <% @party.votes.finished.each do |vote| %>
+          <tr>
+            <td><%= vote.title %></td>
+            <td class="<%= vote.outcome %>"><%= vote.outcome.titleize if vote.outcome %></td>
+            <td colspan="3">
+              <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_previous_vote_path(vote), :size => 'eighty', :class => 'btn blue-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
+  <% end %>
+</div>
+</div>
+<% else %>
+  Only the party chair can edit this page.
+<% end %>

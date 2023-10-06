@@ -1,0 +1,250 @@
+---
+contents:
+- reference: edit-caucus
+  copy: |-
+    <p>A Caucus or Congressional Member Organization (CMO) is an informal group of members that organizes&nbsp;to pursue common goals.</p>
+    <p>Any member can create a caucus and becomes the leader of that caucus. Each caucus includes management tools for promoting communications among members. Members often belong to multiple caucuses.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://cha.house.gov/member_orgs.aspx">House Administration Committee listing of Congressional Caucuses</a></p>
+- reference: create-party
+  copy: |-
+    <p>A Political Party is a type of caucus. In Congress, party members work together to pursue common objectives, often by voting as a block on matters of leadership selection or procedure.</p>
+    <p>In LegSim, Any member can create a party. Members can only belong to one party, and must seek the leader's&nbsp; permission to join.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://www.dems.gov/">House Democratic Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.gop.gov/">House Republican Caucus</a></p>
+    <p><a href="http://src.senate.gov/public/">Senate Republican Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://democrats.senate.gov/">Senate Democratic Caucus</a></p>
+- reference: committee-request-info
+  copy: |-
+    <p><strong><span style="text-decoration: underline;">Available Committees</span></strong></p>
+    <p><em>Please update your committee requests to reflect the committees that are available for your section time</em></p>
+    <p><strong>11:30-12:20 Sections:</strong> Appropriations, Homeland Security, Transportation, Judiciary, Foreign Affairs, Agriculture, Financial Services, Veterans, Oversight</p>
+    <p>&nbsp;<strong>12:30-1:20 Sections:</strong> Education and Labor, Ways and Means, Armed Services, Energy and Commerce, Rules, Small Business, Natural Resources, Science and Technology</p>
+    <p>&nbsp;<span style="text-decoration: underline;">About Congressional Committees</span></p>
+    <p>Congress divides its workload among approximately 200 committees and subcommittees. This workload includes evaluating legislative proposals, overseeing the management of existing programs, and investigating new issues.&nbsp;</p>
+    <p>The issue responsibilities of committees are specified in the rules of the House and Senate (below). The chamber leadership, with the advice of the parliamentarian typically refers a bill to just one committee. The exceptions (multiple referrals) usually involve legislation that address issues that cut across the jurisdictions of multiple committees.</p>
+    <p><a href="http://info.legsim.org/resources/House%20Committee%20Assignment.pdf">House Committees: Assignment Process</a></p>
+    <p><a href="http://info.legsim.org/resources/House%20Committee%20Jurisdictions.pdf">House Committee Jurisdictions</a>&nbsp;&nbsp;&nbsp;<a href="http://www.access.gpo.gov/congress/senate/sclinks.html">Senate Committee Jurisdictions</a></p>
+    <p><a href="http://info.legsim.org/resources/AuthorizationAppropriations.pdf">Authorization-Appropriations Process</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: edit-administrator-profile
+  copy: <p>Every lawmaker has a website that provides information about his or her priorities and the district that he or she represents. This public profile is helpful for communicating with constituents and for helping other busy legislators and their staff learn about your priorities as they seek support for their own policy agendas.&nbsp;</p>
+- reference: submit-legislation
+  copy: |-
+    <p>A bill cannot be withdrawn or edited once it has been submitted.  Please draft bills off-line and proofread carefully before you submit. A  sample bill can be found under the Instruction tab.</p>
+    <p><strong>Types of Legislation</strong>.</p>
+    <p>(H. R.) Bills that become public law revise the U.S. Code (below). Bills can vary dramatically in terms of their importance.</p>
+    <p>(H. Res) Simple Resolutions do not have the force of law.  They are often used to make statements of support or opposition, and are  also used to propose changes in internal legislative procedures.</p>
+    <p>(H.J. Res) Joint Resolutions become law in the same manner as  public bills. The exceptions are Joint Resolutions that propose  amendments to the Constitution, which require 2/3rds support of Congress  to be referred to the states for ratification.</p>
+    <p>&nbsp;</p>
+    <p>The<strong> Legislative Text</strong> of a bill in LegSim includes the specific proposed legislative language (i.e. how you propose to alter the U.S Code).</p>
+    <p>The <strong>Supporting Text </strong>is where the goal of the bill, why it is  needed, and how will will accomplish the goal is described.&nbsp; In other  words, why other lawmakers should support it.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><a href="http://info.legsim.org/resources/Introducing_a_Senate_Bill_or_Resolution.pdf">Introducing a Senate Bill or Resolution</a></p>
+    <p>&nbsp;</p>
+    <p><a href="http://info.legsim.org/resources/Bills%20and%20Resolutions.pdf">Bills and Resolutions: Examples of how each kind is used</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p><a href="http://www.house.gov/legcoun/strokoff.shtml">How&nbsp;laws are made</a></p>
+    <p><a href="http://www.gpoaccess.gov/uscode/browse.html">U.S. Code</a>: The law of the land &nbsp;</p>
+    <p><a href="http://www.whitehouse.gov/omb/">U.S Budget:</a> How much do things cost?</p>
+    <p><a href="http://thomas.loc.gov/">Thomas</a>: Research congressional legislation&nbsp;&nbsp;&nbsp;&nbsp;</p>
+- reference: leadership-nominations-info
+  copy: |-
+    <p>This page offers legislators the opportunity to nominate and indicate support candidates for chamber leadership positions.</p>
+    <p>Actual leadership selection processes are more complicated, and most classes will decide their procedures and make their choices in the classroom.</p>
+    <p>In the House, each party caucus informally chooses its nominee, and then votes as a block during the formal process that takes place on the first day of the 2 year Congress. Thus the real action takes place in caucus, where candidates are successively eliminated (lowest vote getter) until one candidate recieves a majority of support in the caucus.</p>
+    <p>In the Senate, the presiding officer is the Vice-President. In practice, however, the majority party leader is the <em>de facto</em> leader of the Senate.</p>
+    <p>For more information about how congressional leaders are formally chosen, consult the links below.&nbsp;</p>
+    <p>&nbsp;<a href="http://opencrs.com/document/RL30725/2006-12-08/">The First Day of a New Congress</a></p>
+    <p>&nbsp;&nbsp;&nbsp; <a href="http://www.house.gov/house/orgs_pub_hse_ldr_www.shtml">House Leadership</a></p>
+    <p><a href="http://info.legsim.org/resources/Presiding_Officer.pdf">Presiding Officer: Senate</a></p>
+    <p>&nbsp;&nbsp;&nbsp; <a href="http://www.senate.gov/pagelayout/senators/a_three_sections_with_teasers/leadership.htm">Senate Leadership</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: party-directory
+  copy: |-
+    <p>A Political Party is a type of caucus. In Congress, party members work together to pursue common objectives, often by voting as a block on matters of leadership selection or procedure.</p>
+    <p>Any member can create a party. Members can join or leave party caucuses at will. The party caucus leader can also decide to exclude a particular member.</p>
+    <p><span style="text-decoration: underline;">Links to Congressional resources</span></p>
+    <p><a href="http://www.dems.gov/">House Democratic Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://www.gop.gov/">House Republican Caucus</a></p>
+    <p><a href="http://src.senate.gov/public/">Senate Republican Caucus</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://democrats.senate.gov/">Senate Democratic Caucus</a></p>
+- reference: caucus-directory
+  copy: |-
+    <p>A Caucus or Congressional Member Organization (CMO) is an informal group of members that organizes&nbsp;to pursue common goals.</p>
+    <p>Any member can create a caucus, and each caucus includes management tools for promoting communications among members. Members often belong to multiple caucuses.</p>
+    <p>Members can join or leave caucuses at will. The caucus leader can also decide to exclude a particular member from a caucus.</p>
+    <p><a href="http://cha.house.gov/member-services/congressional-memberstaff-organizations">Congressional Member Organizations</a></p>
+- reference: draft-dear-colleague
+  copy: |-
+    <p><strong>About Dear Colleague letters</strong></p>
+    <p>In LegSim there are two kinds of dear colleague emails. Ordinary 'dear colleagues' provide a means of communication among legislators and legislative groups. You&nbsp;are encouraged to use&nbsp;ordinary dear colleagues as often as you like.&nbsp;</p>
+    <p>"Special" dear colleagues sent&nbsp;to the entire chamber should be restricted to&nbsp;general announcements or to seek general support for legislation, etc. They should <span style="text-decoration: underline;">not</span> be used to carry on a conversation that everyone in the class is forced to read. In 2008, Congress implemented&nbsp;an e-dearcolleague email system that looks very similar to&nbsp;what LegSim has had for the past 8 years!</p>
+    <p>&nbsp;<a href="http://digital.library.unt.edu/govdocs/crs//data/2005/upl-meta-crs-6161/RS21667_2005Jan04.pdf">Dear Colleague Letters: A Brief Overview</a></p>
+- reference: browse-legislation
+  copy: |-
+    <p><strong>Browse Submitted Legislation</strong></p>
+    <p>All submitted legislation is listed here. A bill can have only one sponsor. However, other legislators can indicate their support for a bill by co-sponsoring it.</p>
+    <p>The Speaker, in consultation with the Parliamentarian, refers each bill to committee for initial consideration. For information about committee consideration, consult the Committees page.</p>
+    <p><a href="http://assets.opencrs.com/rpts/98-458_19990803.pdf">&nbsp;Introducing a House Bill or Resolution</a></p>
+    <p><a href="http://thomas.loc.gov/bss/d111/sponlst.html">Member Sponsorship and cosponsorship activities in Congress</a></p>
+    <p>&nbsp;</p>
+- reference: committee-directory
+  copy: |-
+    <p><strong>Congress in its Committees is Congress at Work</strong></p>
+    <p>Committees are where much of the work of Congress gets done. They enable Congress to accomplish more by dividing up tasks and by encouraging lawmakers to acquire and share policy and political expertise.</p>
+    <p>Most legislation is referred to committee for initial consideration. This right of referral gives the committee of jurisdiction considerable influence over the progress and substance of legislation.</p>
+    <p><strong>Committee Proceedings</strong></p>
+    <p>The Committee Chair sets the committee agenda. In LegSim, this includes scheduling <strong>legislative hearings </strong>and <strong>votes</strong> on <strong>amendments</strong> sponsored by committee members to legislation referred to the committee, and scheduling <strong>non-legislative</strong> <strong>hearings</strong> on other matters. The committee chair is also responsible for ensuring that the committee issues a written <strong>committee report </strong>on any legislation it sends to the floor.</p>
+    <p><strong>Committee Referrals</strong></p>
+    <p>Every bill must be referred to at least one primary committee of referral  within 24 hours of introduction.</p>
+    <p><strong>Primary referrals.</strong><strong> </strong>The bill cannot be placed on the calendar  for floor consideration until it has been reported out of this committee (or  committees).&nbsp;</p>
+    <p><strong>Secondary referrals</strong>. A bill may also be referred to  secondary committees of referral. Bills can be placed on the calendar even if  they have not been reported by secondary committees of referral.</p>
+    <p><a href="http://wikileaks.org/leak/crs/RS20794.pdf">The Committee System</a></p>
+    <p><a href="http://www.rules.house.gov/archives/RS20465.pdf">House Committee Organization and Process</a></p>
+    <p><a href="http://www.rules.house.gov/archives/98-169.pdf">Committee Reports: Required Conten</a>ts</p>
+- reference: committee-directory
+  copy: |-
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><a href="http://beijing.usembassy-china.org.cn/uploads/images/r8bxlA61-zMHlF76jit9Rw/committee_system.pdf">Committee System n the U.S. Congress</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: manage-content
+  copy: ""
+- reference: chamber-management
+  copy: |-
+    <p>From this desk the House Speaker assigns legislators to committees and refers legislation to the appropriate committee of jurisdiction.</p>
+    <p><strong>Assignment of legislators to committees</strong></p>
+    <p>The Speaker formally assigns legislators to committee and assign committee chairs based upon a process decided by the House.</p>
+    <p><strong>Referrals of legislation to committee.</strong></p>
+    <p>The Speaker, in consultation with the parliamentarian, refers legislation to the committee or committees that possess jurisdiction over the bill's subject.</p>
+    <p style="padding-left: 30px;"><a href="http://info.legsim.org/resources/House%20Committee%20Jurisdictions.pdf">House Committee Jurisdictions</a></p>
+    <p><strong>Calendars and Floor Scheduling</strong></p>
+    <p>The Speaker is also responsible for setting the floor agenda (within the limits of House procedures). This includes placing bills on the calendar, scheduling debates&nbsp;on special rules, and scheduling debates on legislation.</p>
+    <p><a href="http://assets.opencrs.com/rpts/RS20881_20041129.pdf"></a></p>
+- reference: chamber-management
+  copy: |-
+    <p>More tools to come!</p>
+    <p><a href="http://assets.opencrs.com/rpts/RS20881_20041129.pdf">Party Leaders in  the House</a></p>
+    <p><a href="http://rules.house.gov/Archives/comm_jurisdiction.htm">House Committee  Jurisdictions</a></p>
+- reference: committee-referral
+  copy: |-
+    <p>Every bill must be referred to at least one primary committee of referral within 24 hours of introduction.</p>
+    <p><strong>Primary referrals</strong>. The bill cannot be placed on the calendar for floor consideration until it has been reported out of this committee (or committees).&nbsp;</p>
+    <p><strong>Secondary referrals</strong>. A bill may also be referred to secondary committees of referral. Bills can be placed on the calendar even if they have not been reported by secondary committees of referral.</p>
+    <p>Referrals can only be altered within 24 hours of the original referral.</p>
+    <p><a href="http://info.legsim.org/resources/House%20Committee%20Jurisdictions.pdf">House Committee Jurisdictions</a></p>
+- reference: manage-committee
+  copy: "<p>This is where the Committee Chair manages committee affairs.</p>\r\n\
+    <p><strong>Manage Committee Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>\r\n\
+    <p><strong>Manage Legislative Referrals</strong>. Allows you to open and close a committee hearing on a legislative referral. If you open a hearing, it will create a discussion forum that is automatically linked to the legislation. This is also where you have the ability to<strong> table</strong> a bill or prepare a <strong>committee report</strong> and report the bill to the floor. An example of a committee report can be found under Instruction.</p>\r\n\
+    <p><strong>Initiate a Non-legislative Hearing.&nbsp;</strong> Allows you to create a discussion forum on any topic. By default these hearings are public, which means that any member of the chamber can contribute.</p>\r\n\
+    <p><strong>Draft and submit a committee report. </strong>The option to vote to report a bill to the floor does not exist until a committee report has been drafted and submitted by the chair. The chair can continue to edit the report until the vote to report it has been scheduled.</p>\r\n\
+    <p><strong>Reporting a bill to the floor. </strong>Once a draft report has been created, the chair can schedule a vote on a motion to 'adopt the committee report.' If the motion passes, the bill is automatically sent to the leader, who then places it on the calendar.</p>\r\n\
+    <p><strong>Special Rules. </strong>The Rules Committee can propose special rules for the consideration of legislation on the floor. They are especially important because they can allow the legislature to bring bills to the floor that are not at the top of the calendar. The Rules Committee chair drafts a special rule that is linked to a specific bill. The Speaker then has the ability to schedule a vote on the special rule. If the chamber adopts the special rule, the bill can then be considered according to its terms. See the Rules of Procedure for examples and more information about special rules.</p>\r\n\
+    <p>\xEF\xBB\xBF</p>"
+- reference: manage-party
+  copy: |-
+    <p>This is where the Party&nbsp;leader&nbsp;manages party&nbsp;affairs.</p>
+    <p><strong>Manage Party&nbsp;Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Discussions</strong>. Allows you to open and close a party&nbsp;meeting that is linked to a <strong>specific piece of legislation</strong>. When other members of the party go to the legislation, they will see that there is a place to share their views with other party members (only).</p>
+    <p><strong>Manage General Discussions.&nbsp;</strong> Allows you to create a discussion forum on any topic.&nbsp;&nbsp;</p>
+- reference: manage-caucus
+  copy: |-
+    <p>This is where the Caucus leader&nbsp;manages caucus&nbsp;affairs.</p>
+    <p><strong>Manage Caucus&nbsp;Information</strong>. Allows you to post general descriptions of your committee's responsibilities and key issues for other to see. Concise descriptions are more likely to be read and appreciated than long ones!</p>
+    <p><strong>Manage Legislative Discussions</strong>. Allows you to open and close a caucus meeting that is linked&nbsp;to&nbsp;<strong>specific piece of legislation</strong>. When other members of the caucus go to the legislation, they will see that there is a place to share their views with other caucus members (only).</p>
+    <p><strong>Manage General Discussions.&nbsp;</strong> Allows you to create a discussion forum on any topic.&nbsp;&nbsp;</p>
+- reference: manage-party-information
+  copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+- reference: manage-committee-information
+  copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+- reference: manage-caucus-information
+  copy: |-
+    <p><strong>Announcements</strong></p>
+    <p>As leader, you have the ability to post announcement about your group's activities. These announcements can be public, or private (viewable only to members of the group).</p>
+    <p><strong>Descriptions</strong></p>
+    <p>The content you enter here is displayed on the group's home page, and provides an opportunity for other's to learn more about the group's responsibilities and priorities. Keep these descriptions brief if the goal is to have others read them!</p>
+- reference: manage-committee-referrals
+  copy: |-
+    <p><strong>Referral &nbsp;Hearings</strong></p>
+    <p>After a bill has been referred to committee, the committee chair can decide whether to open a hearing to discuss the legislation and consider committee&nbsp;amendments. No other action on a bill can occur until a hearing has been scheduled.</p>
+    <p><strong>Draft and submit a committee report. </strong>The option to vote to report a bill to the floor does not exist until a committee report has been drafted and submitted by the chair. The chair can continue to edit the report until the vote to report it has been scheduled.</p>
+    <p>The committee chair can delegate resposibility for preparing the report to another committee member, but only the chair can create and edit the committee report.</p>
+    <p><strong>Reporting a bill to the floor. </strong>Once a draft report has been created, the chair can schedule a vote on a motion to 'adopt the committee report.' If the motion passes, the bill is automatically sent to the leader, who then places it on the calendar.</p>
+    <p><strong>Bill Reporting</strong></p>
+    <p>If a committee decides to recommend legislation for chamber consideration, the committee chair must issue a committee report (s/he can delegate resposibility for preparing the report to another committee member, but only the Chair can formally report the bill to the floor).</p>
+    <p>A committee report cannot be prepared until a&nbsp;hearing on the legislation has been opened.</p>
+    <p><strong>Tabling</strong></p>
+    <p>If the committee opens a hearing on a bill, but decides not to report it,&nbsp;it can set the bill aside by tabling it.&nbsp;</p>
+- reference: draft-committee-report
+  copy: |-
+    <p>Committee revisions to legislation must reflect decisions made by a majority of the&nbsp;committee (e.g. adopted committee amendments).</p>
+    <p><strong>Committee Reports</strong></p>
+    <p>The Committee chair is primarily responsible for&nbsp;drafting the report. The purpose of the report is to share information about the committee's proceedings and findings. It is an opportunity for the committee to persuade other legislators that committee members have done their homework.</p>
+    <p>The draft&nbsp;becomes available to other committee members to review. Committee members can then recommend revisions.&nbsp;Once a majority of members votes to report the bill, the committee chair produces the&nbsp;final version and the bill is automatically sent to the floor.</p>
+    <p>The final committee report must include the voting positions of committee members on the question of whether to report the legislation. Committee members&nbsp;also have the&nbsp;option of inserting&nbsp;dissenting viewpoints in the final version.&nbsp;</p>
+    <p>This document describes congressional committee reports in detail. Yours should reflect the intent if not the actual substance of an actual congressional committee report.</p>
+    <p><a href="http://www.rules.house.gov/archives/98-169.pdf">Committee Reports: Required Conten</a>ts</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: manage-party-referrals
+  copy: |-
+    <p>The party&nbsp;leader can initiate&nbsp;party caucus discussions on specific bills here. The party can also present its views&nbsp;in the form of a party report. This report has no official status, but it is a way for the party leadership to build support within the caucus, and perhaps&nbsp;attract support from other members.</p>
+    <p><strong>Draft version of party&nbsp;report</strong></p>
+    <p>The party leader&nbsp;is primarily responsible for&nbsp;drafting the report. After the leader submits the&nbsp;draft report, it becomes available to other party members.&nbsp;&nbsp;When s.he is ready, the party leader&nbsp;&nbsp;drafts and submits the&nbsp;final version of the report, which is linked to the legislation.&nbsp;</p>
+    <p>Once the final version&nbsp;has been submitted, it cannot be revised!</p>
+- reference: manage-caucus-referrals
+  copy: |-
+    <p>The caucus&nbsp;leader can initiate&nbsp;caucus discussions on specific bills here. The caucus can also present its views&nbsp;in the form of a caucus report. This report has no official status, but it is a way for the caucus&nbsp;to build support for its perspective.</p>
+    <p><strong>Draft version of caucus&nbsp;report</strong></p>
+    <p>The caucus&nbsp;leader&nbsp;is primarily responsible for&nbsp;drafting the report. After the leader submits the&nbsp;draft report, it becomes available to other caucus&nbsp;members.&nbsp;&nbsp;When s/he is ready, the leader&nbsp;&nbsp;drafts and submits the&nbsp;final version of the report, which is linked to the legislation.&nbsp;</p>
+    <p>Once the final version&nbsp;has been submitted, it cannot be revised!</p>
+- reference: instruction
+  copy: <p>Bill Sample</p>
+- reference: manage-floor-calendars
+  copy: |-
+    <p>Bill that are&nbsp;reported from committee are&nbsp;placed on the&nbsp;calendar.&nbsp;Under ordinary procedure, bills are then scheduled for floor consideration in the order in which they were placed on the calendar. Thus, the first one to be placed on the calendar is the first to be brought to the floor.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: info-calendar
+  copy: |-
+    <p>The Speaker places bills&nbsp;reported from committee on the&nbsp;calendar for floor consideration.&nbsp;Under ordinary procedure, bills are then taken up&nbsp;for debate and voting in the order in which they are&nbsp;placed on the calendar.&nbsp;The first bill to be reported is the&nbsp;first to be brought to the floor etc.</p>
+    <p><strong>Special Rules</strong></p>
+    <p>Bills that are not at the top of the calendar can be taken up first by order of a&nbsp;special rule proposed by&nbsp;the&nbsp;Rules Committee.&nbsp;The Speaker schedules consideration of the Special Rule, which&nbsp;takes effect only if&nbsp;approved by a majority of legislators.</p>
+    <p>Bills are not automatically referred to Rules. Typically, the Chair of the committee that reported the&nbsp;bill seeks a&nbsp;special rule from the Rules committee.&nbsp;</p>
+    <p><a href="http://www.rules.house.gov/archives/98-354.pdf">How Special Rules Regulate Calling up<br />Measures for Consideration in the House</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+- reference: manage-floor-information
+  copy: <p>As Speaker, you have the ability to post announcements about the House agenda. The content you submit here&nbsp;is displayed on each legislators'&nbsp;home page.</p>
+- reference: manage-floor-votes
+  copy: |-
+    <p><strong>Schedule Vote</strong></p>
+    <p>On-line votes are&nbsp;scheduled according to the Rules of the chamber. In the House this means that the only the bill at the top of the&nbsp;calendar can be considered, unless a different bill&nbsp;has been made in order by the formal proposal and adoption of a special rule by the Rules committee.</p>
+    <p>The leader schedules when the vote begins and when it ends. The Rules of procedure specify that&nbsp;on-line votes must be open for 48 hours. In addition, no more than 3 votes can occur on-line at one time. Entering the results for an amendment will not update the staus of the bill of course.</p>
+    <p><strong>Enter Previous Vote</strong></p>
+    <p>First, select the Type of Motion considered. Once you have done this, you can select a specific motion submitted on LegSim or you can enter the text of a different motion.</p>
+    <p>Once&nbsp;you enter the previous vote on Final Passage, the bill's status is updated to reflect the outcome of the vote (e.g. it now indicates 'passed' or 'failed').</p>
+- reference: floor-information
+  copy: |-
+    <p>Bills that are on the floor are open to amendment proposals and debate (once the chamber leader opens the debate) . Bills that have not been reported from committee are not open to amendment.</p>
+    <p>Click on the bill and scroll to the bottom to see where to submit an amendment. Click on one of the several tabs to review the committee's report on the bill, to review proposed committee revisions, or to&nbsp; contribute to the floor debate on the bill.</p>
+- reference: manage-committee-votes
+  copy: |-
+    <p>When committee voting is enabled by the instructor, there are two general options for voting. One is to schedule an on-line vote. The other is to enter a previous vote.</p>
+    <p>In both cases, the dropdown box to the left asks you to specify the type of motion that is being voted on and to confirm or enter the substance of the motion being voted on.</p>
+    <p><strong>Reporting a bill</strong>. In committee, the most important vote is the vote to 'adopt the committee report.' If the committee report is adopted, the bill is automatically reported to the chamber leader. A vote on the report can't occur until a report has been drafted (and a report can't be drafted until a hearing has been opened).</p>

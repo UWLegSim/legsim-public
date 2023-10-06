@@ -1,0 +1,34 @@
+<div class="wide-form">
+
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('assign-committee-leadership') %>
+
+  <%= link_to "Group Administration", admin_groups_path %>
+</div>
+</div>
+
+<div ids="details" class="right-column">
+  <div class="the-content">
+  <%= form_for 'update_committee_leadership', :url => { :action => 'update_committee_leadership' } do |f| %>
+
+  <table style="width: 700px">
+    <tr>
+      <th style="width: 100%">Committee</th>
+      <th>Primary&nbsp;Leader</th>
+    </tr>
+    <% @committees.each do |group| %>
+      <tr>
+        <td><%= link_to_group( group ) %></td>
+        <td><%= select_tag "group_#{group.id}", options_for_select( group.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => group.primary_leader ? group.primary_leader.id : 0} ), :class => "input" %></td>
+      </tr>
+    <% end %>
+  </table>
+
+    <%= f.submit "Assign Committee Leadership" %>
+
+  <% end %>
+</div>
+</div>
+
+</div>

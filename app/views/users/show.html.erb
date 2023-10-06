@@ -1,0 +1,18 @@
+Hello, <%= @current_chamber_role.title %><br />
+
+You are a user in <%= @current_user.course.title %><br />
+<% if @current_chamber %>
+  You are current viewing <%= link_to @current_chamber.title, @current_chamber %>
+<% else %>
+  You are not currently viewing a chamber
+<% end %><br/><br/>
+
+You can switch your view to:
+
+<ul>
+  <% @current_user.course.chambers.each do |chamber| %>
+    <% unless chamber == @current_chamber %>
+      <li><%= link_to chamber.title, visit_chamber_path( chamber ) %></li>
+    <% end %>
+  <% end %>
+</ul>

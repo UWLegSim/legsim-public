@@ -1,0 +1,49 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+      <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %> 
+  </div>
+</div>
+
+<div id="details" class="right-column">
+<div class="the-content">
+  <%= form_for :constituencies, :url => mass_delete_admin_constituencies_path do |f| %>
+
+    <div id="constituencies" class="expander expanded">
+      <div class="bar clearfix">
+        <a href="#" class="title">Constituencies</a>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th style="width: 26px"></th>
+            <th style="width: 300px">Name</th>
+            <th style="width: 100px; text-align: center">Abbreviation</th>
+            <th style="width: 50px"></th>
+            <th></th>
+          </tr>
+          <% @constituencies.each do |constituency| %>
+            <tr>
+              <td><%= check_box_tag "constituency_ids[]", constituency.id %></td>
+              <td><%= constituency.name %></td>
+              <td class="center"><%= constituency.abbr %></td>
+              <td><%= link_to "edit", edit_admin_constituency_path( constituency ) %></td>
+              <td><%= link_to "manage", admin_constituency_path( constituency ) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td>
+      <%= f.submit "Delete Selected Constituencies", :size => "ninety", :confirm => "Are you sure you want to delete the selected constituencies?", :class => 'btn blue-btn' %>
+    </td>
+    <td>
+      <%= link_button_to "New Constituency", new_admin_constituency_path, :class => 'btn blue-btn' %>
+    </td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+</div>

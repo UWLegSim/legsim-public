@@ -1,0 +1,18 @@
+<p>
+  To continue to the next step in the activation of your account you will need to proceed to the WolfWare Payment 
+  Site and select a payment option.  Once you have completed payment you will receive an e-mail containing a 
+  uniqe URL.  Click on this URL to confirm receipt and to proceed to the next step of the LegSim Account Registration.
+</p>
+
+<form name='paySite' action='https://foliodirect.net/index2.php' method="post">
+  <input type='hidden' name='option' value='com_phpshop'>
+  <input type='hidden' name='Itemid' value='6'>
+  <input type='hidden' name='page' value='legsim.start'>
+  <input type='hidden' name='id' value='15'>
+  <input type='hidden' name='o' value='<%= @user.course_id %>'>
+  <input type='hidden' name='setsession' value='new'>
+  <input type='hidden' name='sku' value='2958-0001'>
+
+  <div class="button forty"><div class="left"><div class="right"><input type="submit" value="Proceed to Payment" size="forty" simple="false" name="commit" class="submit"></div></div></div>
+
+</form>

@@ -1,0 +1,44 @@
+<fieldset class="clearfix">
+  <%= f.label :name, "Course Name" %> <%= f.text_field :name %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :institution_id, "Institution" %>
+  <%= f.select :institution_id, Institution.order(:name).collect {|i| [ i.name, i.id ] } .push( ['Create New...','new'] ), {:include_blank => 'Select Institution...'} %>
+  <%= text_field_tag :new_institution_name, '', :style => 'display: none' %>
+</fieldset>
+
+<script type="text/javascript">
+  $().ready(function(){
+    $("#course_institution_id").change( function(){
+      if ( $(this).val() == 'new') $("#new_institution_name").show();
+      else $("#new_institution_name").hide();
+    });
+  });
+</script>
+
+<fieldset class="clearfix">
+  <%= f.label :email, "Course Email" %> <%= f.text_field :email %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :email, "Course Timezone" %> <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, {:include_blank => 'Select default timezone...'}  %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :payment_option, "Payment Option" %>
+  <%= f.select :payment_option, [ [ 'Prepaid'],['Elavon'],['FolioDirect'],['UW Center for Commercialization'] ] %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :start_at, "Start Date" %> <%= f.date_time_picker :start_at %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :finish_at, "Finish Date" %> <%= f.date_time_picker :finish_at %>
+</fieldset>
+
+<fieldset class="clearfix">
+  <%= f.label :archive_at, "Archive Date" %> <%= f.date_time_picker :archive_at %>
+</fieldset>
+

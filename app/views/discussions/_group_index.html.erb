@@ -1,0 +1,78 @@
+  <% if @current_chamber_role.group_member?( group ) or @current_chamber_role.can_instruct? %>
+
+    <h2>Open Discussions</h2>
+
+    <% if group.discussions.open_discussions.empty? %>
+
+      <p>There are no public discussions for this caucus.</p>
+
+    <% else %>
+
+      <table>
+        <tr>
+          <th>Discussion</th>
+          <th>Last Event</th>
+          <th>Status</th>
+          <th>Comments</th>
+        </tr>
+        <% group.discussions.open_discussions.each do |discussion| %>
+          <tr>
+            <td><%= link_to discussion.name, discussion %></td>
+            <td><%= link_to_user( discussion.last_event_chamber_role )%> <%= discussion.last_event %> <%= distance_of_time_in_words_to_now(discussion.last_event_timestamp) %> ago</td>
+            <td class="center"><%= discussion.private? ? "Private" : "Public" %></td>
+            <td class="center"><%= discussion.comments.count %></td>
+          </tr>
+        <% end %>
+      </table>
+
+  <% end %>
+
+    <% unless group.discussions.closed_discussions.empty? %>
+
+      <h2>Closed Discussions</h2>
+
+      <ul><% group.discussions.closed_discussions.each do |discussion| %>
+        <li><%= link_to discussion.name, discussion %></li>
+      <% end %></ul>
+
+    <% end %>
+
+  <% else %>
+
+    <h2>Public Discussions</h2>
+
+    <% if group.discussions.open_discussions.public_discussions.empty? %>
+
+      <p>There are no public discussions for <%= group.name %>.</p>
+
+    <% else %>
+
+      <table>
+        <tr>
+          <th>Discussion</th>
+          <th>Last Event</th>
+          <th>Comments</th>
+        </tr>
+        <% group.discussions.open_discussions.public_discussions.each do |discussion| %>
+          <tr>
+            <td><%= link_to discussion.name, discussion %></td>
+            <td><%= link_to_user( discussion.last_event_chamber_role )%> <%= discussion.last_event %> <%= distance_of_time_in_words_to_now(discussion.last_event_timestamp) %> ago</td>
+            <td class="center"><%= discussion.comments.count %></td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end %>
+
+    <% unless group.discussions.closed_discussions.public_discussions.empty? %>
+
+      <h2>Closed Discussions</h2>
+
+      <ul><% group.discussions.closed_discussions.each do |discussion| %>
+        <li><%= link_to discussion.name, discussion %></li>
+      <% end %></ul>
+
+    <% end %>
+
+
+  <% end %>

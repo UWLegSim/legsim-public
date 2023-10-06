@@ -1,0 +1,41 @@
+<div id="overview">
+  <h1><%= @chamber.name %></h2>
+  <h3><%= @chamber.course.name %></h3>
+
+  <table>
+    <tr><th>Created</th><td><%= @chamber.created_at.to_s(:short_with_year) %></td></tr>
+    <tr><th>Scenerio</th><td><%= @chamber.scenerio_title %></td></tr>
+  </table>
+
+  <%= button_to "Delete Chamber", system_course_chamber_path( @chamber.course, @chamber ), :size => 'sixty', :confirm => "Are you sure you wish to delete this chamber? The action is irreversible.", :method => 'delete' %>
+  <%= button_to "Reinitialize Chamber", reinitialize_system_course_chamber_path( @chamber.course, @chamber ), :size => 'sixty', :confirm => "Are you sure you wish to reinitialize this chamber? The action is irreversible.", :method => 'put' %><br /><br />
+
+  <%= link_button_to "Export Contents to File", export_content_system_course_chamber_path( @chamber.course, @chamber ), :size => 'seventy' %><br /><br />
+
+  <%= link_button_to "Return to Course", system_course_path( @chamber.course ), :size => 'sixty' %><br /><br />
+
+</div>
+
+<div id="details">
+
+  <div id="chamber_settings" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">Chamber Settings</a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th>Setting</th>
+          <th>Value</th>
+        </tr>
+        <% @chamber.chamber_settings.each do |chamber_setting| %>
+          <tr>
+            <td><%= chamber_setting.name %></td>
+            <td><%= chamber_setting.value %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+</div>

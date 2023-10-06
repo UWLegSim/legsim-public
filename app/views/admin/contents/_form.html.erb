@@ -1,0 +1,7 @@
+<div class="field"><%= f.label :name, "Reference" %> <%= f.text_field :reference, :class => "input" %></div>
+
+<div class="field text-field"><%= f.label :copy %>
+<%= f.text_area :copy, :class => "advanced-tinymce" %></div>
+
+<%= f.hidden_field :chamber_id if @content.chamber %>
+<%= f.hidden_field :altered %>

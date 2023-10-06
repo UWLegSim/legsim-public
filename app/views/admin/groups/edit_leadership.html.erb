@@ -1,0 +1,59 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('assign-caucus-leadership') %>
+
+  <%= link_button_to "Return to Administration", admin_path, :size => 'eight', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <%= form_for :group_leaders, :url => update_leadership_admin_groups_path, :html => { :method => :put } do |f| %>
+
+      <table style="">
+        <tr>
+          <th style="">Chamber</th>
+          <th>Primary Leader</th>
+        </tr>
+        <tr>
+          <td><%= link_to_group( @floor ) %></td>
+          <td><%= select_tag "group_#{@floor.id}", options_for_select( @floor.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => @floor.primary_leader ? @floor.primary_leader.id : 0} ), :class => "input", :style => "width: 100%;" %></td>
+        </tr>
+        <tr>
+          <th style="">Committees</th>
+          <th>Primary Leader</th>
+        </tr>
+        <% @committees.each do |group| %>
+          <tr>
+            <td><%= link_to_group( group ) %></td>
+            <td><%= select_tag "group_#{group.id}", options_for_select( group.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => group.primary_leader ? group.primary_leader.id : 0} ), :class => "input", :style => "width: 100%;" %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <th style="">Parties</th>
+          <th>Primary Leader</th>
+        </tr>
+        <% @parties.each do |group| %>
+          <tr>
+            <td><%= link_to_group( group ) %></td>
+            <td><%= select_tag "group_#{group.id}", options_for_select( group.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => group.primary_leader ? group.primary_leader.id : 0} ), :class => "input", :style => "width: 100%;" %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <th style="">Caucus</th>
+          <th>Primary Leader</th>
+        </tr>
+        <% @caucuses.each do |group| %>
+          <tr>
+            <td><%= link_to_group( group ) %></td>
+            <td><%= select_tag "group_#{group.id}", options_for_select( group.membership.collect{|m| [m.title,m.id]}.unshift( ["None",'']), {:selected => group.primary_leader ? group.primary_leader.id : 0} ), :class => "input", :style => "width: 100%;" %></td>
+          </tr>
+        <% end %>
+      </table>
+
+      <div class='field field-submit'>
+        <%= f.submit "Update Group Leadership", :size => 'sixty', :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

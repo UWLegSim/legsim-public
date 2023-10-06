@@ -1,0 +1,76 @@
+<% if @current_chamber_role.group_leader?( @party ) %>
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <%= content('manage-party-discussions') %>
+
+    <h3>New Discussion</h3>
+    <%= form_for @party.discussions.new do |f| %>
+      <%= form_field :tip => "Don't mess with this" do %>
+        <div class='field'>
+        <%= f.label :name, "Title", :style => 'width: 93%' %> <%= f.text_field :name , :style => 'width: 93%'%>
+        </div>
+      <% end %>
+      <%= f.hidden_field :group_id %>
+      <div class="field field-submit">
+        <%= f.submit "Create New Discussion", :size => 'sixty', :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+
+    <br />
+    <div class='field field-submit'>
+    <%= link_button_to "Party Management", manage_party_path( @party ), :size => 'sixty', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+<div class="the-content">
+  <h2>Discussions</h2>
+
+  <% if @party.discussions.empty? %>
+    <p>There are no discussions for this party. You can start one by provided a title in the form below.</p>
+  <% else %>
+    <table>
+      <tr>
+        <th style="width: 100%">Title</th>
+        <th style="width: 100%" colspan="">Actions</th>
+        <th style="width: 100%"></th>
+      </tr>
+      <% @party.discussions.each do |discussion| %>
+        <tr>
+          <td><%= discussion.name %></td>
+          <td>
+            <% if discussion.private %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :private, :value => '0' %>
+                <%= f.submit "Make Public", :size => 'ninty', :class => 'btn blue-btn' %>
+              <% end %>
+            <% else %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :private, :value => true %>
+                <%= f.submit "Make Private", :size => 'ninty', :class => 'btn blue-btn' %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <% if discussion.open %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :open, :value => '0' %>
+                <%= f.submit "Close", :size => 'ninty', :class => 'btn blue-btn' %>
+              <% end %>
+            <% else %>
+              <%= form_for discussion do |f| %>
+                <%= f.hidden_field :open, :value => true %>
+                <%= f.submit "Reopen", :size => 'ninty', :class => 'btn blue-btn' %>
+              <% end %>
+            <% end %>
+          </td>
+        <tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
+</div>
+<% else %>
+  Only the part chair can edit this page.
+<% end %>

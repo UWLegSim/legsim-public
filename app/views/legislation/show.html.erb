@@ -1,0 +1,64 @@
+
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= render(:partial => 'box', :locals => { :legislation => @legislation }) %>
+  <% if @legislation.sponsor == @current_chamber_role and @legislation.status == 'introduced' %>
+    <br/>
+    <p>As the sponsor you can withdraw this legislation from consideration or make revisions until it has been referred.</p>
+    <br/>
+    <%= form_for @legislation, :url => legislation_path(@legislation) do |f| %>
+      <%= f.hidden_field :status, :value => 'withdrawn' %>
+      <%= f.submit "Withdraw", :size => 'eighty', :class => 'btn blue-btn' %>
+    <% end %>
+    <br/>
+    <%= link_button_to "Edit", edit_legislation_path(@legislation), :class => 'btn blue-btn' %>
+
+    <script type="text/javascript">
+      $().ready(function(){
+        $("#edit_legislation_<%= @legislation.id %>").submit(function(){
+          if ( confirm("Are you sure you wish to withdraw this legislation? This cannot be undone.") )
+            return true;
+          else return false;
+        });
+      });
+    </script> 
+  <% end %>
+  </div>
+</div><!--overview-->
+
+<div class="right-column">
+  <div id="tab-container" class="tab-container">
+    <ul class='etabs' data-items='3'>
+      <li class='tab'><a href="#details">Details</a></li
+      ><li class='tab'><a href="#leg-text">Legislative Text</a></li
+      ><li class='tab'><a href="#sup-text">Supporting Text</a></li>
+    </ul>
+
+
+    <!--   <% if ((@legislation.status == 'passed') && @current_chamber_role.is_executive?) %>
+        here is where the veto option should be
+        <%= form_for @legislation, :url => legislation_path(@legislation) do |f|%>
+        <%= select_tag :status, options_for_select([['Law','Veto', '']]), :class => "input" %>
+        <%= submit_tag 'bill_signing', :size => "fifty" %>
+        <% end %>
+      <% end %> -->
+
+    <div id='details'>
+      <div class="the-content">
+          <%= render(:partial => 'combined_info', :locals => { :legislation => @legislation }) %>
+      </div>
+    </div>
+
+    <div id="leg-text">
+      <div class="the-content">
+        <%= sanitize @legislation.submission_text.primary_text, attributes: ['style'] %>
+      </div>
+    </div>
+
+    <div id="sup-text">
+      <div class="the-content">
+        <%= sanitize @legislation.submission_text.secondary_text, attributes: ['style'] %>
+      </div>
+    </div>
+  </div>
+</div><!--details-->

@@ -1,0 +1,49 @@
+<div id="overview" class="left-column">
+  <%= link_button_to "Return to Committee Management", manage_committee_path( @committee ), :size => 'hundred', :class => 'btn blue-btn' %>
+
+  <div class="left-content">
+
+    <%= content('manage-committee-information') %>
+    <div class='field field-submit'>
+    </div>
+
+  </div>
+</div>
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+      <%= form_for @committee do |f| %>
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :public_announcement, "Public Announcement" %>
+          <%= f.text_area :public_announcement, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :private_announcement, "Members Only Announcement" %>
+          <%= f.text_area :private_announcement, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :jurisdiction_description, "Jurisdiction Description" %>
+          <%= f.text_area :jurisdiction_description, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :issue_description, "Issue Description" %>
+          <%= f.text_area :issue_description, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field field-submit">
+        <%= f.submit "Update Committee Information", :size => "fifty", :class =>"btn blue-btn" %>
+        <% end %>
+      </div>
+  </div>
+</div>

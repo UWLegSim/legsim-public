@@ -1,0 +1,87 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $("#generate_draft_floor_proceeding").click(function(){
+
+      var post_url = '/floors/' + <%= @floor.id %> + '/generate_proceeding.js';
+      var data = {
+        proceeding_type: $("input[name='motion[action]']:checked").val(),
+        referral_id: $("#motion_referral_id").val()
+      };
+
+      $.post( 
+        post_url, 
+        data, 
+        function( response ) {
+          tinymce.get("motion_text").setContent( response );
+        },
+        'html'
+      );
+
+      return false;
+
+    });
+
+  });
+</script>
+
+<%= form_for @vote do |f| %>
+
+  <div class="left-column" style='float:left; width: 500px'>
+    <div class="left-content">
+
+      <h2>Floor Proceeding Subject Matter</h2>
+      <div class='field'>
+        <%= select_tag 'motion[referral_id]', options_for_select( @floor.referrals.unscheduled.includes(:legislation).collect{|r| [r.legislation.short_title_with_holds,r.id]} ), :style => "width: 100%;" %>
+      </div>
+
+      <h3>Proceeding Type</h3>
+
+      <input type="radio" name="motion[action]" value="motion_to_proceed" checked /> <b>Motion to Proceed</b>
+      <p>
+        A Motion to Proceed only requires a simple majority for passage, however it is a debatable motion and thus subject to filibuster.
+      </p>
+
+      <input type="radio" name="motion[action]" value="unanimous_consent_agreement" /> <b>Unanimous Consent Agreement</b>
+      <p>
+        A Unanimous Consent Agreement requires no member object in order to be adopted. Because of the high threshold for passage, such agreements are generally only available for non-controversial proceedings.
+      </p>
+      <div class='field field-submit'>
+        <%= link_button_to "Generate Draft Floor Proceeding", "#", :size => 'ninty', :id => 'generate_draft_floor_proceeding', :class => 'btn blue-btn' %>
+      </div>
+
+      <h2>Vote Details</h2>
+
+      <p>
+        Start Vote At:<br />
+        <%= date_field_tag 'vote[start_at_date]', @vote.start_at.strftime("%F"), class: 'datetime' %>
+        <%= time_field_tag 'vote[start_at_time]', @vote.start_at.strftime("%R"), class: 'datetime' %>
+      </p>
+
+      <p>
+        Finish Vote At:<br />
+        <%= date_field_tag 'vote[finish_at_date]', @vote.finish_at.strftime("%F"), class: 'datetime' %>
+        <%= time_field_tag 'vote[finish_at_time]', @vote.finish_at.strftime("%R"), class: 'datetime' %>
+      </p>
+      </div>
+    </div>
+
+  <div id="overview" class="right-column" style='float:right;width:750px'>
+    <div class="the-content">
+      <h2>Draft Floor Proceeding</h2>
+
+      <%= form_field do %>
+        <div class='field text-field'>
+          <%= text_area_tag 'motion[text]', '', :class => 'tinymce', :style => 'width: 540px; height: 400px;' %>
+        </div>
+      <% end %>
+
+      <%= f.hidden_field :record_type %>
+      <%= f.hidden_field :status %>
+      <div class='field field-submit'>
+        <%= f.submit "Propose Floor Proceeding", :size => 'sixty', :class => 'btn blue-btn' %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

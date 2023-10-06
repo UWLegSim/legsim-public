@@ -1,0 +1,29 @@
+<h1>Group: <%= @group.title %></h1>
+
+<%= form_for @group, :url => { :action => :update_membership } do |f| %>
+
+  <h3>Members</h3>
+
+  <% @group.membership.each do |member| %>
+    <%= check_box_tag 'remove_chamber_role_ids[]', member.id %><%= member.title %><br />
+  <% end %>
+
+  <%= submit_tag 'Remove Marked Users from Group', :size => 'forty' %>
+
+<% end %>
+
+
+<%= form_for @group, :url => { :action => :update_membership } do |f| %>
+
+  <h3>Unassigned Users</h3>
+
+  <% @group.unassigned_chamber_roles.each do |chamber_role| %>
+    <%= check_box_tag 'add_chamber_role_ids[]', chamber_role.id %><%= chamber_role.title %><br />
+  <% end %><br/>
+
+  <%= submit_tag 'Add Marked Users to Group' %>
+
+<% end %>
+
+<%= link_to "Group Administration", admin_chamber_path( @current_chamber ) %>
+

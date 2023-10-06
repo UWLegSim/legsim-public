@@ -1,0 +1,35 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <div id="caucuses" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">Caucuses</a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th style="width: 370px">Name</th>
+          <th style="width: 100px; text-align: center">Abbreviation</th>
+          <th style="width: 150px">Leader</th>
+          <th></th>
+        </tr>
+        <% @caucuses.each do |caucus| %>
+          <tr>
+            <td><%= caucus.name %></td>
+            <td class="center"><%= caucus.abbr %></td>
+            <td><%= link_to_user caucus.primary_leader %></td>
+            <td><%= link_to "manage", edit_admin_group_path( caucus ) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+  <%= link_button_to "New Caucus", new_admin_group_path( :type => "Caucus" ), :class => 'btn blue-btn' %>
+</div>
+</div>

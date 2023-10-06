@@ -1,0 +1,22 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+ <!--    <a href="http://youtu.be/FDJxSwEa7-Q"><%= image_tag '/assets/img/video-camera.png', :alt => 'Chamber Leader Video Tutorial', :title => 'Chamber Leader Video Tutorial' %></a><br/> -->
+    <%= content('chamber-management') %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <div class='field'><%= link_to "Committee Assignments", edit_committee_assignments_chamber_path( @chamber ) %></div>
+    <div class='field'><%= link_to "Committee/Chamber Leadership", edit_committee_primary_leaders_chamber_path( @chamber ) %></div>
+    <div class='field'><%= link_to "Committee Referrals", edit_committee_referrals_chamber_path( @chamber ) %></div>
+    <div class='field'><%= link_to "Manage Floor Information", manage_info_floor_path( @chamber.floor ) %></div>
+    <div class='field'><%= link_to "Manage Floor Debates", manage_referrals_floor_path( @chamber.floor ) %></div>
+    <div class='field'><%= link_to "Manage Calendars", manage_calendars_floor_path( @chamber.floor ) %></div>
+    <% if @current_chamber_role.is_administrator? %>
+    	<div class='field'><%= link_to 'Manage Floor Votes', admin_calendars_path %></div>
+    <% else %>
+    	<div class='field'><%= link_to "Manage Floor Votes", manage_votes_floor_path( @chamber.floor ) %></div>
+    <% end %>
+  </div>
+</div>

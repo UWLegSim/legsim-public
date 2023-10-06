@@ -1,0 +1,97 @@
+<div class="left-column">
+  <div class="left-content">
+    <%= render( :partial => 'box', :locals => { :vote => @vote, :type => 'motion' } ) %>
+
+    <%= render( :partial => 'legislation/box', :locals => { :legislation => @vote.referral.legislation } ) %>
+  </div>
+</div>
+
+<div class="right-column">
+  <div class="the-content">
+    <% if @vote.chamber.setting('has_filibuster') %>
+      <%= render( :partial => '/motions/debate_status', :locals => { :motion => @vote.motion } ) %>
+    <% end %>
+    <br/>
+
+    <% unless @vote.chamber.setting('has_filibuster') and @vote.status == 'filibuster' %>
+
+      <% if @vote.record_type == 'voice_vote' %>
+
+        <h2>No Recorded Vote was Taken</h2>
+
+      <% else %>
+
+        <div id="discussions" class="expander expanded">
+          <div class="bar clearfix">
+            <h2 href="#" class="title">Ballot Overview</h2>
+          </div>
+          <div class="expander-contents">
+            <table cellspacing="0">
+              <thead>
+                <tr>
+                  <th style="">Vote Type</th>
+                  <th style="width: 10%">Cast</th>
+                  <th style="width: 10%">Percentage</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Yes</b></td>
+                  <td><%= @vote.yes_tally %></td>
+                  <td><%= @vote.yes_percentage %>%</td>
+                  <td rowspan="4"><img src="<%= @vote.chart_url %>" /></td>
+                </tr>
+                <tr>
+                  <td><b>No</b></td>
+                  <td><%= @vote.no_tally %></td>
+                  <td><%= @vote.no_percentage %>%</td>
+                </tr>
+                <tr>
+                  <td><b>Present</b></td>
+                  <td><%= @vote.present_tally %></td>
+                  <td><%= @vote.present_percentage %>%</td>
+                </tr>
+                <tr>
+                  <td><b>No Vote</b></td>
+                  <td><%= @vote.none_tally %></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <% if @vote.record_type == 'roll_call' %>
+
+          <div id="discussions" class="expander expanded">
+            <div class="bar clearfix">
+              <h2 href="#" class="title">Ballot Details</h2>
+            </div>
+            <div class="expander-contents">
+              <table cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Member</th>
+                    <th>Vote</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @vote.ballots.includes(:chamber_role).sort {|a,b| a.chamber_role.last_name <=> b.chamber_role.last_name }.each do |ballot| %>
+                    <tr class="ballot">
+                      <td><%= link_to_user( ballot.chamber_role ) %></td>
+                      <td class="preference <%= ballot.preference %>" style='padding-left: 0px;'><%= ballot.preference %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        <% end %>
+
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

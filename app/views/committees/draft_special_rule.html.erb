@@ -1,0 +1,52 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $("#generate_draft_rule").click(function(){
+
+      var post_url = '/committees/' + <%= @committee.id %> + '/generate_special_rule.js';
+      var data = { legislation_ids: $("#legislation_ids").val().join(',') };
+
+      $("#draft_rule").load(post_url,data);
+      return false;
+
+    });
+
+  });
+</script>
+
+<%= form_for :committee, :url => propose_special_rule_committee_path( @committee ) do |f| %>
+
+  <div id="overview" class="left-column">
+    <div class="left-content">
+      <h2>Special Rule Subject Matter</h2>
+      <div class='field'><%= select_tag 'legislation_ids', options_for_select( @committee.chamber.legislation.under_consideration.collect{|l| [l.short_title,l.id]} ), :multiple => true, :style => "width: 100%;", :size => 15  %></div>
+      <br /><br />
+      <%= link_button_to "Generate Draft Rule", "#", :size => 'sixty', :id => 'generate_draft_rule', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+      <h2>Draft Special Rule</h2>
+
+      <%= form_field do %>
+        <%= text_area_tag :draft_rule, 
+        '<p>Select a bill to your left, Enter the substance of a proposed Special Rule here. To send a Rule to the chamber, the committee must also vote to report it on a Motion to Report scheduled by the chair.</p>
+          
+         <p>Rules can propose just about anything in a Special Rule, but whatever is proposed is meaningless unless it is subsequently approved by a majority of the House. Open rules do little more than move a bill up the calendar. Closed rules can effectively cut off all amendments and debate.</p>
+
+         <p><b>Open</b>. Allows any Member to offer an amendment under the five minute rule, provided that the amendment is germane.</p>
+
+         <p><b>Modified Open</b>. Permits general debate and allows any Member to offer a germane amendment under the five minute rule subject only to an overall time limit on the amendment process, and/or a requirement that amendments be submitted in advance on LegSim.</p>
+
+         <p><b>Structured (Modified Closed)</b>. The Rules Committee limits the amendments that may be offered to those designated in the special rule or Rules Committee report to accompany the special rule.</p> 
+
+         <p><b>Closed</b>. Permits debate for a certain period of time-usually an hour-but permits no amendments to be offered.</p>', :class => 'tinymce field text-field', :style => 'width: 540px; height: 400px;' %>
+      <% end %>
+      <div class='field field-submit'>
+        <%= f.submit "Propose for Committee Deliberation", :size => 'sixty', :class => 'btn blue-btn' %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

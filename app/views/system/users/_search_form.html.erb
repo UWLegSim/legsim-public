@@ -1,0 +1,14 @@
+<%= form_for :user, :url => find_system_users_path, :html => { :method => :get } do |f| %>
+
+  <h2>User Search</h2>
+  <table>
+    <tr><td>Email</td><td><%= text_field_tag :email, params['email'], :size => 15 %></td></tr>
+    <tr><td>First&nbsp;Name</td><td><%= text_field_tag :first_name, params['first_name'], :size => 15 %></td></tr>
+    <tr><td>Last&nbsp;Name</td><td><%= text_field_tag :last_name, params['last_name'], :size => 15 %></td></tr>
+    <tr><td>Course</td><td><%= select_tag :course_id, options_for_select( [ [ 'None', ''] ] + @courses.collect {|c| [ c.title, c.id ] }, params[:course_id].to_i ), :style => 'width: 135px' %></td></tr>
+<!--     <tr><td>Role Type</td><td><%= text_field_tag :role_type %></td></tr> -->
+  </table>
+
+  <%= submit_tag "Find User", :size => 'seventy' %>
+
+<% end %>

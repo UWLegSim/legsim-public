@@ -1,0 +1,47 @@
+---
+committees:
+  - name: Committee on Agriculture, Nutrition, and Forestry
+    abbr: AG
+    jurisdiction_description: Agricultural production, forestry, pests and pesticides, rural development, matters relating to food, nutrition, and hunger in the United States and internationally
+  - name: Committee on Appropriations
+    abbr: APPROP
+    jurisdiction_description: Appropriation revenue for the support of the Government.
+  - name: Committee on Armed Services
+    abbr: ARMSER
+    jurisdiction_description: Common defense and military personnel (not including veterans), Panama Canal, National security aspects of nuclear energy and space, Strategic materials necessary for the common defense.
+  - name: Committee on Banking, Housing, and Urban Affairs
+    abbr: BANK
+    jurisdiction_description: Financial institutions, foreign trade promotion and export controls, Federal Reserve, Money and credit, Public and private housing, Urban development and urban mass transit.
+  - name: Committee on Commerce, Science, and Transportation
+    abbr: COMM
+    jurisdiction_description: Coast Guard, Communications, Highway safety, Interstate commerce, Marine fisheries, Nonmilitary Space, Consumer products and services, pesticides, credit, financial services, Housing, Transportation, Science, Sports, Standards and measurement.
+  - name: Committee on Energy and Natural Resources
+    abbr: ENG
+    jurisdiction_description: Energy policy and conservation, Extraction of minerals, Hydroelectric power and irrigation, National parks, public lands and wilderness areas, Territories of the United States.
+  - name: Committee on Environment and Public Works
+    abbr: EPW
+    jurisdiction_description: Environmental policy, Fisheries and wildlife, Recycling, Water resources, Flood control, Public buildings, Public works, Highway construction, Regional economic development.
+  - name: Committee on Finance
+    abbr: FIN
+    jurisdiction_description: Debt of the United States, Customs, General revenue sharing, Health, Social Security, Trade agreements,Taxes, Tariffs and import quotas.
+  - name: Committee on Foreign Relations
+    abbr: FR
+    jurisdiction_description: Embassies, Borders, Foreign aid, Red Cross, nuclear transfer policy, International law, International Organizations, Declarations of war, International commerce, Treaties and executive agreements.
+  - name: Committee on Health, Education, Labor, and Pensions
+    abbr: HELP
+    jurisdiction_description: Education, labor, health, and public welfare, Aging, Arts and humanities, Biomedical research and development, Child labor, Equal employment opportunity, Disabilities.
+  - name: Committee on Homeland Security and Governmental Affairs
+    abbr: HSGA
+    jurisdiction_description: Homeland Security (except Coast Guard, Customs, and Immigration); Budget other than appropriations, Census, Congressional organization, Federal Civil Service, Intergovernmental relations, District of Columbia, Organization of the executive branch, Postal Service.
+  - name: Committee on Judiciary
+    abbr: JUD
+    jurisdiction_description: Civil liberties, Constitutional amendments, Federal courts and judges, Criminal and civil laws, Holidays, Immigration, National penitentiaries, Patents, copyrights, and trademarks.
+  - name: Committee on Rules and Administration
+    abbr: RUL
+    jurisdiction_description: Administration of the Senate, Rules and procedures, Corrupt practices, Qualifications of Members, Federal elections, Government Printing Office, Presidential succession.
+  - name: Committee on Small Business and Entrepreneurship
+    abbr: SBUS
+    jurisdiction_description: American small business enterprises.
+  - name: Committee on Veterans Affairs
+    abbr: VA
+    jurisdiction_description: Veterans' compensation, hospitals, medical care, rehabilitation, and education.

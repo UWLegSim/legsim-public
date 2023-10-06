@@ -1,0 +1,247 @@
+---
+chamber_settings:
+  - name:    member_title
+    title:   Member Title
+    default: Senator
+    type:    string
+  - name:    member_title_abbr
+    title:   Member Title Abbreviation
+    default: Sen.
+    type:    string
+  - name:    chamber_leader_title
+    title:   Chamber Leader Title
+    default: Majority Leader
+    type:    string
+  - name:    executive_title
+    title:   Executive Title
+    default: President
+    type:    string
+  - name:    executive_title_abbr
+    title:   Executive Title Abbreviation
+    default: Pres.
+    type:    string
+  - name:    has_executive
+    title:   Executive
+    default: Unitary
+    type:    select
+    options:
+      - None
+      - Unitary
+      - Multiple
+  - name:    executive_building
+    title:   Executive Building
+    default: White House
+    type:    select
+    options:
+      - White House
+      - Mansion
+  - name:    has_committee_voting
+    title:   Committee Voting
+    type:    binary
+    default: true
+  - name:    has_caucus_voting
+    title:   Caucus Voting
+    type:    binary
+    default: true
+  - name:    has_party_voting
+    title:   Party Voting
+    type:    binary
+    default: true
+  - name:    has_regular_order
+    title:   Regular Order
+    type:    binary
+    default:
+  - name:    has_special_rules
+    title:   Special Rules
+    type:    binary
+    default:
+  - name:    has_filibuster
+    title:   Filibuster
+    type:    binary
+    default: true
+  - name:    has_hold
+    title:   Holds
+    type:    binary
+    default: true
+  - name:    email_dear_colleague
+    title:   Email Dear Colleague
+    type:    binary
+    default: true
+
+legislative_types:
+  - name: Bill
+    abbr: S.
+    description: A bill authorizes the spening of money or chage of the law. Requires the approval of the President.
+  - name: Resolution
+    abbr: S.Res.
+    description: A resolution takes action within the chamber such as a rule change or expresses an non-binding opinion. Does not require Presidental approval.
+  - name: Joint Resolution
+    abbr: S.J.Res.
+    description: A joint resolution is used to amend the Constitution, requiring a 2/3rds majority in both chambers and 3/4ths of the States.
+
+parties:
+  - name: Democratic Party
+    abbr: D
+    jurisdiction_description: The Democratic Party is committed to keeping our nation safe and expanding opportunity for every American.  That commitment is reflected in an agenda that emphasizes the security of our nation, strong economic growth, affordable health care for all Americans, retirement security, honest government, and civil rights.
+  - name: Republican Party
+    abbr: R
+    jurisdiction_description: The Republican Party focuses on ensuring that America remains safe, terrorists are defeated, and democracy flourishes in the world; on expanding opportunities for ownership and investment; on making tax relief permanent and ensuring greater energy independence; on increasing the affordability and accessibility of health care; on promoting works of compassion and strengthening our greatest values; on preparing students for success in life by bringing the benefits of education reform to high schools; and on helping workers adjust to a changing economy by offering flexible training options that meet their individual needs.
+  - name: Independent Party
+    abbr: I
+    jurisdiction_description: Not technically a formal party, the Independent Party is an organization for members who do not identify with any of the existing party organizations.
+
+committees:
+  - name: Committee on Agriculture, Nutrition, and Forestry
+    abbr: AG
+    jurisdiction_description: Agricultural production, forestry, pests and pesticides, rural development, matters relating to food, nutrition, and hunger in the United States and internationally
+  - name: Committee on Appropriations
+    abbr: APPROP
+    jurisdiction_description: Appropriation revenue for the support of the Government.
+  - name: Committee on Armed Services
+    abbr: ARMSER
+    jurisdiction_description: Common defense and military personnel (not including veterans), Panama Canal, National security aspects of nuclear energy and space, Strategic materials necessary for the common defense.
+  - name: Committee on Banking, Housing, and Urban Affairs
+    abbr: BANK
+    jurisdiction_description: Financial institutions, foreign trade promotion and export controls, Federal Reserve, Money and credit, Public and private housing, Urban development and urban mass transit.
+  - name: Committee on Commerce, Science, and Transportation
+    abbr: COMM
+    jurisdiction_description: Coast Guard, Communications, Highway safety, Interstate commerce, Marine fisheries, Nonmilitary Space, Consumer products and services, pesticides, credit, financial services, Housing, Transportation, Science, Sports, Standards and measurement.
+  - name: Committee on Energy and Natural Resources
+    abbr: ENG
+    jurisdiction_description: Energy policy and conservation, Extraction of minerals, Hydroelectric power and irrigation, National parks, public lands and wilderness areas, Territories of the United States.
+  - name: Committee on Environment and Public Works
+    abbr: EPW
+    jurisdiction_description: Environmental policy, Fisheries and wildlife, Recycling, Water resources, Flood control, Public buildings, Public works, Highway construction, Regional economic development.
+  - name: Committee on Finance
+    abbr: FIN
+    jurisdiction_description: Debt of the United States, Customs, General revenue sharing, Health, Social Security, Trade agreements,Taxes, Tariffs and import quotas.
+  - name: Committee on Foreign Relations
+    abbr: FR
+    jurisdiction_description: Embassies, Borders, Foreign aid, Red Cross, nuclear transfer policy, International law, International Organizations, Declarations of war, International commerce, Treaties and executive agreements.
+  - name: Committee on Health, Education, Labor, and Pensions
+    abbr: HELP
+    jurisdiction_description: Education, labor, health, and public welfare, Aging, Arts and humanities, Biomedical research and development, Child labor, Equal employment opportunity, Disabilities.
+  - name: Committee on Homeland Security and Governmental Affairs
+    abbr: HSGA
+    jurisdiction_description: Homeland Security (except Coast Guard, Customs, and Immigration); Budget other than appropriations, Census, Congressional organization, Federal Civil Service, Intergovernmental relations, District of Columbia, Organization of the executive branch, Postal Service.
+  - name: Committee on Judiciary
+    abbr: JUD
+    jurisdiction_description: Civil liberties, Constitutional amendments, Federal courts and judges, Criminal and civil laws, Holidays, Immigration, National penitentiaries, Patents, copyrights, and trademarks.
+  - name: Committee on Rules and Administration
+    abbr: RUL
+    jurisdiction_description: Administration of the Senate, Rules and procedures, Corrupt practices, Qualifications of Members, Federal elections, Government Printing Office, Presidential succession.
+  - name: Committee on Small Business and Entrepreneurship
+    abbr: SBUS
+    jurisdiction_description: American small business enterprises.
+  - name: Committee on Veterans Affairs
+    abbr: VA
+    jurisdiction_description: Veterans' compensation, hospitals, medical care, rehabilitation, and education.
+
+survey_questions:
+  - question: Government regulations usually do more good than harm.
+  - question: The federal government, more than the state governments, threatens our personal rights and freedoms.
+  - question: All Americans deserve access to affordable health care, even if it means higher costs for those who can afford it.
+  - question: Preventing terrorist attacks is more important than privacy.
+  - question: We can usually trust our elected representatives in Washington D.C. to do the right thing.
+
+constituencies:
+  - abbr: AL
+    name: Alabama
+  - abbr: AK
+    name: Alaska
+  - abbr: AZ
+    name: Arizona
+  - abbr: AR
+    name: Arkansas
+  - abbr: CA
+    name: California
+  - abbr: CO
+    name: Colorado
+  - abbr: CT
+    name: Connecticut
+  - abbr: DE
+    name: Delaware
+  - abbr: FL
+    name: Florida
+  - abbr: GA
+    name: Georgia
+  - abbr: HI
+    name: Hawaii
+  - abbr: ID
+    name: Idaho
+  - abbr: IL
+    name: Illinois
+  - abbr: IN
+    name: Indiana
+  - abbr: IA
+    name: Iowa
+  - abbr: KS
+    name: Kansas
+  - abbr: KY
+    name: Kentucky
+  - abbr: LA
+    name: Louisiana
+  - abbr: ME
+    name: Maine
+  - abbr: MD
+    name: Maryland
+  - abbr: MA
+    name: Massachusetts
+  - abbr: MI
+    name: Michigan
+  - abbr: MN
+    name: Minnesota
+  - abbr: MS
+    name: Mississippi
+  - abbr: MO
+    name: Missouri
+  - abbr: MT
+    name: Montana
+  - abbr: NE
+    name: Nebraska
+  - abbr: NV
+    name: Nevada
+  - abbr: NH
+    name: New Hampshire
+  - abbr: NJ
+    name: New Jersey
+  - abbr: NM
+    name: New Mexico
+  - abbr: NY
+    name: New York
+  - abbr: NC
+    name: North Carolina
+  - abbr: ND
+    name: North Dakota
+  - abbr: OH
+    name: Ohio
+  - abbr: OK
+    name: Oklahoma
+  - abbr: OR
+    name: Oregon
+  - abbr: PA
+    name: Pennsylvania
+  - abbr: RI
+    name: Rhode Island
+  - abbr: SC
+    name: South Carolina
+  - abbr: SD
+    name: South Dakota
+  - abbr: TN
+    name: Tennessee
+  - abbr: TX
+    name: Texas
+  - abbr: UT
+    name: Utah
+  - abbr: VT
+    name: Vermont
+  - abbr: VA
+    name: Virginia
+  - abbr: WA
+    name: Washington
+  - abbr: WV
+    name: West Virginia
+  - abbr: WI
+    name: Wisconsin
+  - abbr: WY
+    name: Wyoming

@@ -1,0 +1,68 @@
+
+  <div id="legislation" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">President's Desk <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+    
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="4"> Enrolled Legislation </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chamber.legislation.each do |legislation| %>
+          <% if (legislation.status == 'passed') %>
+            <tr>
+              <td class="<%= legislation.status %>"><%= link_to_legislation( legislation ) %> 
+                <% if @current_chamber_role.is_administrator? | @current_chamber_role.is_executive? %>
+                  <%= form_tag legislation do %>
+                    <%= hidden_field_tag :id, legislation.id %>
+                  
+                  <%= submit_tag 'sign', :class => 'btn blue-btn'%> <%= submit_tag 'veto', :class => 'btn red-btn' %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="4">Signed Legislation </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chamber.legislation.active.each do |legislation| %>
+          <% if (legislation.status == 'law') %>
+            <tr>
+              <td class="<%= legislation.status %>"><%= link_to_legislation( legislation ) %></td>
+            </td>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th colspan="4">Vetoed Legislation </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% chamber.legislation.active.each do |legislation| %>
+          <% if (legislation.status == 'vetoed')%>
+          <tr>
+            <td class="<%= legislation.status %>"><%= link_to_legislation( legislation ) %></td>
+          </td>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->

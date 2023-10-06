@@ -1,0 +1,23 @@
+<h1>Editing leadership_nomination</h1>
+
+<%= form_for(@leadership_nomination) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :endorsements %><br />
+    <%= f.text_field :endorsements %>
+  </p>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @leadership_nomination %> |
+<%= link_to 'Back', leadership_nominations_path %>

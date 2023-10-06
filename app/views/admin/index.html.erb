@@ -1,0 +1,127 @@
+<style>
+  div.row{
+    /*clear: left;*/
+    padding-bottom: 20px;
+  }
+
+  ul.tools{
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 0px;
+  }
+
+  ul.tools li{
+    font-size: 12px;
+    line-height: 17px;
+    margin:0 auto;
+  }
+
+  ul.tools li a{
+    color: #818181;
+    display: block;
+    padding: 8px 4px;
+    text-decoration: none;
+  }
+
+  ul.tools li a:hover{
+    background: #f9f9f9;
+  }
+
+  ul.tools li a div.title{
+    color: #0067C6;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  ul.tools li a:hover div{
+    color: #000;
+  }
+
+  ul.tools li a:hover div.title{
+    color: #c64243;
+  }
+
+</style>
+
+<div class="row">
+
+  <h2>System Settings</h2>
+  <div class="column" style="width: 230px;">
+    <ul class="tools">
+      <li><%= link_to_tool 'Settings', 'Modify chamber wide settings such as member titles and procedural settings.', admin_settings_path %></li>
+    </ul>
+  </div>
+
+  <!--<div class="column" style="width: 215px;">
+    <ul class="tools">
+      <li><%= link_to_tool 'Legislative Types', 'Specify the types of legislation.', admin_legislative_types_path %></li>
+    </ul>
+  </div>-->
+
+  <div class="column" style="width: 210px;">
+    <ul class="tools">
+      <li><%= link_to_tool 'Constituencies', 'Specify the constituencies available to student users.', admin_constituencies_path %></li>
+    </ul>
+  </div>
+
+  <!--<div class="column" style="width: 240px;">
+    <ul class="tools">
+      <li><%= link_to_tool 'Survey Questions', 'Modify the political ideology survey questions found on member profiles.', admin_survey_questions_path %></li>
+    </ul>
+  </div>-->
+
+  <br style="clear: both;" />
+
+</div>
+
+<div class="row">
+
+  <div class="column" style="width: 230px;">
+    <h2>Instructional Resources</h2>
+    <ul class="tools">
+      <li><%= link_to_tool 'Page Content','Add or modify content snippets on the different pages of the website.', admin_contents_path %></li>
+      <!--
+        <li><%= link_to_tool 'Tutorials', 'Edit tutorial pages available under the Tutorial menu.', admin_tutorials_path %></li>
+        <li><%= link_to_tool 'Instructions', 'Edit instructional resources available under the Instruction menu.', admin_instructions_path %></li>
+      -->
+      <li><%= link_to_tool 'Download Member Statistics', 'Download a CSV file with details for each member. It is also possible to download per group from the group\'s management page.', download_stats_admin_floor_path( @current_chamber.floor ) %></li>
+    </ul>
+  </div>
+</div>
+
+<div class='row'>
+  <div class="column" style="width: 215px;">
+    <h2>User Management</h2>
+    <ul class="tools">
+      <li><%= link_to_tool 'Reset User Passwords', 'Manage users with the member role. Members are users who can vote and engage in legislative activities.', admin_users_path %></li>
+      <li><%= link_to_tool 'Mass Member Import', 'Add several new member accounts at once based on a list of names.', mass_new_admin_members_path %></li>
+      <li><%= link_to_tool 'Manage Members', 'Delete a member and all submissions and interactions by that member from the chamber.', admin_members_path %></li>
+      <!--<li><%= link_to_tool 'Administrators', 'Set or alter administrator accounts.', admin_administrators_path %></li> -->
+      <!-- <li><%= link_to_tool 'Executives', 'Set or alter executives accounts.', admin_executives_path %></li> -->
+      <!--<li><%= link_to_tool 'Instructors', 'Set or alter instructors accounts.', admin_instructors_path %></li> -->
+    </ul>
+  </div>
+</div>
+
+<div class='row'>
+  <div class="column" style="width: 210px;">
+    <h2>Group Management</h2>
+    <ul class="tools">
+      <li><%= link_to_tool 'Assign Leaders', 'Designate leaders of the chamber, committees, parties and caucuses.', edit_leadership_admin_groups_path %></li>
+      <li><%= link_to_tool 'Committees', 'Choose the committees to be included, and assign or remove committee members.', admin_committees_path %></li>
+      <li><%= link_to_tool 'Sections', 'Create sections, and assign students and instructors to manage them.', admin_sections_path %></li>
+      <li><%= link_to_tool 'Caucuses', 'Create informal caucuses, and assign or remove caucus members.', admin_caucuses_path %></li>
+      <li><%= link_to_tool 'Parties', 'Create political parties and assign or remove party members (only one party per member).', admin_parties_path %></li>
+    </ul>
+  </div>
+</div>
+
+<div class='row'>
+  <div class="column" style="width: 240px;">
+    <h2>Legislation Management</h2>
+    <ul class="tools">
+      <!-- <li><%= link_to_tool 'Manage Referrals', 'Tool currently unavailable.', admin_referrals_path %></li> -->
+      <li><%= link_to_tool 'Schedule Floor Votes', 'Override floor scheduling procedures to consider bills out of their order on the calendar.',admin_calendars_path %></li>
+    </ul>
+  </div>
+</div>

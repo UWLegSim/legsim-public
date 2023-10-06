@@ -1,0 +1,45 @@
+<script type="text/javascript">
+  $().ready( function(){
+    $("#new_legislation").submit(function(){
+
+      var errors = [];
+
+      tinymce.get("legislation_submission_text_attributes_primary_text").save()
+      tinymce.get("legislation_submission_text_attributes_secondary_text").save()
+
+      if ( !$("#legislation_name").val()                                      ) errors.push( 'No title provided' );
+      if ( !$("#legislation_legislative_type_id").val()                       ) errors.push( 'No legislative type selected' );
+      if ( !$("#legislation_submission_text_attributes_primary_text").val()   ) errors.push( 'No legislative text provided' );
+      if ( !$("#legislation_submission_text_attributes_secondary_text").val() ) errors.push( 'No supporting text provided' );
+
+      if ( errors.length ){
+        $("#validation-box").show();
+        $("#form-errors").html("<li>" + errors.join('</li><li>') + "</li>");
+        return false;
+      } else {
+        $("#validation-box").hide();
+        return true;
+      }
+
+    });
+  });
+</script>
+
+<div id="overview" class="left-column">
+  <div class="left-content">
+
+    <%= content('submit-legislation') %>
+  </div>
+</div><!--overview-->
+
+  <div id="details" class="right-column">
+    <div class="the-content">
+    <%= form_for @legislation do |f| %>
+      <%= render(:partial => 'form', :locals => { :f => f } ) %>
+      <div class="field field-submit">
+        <%= submit_tag('Submit Legislation', :size => 'forty', :class => "btn blue-btn" ) %>
+      </div>
+    <% end %>
+
+  </div><!--details-->
+</div>

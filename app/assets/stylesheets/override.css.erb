@@ -1,0 +1,203 @@
+div.discussion div{
+  padding: 5px;
+  clear: right;
+}
+
+
+div.discussion div.even{
+
+}
+
+div.discussion div.odd{
+  background-color: #eee;
+}
+
+.column{
+  float: left;
+}
+
+.vote{
+/*   height: 160px; */
+  padding: 10px 0 20px 0;
+}
+
+TR.ballot TD.preference{
+  text-align: center;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+TR.ballot TD.yes{
+  background: #2789e4;
+}
+
+TR.ballot TD.no{
+  background: #d13030;
+}
+
+TR.ballot TD.present{
+  background: #00af1d;
+}
+
+TR.ballot TD.none{
+  background: #7f7f7f;
+}
+
+.vote-status.withdrawn, .vote-status.terminated {
+    background: #000000;
+    color:      #ffffff;
+    }
+
+.vote-status.pending {
+  background: #d7b100;
+}
+
+.vote-status.in_progress {
+  background: #00af1d;
+}
+
+.vote-status.filibuster {
+  background: #FA0;
+}
+
+#validation-box{
+  display: none;
+}
+
+#referrals tbody td a, div.referrals tbody td a { font-weight: bold; }
+
+#referrals tbody td, div.referrals tbody td { padding-left: 22px; }
+
+#referrals tbody td.pending, div.referrals tbody td.pending {
+    background: url(<%= image_path 'status-pending.png' %>)  no-repeat left 8px;
+    }
+
+#referrals tbody td.hearing, div.referrals tbody td.hearing {
+    background: url(<%= image_path 'status-hearing.png' %>)  no-repeat left 8px;
+    }
+
+#referrals tbody td.tabled, div.referrals tbody td.tabled {
+    background: url(<%= image_path 'status-tabled.png' %>)  no-repeat left 8px;
+    }
+
+#referrals tbody td.reported, div.referrals tbody td.reported {
+    background: url(<%= image_path 'status-reported.png' %>)  no-repeat left 8px;
+    }
+
+.button{
+  margin: auto;
+}
+
+#mail-header #mail-actions {
+  width: 210px;
+}
+
+.tool-box{
+  border-bottom: 1px solid #d5dce2;
+  padding-bottom: 10px;
+}
+
+.legislation{
+/*   height: 160px; */
+  padding: 10px 0 20px 0;
+}
+
+td.center{
+  text-align: center;
+}
+
+.member-headshot{
+  text-align: center;
+  float: left;
+  padding: 10px;
+}
+
+#tab-personal .survey-answer{
+  text-align: center;
+  font-weight: bold;
+}
+
+a.edit-content{
+  display: block;
+  text-align: right;
+  padding-bottom: 5px;
+}
+
+#overview textarea {
+    width: 320px;
+    background: url(<%= image_path 'id.png' %>)  repeat-x left bottom;
+    border: 1px solid #ccd7e2;
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+    }
+
+#overview fieldset.clearfix label {
+    display: block;
+    float: left;
+    width: 100px;
+    padding: 3px 10px 0 0;
+    }
+
+#overview .wit {
+    float: left;
+    display: block;
+    width: 17px;
+    height: 17px;
+    margin: 1px 0 0 10px;
+    background: url(<%= image_path 'whatisthis.png' %>)
+    }
+
+.wide-form #details .tinymce {
+  width: 580px;
+}
+
+.wide-form #details .advanced-tinymce {
+  width: 580px;
+}
+
+input,
+textarea {
+  background: url(<%= image_path 'id.png' %>)  repeat-x left bottom;
+}
+
+input,
+textarea,
+select      {
+  font-family: arial, helvetica, sanserif;
+  border: 1px solid #ccd7e2;
+}
+
+.submit{
+  cursor: pointer;
+}
+
+ul.checkbox{
+  list-style: none;
+  margin: 0 auto 10px auto;
+}
+
+pre.letter{
+  color: #818181;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  white-space: pre-wrap;
+}
+pre {
+    white-space: pre-wrap !important;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* Wide-Form Columns
+-------------------------------------------------------------- */
+
+.wide-form #overview {
+   width: 200px;
+   }
+
+.wide-form #details {
+   width: 700px;
+   }

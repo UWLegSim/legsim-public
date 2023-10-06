@@ -1,0 +1,38 @@
+<!--This way kludges lie, there is more inline styling than there should be-->
+<div class='the-content' style="background-color: #DEDEDE">
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %><br />
+  <div id="users" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">Users</a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th style="width: 100%">Name</th>
+          <th style="width: 100%">Username</th>
+          <th style="width: 100%">Email</th>
+          <th style="width: 100%">Type</th>
+          <th style="width: 100%"></th>
+        </tr>
+        <% @chamber_roles.each do |chamber_role| %>
+          <tr>
+            <td>
+              <% if chamber_role.type == 'Member' %>
+                <%= link_to chamber_role.name, member_path( chamber_role ) %>
+              <% elsif chamber_role.type == 'Administrator' %>
+                <%= link_to chamber_role.name, administrator_path( chamber_role ) %>
+              <% end %>
+            </td>
+            <td><%= chamber_role.email %></td>
+            <td><%= chamber_role.type %></td>
+            <td style="text-align: center;">
+                <%= link_to "reset password", edit_password_admin_user_path( chamber_role.user ) %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+</div>
+

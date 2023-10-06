@@ -1,0 +1,31 @@
+<div id="overview">
+
+  <p>System Users have access to the System Admininstration pages, which provide the ability to create new Courses, manage registrations, and assume the accounts of existing Users. Caution should be exercised when creating new System Users.</p>
+
+  <%= link_button_to "Create New System User", new_system_system_user_path, :size => 'seventy' %>
+
+</div>
+
+<div id="details">
+
+  <div id="system_users" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">System Users</a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th>Name</th>
+          <th>Login</th>
+        </tr>
+        <% @system_users.each do |system_users| %>
+          <tr>
+            <td><%= system_users.name %></td>
+            <td><%= system_users.email %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+</div>

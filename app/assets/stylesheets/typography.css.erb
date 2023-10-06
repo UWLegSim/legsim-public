@@ -1,0 +1,125 @@
+/* -------------------------------------------------------------- 
+   
+   typography.css
+      
+-------------------------------------------------------------- */
+
+/* Default font settings. 
+   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
+
+body { 
+  font-size: 75%;
+  color: #818181; 
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  }
+
+
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; color: #525252; }
+
+h1 { font-size: 1.8em; line-height: 1em; margin-bottom: 0.5em; }
+h2 { font-size: 1.5em; line-height: 1em; margin-bottom: 0.75em; }
+h3 { font-size: 1.2em; line-height: 1em; margin-bottom: 1em; font-weight: bold; }
+h4 { font-size: 1.1em; line-height: 1.25em; margin-bottom: 1.25em; height: 1.25em; font-weight: bold;}
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+
+h1 img, h2 img, h3 img, 
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+h2.legislation  { font-size: 14px;  font-weight: normal; }
+
+h2.legislation a { font-weight: bold; }
+
+
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 1.5em; }
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     { color: #c64243; outline: none;}
+a           { color: #0067c6; text-decoration: none; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre,code    { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; } 
+
+
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, 
+li ol       { margin:0 1.5em; }
+ul, ol      { margin: 0 1.5em 1.5em 1.5em; }
+
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+
+/* Tables
+-------------------------------------------------------------- */
+
+table       { margin-bottom: 1.4em; width:100%; }
+th          { font-weight: bold; }
+th,td       { padding: 0; }
+
+thead, 
+thead td, 
+thead th, 
+tfoot,
+tfoot td    { font-size: 10px; text-transform: uppercase;}
+ 
+tfoot,
+tfoot td    { text-align: center;}
+caption     { background: #eee; }
+
+
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small      { font-size: .8em; line-height: 1.875em; color: #868687; text-transform: uppercase;}
+
+.small-link { font-size: 10px; text-transform: uppercase;}
+
+.quotes p.small {font-size: .9em; margin: 0; line-height: 1.1em;}
+
+.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+.hide       { display: none; }
+
+.quiet      { color: #666; }
+.loud       { color: #000; }
+.highlight  { background:#ff0; }
+.added      { background:#060; color: #fff; }
+.removed    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+

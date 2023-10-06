@@ -1,0 +1,30 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('previous-floor-votes') %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <table>
+    <tr>
+      <th style="width:23%">Legislation</th>
+      <th style="width:23%">Motion Type</th>
+      <th style="width:27%">Recorded At</th>
+      <th colspan="2" style="width:27%">Outcome</th>
+    </tr>
+    <% @group.votes.finished.each do |vote| %>
+      <tr>
+        <td><%= link_to vote.motion.referral.legislation.reference, legislation_path( vote.motion.referral.legislation ) %></td>
+        <td><%= vote.motion.action.titleize %></td>
+        <td><%= vote.finish_at.to_s(:long_with_time) %></td>
+        <td class="vote-status <%= vote.outcome %>" style="text-align: center; padding-left:0px;">
+          <%= vote.outcome.titleize %>
+        </td>
+        <td style="text-align: center;">[<%= link_to "Vote Details", vote_path( vote ) %>]</td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+</div>

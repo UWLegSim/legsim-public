@@ -1,0 +1,93 @@
+<% unless group.votes.in_progress.empty? %>
+  <div id="referrals" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Open Votes <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tbody>
+          <% group.votes.in_progress.each do |vote| %>
+            <tr>
+              <td>
+                <%= link_to vote.referral.legislation.reference, legislation_path( vote.referral.legislation) %>:
+                <b><%= vote.motion.action.titleize %></b>
+              </td>
+              <td>
+                <%= link_to "Motion Text", motion_path( vote.motion ) %>
+              </td>
+              <td>
+                <%= link_to "Vote Page", vote_path( vote ) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->
+  <br/>
+<% end %>
+
+<% unless group.votes.pending.empty? %>
+  <div id="referrals" class="expander expanded">
+    <div class="bar clearfix">
+      <h2 href="#" class="title">Scheduled Votes <span class="parenthesis"></span></h2>
+      <div class="small-link"></div>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tbody>
+          <% group.votes.pending.each do |vote| %>
+            <tr>
+              <td>
+                <%= link_to vote.referral.legislation.reference, legislation_path( vote.referral.legislation) %>:
+                <b><%= vote.motion.action.titleize %></b>
+              </td>
+              <td>
+                <%= link_to "Motion Text", motion_path( vote.motion ) %>
+              </td>
+              <td>
+                <%= link_to "Vote Page", vote_path( vote ) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!--expander-contents-->
+  </div><!--legislation-->
+  <br/>
+<% end %>
+
+<% if group.chamber.setting('has_filibuster') %>
+
+  <% unless group.votes.filibuster.empty? %>
+    <div id="referrals" class="expander expanded">
+      <div class="bar clearfix">
+        <h2 href="#" class="title">Filibustered Votes <span class="parenthesis"></span></h2>
+        <div class="small-link"></div>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tbody>
+            <% group.votes.filibuster.each do |vote| %>
+              <tr>
+                <td>
+                  <%= link_to vote.referral.legislation.reference, legislation_path( vote.referral.legislation) %>:
+                  <b><%= vote.motion.action.titleize %></b>
+                </td>
+                <td>
+                  <%= link_to "Motion Text", motion_path( vote.motion ) %>
+                </td>
+                <td>
+                  <%= link_to "Vote Page", vote_path( vote ) %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div><!--expander-contents-->
+    </div><!--legislation-->
+    <br/>
+  <% end %>
+
+<% end %>

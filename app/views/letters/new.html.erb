@@ -1,0 +1,164 @@
+<script type="text/javascript">
+
+  $().ready(function() {
+    $("#new_letter").submit(function() {
+
+      var errors = [];
+
+      if ( !$("#letter_subject").val() ) errors.push( 'No subject provided' );
+      if ( !$("#letter_message").val() ) errors.push( 'No message provided' );
+      if ( !$("input:checked").length ) errors.push( 'No recipients selected' );
+
+      if ( errors.length ){
+        $("#validation-box").show();
+        $("#form-errors").html("<li>" + errors.join('</li><li>') + "</li>");
+        return false;
+      } else {
+        $("#validation-box").hide();
+        return true;
+      }
+
+    });
+  });
+
+</script>
+<!-- <div class="left-column">
+  <div class="left-content">
+    Figure it out!
+  </div>
+</div>
+
+<div class="right-column">
+  <div class="the-content">
+    This is getting ridiculous
+  </div>
+</div> -->
+
+<%= form_for @letter do |f| %>
+
+  <div id="overview" class="left-column" style="float: left;">
+    <div class="left-content">
+      <%= content('draft-dear-colleague') %>
+
+      <h2>Address the Message</h2>
+
+      <div id="tab-container" class="tab-container">
+        <ul class="etabs" style="display:inline-block">
+          <li class="tab" style='width: 100%'><a href="#tab-members">Members</a></li>
+          <li class="tab" style='width: 100%'><a href="#tab-committees">Committees</a></li>
+          <li class="tab" style='width: 100%'><a href="#tab-organizations">Organizations</a></li>
+          <li class="tab" style='width: 100%'><a href="#tab-special">Special</a></li>
+        </ul>
+        
+        <br/>
+        <br/>
+        <hr/>
+        <div class="panel" id="tab-members">
+          <ul class="checkbox"><% @chamber.members.includes( :constituency ).each do | member | %>
+            <li><%= check_box_tag "chamber_role_ids[]", member.id, @reply_to[:chamber_role_ids][member.id] %> <%= member.title %></li>
+          <% end %></ul>
+        </div>
+
+        <div class="panel" id="tab-committees">
+          <ul class="checkbox"><% @chamber.committees.each do | committee | %>
+            <li><%= check_box_tag "group_ids[]", committee.id, @reply_to[:group_ids][committee.id] %> <%= committee.title %></li>
+          <% end %></ul>
+        </div>
+
+        <div class="panel" id="tab-organizations">
+          <h2>Parties</h2>
+          <ul class="checkbox"><% @chamber.parties.each do | party | %>
+            <li><%= check_box_tag "group_ids[]", party.id, @reply_to[:group_ids][party.id] %> <%= party.title %></li>
+          <% end %></ul>
+
+          <h2>Caucuses</h2>
+          <ul class="checkbox"><% @chamber.caucuses.each do | caucus | %>
+            <li><%= check_box_tag "group_ids[]", caucus.id, @reply_to[:group_ids][caucus.id] %> <%= caucus.title %></li>
+          <% end %></ul>
+
+          <% unless @chamber.sections.empty? %>
+            <h2>Sections</h2>
+            <ul class="checkbox"><% @chamber.sections.each do | section | %>
+              <li><%= check_box_tag "group_ids[]", section.id, @reply_to[:group_ids][section.id] %> <%= section.title %></li>
+            <% end %></ul>
+          <% end %>
+        </div>
+
+        <div class="panel" id="tab-special">
+
+          <ul class="checkbox">
+            <li><%= check_box_tag "group_ids[]", @chamber.floor.id, @reply_to[:group_ids][@chamber.floor.id] %> <%= @chamber.floor.name %></li>
+          </ul>
+
+          <h2>Leadership</h2>
+          <ul class="checkbox">
+            <li><%= check_box_tag "meta_group_ids[]", 'chamber_leader', @reply_to[:meta_group_ids]['chamber_leader'] %> <%= @current_chamber.setting('chamber_leader_title') %></li>
+            <li><%= check_box_tag "meta_group_ids[]", 'committee_leaders', @reply_to[:meta_group_ids]['committee_leaders'] %> Committee Leaders</li>
+            <li><%= check_box_tag "meta_group_ids[]", 'party_leaders', @reply_to[:meta_group_ids]['party_leaders'] %> Party Leaders</li>
+            <li><%= check_box_tag "meta_group_ids[]", 'caucus_leaders', @reply_to[:meta_group_ids]['caucus_leaders'] %> Caucus Leaders</li>
+          </ul>
+
+          <% if @chamber.setting('has_executive') and !@chamber.executives.empty? %>
+            <h2>Executive</h2>
+            <ul class="checkbox">
+              <% @chamber.executives.each do |executive| %>
+                <li><%= check_box_tag "chamber_role_ids[]", executive.id, @reply_to[:chamber_role_ids][executive.id] %> <%= executive.title %></li>
+              <% end %>
+            </ul>
+          <% end %>
+
+          <% if !@chamber.instructors.empty? %>
+            <h2>Instructors</h2>
+            <ul class="checkbox">
+              <% @chamber.instructors.each do |instructor| %>
+                <li><%= check_box_tag "chamber_role_ids[]", instructor.id, @reply_to[:chamber_role_ids][instructor.id] %> <%= instructor.title %></li>
+              <% end %>
+            </ul>
+          <% end %>
+
+          <h2>Management</h2>
+          <ul class="checkbox">
+            <li><%= check_box_tag "meta_group_ids[]", 'administrators', @reply_to[:meta_group_ids]['administrators'] %> Administrators</li>
+            <li><%= check_box_tag "meta_group_ids[]", 'instructors', @reply_to[:meta_group_ids]['instructors'] %> Instructors</li>
+          </ul>
+
+
+          <!--
+            <h2>Sections</h2>
+            <ul><% @chamber.sections.each do | party | %>
+              <li><%= check_box_tag "group_ids[]", party.id, false %> <%= party.title %></li>
+            <% end %></ul>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="details" class="right-column" style="float: left;">
+    <div class="the-content">
+      <div class="alert-box" style="display:none" id="validation-box">
+        <h2 class="error">Error</h2>
+        <ul id="form-errors"></ul>
+      </div>
+
+      <h2>Compose the Message</h2>
+      <div class="field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :subject%> <%= f.text_field :subject %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field do %>
+          <%= f.label :message%> <%= f.text_area :message %>
+        <% end %>
+      </div>
+
+      <%= f.hidden_field :chamber_role_id %>
+
+      <div class="field field-submit">
+        <%= f.submit 'Send Letter', :class => "btn blue-btn" %>
+      </div>
+    </div>
+  </div>
+<% end %>

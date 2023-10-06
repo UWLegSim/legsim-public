@@ -1,0 +1,29 @@
+<h1>Chamber: <%= @chamber.title %></h1>
+
+<%= form_for @chamber, :url => { :action => :update_chamber_roles } do |f| %>
+
+  <h3>Members</h3>
+
+  <% @chamber.members.each do |member| %>
+    <%= check_box_tag 'member_user_ids[]', member.user_id %><%= member.title %><br />
+  <% end %>
+
+  <h3>Administrators</h3>
+
+  <% @chamber.administrators.each do |administrator| %>
+    <%= check_box_tag 'administrator_user_ids[]', administrator.user_id %><%= administrator.title %><br />
+  <% end %>
+
+  <h3>Unassigned Users</h3>
+
+  <% @chamber.unassigned_users.each do |user| %>
+    <%= check_box_tag 'user_ids[]', user.id %><%= user.title %><br />
+  <% end %><br/>
+
+  Assign Role of <%= select_tag 'chamber_role_class', '<option value="Member">Member</option><option value="Administrator">Administrator</option><option value="">None</option>' %> to marked Users.<br />
+
+  <%= submit_tag 'Update Chamber Roles' %>
+
+<% end %>
+
+<%= link_to "Chamber Administration", admin_chamber_path( @chamber ) %>

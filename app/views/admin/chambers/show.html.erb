@@ -1,0 +1,23 @@
+<h1>Chamber: <%= @chamber.title %></h1>
+
+<h3><%= link_to "Manage Roles", edit_chamber_roles_admin_chamber_path( @chamber ) %></h3>
+
+<h3><%= link_to "Manage Committees", edit_committees_admin_chamber_path( @chamber ) %></h3>
+
+<h3><%= link_to "Manage Constituencies", edit_constituencies_admin_chamber_path( @chamber ) %></h3>
+
+<h3><%= link_to "Manage Legislative Types", edit_legislative_types_admin_chamber_path( @chamber ) %></h3>
+
+<h3><%= link_to "Manage Survey Questions", edit_survey_questions_admin_chamber_path( @chamber ) %></h3>
+
+<h3><%= link_to "Manage Groups", admin_groups_path %></h3>
+
+<h3><%= link_to "Manage Referrals", new_referrals_admin_chamber_path( @chamber ) %></h3>
+
+<h3><%= link_to "Manage Content", admin_contents_path %></h3>
+
+<h3><%= link_to "Manage Instructions", admin_instructions_path %></h3>
+
+<h3><%= link_to "Manage Tutorials", admin_tutorials_path %></h3>
+
+<h3><%= link_to "Manage Settings", admin_settings_path %></h3>

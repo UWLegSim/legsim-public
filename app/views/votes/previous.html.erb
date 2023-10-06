@@ -1,0 +1,138 @@
+<%= render partial: "text_javascript", locals: {selector: "#new_vote", cloture: params[:cloture] } %>
+
+<%= form_for @vote, :url => { :action => :create_previous } do |f| %>
+
+  <div class="left-column" style='float:left; width: 500px'>
+    <div class="left-content">
+      <h2>Draft the Motion</h2>
+
+      <h3>Select Motion Type</h3>
+      <p class='field'><%= select_tag 'motion[action]', options_for_select( @motion_options )  %></p>
+
+      <div id="passage_selector" style="display:none" class="text_selector" >
+        <h3>Select Legislative Version</h3>
+        <p><select id="legislative_text_id" style="width: 100%;"></select></p>
+      </div>
+
+      <div id="amendment_selector" style="display:none" class="text_selector" >
+        <h3>Select Amendment</h3>
+        <p><select id="amendment_id" style="width: 100%;"></select></p>
+      </div>
+
+      <div id="motion_text_container" style="display:none">
+        <h3>Motion Text</h3>
+        <%= text_area_tag 'motion[text]', @motion.text, :class => "tinymce", :style => "width: 100%; height: 400px;" %>
+      </div>
+
+      <%= hidden_field_tag 'motion[referral_id]', @motion.referral_id %>
+    </div>
+  </div>
+
+  <div id="overview" class="right-column" style='float:right;width:750px'>
+    <div class="the-content">
+    <div class="alert-box" id="validation-box">
+      <h2 class="error">Error</h2>
+      <ul id="form-errors"></ul>
+    </div>
+
+      <h2>Vote Details</h2>
+
+      <p>
+        Recorded At:<br />
+        <%= date_field_tag 'vote[start_at_date]', @vote.start_at.strftime("%F"), class: 'datetime' %>
+        <%= time_field_tag 'vote[start_at_time]', @vote.start_at.strftime("%R"), class: 'datetime' %>
+      </p>
+
+      <p>
+        Threshold for Passage:<br />
+        <%= select_tag 'vote[threshold]', options_for_select( [['Simple Majority','500'],['60%','600'],['Two-Thirds Majority','667'],['Unanimous Consent','1000']], @vote.threshold.to_s ), :style => "width: 100%;"  %>
+      </p>
+
+      <p>
+        <%= check_box_tag 'vote[absolute]', 1, @vote.absolute %>
+        Count Abstentions and Present Votes as "No" votes
+      </p>
+
+      <% if @current_chamber.setting('has_filibuster') %>
+        <p>
+          <%= check_box_tag 'motion[limited_debate]', 1, @motion.limited_debate %>
+          Debate has been limited by previous agreement
+        </p>
+      <% end %>
+
+      <p>
+        Vote Recorded by:<br />
+        <select name="vote[record_type]" id="vote_record_type">
+          <option value="">--</option>
+          <option value="roll_call">Roll Call</option>
+          <option value="division">Division</option>
+          <option value="voice_vote">Voice Vote</option>
+        </select>
+      </p>
+
+      <div id="roll_call_input_container" class="vote_input_container" style="display:none">
+        <h2>Roll Call Vote</h2>
+
+        <table>
+          <tr><th>Member</th><th>Vote</th></tr>
+          <% @motion.referral.group.membership.each do |member| %>
+            <tr>
+              <td><%= member.title %></td>
+              <td>
+                <select name="roll_call[member_id][<%= member.id %>]">
+                  <option value="none">None</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="present">Present</option>
+                </select>
+              </td>
+            </tr>
+          <% end %>
+          </table>
+      </div>
+
+      <div id="division_input_container" class="vote_input_container" style="display:none">
+        <h2>Division Vote</h2>
+
+        <p>For when an accurate count of yeas and neighs is kept, but not a specific record of who vote which way.</p>
+
+        <table>
+          <tr>
+            <th>Yes Votes</th>
+            <td><input type="text" name="division[yes]" size='3' value="0" style="text-align: center;" /></td>
+          </tr>
+          <tr>
+            <th>No Votes</th>
+            <td><input type="text" name="division[no]" size='3' value="0" style="text-align: center;" /></td>
+          </tr>
+          <tr>
+            <th>Present Votes</th>
+            <td><input type="text" name="division[present]" size='3' value="0" style="text-align: center;" /></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div id="voice_vote_input_container" class="vote_input_container" style="display:none">
+        <h2>Voice Vote</h2>
+
+        <p>For when only the outcome is recorded by a calling of the yeas and neighs but an accurate tally is not kept.</p>
+
+        <p>
+          Outcome:
+          <select name="voice_vote[outcome]">
+            <option value="">--</option>
+            <option value="passed">Passed</option>
+            <option value="failed">Failed</option>
+          </select>
+        </p>
+
+      </div>
+
+      <%= f.hidden_field :status %>
+      <div class='field field-submit'>
+        <%= f.submit "Record Vote", :size => "seventy", :class => 'btn blue-btn' %>
+      </div>
+  </div>
+</div>
+<% end %>

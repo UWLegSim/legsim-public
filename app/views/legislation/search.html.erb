@@ -1,0 +1,57 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <p>You can search through the legislative database based on legislative status, type, or a combination of both.</p>
+  <br/>
+
+  <%= form_for :legislation, :url => { :action => 'search' }, :html => { :method => :get } do |f| %>
+
+    <fieldset class="clearfix">
+      <%= label_tag :legislative_type_id, "Legislative Type", :style => 'color: #AA321E; font-size: 24px' %>
+      <br/>
+      <br/>
+      <div style="float: left;">
+        <% @current_chamber.legislative_types.each do |lt| %>
+          <%= check_box_tag 'legislative_type_ids[]', lt.id, @query[:legislative_type_ids].include?( lt.id.to_s ) %> <%= lt.name %><br />
+        <% end %>
+      </div>
+    </fieldset>
+    <br/>
+    <fieldset class="clearfix">
+      <%= label_tag :status, "Legislative Status", :style => 'color: #AA321E; font-size: 24px' %>
+      <br/>
+      <br/>
+      <div style="float: left;">
+        <%= check_box_tag 'status[]', 'introduced', @query[:status].include?('introduced') %> Introduced<br />
+        <%= check_box_tag 'status[]', 'referred',   @query[:status].include?('referred')   %> Referred<br />
+        <%= check_box_tag 'status[]', 'calendar',   @query[:status].include?('calendar')   %> Calendar<br />
+        <%= check_box_tag 'status[]', 'passed',     @query[:status].include?('passed')     %> Passed<br />
+        <%= check_box_tag 'status[]', 'failed',     @query[:status].include?('failed')     %> Failed<br />
+      </div>
+    </fieldset>
+    <div class='field field-submit'>
+      <%= f.submit "Search Legislation", :size => 'sixty', :class => 'btn blue-btn' %>
+    </div>
+  <% end %>
+  </div>
+</div>
+<div id="details" class="right-column">
+<div class="the-content">
+  <h1>Search Results</h1>
+
+  <% if @legislation.empty? %>
+
+    <% if @query[:status].empty? and @query[:legislative_type_ids].empty? %>
+      <p>To search for legislation, enter parameters using the form on the left and click "Search Legislation".</p>
+    <% else %>
+      <p>Your search yielded no results.</p>
+    <% end %>
+
+  <% else %>
+
+    <% @legislation.reverse.each do |legislation| %>
+      <%= render(:partial => 'box', :locals => { :legislation => legislation, :short => true }) %>
+    <% end %>
+
+  <% end %>
+  </div>
+</div>

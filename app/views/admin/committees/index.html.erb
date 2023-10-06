@@ -1,0 +1,49 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('admin-committees') %>
+
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy', :class => 'btn blue-btn' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <%= form_for :committees, :url => mass_delete_admin_committees_path do |f| %>
+
+    <div id="committees" class="expander expanded">
+      <div class="bar clearfix">
+        <h2 href="#" class="title">Committees</h2>
+      </div><!--bar-->
+      <div class="expander-contents">
+        <table cellspacing="0">
+          <tr>
+            <th></th>
+            <th style="width: 370px">Name</th>
+            <th style="width: 120px; text-align: center">Abbreviation</th>
+            <th style="width: 150px">Leader</th>
+            <th style="width: 50px"></th>
+            <th style="width: 50px"></th>
+          </tr>
+          <% @committees.each do |committee| %>
+            <tr>
+              <td><%= check_box_tag "group_ids[]", committee.id %></td>
+              <td><%= committee.name %></td>
+              <td class="center"><%= committee.abbr %></td>
+              <td><%= link_to_user committee.primary_leader %></td>
+              <td><%= link_to "edit", edit_admin_committee_path( committee ) %></td>
+              <td><%= link_to "manage", admin_committee_path( committee ) %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+    
+    <table>
+      <tr>
+        <td><%= f.submit "Delete Selected Committees", :size => "ninety", :confirm => "Are you sure you want to delete the selected committees?", :class => 'btn blue-btn' %></td>
+        <td><%= link_button_to "New Committee", new_admin_committee_path, :size => "ninety", :class => 'btn blue-btn' %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+</div>

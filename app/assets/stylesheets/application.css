@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require reset.css
+ *= require typography.css
+ *= require shell.css
+ *= require menus.css
+ *= require footer.css
+ *= require tabs.css
+ *= require expanders.css
+ *= require boxes.css
+ *= require elements.css
+ *= require forms.css
+ *= require override.css
+ *=
+ *= require_self
+ */
+
+@media only screen and (max-width: 480px) {
+
+    /* Log in page, mobile view */
+    .LogOnContent{
+	width: 480px;
+    }
+
+
+    #loginheader, #loginnav{
+	width: 480px;
+    }
+
+    .clearfix #loginheader{
+	width: 480px;
+    }
+
+    #loginid{
+	width: 442px;
+    }
+
+    #loginwrapper, #loginfooter{
+	width: 480px;
+    }
+
+    #courseField{
+	width: 440px;
+    }
+
+    #infoLink{
+	display: none;
+    }
+
+    #chamber{
+	display: none;
+    }
+
+
+    /* Application CSS bits*/
+    #topmenu{
+	display: none;
+    }
+
+    #body{
+	width: 480px;
+    }
+
+    #nav{
+	display: none;
+    }
+
+    #overview{
+	display: none;
+    }
+
+    #details{
+	width: 450px;
+    }
+
+    #wrapper{
+	width: 480px;
+    }
+
+    #header{
+	width:480px;
+    }
+
+    #id{
+	display: none;
+    }
+
+    #footer{
+	width: 450px;
+    }
+
+}
+@media only screen and (min-width: 481px) {
+
+    /* Log in page, Normal View*/
+    #loginwrapper, #loginfooter{
+	margin: auto;
+	width: 958px;
+    }
+
+    #loginheader, #loginnav{
+	width: 962px;
+	margin: auto;
+    }
+
+    .LogOnContent{
+	width: 420px;
+	margin: auto;
+    }
+
+   .LogOnContent #courseField{
+	width: 420px;
+    }
+
+    .LogOnContent #loginField{
+	float: left;
+	width: 210px;
+    }
+
+    .LogOnContent #passwordField{
+	float: right;
+	margin: auto;
+    }
+
+    .LogOnContent #infoLink{
+	text-align: center;
+    }
+
+    .LogOnContent #newButton{
+	width: 210px;
+	margin: auto;
+	float: left;
+    }
+
+    .LogOnContent #remindButton{
+	width: 210px;
+	margin: auto;
+	float: right;
+    }
+
+}
+
+

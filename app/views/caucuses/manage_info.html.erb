@@ -1,0 +1,65 @@
+<% if @current_chamber_role.group_leader?( @caucus) %>
+<div id="overview" class="left-column">
+  <div class="left-content">
+    <%= content('manage-caucus-information') %>
+    <div class="field field-submit">
+      <%= link_button_to "Caucus Management", manage_caucus_path( @caucus ), :size => 'hundred', :class => 'btn blue-btn' %>
+    </div>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <%= form_for @caucus do |f| %>
+
+      <div class="field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :abbr, "Abbreviation" %>
+          <%= f.text_field :abbr %>
+        <% end %>   
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :public_announcement, "Public Announcement" %>
+          <%= f.text_area :public_announcement, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :private_announcement, "Members Only Announcement" %>
+          <%= f.text_area :private_announcement, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :jurisdiction_description, "Jurisdiction Description" %>
+          <%= f.text_area :jurisdiction_description, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field text-field">
+        <%= form_field :tip => "Don't mess with this" do %>
+          <%= f.label :issue_description, "Issue Description" %>
+          <%= f.text_area :issue_description, :class => 'tinymce' %>
+        <% end %>
+      </div>
+
+      <div class="field field-submit">
+        <%= f.submit "Update Caucus Information", :size => "fifty", :class => 'btn blue-btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% else %>
+  Only the caucus leader can edit this page.
+<% end %>

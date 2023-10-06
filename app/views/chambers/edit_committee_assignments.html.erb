@@ -1,0 +1,48 @@
+<div id = "overview" class="left-column">
+  <div class="left-content">
+  <h2>Committee Membership Management</h2><br/>
+
+  <%= form_for @chamber, :url => { :action => :update_committee_assignments } do |f| %>
+
+    <% @chamber.committees.each do |committee| %>
+      <b><h3><%= committee.title %></h3></b>
+
+      <h4>Current Membership</h4>
+      <% committee.group_memberships.each do |committee_membership| %>
+        <%= check_box_tag 'remove_group_membership_ids[]', committee_membership.id %><%= link_to_user( committee_membership.chamber_role ) %><br />
+      <% end %>
+
+      <h4>Requests</h4>
+      <ul><% committee.group_membership_requests.each do |membership_request| %>
+        <li><%= link_to_user( membership_request.chamber_role ) %> (<%= membership_request.rank.ordinalize %> choice)</li>
+      <% end %></ul>
+
+    <% end %>
+    <div class='field field-submit'>
+    <%= f.submit "Removed Selected Assignments", :size => 'hundred', :class => 'btn blue-btn'%>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div id = "details" class="right-column">
+  <div class="the-content">
+
+<h2>New Committee Assignments</h2>
+
+<%= form_for @chamber, :url => { :action => :update_committee_assignments } do |f| %>
+
+  <% @chamber.members.each do |member| %>
+    <%= check_box_tag 'add_chamber_role_ids[]', member.id %><%= link_to_user( member ) %><br/>
+  <% end %>
+
+  Assign to <%= select_tag 'group_id', options_for_select( @chamber.committees.collect{|c| [c.title,c.id]} ) %><br />
+  <div class='field field-submit'>
+    <%= f.submit "Update Assignments", :size => 'forty', :class => 'btn blue-btn'  %>
+  </div>
+
+<% end %>
+<br/>
+<%= link_button_to "Chamber Management", manage_chamber_path( @chamber ), :size => 'hundred', :class => 'btn blue-btn' %>
+</div>
+</div>

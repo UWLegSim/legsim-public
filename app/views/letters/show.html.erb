@@ -1,0 +1,69 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <div id="mail-actions" class="clearfix">
+    <%= link_button_to "Reply", reply_letter_path( @letter ), :class => 'btn blue-btn' %>
+    <br/>
+    <%= link_button_to "Reply All", reply_all_letter_path( @letter ), :class => 'btn blue-btn' %>
+<!--     <div class="button"><div class="left"><div class="right"><a href="">Reply</a></div></div></div>
+     <div class="button"><div class="left"><div class="right"><a href="">Reply All</a></div></div></div>-->
+
+<!--     <div class="button"><div class="left"><div class="right"><a href="">Forward</a></div></div></div>
+     <div class="button"><div class="left"><div class="right"><a href="">Delete</a></div></div></div>-->
+  </div><!--mail-actions-->
+
+  <h2><%= link_to_user( @letter.chamber_role ) %></h2>
+  <table cellspacing="0">
+  <tr>
+    <th style='padding: 15px 0;'>Sent<td></td>
+    <td><%= @letter.created_at.to_s(:long) %></td>
+  </tr>
+  <tr>
+    <th>To</th><td></td>
+    <td><%= @letter.recipient_list.join(', ') %></td>
+  </tr>
+  </table>
+  </div>
+</div><!--mail-header-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+    <pre style="white-space: pre-wrap;font-size:18px;">
+      <%= @letter.message%>
+
+    </pre>
+  </div>
+</div><!--mail-message-->
+
+
+<!--<div class="wide-form">
+  <div id="overview">
+
+    <h2>Delivery Information</h2>
+
+    <h3>Sent By</h3>
+    <p><%= @letter.chamber_role.title %></p>
+
+    <h3>Date</h3>
+    <p><%= @letter.created_at.strftime("%m/%d/%Y %H:%M %p") %></p>
+
+    <h3>Recipient(s)</h3>
+      <ul>
+        <% @letter.recipient_list.each do |recipient| %>
+          <li><%= recipient %></li>
+        <% end %>
+      </ul>
+
+  </div>
+
+  <div id="details">
+
+    <h2>Subject</h2>
+
+    <p><%= @letter.subject %></p>
+
+    <h2>Message</h2>
+
+    <pre class="letter"><%= @letter.message %></pre>
+
+  </div>
+</div>-->

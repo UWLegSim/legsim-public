@@ -1,0 +1,61 @@
+<div class="expander expanded">
+  <div class="bar clearfix">
+    <h2 href="#" class="title">Debate Status</h2>
+  </div>
+  <br/>
+  <div class="expander-contents">
+    <% if motion.limited_debate %>
+      <p>This motion is being considered under limited debate and cannot be filibustered.</p>
+    <% else %>
+
+      <% if motion.vote.filibuster? %>
+        <p>This motion is being filibustered by the following members.</p>
+        <ul>
+          <% motion.filibusters.includes(:chamber_role).each do |filibuster| %>
+            <li><%= link_to_user( filibuster.chamber_role ) %> for <%= distance_of_time_in_words_to_now(filibuster.created_at) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>This motion is not being filibustered.</p>
+      <% end %>
+
+      <% if motion.can_filibuster?( @current_chamber_role ) || @current_chamber_role.is_administrator? %>
+
+        <% if motion.is_filibustering?( @current_chamber_role ) || @current_chamber_role.is_administrator? %>
+
+          <p>You are participating in this filibuster.</p>
+
+          <%= form_for :motion, :url => leave_filibuster_motion_path( motion ) do |f| %>
+            <% if motion.filibusters.count > 1 %>
+              <%= f.submit "Leave Filibuster", :class => 'btn blue-btn' %>
+            <% elsif @current_chamber_role.is_administrator? %>
+              <p>Course Administrator Override</p>
+              <%= f.submit "End Filibuster", :class => 'btn blue-btn' %>
+            <% else %>
+              <%= f.submit "End Filibuster", :class => 'btn blue-btn' %>
+            <% end %>
+          <% end%>
+
+        <% else %>
+
+          <p>You are eligible to filibuster this motion.</p>
+
+          <%= form_for :motion, :url => join_filibuster_motion_path( motion ) do |f| %>
+            <% if motion.vote.filibuster? %>
+              <%= f.submit "Join Filibuster", :class => 'btn blue-btn' %>
+            <% else %>
+              <%= f.submit "Start Filibuster", :class => 'btn blue-btn' %>
+            <% end %>
+          <% end%>
+
+        <% end %>
+
+      <% else %>
+
+        <p>You are not eligible to filibuster this motion because you did not register a hold on the legislation before the motion was offered.</p>
+
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

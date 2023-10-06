@@ -1,0 +1,14 @@
+<div id="overview">
+  <h1>New Course</h1>
+</div>
+
+<div id="details">
+
+  <%= error_messages_for :course %>
+
+  <%= form_for [:system,@course] do |f| %>
+    <%= render 'form', f: f  %>
+    <%= submit_tag 'Create Course' %>
+  <% end %>
+
+</div>

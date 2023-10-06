@@ -1,0 +1,52 @@
+<h2>Chamber</h2>
+
+<%= link_button_to  "Download Chamber Membership Data", csv_group_path( @chamber.floor ), :size => 'sixty' %>
+
+<h2>Committees</h2>
+
+<table>
+  <tr><th>Group</th><th colspan="2">Action</th></tr>
+  <% @chamber.committees.each do |group| %>
+    <tr>
+      <td><%= link_to_group( group ) %></td>
+      <td><%= link_button_to "Manage Membership", edit_membership_admin_group_path( group ), :size => 'eighty' %></td>
+      <td><%= link_button_to  "Download Data", csv_group_path( group ), :size => 'eighty' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_button_to "Assign Committee Leadership", edit_committee_leadership_admin_groups_path %>
+
+<h2>Caucuses</h2>
+
+<table>
+  <tr><th>Group</th><th colspan="2">Action</th></tr>
+  <% @chamber.caucuses.each do |group| %>
+    <tr>
+      <td><%= link_to_group( group ) %></td>
+      <td><%= link_button_to "Manage Membership", edit_membership_admin_group_path( group ), :size => 'eighty' %></td>
+      <td><%= link_button_to  "Download Data", csv_group_path( group ), :size => 'eighty' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_button_to "Assign Caucus Leadership", edit_caucus_leadership_admin_groups_path %>
+
+<h2>Parties</h2>
+
+<table>
+  <tr><th>Group</th><th colspan="2">Action</th></tr>
+  <% @chamber.parties.each do |group| %>
+    <tr>
+      <td><%= link_to_group( group ) %></td>
+      <td><%= link_button_to "Manage Membership", edit_membership_admin_group_path( group ), :size => 'eighty' %></td>
+      <td><%= link_button_to  "Download Data", csv_group_path( group ), :size => 'eighty' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_button_to "Assign Party Leadership", edit_party_leadership_admin_groups_path %>
+
+
+<hr />
+<%= link_to "Chamber Administration", admin_chamber_path( @current_chamber ) %>

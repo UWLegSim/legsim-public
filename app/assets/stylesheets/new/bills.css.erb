@@ -1,0 +1,297 @@
+/*  BILL */
+
+/*  topline */
+
+.topline p  {
+    margin: 0 0 5px 0;
+    }
+
+.vote-status  {
+    margin-top: 10px;
+    padding: 7px 10px;
+    color: #f2f2f2;
+    font-size: 14px;
+    }
+
+.vote-status strong {
+    text-transform: uppercase;
+    }
+
+.vote-status .small-link {
+    float: right;
+    padding-top: 3px;
+    }
+
+.vote-status .small-link a {
+    color: white;
+    }
+
+
+/*  vote status bars */
+
+.vote-status.draft  {
+    background: #ad6600;
+    }
+
+
+.vote-status.introduced  {
+    background: #d7b100;
+    }
+
+.vote-status.referred {
+    background: #00af1d;
+    }
+
+.vote-status.calendar  {
+    background: #7f7f7f;
+    }
+
+.vote-status.passed  {
+    background: #2789e4;
+    }
+
+.vote-status.failed  {
+    background: #d13030;
+    }
+
+.vote-status.vetoed  {
+    background: #ad6600;
+    }
+
+.vote-status.law  {
+    background: #8800bf;
+    }
+
+.seal  {
+    float: right;
+    width: 104px;
+    height: 104px;
+    margin: 0 0 15px 15px;
+    }
+
+.seal.introduced  {
+    background: url(<%= image_path 'seal-introduced.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-introduced-ie.png' %>) no-repeat left top;
+    }
+
+.seal.referred {
+    background: url(<%= image_path 'seal-referred.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-referred-ie.png' %>) no-repeat left top;
+    }
+
+.seal.calendar  {
+    background: url(<%= image_path 'seal-calendar.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-calendar-ie.png' %>) no-repeat left top;
+    }
+
+.seal.passed  {
+    background: url(<%= image_path 'seal-passed.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-passed-ie.png' %>) no-repeat left top;
+    }
+
+.seal.failed  {
+    background: url(<%= image_path 'seal-failed.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-failed-ie.png' %>) no-repeat left top;
+    }
+
+.seal.vetoed  {
+    background: url(<%= image_path 'seal-vetoed.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-vetoed-ie.png' %>) no-repeat left top;
+    }
+
+.seal.law  {
+    background: url(<%= image_path 'seal-law.png' %>) no-repeat left top;
+    _background: url(<%= image_path 'seal-law-ie.png' %>) no-repeat left top;
+    }
+ /*---- Examine this section for the small stuff ---*/
+#referrals tbody td.pending, div.referrals tbody td.pending {
+    background: url(<%= image_path 'status-pending.png' %>) no-repeat left 8px;
+    }
+
+#referrals tbody td.hearing, div.referrals tbody td.hearing {
+    background: url(<%= image_path 'status-hearing.png' %>) no-repeat left 8px;
+    }
+
+#referrals tbody td.tabled, div.referrals tbody td.tabled {
+    background: url(<%= image_path 'status-tabled.png' %>) no-repeat left 8px;
+    }
+
+#referrals tbody td.reported, div.referrals tbody td.reported {
+    background: url(<%= image_path 'status-reported.png' %>) no-repeat left 8px;
+    }
+
+/* Vote Details and such */
+.vote{
+/*   height: 160px; */
+  padding: 10px 0 20px 0;
+}
+
+TR.ballot TD.preference{
+  text-align: center;
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+TR.ballot TD.yes{
+  background: #2789e4;
+}
+
+TR.ballot TD.no{
+  background: #d13030;
+}
+
+TR.ballot TD.present{
+  background: #00af1d;
+}
+
+TR.ballot TD.none{
+  background: #7f7f7f;
+}
+
+.vote-status.withdrawn, .vote-status.terminated {
+    background: #000000;
+    color:      #ffffff;
+    }
+
+.vote-status.pending {
+  background: #d7b100;
+}
+
+.vote-status.in_progress {
+  background: #00af1d;
+}
+
+.vote-status.filibuster {
+  background: #FA0;
+}
+
+/***Kludge for dealing with the select tag with the refresh for css***/
+
+select {
+    width:100%;
+    background-color: #DEDEDE;
+    /*height: 32px;*/
+    font-size: 16px;
+    border:0 none;
+    outline: none;
+    padding: 8px 12px;
+}
+
+.expanded {
+    background-color: #F0F0F0;
+    padding: 2%;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* LEGISLATION */
+
+#legislation tbody td a { font-weight: bold; }
+
+#legislation tbody td { padding-left: 22px; }
+
+#legislation tbody td.introduced {
+    background: url(<%= image_path 'status-introduced.png' %>) no-repeat left 8px;
+    }
+
+#legislation tbody td.referred {
+    background: url(<%= image_path 'status-referred.png' %>) no-repeat left 8px;
+    }
+
+#legislation tbody td.calendar {
+    background: url(<%= image_path 'status-calendar.png' %>) no-repeat left 8px;
+    }
+
+#legislation tbody td.passed {
+    background: url(<%= image_path 'status-passed.png' %>) no-repeat left 8px;
+    }
+
+#legislation tbody td.failed {
+    background: url(<%= image_path 'status-failed.png' %>) no-repeat left 8px;
+    }
+
+#legislation tbody td.vetoed {
+    background: url(<%= image_path 'status-vetoed.png' %>) no-repeat left 8px;
+    }
+
+#legislation tbody td.law {
+    background: url(<%= image_path 'status-law.png' %>) no-repeat left 8px;
+    }
+
+#legislation .legend thead th { padding: 15px 0 0 0; border: none;}
+
+#legislation .legend tbody td { border: none;}
+
+/* ALERT BOX */
+
+.alert-box {
+    background: #024683;
+    padding: 15px 15px 1px 15px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #d2f0ff;
+    }
+
+
+.alert-box h2 {
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 24px;
+    text-transform: uppercase;
+    }
+
+.alert-box h2.error { background: url(<%= image_path 'icon-error.png' %>) no-repeat -1px -1px; }
+.alert-box h2.attention { background: url(<%= image_path 'icon-attention.png' %>) no-repeat -1px -1px; }
+.alert-box h2.information { background: url(<%= image_path 'icon-information.png' %>) no-repeat -1px -1px; }
+.alert-box h2.notice { background: url(<%= image_path 'icon-notice.png' %>) no-repeat -1px -1px; }
+
+
+.alert-box h2.separator {
+    border-top: 1px dotted #d2f0ff;
+    padding-top: 15px;
+    }
+
+.alert-box h2.error.separator,
+.alert-box h2.attention.separator,
+.alert-box h2.information.separator,
+.alert-box h2.notice.separator { background-position: -1px 14px; }
+
+.alert-box ul {
+    padding-left: 24px;
+    margin-bottom: 15px;
+    }
+/* old referral table style */
+#referrals tbody td a, div.referrals tbody td a { font-weight: bold; }
+
+#referrals tbody td, div.referrals tbody td { padding-left: 22px; }
+
+#referrals tbody td.pending, div.referrals tbody td.pending {
+    background: url(<%= image_path 'status-pending.png) no-repeat left 8px;
+    }
+
+#referrals tbody td.hearing, div.referrals tbody td.hearing {
+    background: url(<%= image_path 'status-hearing.png) no-repeat left 8px;
+    }
+
+#referrals tbody td.tabled, div.referrals tbody td.tabled {
+    background: url(<%= image_path 'status-tabled.png) no-repeat left 8px;
+    }
+
+#referrals tbody td.reported, div.referrals tbody td.reported {
+    background: url(<%= image_path 'status-reported.png) no-repeat left 8px;
+    }
+
+.btn.red-btn { background: #FF233E; }
+/* line 194, ../sass/_content.scss */
+.btn.red-btn:hover { background: #E51F38; }
+
+#validation-box {
+    display:none;
+}
+
+.profile-pic { -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; height: 150px; width:150px;}

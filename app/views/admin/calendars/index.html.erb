@@ -1,0 +1,76 @@
+
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <p>This tool is different from what your chamber leader will see. This tool is here to allow you schedule and execute votes immediately.
+The chamber leader on the other hand, is only able to schedule votes based on the order in which legislation is currently on the calendar.</p>
+<h2>Previous Votes</h2>
+
+    <% if @current_chamber.floor.votes.finished.empty? %>
+      <p>There are no finished votes.</p>
+    <% else %>
+      <table style="width: 100%">
+        <tr>
+          <th>Title</th>
+          <th style="width: 100px">Outcome</th>
+          <th style="width: 140px">Actions</th>
+        </tr>
+        <% @current_chamber.floor.votes.finished.each do |vote| %>
+          <tr>
+            <td><%= vote.title %></td>
+            <td class="<%= vote.outcome %>"><%= vote.outcome.titleize if vote.outcome %></td>
+            <td colspan="3">
+              <%= link_button_to "Edit&nbsp;Vote".html_safe, edit_previous_vote_path(vote), :size => 'eighty' %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+<div class="tabs">
+  <ul class="clearfix">
+    <% @calendars.each do |calendar| %>
+      <li><a href="#tab-calendar-<%= calendar.id %>"><%= calendar.name %> (<%= calendar.calendar_referrals.count %>)</a></li>
+    <% end %>
+  </ul>
+</div>
+<% @calendars.each do |calendar| %>
+
+  <div class="panel" id="tab-calendar-<%= calendar.id %>">
+
+    <% if calendar.referrals.empty? %>
+      <h2>There is no legislation on this calendar.</h2>
+    <% else %>
+
+      <%= form_for( [:admin,calendar], :url => update_positions_admin_calendar_path( calendar ) ) do |f| %>
+        <% s1 = Set.new %>
+        <table>
+          <tr>
+            <th>Position</th>
+            <th>Legislation</th>
+            <th></th>
+          </tr>
+          <% calendar.calendar_referrals.includes(referral: :legislation).each do |calendar_referral| %>
+            <% if !s1.include?(calendar_referral.referral.legislation) %>
+              <tr>
+                <td><%= text_field_tag "calendar_referral[#{calendar_referral.id}][position]", calendar_referral.position, :style => "width: 40px; text-align: center;" %></td>
+                <td><%= calendar_referral.referral.legislation.title %></td>
+                <td><%= link_button_to "Schedule&nbsp;Vote".html_safe, new_referral_vote_path(calendar_referral.referral), :size => 'hundred' %></td>
+                <td><%= link_button_to "Enter&nbsp;Previous&nbsp;Vote".html_safe, previous_referral_votes_path(calendar_referral.referral), :size => 'hundred' %></td>
+              </tr>
+                <%  s1.add(calendar_referral.referral.legislation) %>
+              <%  end%>
+          <% end %>
+        </table>
+        <div class='field field-submit'>
+          <%= f.submit "Save Calendar Positions", :class => 'btn blue-btn' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+<% end %>
+</div></div>

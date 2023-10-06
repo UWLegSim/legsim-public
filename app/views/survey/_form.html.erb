@@ -1,0 +1,13 @@
+<%= form_tag survey_path do -%>
+		
+		<p>
+		<%= label_tag 'Survey Topic'%><br/>
+		<%= text_field_tag 'topic', @topic %><br/>
+		<%= label_tag 'A brief description' %><br/>
+		<%= text_field_tag 'description', @description %><br/>
+		<% hidden_field_tag :group_id %>
+		</p>
+
+		<%= submit_tag 'new survey', :size => 'ninety' %>
+		<br/>
+<% end %>

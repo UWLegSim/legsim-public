@@ -1,0 +1,68 @@
+<div id="overview-comments" class="left-column">
+    <%= link_button_to "Return to #{@discussion.group.type}", @discussion.group, :size => 'sixty', :class => 'btn blue-btn' %>
+    <div class="left-content">
+    <h2>Most Recent Comment</h2>
+
+    <% if @discussion.most_recent_comment %>
+      <div>
+        <%= chamber_role_photo( @discussion.most_recent_comment.chamber_role, :align => 'right', :class => 'profile-pic' ) %>
+
+        <b>From</b> <%= link_to_user @discussion.most_recent_comment.chamber_role %><br />
+        <b>On</b> <%= @discussion.most_recent_comment.created_at.strftime("%m/%d/%Y %H:%M %p") %>
+
+        <p><%= sanitize @discussion.most_recent_comment.content, attributes: ['style'] %></p>
+        <br style="clear: right; line-height: 0px;" />
+      </div>
+    <% else %>
+      <p>No comments have been made in this discussion. Perhaps you should be first?</p>
+    <% end %>
+
+    <% if @discussion.can_comment?( @current_chamber_role ) %>
+
+      <h2>Add a Comment</h2>
+      <%= form_for Comment.new do |f| %>
+
+        <fieldset class="clearfix">
+        <%= form_field do %>
+        <%= f.hidden_field :discussion_id, :value => @discussion.id %>
+          <%= f.text_area :content, :class => "tinymce"%>
+        <% end %>
+      </fieldset>
+        <%= f.submit "Post Comment", :size => 'fifty', :class => 'btn blue-btn' %>
+    <% end %><br />
+
+    <% else %>
+
+      <% unless @discussion.open? %>
+        <p>This discussion is closed. No further comments are accepted.</p>
+      <% else %>
+        <p>You are not a member of the <%= @discussion.group.name %> and thus not entitled to participate in this discussion.</p>
+      <% end %>
+
+    <% end %>
+
+
+  </div>
+</div>
+
+<div id="details-comments" class="right-column">
+  <div class="the-content">
+    <h2>Previous Comments</h2>
+    <div class="discussion">
+      <% @discussion.comments.includes(:chamber_role).each do |comment| %>
+
+        <div class="<%= cycle("even", "odd") -%>" >
+
+          <%= chamber_role_photo( comment.chamber_role, :align => 'right', :style => '-moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; height: 150px; width:150px;' ) %>
+          <b>From</b> <%= link_to_user comment.chamber_role %><br />
+          <b>On</b> <%= comment.created_at.strftime("%m/%d/%Y %H:%M %p") %>
+
+          <p><%= sanitize comment.content, attributes: ['style'] %></p>
+          <br style="clear: right; line-height: 0px;" />
+
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

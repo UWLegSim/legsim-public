@@ -1,0 +1,22 @@
+---
+:verbose: false
+:concurrency: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+:timeout: 30
+:queues:
+  - [scheduler, 2]
+  - [default, 1]
+
+:scheduler:
+  :schedule:
+    LetterDeliveryJob:
+        cron: '*/1 * * * *'
+        queue: scheduler
+        enabled: true
+    VoteManagerJob:
+        cron: '*/1 * * * *'
+        queue: scheduler
+        enabled: true
+    CourseManagerJob:
+        cron: '0 * * * *'
+        queue: scheduler
+        enabled: true

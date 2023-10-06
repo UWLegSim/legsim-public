@@ -1,0 +1,13 @@
+<% if @current_chamber_role.is_administrator? %>
+	<div id="details" class="right-column">
+	<div class="the-content">
+	<h1>New Committee</h1>
+	  <%= form_for @committee do |f| %>
+		<%= render(:partial => 'form', :locals => { :f => f } ) %>
+		<%= submit_tag 'Create Committee' %>
+	  </div>
+	</div>
+<% else %>
+	Only the course administrator can create new committees.
+<% end %>
+

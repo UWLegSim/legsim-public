@@ -1,0 +1,28 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= content('manage-legislative-types') %>
+
+  <%= form_for @chamber, :url => { :action => :init_legislative_types } do |f| %>
+    <h2>Reload Legislative Types</h2>
+
+    <p>Reloading legislative types will destroy all current types and anything submitted
+    legislation and then reload legislative types based on the chamber's scenerio.</p>
+    <%= submit_tag "Reload Legislative Types", :size => 'seventy' %>
+  <% end %>
+
+  <%= link_to "Return to Chamber Management", admin_chamber_path( @chamber ) %>
+</div>
+</div><!--overview-->
+
+<div id="details" class="right-column">
+  <div class="the-content">
+
+  <h2>Existing Legislative Types</h2>
+
+  <ul>
+    <% @chamber.legislative_types.each do |legislative_type| %>
+      <li><%= legislative_type.title %></li>
+    <% end %>
+  </ul>
+</div>
+</div>

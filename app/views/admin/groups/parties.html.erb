@@ -1,0 +1,35 @@
+<div id="overview" class="left-column">
+  <div class="left-content">
+  <%= link_button_to 'Return to Administration', admin_path, :size => 'seventy' %>
+</div>
+</div>
+
+<div id="details" class="right-column">
+  <div class="the-content">
+  <div id="parties" class="expander expanded">
+    <div class="bar clearfix">
+      <a href="#" class="title">Parties</a>
+    </div><!--bar-->
+    <div class="expander-contents">
+      <table cellspacing="0">
+        <tr>
+          <th style="width: 370px">Name</th>
+          <th style="width: 100px; text-align: center">Abbreviation</th>
+          <th style="width: 150px">Leader</th>
+          <th></th>
+        </tr>
+        <% @parties.each do |party| %>
+          <tr>
+            <td><%= party.name %></td>
+            <td class="center"><%= party.abbr %></td>
+            <td><%= link_to_user party.primary_leader %></td>
+            <td><%= link_to "manage", edit_admin_group_path( party ) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+  <%= link_button_to "New Party", new_admin_group_path( :type => "Party" ) %>
+</div>
+</div>

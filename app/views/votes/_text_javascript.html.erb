@@ -1,0 +1,135 @@
+<script type="text/javascript">
+
+  $().ready(function(){
+
+    $("<%= selector %>").submit(function() {
+
+      var errors = [];
+      var time_regex = /^\d{2}:\d{2}$/;
+      var date_regex = /^\d{4}-\d{2}-\d{2}$/;
+
+      tinymce.get("legislative_text_id").save()
+      tinymce.get("amendment_id").save()
+      tinymce.get("motion_text").save()
+
+      if ( !$("#motion_action").val()  ) errors.push( 'No motion type provided' );
+      if ( !$("#motion_text").val()    ) errors.push( 'No motion text provided' );
+      if ( !$("#vote_threshold").val() ) errors.push( 'No threshold for passage provided' );
+
+      if ( !$("#vote_start_at_time").val().match( time_regex )  ) errors.push( 'Invalid start time (example: 07:45 PM)' );
+      if ( !$("#vote_finish_at_time").val().match( time_regex ) ) errors.push( 'Invalid finish time (example: 07:45 PM)' );
+      if ( !$("#vote_start_at_date").val().match( date_regex )  ) errors.push( 'Invalid start date (example: 11/28/2009)' );
+      if ( !$("#vote_finish_at_date").val().match( date_regex ) ) errors.push( 'Invalid finish date (example: 11/28/2009)' );
+
+      if ( errors.length ){
+        $("#validation-box").show();
+        $("#form-errors").html("<li>" + errors.join('</li><li>') + "</li>");
+        return false;
+      } else {
+        $("#validation-box").hide();
+        return true;
+      }
+
+    });
+
+    var update_motion_form = function(){
+
+      if ( $("#motion_action").val() == 'passage' ){
+        $(".text_selector").hide();
+        $("#passage_selector").show();
+
+        var get_url = '/referrals/' + <%= @motion.referral.id %> + '/votes/final_passage_options.js';
+        $("#legislative_text_id").load(get_url)
+
+      } else if ( $("#motion_action").val() == 'amendment' ) {
+        $(".text_selector").hide();
+        $("#amendment_selector").show();
+
+        var get_url = '/referrals/' + <%= @motion.referral.id %> + '/votes/amendment_options.js';
+        $("#amendment_id").load(get_url)
+
+
+      } else if ( $("#motion_action").val() == 'report' ) {
+        $(".text_selector").hide();
+
+        var get_url = '/referrals/' + <%= @motion.referral.id %> + '/votes/report_text.js';
+
+        $.get( get_url, function( data ) {
+          tinymce.get("motion_text").setContent( data );
+          $("#motion_text_container").show();
+        });
+
+      } else if ( $("#motion_action").val() == 'general' ) {
+
+        $("#amendment_selector").hide();
+        $(".text_selector").hide();
+
+        tinymce.get("motion_text").setContent( '' );
+        $("#motion_text_container").show();
+
+      }
+    }
+
+    update_motion_form();
+    $("#motion_action").change(update_motion_form);
+
+    <% if cloture %>
+
+      var get_url = '/referrals/' + <%= @motion.referral.id %> + '/votes/cloture_text.js';
+      $.get( get_url, function( data ) {
+        tinymce.get("motion_text").setContent( data );
+        $("#motion_text_container").show();
+      });
+
+    <% end %>
+
+    $("#legislative_text_id").change(function(){
+
+      if ( $(this).val() == 'blank' ) {
+        tinymce.get("motion_text").setContent( '' );
+        $("#motion_text_container").show();
+      } else if ( $(this).val() ) {
+        var get_url = '/referrals/' + <%= @motion.referral.id %> + '/votes/final_passage_text.js?legislative_text_id=' + $(this).val();
+        $.get( get_url, function( data ) {
+          tinymce.get("motion_text").setContent( data );
+          $("#motion_text_container").show();
+        });
+      } else {
+        $("#motion_text_container").hide();
+      }
+
+    });
+
+    $("#amendment_id").change(function(){
+
+      if ( $(this).val() == 'blank' ) {
+        tinymce.get("motion_text").setContent( '' );
+        $("#motion_text_container").show();
+      } else if ( $(this).val() ) {
+        var get_url = '/referrals/' + <%= @motion.referral.id %> + '/votes/amendment_text.js?amendment_id=' + $(this).val();
+        $.get( get_url, function( data ) {
+          tinymce.get("motion_text").setContent( data );
+          $("#motion_text_container").show();
+        });
+      } else {
+        $("#motion_text_container").hide();
+      }
+
+    });
+
+    var update_vote_recording_form = function () {
+      var record_type = $("#vote_record_type").val()
+      $(".vote_input_container").hide();
+
+      if      ( record_type == 'voice_vote' ) { $("#voice_vote_input_container").show(); }
+      else if ( record_type == 'division'   ) { $("#division_input_container").show();   }
+      else if ( record_type == 'roll_call'  ) { $("#roll_call_input_container").show();  }
+
+    }
+
+    update_vote_recording_form();
+    $("#vote_record_type").change(update_vote_recording_form);    
+
+  });
+
+</script>

@@ -1,0 +1,235 @@
+<div class="left-column">
+  <div class="left-content">
+    <div class="profile-wrap">
+      <% if @member.photo.attached? %>
+        <%= image_tag @member.photo.variant(resize_to_fill: [150, 150]), :alt => @member.title, :title => @member.title, :class => "profile-pic" %>
+      <% else %>
+        <%= image_tag '/assets/silhouette.png', :alt => @member.title, :title => @member.title, :class => "profile-pic" %>
+      <% end %>
+
+      <div class="name"><%= @member.name%></div>
+
+      <div class="address">
+        <% if @member.constituency.nil? %>
+        <% else %>
+          <%= @member.constituency.title %>
+        <% end %>
+      </div>
+      <div class="mail"><a href="mailto:<%= @member.email %>"><%= @member.email %></a></div>
+      <div class='view-details'><%= link_to "View Public Profile", member_path( @member ) %></div>
+      <div>
+        <%= link_to "Edit Profile", edit_member_path( @member ), :class => "btn blue-btn" %>
+      </div>
+      <br/>
+      <div>
+        <%= link_to "Change Password", edit_password_users_path, :class => 'btn blue-btn' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="right-column">
+  <div id="tab-container" class="tab-container">
+    <ul class='etabs' data-items='4'>
+      <li class='tab'><a href="#activities">My Activities</a></li
+      ><li class='tab'><a href="#groups">My Groups</a></li
+      ><!-- <li class='tab'><a href="#committees">Committees</a></li
+      ><li class='tab'><a href="#caucuses">Party And Caucuses</a></li> -->
+    </ul>
+    <div id="activities">
+      <div class="the-content">
+        <%= render(:partial => 'letters/mailbox', :locals => { :chamber_role => @member } ) %>
+        <br/>
+        <div>
+          <script type="text/javascript">
+
+            $().ready(function(){
+
+              $(".submit_vote").change(function(){
+
+                var vote_ref = $(this).attr('id').substr(11);
+
+                if ( $(this).val() == 'none' ){
+                  $("#button_" + vote_ref + " div div").html('NOT&nbsp;CAST'.html_safe);
+                } else if ( $("#current_preference_" + vote_ref).val() == $(this).val() ){
+                  alert( $("#current_preference_" + vote_ref).val() );
+                  $("#button_" + vote_ref + " div div").html('CAST');
+                } else {
+                  $("#button_" + vote_ref).removeClass('inactive');
+                  $("#button_" + vote_ref + " div div").html('<a href="#' + vote_ref + '">VOTE</a>');
+
+                  $("#button_" + vote_ref).click(function(){
+
+                    var preference = $("#preference_" + vote_ref).val();
+                    var ballot_id = $("#ballot_id_" + vote_ref).val();
+                    $("#current_preference_" + vote_ref).val( preference );
+                    var data = {
+                      'ballot[preference]': preference,
+                    };
+                    var button = this;
+
+                    $.rails.ajax({
+                      url: '/ballots/' + ballot_id + '.json',
+                      type: "put",
+                      data: data,
+                      success: function(data) {
+                        $(button).addClass('inactive');
+                        $(button).find("div div").html('CAST');                        
+                      },
+                      error: function(data) {
+                      }
+                    })
+
+                    return false;
+                  });
+                }
+
+              });
+            });
+
+          </script>
+
+          <% unless @member.ballots.open.empty? %>
+            <div id="ballot" class="expander expanded">
+              <div class="bar clearfix">
+                <h2 href="#" class="title">Ballot <span class="parenthesis">(<%= @member.ballots.open.count %> open votes)</span></h2>
+              </div><!--bar-->
+              <div class="expander-contents">
+                <table cellspacing="0">
+                  <tr>
+                    <th>Legislation</th>
+                    <th colspan="2">Your Vote</th>
+                  </tr>
+                  <% @member.ballots.open.each do |ballot| %>
+                    <tr>
+                      <td>
+                        <h2>
+                          <%= link_to ballot.motion.referral.legislation.reference, legislation_path( ballot.motion.referral.legislation) %>:
+                          <b><%= ballot.motion.action.titleize %></b>
+                          <!-- (<%= ballot.motion.referral.group.name %>) -->
+                        </h2>
+                        <%= ballot.motion.referral.legislation.name %><br />
+                        [<%= link_to "Motion Text", motion_path( ballot.motion ), :class => "small-link" %>]&nbsp;&nbsp;
+                        [<%= link_to "Current Results", vote_path( ballot.vote ), :class => "small-link" %>]&nbsp;&nbsp;
+                        <!-- test below, link might not be properly done. -->
+                        <!-- [<%#= link_to "Contribute to Debate", referral_path(ballot.motion.referral.discussion), :class => "small-link" %>]&nbsp;&nbsp; -->
+                      </td>
+                      <% if @member.chamber.setting('has_filibuster') and ballot.vote.filibuster? %>
+                        <td colspan="2">Filibustered</td>
+                      <% else %>
+                        <td>
+                          <select class="pulldown submit_vote" id="preference_vote_<%= ballot.vote.id %>">
+                            <option <%= "selected" if (ballot.preference == 'none')    %> value="none"   >--</option>
+                            <option <%= "selected" if (ballot.preference == 'yes')     %> value="yes"    >Yes</option>
+                            <option <%= "selected" if (ballot.preference == 'no')      %> value="no"     >No</option>
+                            <option <%= "selected" if (ballot.preference == 'present') %> value="present">Present</option>
+                          </select>
+                        </td>
+                        <td>
+                          <%= hidden_field_tag "current_preference_vote_#{ballot.vote.id}", ballot.preference %>
+                          <%= hidden_field_tag "ballot_id_vote_#{ballot.vote.id}", ballot.id %>
+                          <div class="button ninty inactive" id="button_vote_<%= ballot.vote.id %>"><div class="left"><div class="right">
+                            <%= (ballot.preference == 'none') ? "Not&nbsp;Cast".html_safe : "Cast"  %>
+                          </div></div></div>
+                        </td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </table>
+              </div><!--expander-contents-->
+            </div><!--ballot-->
+          <% end %>
+        </div><!--ballot tool-->
+        <br/>
+        <%= render(:partial => 'discussions/chamber_role_index', :locals => { :chamber_role => @member } ) %>
+        <br/>
+        <%= render(:partial => 'legislation/chamber_role_box', :locals => { :chamber_role => @member } ) %>
+      </div>
+    </div>
+    <div id="groups">
+      <div class="the-content">
+        <h1><%= @member.chamber.title %></h1>
+        <br/>
+        <ul>
+          <% if @member.chamber.floor.primary_group_leader %>
+            <li><b><%= @member.chamber.floor.primary_group_leader.title %></b> <%= link_to_user( @member.chamber.floor.primary_leader ) %></li>
+          <% end %>
+          <li><a href="/members">Membership Directory</a></li>
+          <li><b>Member's Announcement</b> <%= @member.chamber.floor.private_announcement ? @member.chamber.floor.private_announcement : "<p>No Announcement</p>" %></li>
+        </ul>
+
+        <% unless @member.section.nil? %>
+
+          <h3><%= link_to_group( @member.section ) %></h3>
+          <ul>
+            <% if @member.section.primary_group_leader %>
+              <li><b><%= @member.section.primary_group_leader.title %></b> <%= link_to_user( @member.section.primary_leader ) %></li>
+            <% end %>
+            <li><b>Member's Announcement</b> <%= @member.section.private_announcement ? @member.section.private_announcement : "<p>No Announcement</p>" %></li>
+          </ul>
+
+        <% end %>
+        <br/>
+        <h1>Committees</h1>
+        <br/>
+        <% if @member.committees.empty? %>
+          You are not a member of any committee. You should register your committee requests to be assigned a position.
+          <ul>
+            <li><a href="/committees/membership_requests">Committee Requests</a></li>
+          </ul>
+        <% else %>
+          <% @member.committees.each do |committee| %>
+            <h3><%= link_to_group( committee ) %></h3>
+            <ul>
+              <% if committee.primary_group_leader %>
+                <li><b><%= committee.primary_group_leader.title %></b> <%= link_to_user( committee.primary_leader ) %></li>
+              <% end %>
+              <li><b><%= committee.referrals.hearing.count %></b> Open <%= committee.referrals.hearing.count == 1 ? 'Hearing' : 'Hearings' %></li>
+              <li><b>Member's Announcement</b> <%= committee.private_announcement ? committee.private_announcement : "<p>No Announcement</p>" %></li>
+            </ul>
+          <% end %>
+        <% end %>
+        <br/>
+        <h1>Caucuses</h1>
+        <br/>
+        <% if @member.caucuses.empty? %>
+          You are not a member of any caucuses. You should consider joining one or create your own.
+          <ul>
+            <li><%= link_to "Chamber Caucuses", caucuses_path %></li>
+            <li><%= link_to "Create a New Caucus", new_caucus_path %></li>
+          </ul>
+        <% else %>
+          <% @member.caucuses.each do |caucus| %>
+            <h3><%= link_to_group( caucus ) %></h3>
+            <ul>
+              <% if caucus.primary_group_leader %>
+                <li><b><%= caucus.primary_group_leader.title %></b> <%= link_to_user( caucus.primary_leader ) %></li>
+              <% end %>
+              <li><b><%= caucus.referrals.hearing.count %></b> Open Legislative <%= caucus.referrals.hearing.count == 1 ? 'Study' : 'Studies' %></li>
+              <li><b>Member's Announcement</b> <%= sanitize (caucus.private_announcement ? caucus.private_announcement : "<p>No Announcement</p>"), attributes: ['style'] %></li>
+            </ul>
+          <% end %>
+        <% end %>
+        <br/>
+        <h1>Party</h1>
+        <br/>
+        <% if @member.party.nil? %>
+          You are not a member of a party. You should consider joining one or create your own.
+          <ul>
+            <li><%= link_to "Chamber Parties", parties_path %></li>
+            <li><%= link_to "Create a New Party", new_party_path %></li>
+          </ul>
+        <% else %>
+          <h3><%= link_to_group( @member.party ) %></h3>
+          <ul>
+            <% if @member.party.primary_group_leader %>
+              <li><b><%= @member.party.primary_group_leader.title %></b> <%= link_to_user( @member.party.primary_leader ) %></li>
+            <% end %>
+            <li><b><%= @member.party.referrals.hearing.count %></b> Open Legislative <%= @member.party.referrals.hearing.count == 1 ? 'Study' : 'Studies' %></li>
+            <li><b>Member's Announcement</b> <%= sanitize (@member.party.private_announcement ? @member.party.private_announcement : "<p>No Announcement</p>"), attributes: ['style'] %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
